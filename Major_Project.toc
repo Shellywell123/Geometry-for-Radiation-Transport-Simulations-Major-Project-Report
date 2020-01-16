@@ -8,22 +8,23 @@
 \contentsline {subsection}{\numberline {2.1}Co-ordinate Systems}{1}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Cylindrical Co-ordinate System}{1}{subsubsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.2}Spherical Co-ordinate System}{2}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Toroidal Co-ordinate System}{2}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Meshing performance testing}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Curved primitive solids}{3}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Cons}{4}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}CutTubs}{5}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Ellipsoid}{6}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}EllipticalCone}{7}{subsubsection.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.5}EllipticalTube}{8}{subsubsection.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.6}Hyperboloid}{9}{subsubsection.2.3.6}
-\contentsline {subsubsection}{\numberline {2.3.7}Orb}{10}{subsubsection.2.3.7}
-\contentsline {subsubsection}{\numberline {2.3.8}Paraboloid}{11}{subsubsection.2.3.8}
-\contentsline {subsubsection}{\numberline {2.3.9}Polycone}{12}{subsubsection.2.3.9}
-\contentsline {subsubsection}{\numberline {2.3.10}Sphere}{13}{subsubsection.2.3.10}
-\contentsline {subsubsection}{\numberline {2.3.11}Torus}{14}{subsubsection.2.3.11}
-\contentsline {subsubsection}{\numberline {2.3.12}Tubs}{15}{subsubsection.2.3.12}
-\contentsline {subsection}{\numberline {2.4}Performance tests}{16}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.1.3}Toroidal Co-ordinate System}{3}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Plane Direction}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Meshing performance testing}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Curved primitive solids}{3}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Cons}{4}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}CutTubs}{5}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Ellipsoid}{6}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}EllipticalCone}{7}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}EllipticalTube}{8}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}Hyperboloid}{9}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}Orb}{10}{subsubsection.2.4.7}
+\contentsline {subsubsection}{\numberline {2.4.8}Paraboloid}{11}{subsubsection.2.4.8}
+\contentsline {subsubsection}{\numberline {2.4.9}Polycone}{12}{subsubsection.2.4.9}
+\contentsline {subsubsection}{\numberline {2.4.10}Sphere}{13}{subsubsection.2.4.10}
+\contentsline {subsubsection}{\numberline {2.4.11}Torus}{14}{subsubsection.2.4.11}
+\contentsline {subsubsection}{\numberline {2.4.12}Tubs}{15}{subsubsection.2.4.12}
+\contentsline {subsection}{\numberline {2.5}Performance tests}{16}{subsection.2.5}
 \contentsline {section}{\numberline {3}BDSIM}{16}{section.3}
 \contentsline {subsection}{\numberline {3.1}Particle collisions with meshed solids}{16}{subsection.3.1}
 \contentsline {section}{\numberline {4}CAD}{16}{section.4}
