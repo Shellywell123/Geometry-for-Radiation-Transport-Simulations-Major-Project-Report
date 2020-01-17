@@ -100,8 +100,18 @@
 % Bottom of the page
 	{\large \today\par}
 
-\includegraphics[width=0.3\textwidth]{Images//Logos//BDSIM_Logo.jpg}\par\vspace{1cm}
-\includegraphics[width=0.3\textwidth]{Images//Logos//JAI_Logo.jpeg}\par\vspace{1cm}
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.6\textwidth}
+  \includegraphics[width=0.4\textwidth]{Images//Logos//BDSIM_Logo.jpg}
+\end{minipage}%
+\begin{minipage}{.6\textwidth}
+  \centering
+  \includegraphics[width=0.5\textwidth]{Images//Logos//JAI_Logo.jpeg}
+  \end{minipage}
+\end{figure}
 
 \end{titlepage}
 \leavevmode\thispagestyle{empty}\newpage
@@ -133,11 +143,12 @@ This section will describe the work done to optimize the python scripts that gen
 \\\\
 All the python meshing scripts follow a similar structure of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given coordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylcmeshin}
 \\\\
-One of the major reasons that the code has been improved is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by Boolean subtractions and additions, which involved creating two seperate solids and acting upon both of them. Which resulted in a very computationally heavy and less aestetic outcome. The the mesh lines ('slice and stack'), were not in radial directions.
+One of the major reasons that the code has been improved is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by Boolean subtractions and additions, which involved creating two separate solids and acting upon both of them. Which resulted in a very computationally heavy and less aestetic outcome. The the mesh lines ('slice and stack'), were not in radial directions.
 
 \subsection{Co-ordinate Systems}
-The various primitive solids are all constructed by using the predefined paramters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
+The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
 
+\newpage
 \subsubsection{Cylindrical Co-ordinate System}
 The meshing for the primitive solids in cylindrical polar coordinate systems are constructed by looping though the number of slices and stacks which the cylinder is being cut into. The Loop then creates the coordinates for 3 or 4 points at a time, which can then be defined as a triangular or polygonal face. The only cases where the mesh produces triangles is at the top and bottom faces of the cylinder, provided it does has a minimum radius equal to zero (creating a tube or cone). 
 %one on each slice as shown in Listing \ref{loopcode1} 
@@ -179,6 +190,7 @@ The code in Listing \ref{loopcode1} generates counters so that you can choses fr
 \\\\
 The only time stack is needed in the cylindrical coordinate system is when the solid has a non linear function in the r-z plane. For example a paraboild (Figure \ref{para}) would need a stack but a linear cone (Figure \ref{cons}) would not.
 
+\newpage
 \subsubsection{Spherical Co-ordinate System}
 
 \begin{figure}[h!]
@@ -213,8 +225,7 @@ for j0 in range(nslice):
           i2 = i0 + 1
 \end{lstlisting}
 
-
-
+\newpage
 \subsubsection{Toroidal Co-ordinate System}
 
 \begin{figure}[h!]
