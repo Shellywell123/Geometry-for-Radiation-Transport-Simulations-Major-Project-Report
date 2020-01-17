@@ -6,6 +6,8 @@
 % fig refs not working ?
 % code snipped links
 % degenerate points
+% eqs align left
+% subtraction and addition of booleans
 
 
 
@@ -130,6 +132,8 @@ The aims of this project are to optimize the pyg4ometry package to improve and p
 This section will describe the work done to optimize the python scripts that generate the three dimensional meshing for the primitive solids. All the solids used are constructed such that they are compatible with Geant4's solids. It was orginally thought that it would be best to use triangles meshes to construct the 3D solids, however it has been realised that the computation of triangles compared with polygons is much more intensive and ineffecient, in most cases. In particular with the curved solids, i.e circular and elliptical based solids.
 \\\\
 All the python meshing scripts follow a similar structure of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given coordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylcmeshin}
+\\\\
+One of the major reasons that the code has been improved is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by Boolean subtractions and additions, which involved creating two seperate solids and acting upon both of them. Which resulted in a very computationally heavy and less aestetic outcome. The the mesh lines ('slice and stack'), were not in radial directions.
 
 \subsection{Co-ordinate Systems}
 The various primitive solids are all constructed by using the predefined paramters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
@@ -173,7 +177,7 @@ for j0 in range(nslice):
 \end{lstlisting}
 The code in Listing \ref{loopcode1} generates counters so that you can choses from two slices and two stacks, in order to gain the four points surrounding a desired face. These points are then used to define a polygon. Same logic applies for the triangles, just using 3 points.
 \\\\
-The only time stack is needed in the cylindrical coordinate system is when the solid has a non linear function in the r-z plane. For example a bent tube would need a stack but a linear tube would not.
+The only time stack is needed in the cylindrical coordinate system is when the solid has a non linear function in the r-z plane. For example a paraboild (Figure \ref{para}) would need a stack but a linear cone (Figure \ref{cons}) would not.
 
 \subsubsection{Spherical Co-ordinate System}
 
@@ -228,7 +232,7 @@ The trigonometry that converts the points from toroidal coordinates to cartesian
 \begin{split}
 x = R_{Torus} + R\cos{\theta}\cos{\phi} \\
 y = R_{Torus} + R\cos{\theta}\sin{\phi} \\
-z =  R\sin{\theta}
+z =  R\sin{\theta} 
 \end{split}
 \end{equation}
 
@@ -243,7 +247,7 @@ One key thing to be taken into account is the convention being used in the code 
 \end{figure}
 
 \subsection{Degenerate points}
-
+Multiple points occupying the same area
 
 \subsection{Meshing performance testing}
 
@@ -260,7 +264,7 @@ which coord system
 \centering
 \includegraphics[scale=0.5]{Images//Meshes//cons.png}
 \caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\label{cons}
 \end{figure}
 
 \begin{figure}[h!]
@@ -376,8 +380,8 @@ which coord system
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Meshes//paraboloid.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\caption[width=\columnwidth]{Paraboid Meshing Development}
+\label{para}
 \end{figure}
 
 \begin{figure}[h!]
