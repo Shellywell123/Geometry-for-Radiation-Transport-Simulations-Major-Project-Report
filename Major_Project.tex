@@ -4,6 +4,8 @@
 % sphere coord needs middlie red line to get slice count consistent
 % torus diagram needs colour
 % fig refs not working ?
+% code snipped links
+% degenerate points
 
 
 
@@ -76,9 +78,9 @@
 	\vspace{1cm}
 	{\scshape\Large PH4100: Major Project\par}
 	\vspace{1.5cm}
-	{\huge\bfseries BDSIM\\
-	\&\\
-	pyg4ometry\par}
+	{\huge\bfseries Meshing of Primitive Solids\\
+	in\\
+	pyg4ometry \& BDSIM\par}
 	\vspace{2cm}
 	{\Large\itshape Ben Shellswell\par}
 	\vfill
@@ -127,12 +129,14 @@ The aims of this project are to optimize the pyg4ometry package to improve and p
 \section{Primitive Meshing}
 This section will describe the work done to optimize the python scripts that generate the three dimensional meshing for the primitive solids. All the solids used are constructed such that they are compatible with Geant4's solids. It was orginally thought that it would be best to use triangles meshes to construct the 3D solids, however it has been realised that the computation of triangles compared with polygons is much more intensive and ineffecient, in most cases. In particular with the curved solids, i.e circular and elliptical based solids.
 \\\\
-All the python meshing scripts follow a similar structure of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of angles swept through to generate that solid in a given coordinate system. 
+All the python meshing scripts follow a similar structure of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given coordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylcmeshin}
 
 \subsection{Co-ordinate Systems}
-The various primitive solids were all constructed by using the predefined paramters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
+The various primitive solids are all constructed by using the predefined paramters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
 
 \subsubsection{Cylindrical Co-ordinate System}
+The meshing for the primitive solids in cylindrical coordinate systems are constructed by looping though the number of slices and stacks which the cylinder is being cut into. The Loop then creates the coordinates for 3 or 4 points at a time, which can then be defined as a triangular or polygonal face. The only cases where the mesh produces triangles is at the top and bottom faces of the cylinder, provided it does has a minimum radius equal to zero (creating a tube or cone). 
+%one on each slice as shown in Listing \ref{loopcode1} 
 
 \begin{figure}[h!]
 \centering
@@ -140,9 +144,10 @@ The various primitive solids were all constructed by using the predefined paramt
 \caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical coordinate system\\
 Red = Slices (8)\\
 Blue = Stack (2)}
-\label{conts}
+\label{cylmeshin}
 \end{figure}
 
+The trigonometry that converts the points from cylindrical polar coordinates to cartesian, are:
 \begin{equation}
 \begin{split}
 x = r \cos{\theta} \\
@@ -151,21 +156,38 @@ z = z
 \end{split}
 \end{equation}
 
+\label{loopcode1} 
 \begin{lstlisting}[language=Python, caption=Python example]
+polygons = []
+
 for j0 in range(nslice):
     j1 = j0
     j2 = j0 + 1
+    
+    vertices = []
+
+    for i0 in range(nstack):
+          i1 = i0
+          i2 = i0 + 1     
+
 \end{lstlisting}
+The code in Listing \ref{loopcode1} generates counters so that you can choses from two slices and two stacks, in order to gain the four points surrounding a desired face. These points are then used to define a polygon. Same logic applies for the triangles, just using 3 points.
+\\\\
+The only time stack is needed in the cylindrical coordinate system is when the solid has a non linear function in the r-z plane, for example a bent tube would need a stack but a linear tube would not.
 
 \subsubsection{Spherical Co-ordinate System}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Coords//sph.png}
 \caption[width=\columnwidth]{Diagram showing the meshing method for a spherical coordinate system\\
 Red = Slices (12)\\
 Blue = Stack (6)}
-\label{conts}
+\label{sphmeshin}
 \end{figure}
+
+The meshing for the primitive solids in spherical coordinate systems are constructed by similar means the that of the spherical just with different trigonometric equations (\ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. 
+The trigonometry that converts the points from spherical coordinates to cartesian, are:
 
 \begin{equation}
 \begin{split}
@@ -173,6 +195,7 @@ x = r \cos{\theta}\sin{\phi}\\
 y = r \sin{\theta}\sin{\phi} \\
 z = z
 \end{split}
+\label{trigsph}
 \end{equation}
 
 \begin{lstlisting}[language=Python, caption=Python example]
@@ -195,6 +218,8 @@ for j0 in range(nslice):
 \label{conts}
 \end{figure}
 
+The trigonometry that converts the points from toroidal coordinates to cartesian, are:
+
 \begin{equation}
 \begin{split}
 x = R_{Torus} + R\cos{\theta}\cos{\phi} \\
@@ -212,7 +237,9 @@ One key thing to be taken into account is the convention being used in the code 
 \caption[width=\columnwidth]{Diagram showing the order convention of appending points to define the normal to a plane}
 \label{pointsorder}
 \end{figure}
- 
+
+\subsection{Degenerate points}
+
 
 \subsection{Meshing performance testing}
 
