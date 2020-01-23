@@ -11,6 +11,7 @@
 % bdsim shooting particles at geant4 sphere and then new old mesh with incresing desities
 % then bdsim of compound solids
 % euations of a moving particle
+% hyperboiloid poly count still needs to be done
 
 
 
@@ -28,12 +29,12 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{subfigure}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \usepackage{afterpage}
-\usepackage{subcaption} 
 
 \newcommand{\ts}{\textsuperscript}
 \usepackage[super]{nth}
@@ -160,7 +161,7 @@ The meshing for the primitive solids in cylindrical polar coordinate systems are
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Coords//cyl.png}
+\includegraphics[scale=0.45]{Images//Coords//cyl.png}
 \caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical coordinate system\\
 Red = Slices (8)\\
 Blue = Stack (2)}
@@ -266,6 +267,15 @@ One key thing to be taken into account is the convention being used in the code 
 
 \subsection{New Meshing of Curved Primitve Solids}
 can give one eaxmple and reference rest in appendix, radial meshing clean up, can remove stack in some cases, boolean slow and messy
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{Images//Meshes//tubs.png}
+\caption[width=\columnwidth]{Toroidal Coordinate System}
+\label{conts}
+\end{figure}
+
+
+
 \subsubsection{Degenerate points}
 Multiple points occupying the same area can spring a few errors with out crashing the code, therefore can sometimes be tricky to spot. 
 
@@ -275,18 +285,17 @@ One of the largest changes to the performance of the new meshing compared with t
 
 \subsection{Meshing performance testing}
 \subsubsection{Polygon Count}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{Images//Quad_fits//Tubs_quad.png}
+\caption[width=\columnwidth]{Spherical Coordinate System}
+\label{conts}
+\end{figure}
 \subsubsection{BDSIM interactions}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\newpage
-
-%\bibliographystyle{ieeetr}
-%\bibliography{library}
-
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv,library}
 
 \newpage
 \appendix
@@ -294,120 +303,146 @@ One of the largest changes to the performance of the new meshing compared with t
 \section{Appendix (Python scripts)}
 This section lists the Python scripts used to generate some of the figures within this report.
 Data taken from Online NASA's confirmed exoplanet archive \cite{arch}, downloaded as .cvs file and imported into Python 3.7. ``path'' is the path to your ``.cvs'' type file. May be required to delete unnecessary rows explaining column headers.
+%\subsection{Discoveries by year histogram (Figure \ref{hist})}\label{ap1}
+%\lstinputlisting[language=Python]{Python//histogram.py}
+%
+%\newpage
+%\subsection{Discovery method contribution pie chart (Figure \ref{pie})}\label{ap2}
+%\lstinputlisting[language=Python]{Python//pi.py}
+
 
 \section{All Meshed Solids and Polygon Count Plots}
+\twocolumn
 \subsubsection{Cons}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Meshes//cons.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{cons}
-\end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Cons_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//cons.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Cons_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
+
+
 
 
 \subsubsection{CutTubs}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//CutTubs.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//CutTubs.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//CutTubs_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//CutTubs_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
 
 \subsubsection{Ellipsoid}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//ellipsoid.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//ellipsoid.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Ellipsoid_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Ellipsoid_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
-
-
+\newpage
 \subsubsection{EllipticalCone}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//ellipticalcone.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//ellipticalcone.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Ellipticalcone_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Ellipticalcone_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
-
 
 \subsubsection{EllipticalTube}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//ellipticaltube.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.8\linewidth]{Images//Meshes//ellipticaltube.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//EllipticalTube_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//EllipticalTube_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
-
 
 \subsubsection{Hyperboloid}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//hyperboloid.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.9\linewidth]{Images//Meshes//hyperboloid.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//EllipticalTube_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
-
+\newpage
 \subsubsection{Orb}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//orb.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Orb_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.8\linewidth]{Images//Meshes//orb.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//orb_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
 
@@ -415,91 +450,107 @@ Data taken from Online NASA's confirmed exoplanet archive \cite{arch}, downloade
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//paraboloid.png}
-\caption[width=\columnwidth]{Paraboid Meshing Development}
-\label{para}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Paraboloid_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//paraboloid.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Paraboloid_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
 
 \subsubsection{Polycone}
-
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//polycone.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Meshes//polycone.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Polycone_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Polycone_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
-
-\subsubsection{Sphere}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Meshes//sphere.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Sphere_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
 
 \newpage
+\subsubsection{Sphere}
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.75\linewidth]{Images//Meshes//sphere.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Sphere_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
+\end{figure}
+
 \subsubsection{Torus}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//torus.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.5\linewidth]{Images//Meshes//torus.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Torus_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Torus_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}
-
 
 \subsubsection{Tubs}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Meshes//tubs.png}
-\caption[width=\columnwidth]{Toroidal Coordinate System}
-\label{conts}
+\begin{minipage}{.2\textwidth}
+  \centering
+  \includegraphics[height=0.7\linewidth]{Images//Meshes//tubs.png}
+  \captionof{figure}{A figure}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{Images//Quad_fits//Tubs_quad.png}
+  \captionof{figure}{Another figure}
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{Images//Quad_fits//Tubs_quad.png}
-\caption[width=\columnwidth]{Spherical Coordinate System}
-\label{conts}
-\end{figure}t
-%\subsection{Discoveries by year histogram (Figure \ref{hist})}\label{ap1}
-%\lstinputlisting[language=Python]{Python//histogram.py}
-%
-%\newpage
-%\subsection{Discovery method contribution pie chart (Figure \ref{pie})}\label{ap2}
-%\lstinputlisting[language=Python]{Python//pi.py}
+\onecolumn
+\newpage
+\begin{thebibliography}{1}
+	\bibitem{wombat2016}
+		Walther Wombat and Klaus Koala,
+		``The true meaning of 42'' in: Journal of modern skepticism;
+		2016
+	\bibitem{lion2010}
+		Laura Lion, Gabrielle Giraffe and Carl Capybara,
+		``The dangers of asking the wrong question'', publishing house;
+		2010
+	\bibitem{wikibook}
+		manually managing references, 
+		\url{https://en.wikibooks.org/wiki/LaTeX/Manually_Managing_References}
+		2016
+\end{thebibliography}
 
 \end{document}
