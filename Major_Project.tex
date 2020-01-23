@@ -8,6 +8,10 @@
 % degenerate points
 % eqs align left
 % subtraction and addition of booleans
+% bdsim shooting particles at geant4 sphere and then new old mesh with incresing desities
+% then bdsim of compound solids
+% euations of a moving particle
+
 
 
 
@@ -91,6 +95,7 @@
 \centering
 
 \end{abstract}
+When testing new concepts and devices within particle physics it is often very expensive and time consuming. The software packages pyg4ometry \& BDSIM are designed to enable scientists and people within in the industry to virtually simulate these tests, with accurate physics concepts. This project looks at improving the 3D simulation of the events and devices, by remeshing the basic primitive solids.
 
 	\vfill
 	
@@ -257,18 +262,40 @@ One key thing to be taken into account is the convention being used in the code 
 \label{pointsorder}
 \end{figure}
 
-\subsection{Degenerate points}
-Multiple points occupying the same area
+
+
+\subsection{New Meshing of Curved Primitve Solids}
+can give one eaxmple and reference rest in appendix, radial meshing clean up, can remove stack in some cases, boolean slow and messy
+\subsubsection{Degenerate points}
+Multiple points occupying the same area can spring a few errors with out crashing the code, therefore can sometimes be tricky to spot. 
+
+\subsubsection{Boolean operations}
+One of the largest changes to the performance of the new meshing compared with the previous method, is the disgarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithurms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube. The boolean operations worked, however are very computationally heavy compared with that of some adapated trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created alot of non radially uniform mesh sections as seen in Tubs.
+
 
 \subsection{Meshing performance testing}
+\subsubsection{Polygon Count}
+\subsubsection{BDSIM interactions}
 
-\subsection{Curved primitive solids}
-for each shape\\
-stack and slice ?\\
-radially mesh ?\\
-which coord system
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\newpage
+
+%\bibliographystyle{ieeetr}
+%\bibliography{library}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,library}
 
 \newpage
+\appendix
+
+\section{Appendix (Python scripts)}
+This section lists the Python scripts used to generate some of the figures within this report.
+Data taken from Online NASA's confirmed exoplanet archive \cite{arch}, downloaded as .cvs file and imported into Python 3.7. ``path'' is the path to your ``.cvs'' type file. May be required to delete unnecessary rows explaining column headers.
+
+\section{All Meshed Solids and Polygon Count Plots}
 \subsubsection{Cons}
 
 \begin{figure}[h!]
@@ -285,7 +312,7 @@ which coord system
 \label{conts}
 \end{figure}
 
-\newpage
+
 \subsubsection{CutTubs}
 
 \begin{figure}[h!]
@@ -302,7 +329,7 @@ which coord system
 \label{conts}
 \end{figure}
 
-\newpage
+
 \subsubsection{Ellipsoid}
 
 \begin{figure}[h!]
@@ -320,7 +347,7 @@ which coord system
 \end{figure}
 
 
-\newpage
+
 \subsubsection{EllipticalCone}
 
 \begin{figure}[h!]
@@ -338,7 +365,7 @@ which coord system
 \end{figure}
 
 
-\newpage
+
 \subsubsection{EllipticalTube}
 
 \begin{figure}[h!]
@@ -356,7 +383,7 @@ which coord system
 \end{figure}
 
 
-\newpage
+
 \subsubsection{Hyperboloid}
 
 \begin{figure}[h!]
@@ -367,7 +394,6 @@ which coord system
 \end{figure}
 
 
-\newpage
 \subsubsection{Orb}
 
 \begin{figure}[h!]
@@ -385,7 +411,6 @@ which coord system
 \end{figure}
 
 
-\newpage
 \subsubsection{Paraboloid}
 
 \begin{figure}[h!]
@@ -403,7 +428,6 @@ which coord system
 \end{figure}
 
 
-\newpage
 \subsubsection{Polycone}
 
 \begin{figure}[h!]
@@ -421,7 +445,6 @@ which coord system
 \end{figure}
 
 
-\newpage
 \subsubsection{Sphere}
 
 \begin{figure}[h!]
@@ -457,7 +480,6 @@ which coord system
 \end{figure}
 
 
-\newpage
 \subsubsection{Tubs}
 
 \begin{figure}[h!]
@@ -472,34 +494,7 @@ which coord system
 \includegraphics[scale=0.5]{Images//Quad_fits//Tubs_quad.png}
 \caption[width=\columnwidth]{Spherical Coordinate System}
 \label{conts}
-\end{figure}
-
-\newpage
-\subsection{Performance tests}
-table of perfrmance for each shape\\
-plots\\
-
-\section{BDSIM}
-\subsection{Particle collisions with meshed solids}
-
-\section{CAD}
-
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\newpage
-
-%\bibliographystyle{ieeetr}
-%\bibliography{library}
-
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv,library}
-
-\newpage
-\section{Appendix (Python scripts)}
-This section lists the Python scripts used to generate some of the figures within this report.
-Data taken from Online NASA's confirmed exoplanet archive \cite{arch}, downloaded as .cvs file and imported into Python 3.7. ``path'' is the path to your ``.cvs'' type file. May be required to delete unnecessary rows explaining column headers.
-%\appendix
+\end{figure}t
 %\subsection{Discoveries by year histogram (Figure \ref{hist})}\label{ap1}
 %\lstinputlisting[language=Python]{Python//histogram.py}
 %
