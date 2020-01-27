@@ -6,7 +6,6 @@
 % fig refs not working ?
 % code snipped links
 % degenerate points
-% eqs align left
 % subtraction and addition of booleans
 % bdsim shooting particles at geant4 sphere and then new old mesh with incresing desities
 % then bdsim of compound solids
@@ -14,7 +13,9 @@
 % hyperboiloid poly count still needs to be done
 % mention wether software are free ?
 % cylindrical image has random theta
-
+% backwards quotation marks
+% polygon count also counts triangles 
+%equations for motion of a particle
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -70,6 +71,7 @@
   title=\lstname                               % show the filename of files included with \lstinputlisting; also try caption instead of title
 } 
 
+\usepackage{multicol}
 \usepackage[font=small,labelfont=bf]{caption} % Makes the font for figure captions smaller and the figure label bold.
 
 \begin{document}
@@ -217,9 +219,9 @@ The code in Listing \ref{code1} generates counters so that you can choses from t
 The only time a stack is needed in the cylindrical coordinate system is when the solid has a non linear function in the r-z plane. For example a paraboild (Figure \ref{para}) would need a stack, but a linear cone (Figure \ref{cons}) would not. This is due to the fact how that a plane can't represent a curved surface with a singe face. 
 
 \newpage
-\subsubsection{Spherical Co-ordinate System}
+\subsubsection{Spherical Coordinate System}
 
-The meshing for the primitive solids in spherical coordinate systems are constructed by similar means the that of the cylindrical \ref{cycl}. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack and slice for solids in the spherical coordinate system works, like the longitude and latitude on a globe, as shown in Figure \ref{sphmeshin}. 
+The meshing for the primitive solids in spherical coordinate systems are constructed by similar means the that of the cylindrical \ref{cycl}. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical coordinate system works, like the longitude and latitude on a globe, as shown in Figure \ref{sphmeshin}. 
 \\\\
 The trigonometry that converts the points from spherical coordinates to cartesian, are:
 
@@ -240,6 +242,7 @@ Blue = Stacks (6)}
 \label{sphmeshin}
 \end{figure}
 
+\noindent The structure of the code is the same as used in Listing \ref{code1}.\\\\
 \noindent The only time triangles are constructed in the spherical coordinate system is if the solid has a complete pole at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
 
 %\begin{lstlisting}[language=Python, caption=Python example]
@@ -253,16 +256,9 @@ Blue = Stacks (6)}
 %\end{lstlisting}
 
 \newpage
-\subsubsection{Toroidal Co-ordinate System}
+\subsubsection{Toroidal Coordinate System}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.35]{Images//Coords/torus_coords.png}
-\caption[width=\columnwidth]{Diagram showing the meshing method for a toroidal coordinate system}
-\label{tormeshin}
-\end{figure}
-
-The torus is much harder to visualise for a stack and slice, a toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$, shown in Figure \ref{tormeshin}. The toroidal stack is a $R$ radial cut out of the angle $\theta$. 
+A toridal shape is much harder to visualise a stack and slice, due to the fact it is a rotating coordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$, as shown in Figure \ref{tormeshin}. The toroidal stack is a $R$ radial cut out of the angle $\theta$. 
 \\\\
 The trigonometry that converts the points from toroidal coordinates to cartesian, are:
 
@@ -273,6 +269,13 @@ The trigonometry that converts the points from toroidal coordinates to cartesian
 & z =  R\sin{\theta} 
 \end{aligned}
 \end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.35]{Images//Coords/torus_coords.png}
+\caption[width=\columnwidth]{Diagram showing the meshing method for a toroidal coordinate system}
+\label{tormeshin}
+\end{figure}
 
 \subsection{Plane Direction}
 One key thing to be taken into account is the convention being used in the code for the order in which points are appended to make a plane, i.e to define a face on a solid. This is important as the direction the normal of the plane points in, dictates wether a face is considered an inside or outside face on the given solid. Getting this incorrect, will lead to missing faces, when the meshing is made. The concept is demonstrated in Figure \ref{pointsorder}.
@@ -316,6 +319,7 @@ One of the largest changes to the performance of the new meshing compared with t
 \end{figure}
 \subsubsection{BDSIM interactions}
 
+\newpage
 \section{Conclusion \& Summary}
 \label{conc}
 \subsection{Improvements}
@@ -341,23 +345,23 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 %\subsection{Discovery method contribution pie chart (Figure \ref{pie})}\label{ap2}
 %\lstinputlisting[language=Python]{Python//pi.py}
 
-\section{All Meshed Solids and Polygon Count Plots}
-\twocolumn
+\newpage
+\twocolumn[\section{All Meshed Solids and Polygon Count Plots}
+The following Figures are the meshing and polygon data for each primitive solid constructed in pyg4ometry \ref{pyg}. The first Figure for each solid is screenshots of the old meshing and new meshing visualized in VTK. They show the before and after of each primitive solid in both "solid view" and \" mesh view". The second Figures Show the number of polygons and triangles produced by the solid as you increase the slice across a range of 10-100 (if there is a stack it is kept at a constant 10). The polygon data plots are generate using python 2.7.\\]
+\begingroup
 \subsubsection{Cons}
-
-
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//cons.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{}
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Cons_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -369,13 +373,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//CutTubs.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//CutTubs_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -387,13 +391,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//ellipsoid.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Ellipsoid_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -406,13 +410,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//ellipticalcone.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Ellipticalcone_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -424,13 +428,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.8\linewidth]{Images//Meshes//ellipticaltube.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//EllipticalTube_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -442,13 +446,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.9\linewidth]{Images//Meshes//hyperboloid.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//EllipticalTube_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -461,13 +465,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.8\linewidth]{Images//Meshes//orb.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//orb_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -480,13 +484,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//paraboloid.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Paraboloid_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -498,13 +502,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//polycone.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Polycone_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -516,13 +520,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.75\linewidth]{Images//Meshes//sphere.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Sphere_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -534,13 +538,13 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.5\linewidth]{Images//Meshes//torus.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Torus_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
@@ -552,17 +556,18 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 \begin{minipage}{.2\textwidth}
   \centering
   \includegraphics[height=0.7\linewidth]{Images//Meshes//tubs.png}
-  \captionof{figure}{A figure}
+  \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//Tubs_quad.png}
-  \captionof{figure}{Another figure}
+  \captionof{figure}{ }
   \label{fig:test2}
 \end{minipage}%
 \end{figure}
 
+\endgroup
 % ------------------------------------------------------------------------------------------------------------------------------
 
 \onecolumn
