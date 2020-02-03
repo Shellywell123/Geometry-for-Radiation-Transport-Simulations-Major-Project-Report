@@ -98,7 +98,7 @@
 \centering
 
 \end{abstract}
-When testing new concepts and devices within particle physics it is often very expensive and time consuming. The software packages pyg4ometry \& BDSIM are designed to enable scientists and people within in the industry to virtually simulate these tests, with accurate physics concepts. This project looks at improving the 3D simulation of the events and devices, by remeshing the basic primitive solids.
+When testing new concepts and devices within particle physics it is often a very expensive and time consuming process. The software packages pyg4ometry \& BDSIM are designed to enable scientists and people within in the industry to virtually simulate these tests, with accurate physics concepts. This project looks at improving the 3D simulation of the events and devices, by remeshing the basic primitive solids.
 
 	\vfill
 	
@@ -138,7 +138,7 @@ When testing new concepts and devices within particle physics it is often very e
 \section{Introduction}
 
 \subsection{Project Aims}
-The aims of this project are to contribute towards the optimization of the pyg4ometry package \ref{pyg} (and subsequently BDSIM \ref{bdsim}), by improving parts of the code and conducting performance test to produce the results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 \ref{g4} compatible solids.
+The aims of this project are to contribute towards the optimization of the pyg4ometry package \ref{pyg} (and subsequently BDSIM \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 \ref{g4} compatible solids, due to the unessecary use of boolean operations \ref{bool}.
 
 \subsection{Report Structure}
 The subsequent sections are constructed in the following way, the software packages that are used and referenced through out this report (Section \ref{packs}), the concept and details of the primitive meshing used in pyg4ometry (Section \ref{prim}), then a conclusion and summary of the results of the report (Section \ref{conc}).
@@ -168,18 +168,18 @@ Geant4 (or GEometry ANd Tracking) is a software developed for the simulation and
 \newpage
 \section{Primitive Meshing}
 \label{prim}
-This section will describe the work done to optimize the python scripts that generate the three dimensional meshing for the primitive solids within the pyg4ometry package \ref{pyg}. All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was orginally thought that it would be best to use triangles meshes to construct the 3D solids, however it has been realised that the computation of triangles compared with polygons is much more intensive and ineffecient, in most cases. In particular with the curved solids, i.e circular and elliptical based solids.
+This section will describe the work done to optimize the python scripts that generate the three dimensional meshing for the primitive solids within the pyg4ometry package \ref{pyg}. All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was orginally thought that it would be best to use trianglar based meshes in combination with boolean operations \ref{bool} to construct the 3D solids. However it has been realised that the computation of triangles and boolean operations compared with polygons and adapted trigonometry is much more intensive and ineffecient, in most cases. In particular with the curved solids, i.e circular and elliptical based solids.
 \\\\
-All the python meshing scripts follow a similar structure of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given coordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylcmeshin}.
-\\\\
-One of the major reasons that the code has been improved is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by Boolean subtractions and additions, which involved creating two separate solids and acting upon both of them. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aestetic outcome, where the mesh lines ('slice and stack'), were not meshed in radial directions.
+One of the major improvements to the pyg4ometry \ref{pyg} code is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by Boolean subtractions and unions, which involved creating two separate solids and acting upon both of them. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aestetic outcome, where the mesh lines ('slice and stack'), were not meshed in radial directions.
 
 \subsection{Co-ordinate Systems}
-The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own solids. The parameters would be properties of a 3D solid such as height or radius. Which are then used as a way to define the points of the object via basic trigonometry.\
+The various primitive solids are all constructed by using the predefined parameters used by Geant4 \ref{g4}, to be consistent with Geant4's own solids. The parameters of a 3D solid are properties relating to the coordinate system it is constructed in, such as height or radius. The parameters are then used to define the points of the object via basic trigonometry.
+\\\\
+The python meshing scripts for all coordinate systems follow a similar structure, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given coordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylcmeshin}.
 
 \subsubsection{Cylindrical Co-ordinate System}
 \label{cycl}
-The meshing for the primitive solids in cylindrical polar coordinate systems are constructed by looping though the number of slices and stacks which the cylinder is being cut into (Listing \ref{code1}). The Loop then creates the coordinates for 3 or 4 points at a time using the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or polygonal face. The only cases where the mesh produces triangles is at the top and bottom faces of the cylinder, provided it does has a minimum radius equal to zero (creating a tube or cone). The same logic for the polygons also applied to triangles, just using 3 vertex points to make a face.
+The meshing for the primitive solids in cylindrical polar coordinate systems are constructed by looping though the user defined number of slices and stacks (as shown in Figure \ref{cycmeshin}) which the cylinder is being cut into (Listing \ref{code1}). The Loop then creates the coordinates for 3 or 4 points at a time using an adapation to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or polygonal face. The only cases where the mesh produces triangles is at the top and bottom faces of the cylinder, provided it does has a minimum radius equal to zero (creating a tube or cone). The same logic for the polygons also applied to triangles, just using 3 vertex points to make a face.
 
 \begin{figure}[h!]
 \centering
@@ -201,6 +201,7 @@ The trigonometry that converts the points from cylindrical polar coordinates to 
 \end{equation}
 
 %\label{code1} 
+\newpage
 \begin{lstlisting}[language=Python, label=code1, caption=Basic method structure for pyg4ometry primitive meshing of solids]
 polygons = []
 
@@ -287,16 +288,18 @@ One key thing to be taken into account is the convention being used in the code 
 \caption[width=\columnwidth]{Diagram showing the order convention of appending points to define the normal to a plane}
 \label{pointsorder}
 \end{figure}
-
-
+\noindent The simplest way to test this is by performing boolean operations with a box, as the boolean operation will only work nicely if all the planes are correct on both shapes.
 
 \subsection{New Meshing of Curved Primitve Solids}
+In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few solids will be discussed in this section, but their development can all be viewed in Appendix \ref{app1}.
+\\\\
 can give one eaxmple and reference rest in appendix, radial meshing clean up, can remove stack in some cases, boolean slow and messy
+
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Meshes//tubs.png}
 \caption[width=\columnwidth]{Meshing Development for CutTubs (Solid \& Mesh View)}
-\label{conts}
+\label{tubspic}
 \end{figure}
 
 
@@ -306,8 +309,14 @@ Multiple points occupying the same area can spring a few errors with out crashin
 
 \subsubsection{Boolean operations}
 \label{bool}
-One of the largest changes to the performance of the new meshing compared with the previous method, is the disgarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithurms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube. The boolean operations worked, however are very computationally heavy compared with that of some adapated trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created alot of non radially uniform mesh sections as seen in Tubs.
+One of the largest changes to the performance of the new meshing compared with the previous method, is the disgarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithurms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of some adapated trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created alot of non radially uniform mesh sections as seen in Tubs.
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{Images//Booleans//Boolean.pdf}
+\caption[width=\columnwidth]{Meshing Development for CutTubs (Solid \& Mesh View)}
+\label{tubspic}
+\end{figure}
 
 \subsection{Meshing performance testing}
 \subsubsection{Polygon Count}
@@ -348,6 +357,7 @@ BDSIM and pyg4ometry are both very powerful software packages that can be used t
 
 \newpage
 \twocolumn[\section{All Meshed Solids and Polygon Count Plots}
+\label{app1}
 The following Figures are the meshing and polygon data for each primitive solid constructed in pyg4ometry \ref{pyg}. The first Figure for each solid is screenshots of the old meshing and new meshing visualized in VTK. They show the before and after of each primitive solid in both "solid view" and "mesh view". The second Figures Show the number of polygons and triangles produced by the solid as you increase the slice across a range of 10-100 (if there is a stack it is kept at a constant 10). The polygon data plots are generate using python 2.7. The naming convention is the one used by Geant4 \ref{g4}.\\]
 \begingroup
 \subsubsection{Cons}
