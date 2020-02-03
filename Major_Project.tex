@@ -309,13 +309,29 @@ Multiple points occupying the same area can spring a few errors with out crashin
 
 \subsubsection{Boolean operations}
 \label{bool}
-One of the largest changes to the performance of the new meshing compared with the previous method, is the disgarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithurms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of some adapated trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created alot of non radially uniform mesh sections as seen in Tubs.
+One of the largest changes to the performance of the new meshing compared with the previous method, is the disgarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithurms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of some adapated trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created a lot of non radially uniform mesh sections as seen in Tubs.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1]{Images//Booleans//Boolean.pdf}
 \caption[width=\columnwidth]{Meshing Development for CutTubs (Solid \& Mesh View)}
 \label{tubspic}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.4\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Booleans/SphereUnion.png}
+  \captionof{figure}{ }
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.4\textwidth}
+  \centering
+  \includegraphics[height=1\linewidth]{Images//Booleans//SphereSubtraction.png}
+  \captionof{figure}{ }
+  \label{fig:test2}
+\end{minipage}%
 \end{figure}
 
 \subsection{Meshing performance testing}

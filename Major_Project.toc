@@ -18,21 +18,21 @@
 \contentsline {subsection}{\numberline {3.4}Meshing performance testing}{6}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Polygon Count}{6}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}BDSIM interactions}{6}{subsubsection.3.4.2}
-\contentsline {section}{\numberline {4}Conclusion \& Summary}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Improvements}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Applications}{7}{subsection.4.2}
-\contentsline {section}{\numberline {A}Appendix (Python scripts)}{8}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{8}{subsection.A.1}
-\contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{9}{appendix.B}
-\contentsline {subsubsection}{\numberline {B.0.1}Cons}{9}{subsubsection.B.0.1}
-\contentsline {subsubsection}{\numberline {B.0.2}CutTubs}{9}{subsubsection.B.0.2}
-\contentsline {subsubsection}{\numberline {B.0.3}Ellipsoid}{9}{subsubsection.B.0.3}
-\contentsline {subsubsection}{\numberline {B.0.4}EllipticalCone}{9}{subsubsection.B.0.4}
-\contentsline {subsubsection}{\numberline {B.0.5}EllipticalTube}{9}{subsubsection.B.0.5}
-\contentsline {subsubsection}{\numberline {B.0.6}Hyperboloid}{9}{subsubsection.B.0.6}
-\contentsline {subsubsection}{\numberline {B.0.7}Orb}{10}{subsubsection.B.0.7}
-\contentsline {subsubsection}{\numberline {B.0.8}Paraboloid}{10}{subsubsection.B.0.8}
-\contentsline {subsubsection}{\numberline {B.0.9}Polycone}{10}{subsubsection.B.0.9}
-\contentsline {subsubsection}{\numberline {B.0.10}Sphere}{10}{subsubsection.B.0.10}
-\contentsline {subsubsection}{\numberline {B.0.11}Torus}{10}{subsubsection.B.0.11}
-\contentsline {subsubsection}{\numberline {B.0.12}Tubs}{10}{subsubsection.B.0.12}
+\contentsline {section}{\numberline {4}Conclusion \& Summary}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Improvements}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Applications}{8}{subsection.4.2}
+\contentsline {section}{\numberline {A}Appendix (Python scripts)}{9}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{9}{subsection.A.1}
+\contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{10}{appendix.B}
+\contentsline {subsubsection}{\numberline {B.0.1}Cons}{10}{subsubsection.B.0.1}
+\contentsline {subsubsection}{\numberline {B.0.2}CutTubs}{10}{subsubsection.B.0.2}
+\contentsline {subsubsection}{\numberline {B.0.3}Ellipsoid}{10}{subsubsection.B.0.3}
+\contentsline {subsubsection}{\numberline {B.0.4}EllipticalCone}{10}{subsubsection.B.0.4}
+\contentsline {subsubsection}{\numberline {B.0.5}EllipticalTube}{10}{subsubsection.B.0.5}
+\contentsline {subsubsection}{\numberline {B.0.6}Hyperboloid}{10}{subsubsection.B.0.6}
+\contentsline {subsubsection}{\numberline {B.0.7}Orb}{11}{subsubsection.B.0.7}
+\contentsline {subsubsection}{\numberline {B.0.8}Paraboloid}{11}{subsubsection.B.0.8}
+\contentsline {subsubsection}{\numberline {B.0.9}Polycone}{11}{subsubsection.B.0.9}
+\contentsline {subsubsection}{\numberline {B.0.10}Sphere}{11}{subsubsection.B.0.10}
+\contentsline {subsubsection}{\numberline {B.0.11}Torus}{11}{subsubsection.B.0.11}
+\contentsline {subsubsection}{\numberline {B.0.12}Tubs}{11}{subsubsection.B.0.12}
