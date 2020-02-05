@@ -9,6 +9,7 @@
 % equations for motion of a particle
 % need to have local copy of code if it changes in appendix listings
 % polycone stack kept at 3
+% update table in appendix with correct values
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -348,6 +349,8 @@ Within BDSIM the charge of a particle is represented by its colour, green = nuet
 Each BDSIM event outputs a $.root$ file which contains a detailed analysis of the interaction. One of the elements analysed within this project is the energy loss across the Z-axis.
 \\\\
 BDSIM works by running a $.GMAD$ file and then outputs $.root$ file with the option of a 3D visualisation of the interactions. The $.GMAD$ contains the basic information needed to produce an output, i.e a particle and a target fie (Typically of the format $.GDML$).
+\\\\
+Due to Geant4 already having its own primitive solids, you cannot directly pass a meshed primitve solid into BDSIM without it replacing it with a geant4 one. The wa around this is to pass the mesh into another Geant4 solid which intakes the properties of a meshed solid without overiding them with a Geant4 alternative. This prooved to be more difficult than first intended due to many of the solids having a mixture of quadrangular and triangular faces to be unpacked. It orginally sprung a few problems such as missing faces or faces of the wrong shape. 
 
 \newpage
 \section{Conclusion \& Summary}
