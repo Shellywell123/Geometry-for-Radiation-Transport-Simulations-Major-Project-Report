@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.1}BDSIM}{1}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}pyg4ometry}{1}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Geant4}{1}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Root}{2}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.4}ROOT}{2}{subsection.2.4}
 \contentsline {section}{\numberline {3}Primitive Meshing}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Co-ordinate Systems}{3}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Cylindrical Co-ordinate System}{3}{subsubsection.3.1.1}
@@ -18,23 +18,23 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Boolean operations}{7}{subsubsection.3.3.2}
 \contentsline {subsection}{\numberline {3.4}Meshing performance testing}{8}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Polygon Count}{8}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}BDSIM interactions}{9}{subsubsection.3.4.2}
-\contentsline {section}{\numberline {4}Conclusion \& Summary}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Improvements}{10}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Applications}{10}{subsection.4.2}
-\contentsline {section}{\numberline {A}Appendix (Python scripts)}{11}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{11}{subsection.A.1}
-\contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{12}{appendix.B}
-\contentsline {subsubsection}{\numberline {B.0.1}Cons}{12}{subsubsection.B.0.1}
-\contentsline {subsubsection}{\numberline {B.0.2}CutTubs}{12}{subsubsection.B.0.2}
-\contentsline {subsubsection}{\numberline {B.0.3}Ellipsoid}{12}{subsubsection.B.0.3}
-\contentsline {subsubsection}{\numberline {B.0.4}EllipticalCone}{12}{subsubsection.B.0.4}
-\contentsline {subsubsection}{\numberline {B.0.5}EllipticalTube}{12}{subsubsection.B.0.5}
-\contentsline {subsubsection}{\numberline {B.0.6}Hyperboloid}{12}{subsubsection.B.0.6}
-\contentsline {subsubsection}{\numberline {B.0.7}Orb}{13}{subsubsection.B.0.7}
-\contentsline {subsubsection}{\numberline {B.0.8}Paraboloid}{13}{subsubsection.B.0.8}
-\contentsline {subsubsection}{\numberline {B.0.9}Polycone}{13}{subsubsection.B.0.9}
-\contentsline {subsubsection}{\numberline {B.0.10}Sphere}{13}{subsubsection.B.0.10}
-\contentsline {subsubsection}{\numberline {B.0.11}Torus}{13}{subsubsection.B.0.11}
-\contentsline {subsubsection}{\numberline {B.0.12}Tubs}{13}{subsubsection.B.0.12}
-\contentsline {section}{\numberline {C}Quadratic Parameters for polygon count plots}{14}{appendix.C}
+\contentsline {subsubsection}{\numberline {3.4.2}BDSIM interactions}{10}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Conclusion \& Summary}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Improvements}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Applications}{11}{subsection.4.2}
+\contentsline {section}{\numberline {A}Appendix (Python scripts)}{12}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{12}{subsection.A.1}
+\contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{13}{appendix.B}
+\contentsline {subsubsection}{\numberline {B.0.1}Cons}{13}{subsubsection.B.0.1}
+\contentsline {subsubsection}{\numberline {B.0.2}CutTubs}{13}{subsubsection.B.0.2}
+\contentsline {subsubsection}{\numberline {B.0.3}Ellipsoid}{13}{subsubsection.B.0.3}
+\contentsline {subsubsection}{\numberline {B.0.4}EllipticalCone}{13}{subsubsection.B.0.4}
+\contentsline {subsubsection}{\numberline {B.0.5}EllipticalTube}{13}{subsubsection.B.0.5}
+\contentsline {subsubsection}{\numberline {B.0.6}Hyperboloid}{13}{subsubsection.B.0.6}
+\contentsline {subsubsection}{\numberline {B.0.7}Orb}{14}{subsubsection.B.0.7}
+\contentsline {subsubsection}{\numberline {B.0.8}Paraboloid}{14}{subsubsection.B.0.8}
+\contentsline {subsubsection}{\numberline {B.0.9}Polycone}{14}{subsubsection.B.0.9}
+\contentsline {subsubsection}{\numberline {B.0.10}Sphere}{14}{subsubsection.B.0.10}
+\contentsline {subsubsection}{\numberline {B.0.11}Torus}{14}{subsubsection.B.0.11}
+\contentsline {subsubsection}{\numberline {B.0.12}Tubs}{14}{subsubsection.B.0.12}
+\contentsline {section}{\numberline {C}Quadratic Parameters for polygon count plots}{15}{appendix.C}

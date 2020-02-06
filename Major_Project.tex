@@ -157,7 +157,7 @@ Most of the development in this project is conducted in pyg4ometry and managed u
 \label{g4}
 Geant4 (or GEometry ANd Tracking) is a software developed for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular options for handling the geometry within interactions. Geant4 has its own preset solids used for simulating with particle interactions. For ease of conversion between file formats pyg4ometry uses the same conventions when meshing its primitive solids.
 
-\subsection{Root}\label{root}
+\subsection{ROOT}\label{root}
 Root files are the default output for analysis by BDSIM, as it has been heavily used by particle physicists since its release. Root has its own file browsing system due to the nature of its formatting. Root is adopted by many physics communities such as CERN \cite{cern}, where it was first written.
 
 
@@ -308,7 +308,7 @@ One of the largest changes to the performance of the new meshing compared with t
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1]{Images//Booleans//Boolean.pdf}
+\includegraphics[scale=0.4]{Images//Booleans//Boolean.png}
 \caption[width=\columnwidth]{A diagram showing the basic method of constructing a more complicated 3D solid out of boolean operations with simpler primitive solids.}
 \label{tubspic}
 \end{figure}
@@ -354,6 +354,14 @@ BDSIM works by running a $.GMAD$ file and then outputs $.root$ file with the opt
 \\\\
 Due to Geant4 already having its own primitive solids, you cannot directly pass a meshed primitive solid into BDSIM without it replacing it with a Geant4 one. The way around this is to pass the mesh into another Geant4 solid which intakes the properties of a meshed solid without overriding them with a Geant4 alternative. This proved to be more difficult than first intended due to many of the solids having a mixture of quadrangular and triangular faces to be unpacked. It orginally sprung a few problems such as missing faces or faces of the wrong shape. 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.45]{Images//BDSIM//ProtonSphere.png}
+\caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical coordinate system\\
+Red = Slices   (8)\\
+Blue = Stacks (2)}
+\label{cylmeshin}
+\end{figure}
 \newpage
 \section{Conclusion \& Summary}
 \label{conc}
