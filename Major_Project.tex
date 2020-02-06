@@ -9,7 +9,6 @@
 % equations for motion of a particle
 % need to have local copy of code if it changes in appendix listings
 % polycone stack kept at 3
-% update table in appendix with correct values
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -295,7 +294,7 @@ can give one example and reference rest in appendix, radial meshing clean up, ca
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Meshes//tubs.png}
-\caption[width=\columnwidth]{Meshing Development for CutTubs (Solid \& Mesh View)}
+\caption[width=\columnwidth]{Meshing Development for Tubs (Solid \& Mesh View)}
 \label{tubspic}
 \end{figure}
 
@@ -304,17 +303,17 @@ Multiple meshing points occupying the same area can spring a few errors, sometim
 
 \subsubsection{Boolean operations}
 \label{bool}
-One of the largest changes to the performance of the new meshing compared with the previous method, is the discarding of boolean operations in order to create hollow or cut-up primitive solids. The Old meshing algorithms would make two solids one smaller that the other and subtract it, with the aim of creating a new shape that is hollow. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of some adapted trigonometry. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created a lot of non radially uniform mesh sections as seen in Tubs.\\
-
+One of the largest improvements to the performance of the new meshing methods compared with the previous methods, is the discarding of boolean operations in order to create hollow or cut-up primitive solids. The idea can be clearly seen in Figure \ref{booly}, where you conduct basic operations on simple solids, resulting in a complex solid being made.
+\\
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Booleans//Boolean.png}
 \caption[width=\columnwidth]{A diagram showing the basic method of constructing a more complicated 3D solid out of boolean operations with simpler primitive solids.}
-\label{tubspic}
+\label{booly}
 \end{figure}
 
-\noindent The Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a box with a hollow sphere (in solid view). The coloured lines are representing the perpendicular planes in which the final object is place in. 
-
+\noindent The Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a box with a hollow sphere (in solid view). The coloured lines are representing the perpendicular planes in which the final object is place in. These were made in the process of checking the normals before passing them into BDSIM.
+\\
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.4\textwidth}
@@ -330,6 +329,12 @@ One of the largest changes to the performance of the new meshing compared with t
   \label{sub}
 \end{minipage}%
 \end{figure}
+
+
+
+\noindent The old meshing algorithms would heavily rely on these operations. The old meshing algorithms used intersections to slice solids Figure \ref{ctub} and subtractions to make solids hollow of cut-up Figure \ref{Sphere}. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of the adapted trigonometry applied in the new method. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points and then remeshing. This created a lot of non radially uniform mesh sections as seen in Tubs.\\
+
+
 
 \newpage
 \subsection{Meshing performance testing}
@@ -416,13 +421,13 @@ The following Figures are the meshing and polygon data for each primitive solid 
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//CutTubs.png}
   \captionof{figure}{ }
-  \label{fig:test1}
+  \label{ctub}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[scale=0.35]{Images//Quad_fits//CutTubs_quad.pdf}
   \captionof{figure}{ }
-  \label{fig:test2}
+  \label{}
 \end{minipage}%
 \end{figure}
 
@@ -508,7 +513,7 @@ The following Figures are the meshing and polygon data for each primitive solid 
   \centering
   \includegraphics[height=0.8\linewidth]{Images//Meshes//orb.png}
   \captionof{figure}{ }
-  \label{fig:test1}
+  \label{Sphere}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
