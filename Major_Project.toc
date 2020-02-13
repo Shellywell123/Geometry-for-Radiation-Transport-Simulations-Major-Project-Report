@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {1.2}Report Structure}{1}{subsection.1.2}
 \contentsline {section}{\numberline {2}Software Packages}{1}{section.2}
 \contentsline {subsection}{\numberline {2.1}BDSIM}{1}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}pyg4ometry}{1}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Pyg4ometry}{1}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Geant4}{1}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}ROOT}{2}{subsection.2.4}
 \contentsline {section}{\numberline {3}Primitive Meshing}{3}{section.3}
@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Boolean operations}{7}{subsubsection.3.3.2}
 \contentsline {subsection}{\numberline {3.4}Meshing performance testing}{8}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Polygon Count}{8}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}BDSIM interactions}{10}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.2}BDSIM interactions}{9}{subsubsection.3.4.2}
 \contentsline {section}{\numberline {4}Conclusion \& Summary}{11}{section.4}
 \contentsline {subsection}{\numberline {4.1}Improvements}{11}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Applications}{11}{subsection.4.2}
