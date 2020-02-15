@@ -5,8 +5,10 @@
 \contentsline {section}{\numberline {2}Software Packages}{1}{section.2}
 \contentsline {subsection}{\numberline {2.1}BDSIM}{1}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Pyg4ometry}{1}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Geant4}{1}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Geant4}{2}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}ROOT}{2}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Freecad (Libraries)}{2}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Visulisation Packages}{2}{subsection.2.6}
 \contentsline {section}{\numberline {3}Primitive Meshing}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Co-ordinate Systems}{3}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Cylindrical Co-ordinate System}{3}{subsubsection.3.1.1}
@@ -14,18 +16,18 @@
 \contentsline {subsubsection}{\numberline {3.1.3}Toroidal Coordinate System}{6}{subsubsection.3.1.3}
 \contentsline {subsection}{\numberline {3.2}Plane Direction}{6}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}New Meshing of Curved Primitive Solids}{7}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Degenerate points}{7}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Boolean operations}{7}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Meshing performance testing}{8}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.3.1}Degenerate Points}{7}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Boolean Operations}{7}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Meshing Performance Testing}{8}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Polygon Count}{8}{subsubsection.3.4.1}
-\contentsline {section}{\numberline {4}BDSIM interactions}{9}{section.4}
-\contentsline {subsection}{\numberline {4.1}Iron}{10}{subsection.4.1}
+\contentsline {section}{\numberline {4}BDSIM Interactions}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Iron Sphere Interactions}{10}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Error Reduction}{11}{subsubsection.4.1.1}
-\contentsline {subsection}{\numberline {4.2}Titanium \& spherical beam distribution}{11}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Interaction with Magnet}{12}{subsection.4.3}
-\contentsline {section}{\numberline {5}Conclusion \& Summary}{13}{section.5}
-\contentsline {subsection}{\numberline {5.1}Improvements}{13}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Applications}{13}{subsection.5.2}
+\contentsline {subsection}{\numberline {4.2}Titanium Sphere Interactions \& Spherical Beam Distribution}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Interaction with Magnet}{11}{subsection.4.3}
+\contentsline {section}{\numberline {5}Conclusion \& Summary}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Improvements}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Applications}{12}{subsection.5.2}
 \contentsline {section}{\numberline {A}Appendix (Python scripts)}{14}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{14}{subsection.A.1}
 \contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{15}{appendix.B}
