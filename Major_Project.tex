@@ -25,7 +25,8 @@
 % check captions
 % ref table in diff latex doc ?
 % table of sphere comps
-
+% G4 total unrestricted stopping power mathes with paper
+% freecad ref
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -147,47 +148,51 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \section{Introduction}
 
 \subsection{Project Aims}
-The aims of this project are to contribute towards the optimization of the Pyg4ometry package \ref{pyg} (and subsequently BDSIM \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 \ref{g4} compatible solids. The inefficient computation is due to the unessesscary use of boolean operations \ref{bool}.
+The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}).
+\\\\
+The first part of the part of the project and report focusses on the meshing of the primitive solids. Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focusses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
 
 \subsection{Report Structure}
-The subsequent sections are constructed in the following way, the software packages that are used and referenced through out this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the Project, but is not included in the report its self, due to repetition.
+The subsequent sections are constructed in the following way. First the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
 
 % ------------------------------------------------------------------------------------------------------------------------------
 
 \section{Software Packages}
 \label{packs}
-This section goes through each package of software related to and used throughout the duration of the project. It outlines the key details of each package, describing its function and link to the project. At the time of the project a lot of the prerequisite packages were only compatible with linux systems. Due to owning a machine that operated on windows, a lot of time was initially spent setting up virtual machines running Cent0s 7 (standard free linux used by CERN \cite{cern}). However despite getting it setup, the packages were not performing nearly as well as they were on the macs. Therefore for the main duration of project a loaner linux laptop (2011 Apple MacBookPro running OS El Capitan) was used from the particle physics department of Royal Holloway. 
+This section goes through each package of software related to and used throughout the duration of the project. It outlines the key details of each package, describing its function and link to the project. At the time of the project a lot of the prerequisite packages were only compatible with linux systems. Due to owning a machine that operated on windows, a lot of time was initially spent setting up virtual machines running Cent0s 7 (standard free linux used by CERN \cite{cern}). However despite getting it setup, the packages were not performing nearly as well as they were on the fellow Apple MacBooks. Therefore for the main duration of project, a linux laptop was loaned out from the particle physics department of Royal Holloway (a 2011 Apple MacBookPro running OS El Capitan). This legacy operating system came pre-installed with the some of the required packages, and allowed for easy installation of outstanding backdated versions.
 
 \subsection{Pyg4ometry}
 \label{pyg}
-Pyg4ometry is an open source python package also generated by JAI, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with Geant4 \ref{geant4}. The package is a key tool for allowing multiple file formats to become compatible with BDSIM, which increases the number of people who can utilise the package.
+Pyg4ometry is an open-source Python package  written by the John Adams Institute (JAI) \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with Geant4 (Section \ref{geant4}). The package is a key tool for allowing multiple file formats, such as STEP/STL files to be converted into GDML files, which are then compatible with BDSIM. This increases the number of people who can utilise the package, as many people within in the industry use different file formats to store 3D CAD models..
 \\\\
-Most of the development in this project is conducted in Pyg4ometry and managed using an online git in combination with Sourctree (A git management GUI). The package is currently written in and only supports Python 2.7, however as of January 2020 Python 2 is no longer being backed as the newer version Python 3 is taking over. The transition to Python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began but a full transition will take sometime as it is not an immediate priority.
+Most of the development in this project is conducted in Pyg4ometry and managed using an online bitbucket code repository \cite{bitb} in combination with Sourcetree \cite{st} (An open-source git management GUI). The package is currently written in and only supports Python 2.7, however as of January 2020 support for Python 2 has been discontinued as the newer version Python 3 is taking over. The transition to Python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
 
 \subsection{Geant4}\label{geant4}
 \label{g4}
 Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset solids that are used for simulating particle interactions. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids.
 \\\\
-The materials used in Pyg4ometry and throughout this project are also from the Geant4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact with the air before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ withtin the GMAD files.
+The materials used in Pyg4ometry and throughout this project are also from the Geant4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each Geant4 material are also used in this project, such as the stopping power (Section \ref{stop}).
 
 \subsection{BDSIM}
 \label{bdsim}
-BDSIM (or Beam Delivery SIMulation) is an open-source software package written by the John Adams Institute (JAI) \cite{jai}, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators, for example the Large Hadron Collider (LHC) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle of a set energy colliding with a provided object. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to run at once (batch mode).
+BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
+\\\\
+BDSIM has a Python library called Pybdsim which allows interactions to run and analysed using Python scripts. This is how all the plots in Section 4 are generated. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}.
 
 \subsection{ROOT}\label{root}
-Suprisingly ROOT is not an acronym and is a name made around the idea that it is a system for other system to grow off of, much like the roots of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular. ROOT files are the default output for analysis by BDSIM, as it has been heavily used by particle physicists since its release. ROOT has its own GUI for file browsing due to the nature of its formatting. In this report no ROOT files or plots are shown, as all the data has been extracted from the root files and replotted using Python and Matplotlib.
+Suprisingly ROOT is not an acronym and is named after the idea that it is a system for other system to grow off of, much like the roots of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. ROOT has its own GUI for file browsing due to the nature of its formatting. Despite ROOT generating its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and been replotted using Python and Matplotlib (library for creating publication grade figures).
 
 \subsection{Freecad (Libraries)}
-In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry \ref{pyg}, without the use of the Freecad GUI. The libraries were used to import STEP files and to convert them into a tessellated meshed solid, that can then be written out as a GDML file (a format compatible with BDSIM).
+In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI. The libraries are used to import STEP files and to convert them into a tessellated meshed solids, that can then be written out as a GDML file (a format compatible with BDSIM). As an exercise at the beggining of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a space satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM. 
 
 \subsection{Visulisation}
-Most of the packages mentioned above al have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (as seen in Figure \ref{sat}) to create its GUI's and BDSIM uses Geant4's GUI's under the hood (as seen in Figure \ref{screengrab}).
+Most of the packages mentioned above have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (as seen in Figure \ref{sat}) to create its GUI's and BDSIM uses Geant4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with Geant4. Both the VTK and Geant4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The Geant4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by Pybdsim.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//VTK/sat.png}
-\caption[width=\columnwidth]{STEP file of a space satellite imported into Pyg4ometry and viewed in VTK}
+\caption[width=\columnwidth]{STEP file of a space satellite imported into Pyg4ometry using the Freecad libraries and viewed in VTK.}
 \label{sat}
 \end{figure}
 
@@ -203,26 +208,24 @@ Most of the packages mentioned above al have their own GUI's to visualise the me
 \newpage
 \section{Primitive Meshing}
 \label{prim}
-This section will describe the work done to optimize the Python scripts that generate the three dimensional meshing for the primitive solids within the Pyg4ometry package \ref{pyg}. All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was orginally thought that it would be best to use triangular based meshes in combination with boolean operations \ref{bool} to construct the 3D solids. However it had been realised that the computation of triangles and boolean operations in most cases compared with polygons and adapted trigonometry is much more intensive and inefficient. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes.
+This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. However it had been realised that the computation of triangles and boolean operations in most cases compared with polygons and adapted trigonometry is much more intensive and inefficient. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
 \\\\
-One of the major improvements to the Pyg4ometry \ref{pyg} code is the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously computed by boolean subtractions and unions, which involved creating two separate solids and acting upon both of them. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack''), were not meshed in radial directions.
+One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack''), were not meshed in radial directions.
 
 \subsection{Co-ordinate Systems}
 \label{cosy}
-The various primitive solids are all constructed by using the predefined parameters used by Geant4 \ref{g4}, to be consistent with Geant4's own solids. The parameters of a 3D solid are properties relating to the coordinate system it is constructed in, such as height or radius. The parameters are then used to define the points of the object via basic trigonometry. The in which the points are appended is also very important and is discussed in Section \ref{order}.
+The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own solids. The parameters of a 3D solid are properties relating to the co-ordinate system it is constructed in, such as height or radius. The parameters are then used to define the points of the object via basic trigonometry. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
 \\\\
-The Python meshing scripts for all co-ordinate systems follow a similar structure, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, demonstrated in Figure \ref{cylmeshin}.
+The Python meshing scripts for all co-ordinate systems follow a similar structure, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with coordinate system. The slice and stack for solids in the cylindrical polar co-ordinate system is demonstrated in Figure \ref{cylmeshin}.
 
 \subsubsection{Cylindrical Co-ordinate System}
 \label{cycl}
-The meshing for the primitive solids in cylindrical polar co-ordinate systems are constructed by looping through user defined number of slices and stacks (as shown in Figure \ref{cylmeshin}) which the cylinder is being cut into (Listing \ref{code1}). The Loop then creates the co-ordinates for 3 or 4 points at a time using an adaption to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or polygonal face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder, provided it does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the polygons also applied to triangles, just using 3 vertex points to make a face.
+The meshing for the primitive solids in cylindrical polar co-ordinate systems are constructed by looping through user defined number of slices and stacks (as shown in Figure \ref{cylmeshin}), which the cylinder is being cut into (Listing \ref{code1}). The Loop then creates the co-ordinates for 3 or 4 points at a time using an adaption to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or polygonal face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder, provided it does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the polygons also applies to triangles, just using 3 vertex points to make a face.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.45]{Images//Coords//cyl.png}
-\caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical co-ordinate system\\
-Red = Slices   (8)\\
-Blue = Stacks (2)}
+\caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical co-ordinate system, where the red lines indicate the slices (8) and the blue indicate the stacks (2).}
 \label{cylmeshin}
 \end{figure}
 \vspace{0.3cm}
@@ -252,7 +255,7 @@ for j0 in range(nslice):
           i2 = i0 + 1     
 
 \end{lstlisting}
-The code in Listing \ref{code1} generates counters so that you can choses from two slices and two stacks, in order to gain the four points surrounding a desired face. These points are then used to define a polygon. 
+The code in Listing \ref{code1} generates counters so that you can choose from two slices and two stacks, in order to gain the four points surrounding a desired face. These points are then used to define a polygon. 
 \\\\
 The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non linear function in the r-z plane. For example a paraboloid (Figure \ref{para}) would need a stack, but a linear cone (Figure \ref{cons}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
 
@@ -328,7 +331,7 @@ One key thing to be taken into account is the convention being used in the code 
 \noindent The simplest way to test this is by performing boolean operations with a box, as the boolean operation will only work nicely if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses Geant4, which displays face directions. VTK inside Pyg4ometry is much more lenient and will display solids even if their normals are incorrect, giving you a false idea of what is being displayed.
 
 \subsection{New Meshing of Curved Primitive Solids}
-In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few solids will be discussed in this section, but their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being in this project and within this report are the ones used by Geant4.
+In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being in this project and within this report are the ones used by Geant4.
 \\\\
 One of the curved solids is the polycone, the old and new meshing development of the polycone is shown in Figure \ref{polypic1}. It can be seen that in this example that the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the polycone.
 
@@ -508,12 +511,27 @@ The error bars are still very big so it was proposed to use the standard error o
 \label{tubspic}
 \end{figure}
 
-\subsection{Choice of Materials}
+\subsection{Materials}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Materials//Time_ex_dists.pdf}
 \caption[width=\columnwidth]{Meshing Development for Tubs (Solid \& Mesh View)}
 \label{tubspic}
+\end{figure}
+
+\subsubsection{Stopping Power}
+\label{stop}
+stopping power is ../\\
+The stopping power is calculated by extracting values from the Geant4 data lists and then interpolating or extrapolating between them, as the stopping power is a function of the energy of the incident particle as well as the material. If both the stopping power of a material and the energy of the particle interacting with it, a stopping distance can be calculated. The Geant4 TestEm0 example outputs the stopping power and distances for a given material and particle energy. 
+\\
+The extracted stopping powers match with values found in other studies to
+\\
+Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with 100 different energy electrons. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1TeV, where most if not all of the particle tracks leave the sphere. 
+
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
+\label{tung}
 \end{figure}
 
 \subsection{Titanium Sphere Interactions \& Spherical Beam Distribution}
@@ -552,6 +570,18 @@ BDSIM and Pyg4ometry are both very powerful software packages that can be used t
 \newpage
 \begin{thebibliography}{1}
 
+	\bibitem{cern}
+	CERN Homepage\\
+	\url{https://home.cern/}
+	
+	\bibitem{jai}
+	JAI Homepage\\
+	\url{https://www.adams-institute.ac.uk/}
+	
+	\bibitem{bitb}
+	Pyg4ometry BitBucket\\
+	\url{https://bitbucket.org/jairhul/Pyg4ometry/src/}
+	
 	\bibitem{}
 		BDSIM Manual\\
 		\url{http://www.pp.rhul.ac.uk/bdsim/manual/}
@@ -559,25 +589,25 @@ BDSIM and Pyg4ometry are both very powerful software packages that can be used t
 		BDSIM Paper\\
 		\url{https://doi.org/10.1016/j.cpc.2020.107200}
 		
-	\bibitem{}
-		Pyg4ometry BitBucket\\
-		\url{https://bitbucket.org/jairhul/Pyg4ometry/src/}
+	\bibitem{st}
+		Sourcetree\\
+		\url{https://www.sourcetreeapp.com/}
+		
+		
+		
+
 		
 	\bibitem{}
 	Geant4 Solids\\
 	\url{http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html}
-	
+	xt
 	\bibitem{mater}
 	Geant4 Materials\\
 	\url{http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html}
 	
-	\bibitem{jai}
-	JAI Homepage\\
-	\url{https://www.adams-institute.ac.uk/}
+
 	
-	\bibitem{cern}
-	CERN Homepage\\
-	\url{https://home.cern/}
+
 	
 	\bibitem{meh}
 	M. Pinto, P. Gon\c{c}alves\\
@@ -589,6 +619,13 @@ BDSIM and Pyg4ometry are both very powerful software packages that can be used t
 	43. Monte Carlo Particle Numbering Scheme\\
 	\url{http://pdg.lbl.gov/2019/reviews/rpp2019-rev-monte-carlo-numbering.pdf}
 	
+	\bibitem{stp}
+	U.S. DEPARTMENT OF COMMERCE\\
+	Stopping Powers and Ranges of
+	Electrons and Positrons\\
+	\url{https://www.govinfo.gov/content/pkg/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7/pdf/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7.pdf}
+
+
 \end{thebibliography}
 
 % ------------------------------------------------------------------------------------------------------------------------------

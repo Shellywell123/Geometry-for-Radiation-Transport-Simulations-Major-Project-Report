@@ -4,12 +4,12 @@
 \contentsline {subsection}{\numberline {1.2}Report Structure}{1}{subsection.1.2}
 \contentsline {section}{\numberline {2}Software Packages}{1}{section.2}
 \contentsline {subsection}{\numberline {2.1}Pyg4ometry}{1}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Geant4}{1}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Geant4}{2}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}BDSIM}{2}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}ROOT}{2}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Freecad (Libraries)}{2}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Visulisation}{2}{subsection.2.6}
-\contentsline {section}{\numberline {3}Primitive Meshing}{3}{section.3}
+\contentsline {subsection}{\numberline {2.6}Visulisation}{3}{subsection.2.6}
+\contentsline {section}{\numberline {3}Primitive Meshing}{4}{section.3}
 \contentsline {subsection}{\numberline {3.1}Co-ordinate Systems}{4}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Cylindrical Co-ordinate System}{4}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Spherical Co-ordinate System}{6}{subsubsection.3.1.2}
@@ -24,12 +24,13 @@
 \contentsline {subsection}{\numberline {4.1}Iron Sphere Interactions}{12}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Error Reduction}{13}{subsubsection.4.1.1}
 \contentsline {subsection}{\numberline {4.2}Choice of Materials}{13}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Choice of Materials}{13}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Titanium Sphere Interactions \& Spherical Beam Distribution}{13}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Interaction with CAD Magnet}{14}{subsection.4.5}
-\contentsline {section}{\numberline {5}Conclusion \& Summary}{15}{section.5}
-\contentsline {subsection}{\numberline {5.1}Improvements}{15}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Applications}{15}{subsection.5.2}
+\contentsline {subsection}{\numberline {4.3}Materials}{13}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Stopping Power}{13}{subsubsection.4.3.1}
+\contentsline {subsection}{\numberline {4.4}Titanium Sphere Interactions \& Spherical Beam Distribution}{15}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Interaction with CAD Magnet}{15}{subsection.4.5}
+\contentsline {section}{\numberline {5}Conclusion \& Summary}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1}Improvements}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Applications}{16}{subsection.5.2}
 \contentsline {section}{\numberline {A}Appendix (Python scripts)}{18}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{18}{subsection.A.1}
 \contentsline {section}{\numberline {B}All Meshed Solids and Polygon Count Plots}{19}{appendix.B}
