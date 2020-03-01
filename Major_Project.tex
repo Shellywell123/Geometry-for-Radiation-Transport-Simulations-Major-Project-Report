@@ -27,6 +27,7 @@
 % table of sphere comps
 % G4 total unrestricted stopping power mathes with paper
 % freecad ref
+% make inkscape pdf
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -262,7 +263,7 @@ The only time a stack is needed in the cylindrical co-ordinate system is when th
 \newpage
 \subsubsection{Spherical Co-ordinate System}
 
-The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical \ref{cycl}. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works, like the longitude and latitude on a globe, as shown in Figure \ref{sphmeshin}. 
+The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works, like the longitude and latitude on a globe, as shown in Figure \ref{sphmeshin}. 
 \\\\
 The trigonometry that converts the points from spherical co-ordinates to cartesian, are:
 
@@ -426,8 +427,7 @@ The second aim of this project was to measure how the physics is altered, betwee
 \\\\
 BDSIM works by running a GMAD file and then outputs  a ROOT file with the option of a GUI. The GUI allows the user to visualise the interactions in 3D. The GMAD contains the basic information needed to produce an output, i.e a particle and a target file (Typically of the format GDML). The option ``physicsList'' defines the physics which is used for the interaction, for the project the option was set to``g4FTFP\_BERT''. The ROOT file contains a detailed analysis of the interaction. One of the elements analysed within this project is the energy loss across the Z-axis.
 \\\\
-Due to Geant4 already having its own primitive solids, you cannot directly pass a meshed primitive solid into BDSIM without it being replaced with a Geant4 one. The way around this is to pass the mesh in as a Geant4 tessellated solid, which intakes the properties of a meshed solid without overriding them with a Geant4 alternative. This proved to be more difficult than first intended due to many of the solids having a mixture of quadrangular and triangular faces to be unpacked. It orginaly sprung a few problems such as missing faces or faces of the wrong shape. Relitorating the importance of the normlas needing to be correct.
-\\\\
+M\\\\
 One of the first shapes to be tested in BDSIM was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. As seen in Figure \ref{sphbd} the sphere was chosen to be orientented such that the particle beam is fire from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a Geant4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
 
 \begin{figure}[h!]
@@ -504,14 +504,64 @@ However Figure \ref{} shows...\\
 The error bars are still very big so it was proposed to use the standard error of the main as an alternative. As well as as investigation for varying energy and the material of the target.
 
 \subsection{Choice of Materials}
+When creating meshed solids, you have the choice of material. Figure \ref{novar} shows the CPU duration time distributions for electron interactions with spheres of different materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time of the interactions increasing with energy, this is linked to the number of secondary particles being produced increasing with energy. It can be seen that as the energy is increased the width of the distribution increases. This widening is due to the number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way.
+
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{Images//Materials//Materials_Time_dists.pdf}
-\caption[width=\columnwidth]{Meshing Development for Tubs (Solid \& Mesh View)}
-\label{tubspic}
+\includegraphics[scale=0.6]{Images//Materials//not_Varied_by_radius_and_secondaries.pdf}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a Geant4 sphere. The left 4 histograms show the distributions show the varying of energy apon each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\label{novar}
 \end{figure}
 
-\subsection{Materials}
+\noindent The dimensions of the spheres used in Figure \ref{novar} were a minimum radius of 1 micron and a maximum radius of 20 mm. It was then proposed that the radius of thickness could be scaled with respect to the stopping distance of the material it is travelling through, in order to eliminate material as a variable. The radius of thickness $\Delta R$ can be seen depicted in Figure \ref{deltar}, where $\Delta R = R_{Max} - R_{Min}$. The next Section discusses the stopping power of materials in more detail.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.2]{Images//Materials//RMAX.png}
+\caption[width=\columnwidth]{Meshing Development for Tubs (Solid \& Mesh View)}
+\label{deltar}
+\end{figure}
+
+
+\newpage
+\subsubsection{Stopping Power}
+\label{stop}
+Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEmo example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+\\\\
+Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with 100 different energy electrons. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1TeV, where most if not all of the particle tracks leave the sphere. 
+
+\begin{figure}[h!]
+\hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
+\label{tung}
+\end{figure}
+
+\noindent With the stopping power in mind Figure \ref{novar} was reproduced, but instead of using the same dimensions for each sphere, $\Delta R$ was scaled by the stopping distance. The radius of thickness is set to be the extracted stopping distance for a 100 MeV electron interacting with the material in question. The values of $\Delta R$ are shown in Table \ref{rs}.
+
+\newpage
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Material & $\Delta R$ [mm] \\ \hline
+G4\_Au &  9.89382\\ \hline
+G4\_Ti &  33.6854\\ \hline
+G4\_Fe &  62.3434\\ \hline
+G4\_W &  10.1631\\ \hline
+\end{tabular}
+\caption{A table showing the values of $\Delta R$ used in Figure \ref{var}.}
+\label{rs}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{Images//Materials//Varied_by_radius_and_secondaries.pdf}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a Geant4 sphere. The left 4 histograms show the distributions show the varying of energy on each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\label{var}
+\end{figure}
+
+\noindent It can be seen that in Figure \ref{var}, the scaling of radius relative to stopping distances, generates histograms which act extremely similar at the same particle energies irrespective of the material it propagates through. This is very interesting as it means that for any further analysis, material can be ruled out as a variable and only energy needs to be varied.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Materials//Time_ex_dists.pdf}
@@ -519,21 +569,7 @@ The error bars are still very big so it was proposed to use the standard error o
 \label{tubspic}
 \end{figure}
 
-\subsubsection{Stopping Power}
-\label{stop}
-stopping power is ../\\
-The stopping power is calculated by extracting values from the Geant4 data lists and then interpolating or extrapolating between them, as the stopping power is a function of the energy of the incident particle as well as the material. If both the stopping power of a material and the energy of the particle interacting with it, a stopping distance can be calculated. The Geant4 TestEm0 example outputs the stopping power and distances for a given material and particle energy. 
-\\
-The extracted stopping powers match with values found in other studies to
-\\
-Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with 100 different energy electrons. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1TeV, where most if not all of the particle tracks leave the sphere. 
-
-\begin{figure}[h!]
-\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
-\caption[width=\columnwidth]{Screenshots of 1 GeV, 1TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
-\label{tung}
-\end{figure}
-
+\newpage
 \subsection{Titanium Sphere Interactions \& Spherical Beam Distribution}
 rmin = 0.01mm\\
 rmax = 10mm\\
@@ -619,7 +655,7 @@ BDSIM and Pyg4ometry are both very powerful software packages that can be used t
 	43. Monte Carlo Particle Numbering Scheme\\
 	\url{http://pdg.lbl.gov/2019/reviews/rpp2019-rev-monte-carlo-numbering.pdf}
 	
-	\bibitem{stp}
+	\bibitem{stpdat}
 	U.S. DEPARTMENT OF COMMERCE\\
 	Stopping Powers and Ranges of
 	Electrons and Positrons\\
