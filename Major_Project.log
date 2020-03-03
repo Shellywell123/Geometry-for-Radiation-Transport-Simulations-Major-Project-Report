@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.14)  2 MAR 2020 06:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.14)  2 MAR 2020 08:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -944,14 +944,11 @@ File: Images//Error//std_N.png Graphic file (type png)
 <use Images//Error//std_N.png>
 Package pdftex.def Info: Images//Error//std_N.png  used on input line 494.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
- [13 <./Images//CPU//Total_plot_with_offset.pdf> <./Images//CPU//Total_Plot_wit
-h_offset_and_no_secondaries.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//CPU//Total_Plot_wi
-th_offset_and_no_secondaries.pdf): PDF inclusion: multiple pdfs with page group
- included in a single page
-> <./Images//Error//std_N.png>]
-<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=723, 794.97pt 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=608, 794.97pt 
 x 505.89pt>
 File: Images//Materials//not_Varied_by_radius_and_secondaries.pdf Graphic file 
 (type pdf)
@@ -959,7 +956,14 @@ File: Images//Materials//not_Varied_by_radius_and_secondaries.pdf Graphic file
 Package pdftex.def Info: Images//Materials//not_Varied_by_radius_and_secondarie
 s.pdf  used on input line 506.
 (pdftex.def)             Requested size: 476.98569pt x 303.53633pt.
-<Images//Materials//RMAX.png, id=726, 760.8425pt x 760.8425pt>
+[13 <./Images//CPU//Total_plot_with_offset.pdf> <./Images//CPU//Total_Plot_with
+_offset_and_no_secondaries.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//CPU//Total_Plot_wi
+th_offset_and_no_secondaries.pdf): PDF inclusion: multiple pdfs with page group
+ included in a single page
+>]
+<Images//Materials//RMAX.png, id=725, 760.8425pt x 760.8425pt>
 File: Images//Materials//RMAX.png Graphic file (type png)
 <use Images//Materials//RMAX.png>
 Package pdftex.def Info: Images//Materials//RMAX.png  used on input line 515.
@@ -968,12 +972,13 @@ Package pdftex.def Info: Images//Materials//RMAX.png  used on input line 515.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./Images//Materials//not_Varied_by_radius_and_secondaries.pdf>]
+[14 <./Images//Error//std_N.png> <./Images//Materials//not_Varied_by_radius_and
+_secondaries.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 524--527
 
  []
 
-<Images//BDSIM//Tungsten_Sphere.png, id=785, 939.0282pt x 317.0244pt>
+<Images//BDSIM//Tungsten_Sphere.png, id=784, 939.0282pt x 317.0244pt>
 File: Images//BDSIM//Tungsten_Sphere.png Graphic file (type png)
 <use Images//BDSIM//Tungsten_Sphere.png>
 Package pdftex.def Info: Images//BDSIM//Tungsten_Sphere.png  used on input line
@@ -985,7 +990,7 @@ Overfull \hbox (20.24376pt too wide) in paragraph at lines 529--530
  []
 
 [15 <./Images//Materials//RMAX.png> <./Images//BDSIM//Tungsten_Sphere.png>]
-<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=800, 794.97pt x 50
+<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=799, 794.97pt x 50
 5.89pt>
 File: Images//Materials//Varied_by_radius_and_secondaries.pdf Graphic file (typ
 e pdf)
@@ -993,7 +998,7 @@ e pdf)
 Package pdftex.def Info: Images//Materials//Varied_by_radius_and_secondaries.pd
 f  used on input line 553.
 (pdftex.def)             Requested size: 476.98569pt x 303.53633pt.
-<Images//Materials//Time_ex_dists.pdf, id=802, 794.97pt x 505.89pt>
+<Images//Materials//Time_ex_dists.pdf, id=801, 794.97pt x 505.89pt>
 File: Images//Materials//Time_ex_dists.pdf Graphic file (type pdf)
 <use Images//Materials//Time_ex_dists.pdf>
 Package pdftex.def Info: Images//Materials//Time_ex_dists.pdf  used on input li
@@ -1008,7 +1013,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 569--574
 
  []
 
-<Images//BDSIM//numoftris_tit_10G_e_nostd.pdf, id=859, 979.9812pt x 417.7206pt>
+<Images//BDSIM//numoftris_tit_10G_e_nostd.pdf, id=858, 979.9812pt x 417.7206pt>
 
 File: Images//BDSIM//numoftris_tit_10G_e_nostd.pdf Graphic file (type pdf)
 <use Images//BDSIM//numoftris_tit_10G_e_nostd.pdf>
@@ -1020,7 +1025,7 @@ Overfull \hbox (0.88652pt too wide) in paragraph at lines 577--578
  [][] 
  []
 
-<Images//CAD_Mag//Secondaries_count.pdf, id=860, 711.85951pt x 456.74641pt>
+<Images//CAD_Mag//Secondaries_count.pdf, id=859, 711.85951pt x 456.74641pt>
 File: Images//CAD_Mag//Secondaries_count.pdf Graphic file (type pdf)
 <use Images//CAD_Mag//Secondaries_count.pdf>
 Package pdftex.def Info: Images//CAD_Mag//Secondaries_count.pdf  used on input 
@@ -1698,12 +1703,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 688--688
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 690.
 
-<Images//Meshes//cons.png, id=1089, 210.5466pt x 361.35pt>
+<Images//Meshes//cons.png, id=1088, 210.5466pt x 361.35pt>
 File: Images//Meshes//cons.png Graphic file (type png)
 <use Images//Meshes//cons.png>
 Package pdftex.def Info: Images//Meshes//cons.png  used on input line 695.
 (pdftex.def)             Requested size: 56.99612pt x 97.81908pt.
-<Images//Quad_fits//Cons_quad.pdf, id=1090, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Cons_quad.pdf, id=1089, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Cons_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Cons_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Cons_quad.pdf  used on input line 7
@@ -1719,12 +1724,12 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 693--705
  []$[]$$[]$ 
  []
 
-<Images//Meshes//CutTubs.png, id=1091, 412.4208pt x 426.393pt>
+<Images//Meshes//CutTubs.png, id=1090, 412.4208pt x 426.393pt>
 File: Images//Meshes//CutTubs.png Graphic file (type png)
 <use Images//Meshes//CutTubs.png>
 Package pdftex.def Info: Images//Meshes//CutTubs.png  used on input line 713.
 (pdftex.def)             Requested size: 94.60936pt x 97.81908pt.
-<Images//Quad_fits//CutTubs_quad.pdf, id=1092, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//CutTubs_quad.pdf, id=1091, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//CutTubs_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//CutTubs_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//CutTubs_quad.pdf  used on input lin
@@ -1740,13 +1745,13 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 711--723
  []$[]$$[]$ 
  []
 
-<Images//Meshes//ellipsoid.png, id=1093, 335.8146pt x 355.0866pt>
+<Images//Meshes//ellipsoid.png, id=1092, 335.8146pt x 355.0866pt>
 File: Images//Meshes//ellipsoid.png Graphic file (type png)
 <use Images//Meshes//ellipsoid.png>
 Package pdftex.def Info: Images//Meshes//ellipsoid.png  used on input line 731.
 
 (pdftex.def)             Requested size: 92.51071pt x 97.81908pt.
-<Images//Quad_fits//Ellipsoid_quad.pdf, id=1094, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Ellipsoid_quad.pdf, id=1093, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Ellipsoid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Ellipsoid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Ellipsoid_quad.pdf  used on input l
@@ -1767,7 +1772,7 @@ File: Images//Meshes//ellipticalcone.png Graphic file (type png)
 Package pdftex.def Info: Images//Meshes//ellipticalcone.png  used on input line
  750.
 (pdftex.def)             Requested size: 82.89197pt x 97.81908pt.
-<Images//Quad_fits//Ellipticalcone_quad.pdf, id=1095, 462.52798pt x 346.89601pt
+<Images//Quad_fits//Ellipticalcone_quad.pdf, id=1094, 462.52798pt x 346.89601pt
 >
 File: Images//Quad_fits//Ellipticalcone_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Ellipticalcone_quad.pdf>
@@ -1784,13 +1789,13 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 748--760
  []$[]$$[]$ 
  []
 
-<Images//Meshes//ellipticaltube.png, id=1096, 353.1594pt x 304.0158pt>
+<Images//Meshes//ellipticaltube.png, id=1095, 353.1594pt x 304.0158pt>
 File: Images//Meshes//ellipticaltube.png Graphic file (type png)
 <use Images//Meshes//ellipticaltube.png>
 Package pdftex.def Info: Images//Meshes//ellipticaltube.png  used on input line
  768.
 (pdftex.def)             Requested size: 90.90317pt x 78.25555pt.
-<Images//Quad_fits//EllipticalTube_quad.pdf, id=1097, 462.52798pt x 346.89601pt
+<Images//Quad_fits//EllipticalTube_quad.pdf, id=1096, 462.52798pt x 346.89601pt
 >
 File: Images//Quad_fits//EllipticalTube_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//EllipticalTube_quad.pdf>
@@ -1807,13 +1812,13 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 766--778
  []$[]$$[]$ 
  []
 
-<Images//Meshes//hyperboloid.png, id=1098, 406.1574pt x 378.213pt>
+<Images//Meshes//hyperboloid.png, id=1097, 406.1574pt x 378.213pt>
 File: Images//Meshes//hyperboloid.png Graphic file (type png)
 <use Images//Meshes//hyperboloid.png>
 Package pdftex.def Info: Images//Meshes//hyperboloid.png  used on input line 78
 6.
 (pdftex.def)             Requested size: 94.53596pt x 88.03656pt.
-<Images//Quad_fits//Hyperboloid_quad.pdf, id=1099, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Hyperboloid_quad.pdf, id=1098, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Hyperboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Hyperboloid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Hyperboloid_quad.pdf  used on input
@@ -1855,12 +1860,12 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//Quad_fits//Hyperbo
 loid_quad.pdf): PDF inclusion: multiple pdfs with page group included in a sing
 le page
 >]
-<Images//Meshes//orb.png, id=1325, 374.3586pt x 319.9152pt>
+<Images//Meshes//orb.png, id=1324, 374.3586pt x 319.9152pt>
 File: Images//Meshes//orb.png Graphic file (type png)
 <use Images//Meshes//orb.png>
 Package pdftex.def Info: Images//Meshes//orb.png  used on input line 805.
 (pdftex.def)             Requested size: 91.57298pt x 78.25555pt.
-<Images//Quad_fits//orb_quad.pdf, id=1326, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//orb_quad.pdf, id=1325, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//orb_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//orb_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//orb_quad.pdf  used on input line 81
@@ -1876,13 +1881,13 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 803--815
  []$[]$$[]$ 
  []
 
-<Images//Meshes//paraboloid.png, id=1327, 298.716pt x 367.1316pt>
+<Images//Meshes//paraboloid.png, id=1326, 298.716pt x 367.1316pt>
 File: Images//Meshes//paraboloid.png Graphic file (type png)
 <use Images//Meshes//paraboloid.png>
 Package pdftex.def Info: Images//Meshes//paraboloid.png  used on input line 823
 .
 (pdftex.def)             Requested size: 79.58781pt x 97.81908pt.
-<Images//Quad_fits//Paraboloid_quad.pdf, id=1328, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Paraboloid_quad.pdf, id=1327, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Paraboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Paraboloid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Paraboloid_quad.pdf  used on input 
@@ -1902,7 +1907,7 @@ File: Images//Meshes//polycone.png Graphic file (type png)
 <use Images//Meshes//polycone.png>
 Package pdftex.def Info: Images//Meshes//polycone.png  used on input line 840.
 (pdftex.def)             Requested size: 86.06625pt x 97.81908pt.
-<Images//Quad_fits//Polycone_quad.pdf, id=1329, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Polycone_quad.pdf, id=1328, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Polycone_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Polycone_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Polycone_quad.pdf  used on input li
@@ -1918,12 +1923,12 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 838--850
  []$[]$$[]$ 
  []
 
-<Images//Meshes//sphere.png, id=1330, 424.4658pt x 332.9238pt>
+<Images//Meshes//sphere.png, id=1329, 424.4658pt x 332.9238pt>
 File: Images//Meshes//sphere.png Graphic file (type png)
 <use Images//Meshes//sphere.png>
 Package pdftex.def Info: Images//Meshes//sphere.png  used on input line 858.
 (pdftex.def)             Requested size: 93.53172pt x 73.3643pt.
-<Images//Quad_fits//Sphere_quad.pdf, id=1331, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Sphere_quad.pdf, id=1330, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Sphere_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Sphere_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Sphere_quad.pdf  used on input line
@@ -1939,12 +1944,12 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 856--868
  []$[]$$[]$ 
  []
 
-<Images//Meshes//torus.png, id=1332, 370.986pt x 219.7008pt>
+<Images//Meshes//torus.png, id=1331, 370.986pt x 219.7008pt>
 File: Images//Meshes//torus.png Graphic file (type png)
 <use Images//Meshes//torus.png>
 Package pdftex.def Info: Images//Meshes//torus.png  used on input line 876.
 (pdftex.def)             Requested size: 82.58516pt x 48.90953pt.
-<Images//Quad_fits//Torus_quad.pdf, id=1333, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Torus_quad.pdf, id=1332, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Torus_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Torus_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Torus_quad.pdf  used on input line 
@@ -1960,7 +1965,7 @@ Overfull \hbox (4.99998pt too wide) in paragraph at lines 874--886
  []$[]$$[]$ 
  []
 
-<Images//Meshes//tubs.png, id=1334, 498.663pt x 365.2044pt>
+<Images//Meshes//tubs.png, id=1333, 498.663pt x 365.2044pt>
 File: Images//Meshes//tubs.png Graphic file (type png)
 <use Images//Meshes//tubs.png>
 Package pdftex.def Info: Images//Meshes//tubs.png  used on input line 894.
@@ -2048,9 +2053,9 @@ texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Major_Project.pdf (27 pages, 4759739 bytes).
+Output written on Major_Project.pdf (27 pages, 4760031 bytes).
 PDF statistics:
- 1632 PDF objects out of 1728 (max. 8388607)
+ 1631 PDF objects out of 1728 (max. 8388607)
  729 compressed objects within 8 object streams
  181 named destinations out of 1000 (max. 500000)
  627 words of extra memory for PDF output out of 10000 (max. 10000000)
