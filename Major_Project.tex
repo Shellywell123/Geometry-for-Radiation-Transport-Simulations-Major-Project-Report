@@ -25,6 +25,7 @@
 % clean cuttubs fig
 % boolean symbols latex
 % what is pycsg 
+% if contents page increases change font size back to 12
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -132,7 +133,9 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \end{titlepage}
 \leavevmode\thispagestyle{empty}\newpage
 %\color{black}
+\footnotesize
 \tableofcontents
+\normalsize
 \thispagestyle{empty}
 \newpage
 \onecolumn
@@ -216,19 +219,27 @@ The various primitive solids are all constructed by using the predefined paramet
 The Python meshing scripts for all co-ordinate systems follow a similar structure, using a pycsgmesh() function, the begining of which can be seen in Listing \ref{code1}. The ``CSG'' in ``pycsg'' stands for Constructive Solid Geometry, which is a  modeling technique that uses Boolean operations to construct 3D solids. The script works by  first defining an empty list of faces (polygons) and then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar co-ordinate system is demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
 \\\\
 
-%\label{code1} 
+\newpage
 \begin{lstlisting}[language=Python, label=code1, caption=Basic Python script structure for new meshing of primitive solid in Pyg4ometry.]
-polygons = []
+def pycsgmesh():
 
-for j0 in range(nslice):
-    j1 = j0
-    j2 = j0 + 1
+    # ...
     
-    vertices = []
+    polygons = []
 
-    for i0 in range(nstack):
-          i1 = i0
-          i2 = i0 + 1     
+    for j0 in range(nslice):
+        j1 = j0
+        j2 = j0 + 1
+    
+        vertices = []
+
+        for i0 in range(nstack):
+              i1 = i0
+              i2 = i0 + 1     
+              
+    #....
+    
+    return mesh
 
 \end{lstlisting}
 
@@ -268,7 +279,7 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 \label{consco}
 \end{figure}
 
-\newpage
+
 \subsubsection{Spherical Co-ordinate System}
 
 The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works in the same way as the longitudinal and latitudinal mapping on a globe, shown in Figure \ref{sphmeshin}. 
@@ -302,7 +313,6 @@ The trigonometry that converts the points from spherical co-ordinates to cartesi
 %          i2 = i0 + 1
 %\end{lstlisting}
 
-\newpage
 \subsubsection{Toroidal Co-ordinate System}
 
 The toroidal co-ordinate system is a special case and is only needed, for toroidal based solids. The stack and slice for a toroidal shape is much harder to visualise, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$ and a toroidal stack is a $R$ radial cut out of the angle $\theta$, where the angles and radii are displayed in Figure \ref{tormeshin}. 
@@ -363,7 +373,7 @@ One of the curved solids for which the meshing was rewritten is the hyperboloid,
 
 \noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operations to generate this solid, the meshing is still improved by replacing all the unnecessary triangular faces with quadrilateral ones. For the ellipticalcone it was also possible for the stack to be removed, as for a cone the faces in the r-z plane (in cylindrical co-ordinates) are a linear function.
 \\\\
-\noindent A feature that is also removed by the transition to the new meshing algorithms is the "grenade like" texture seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become trianglised but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexs. Despite this improving the mesh accuracy, it was removed as when you increase the orders of stack and slice to high enough orders the difference is negligible and is not worth the extra computation.  
+\noindent A feature that is also removed by the transition to the new meshing algorithms is the "grenade like" texture seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become triangulated but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexs. Despite this improving the mesh accuracy, it was removed as when you increase the orders of stack and slice to high enough orders the difference is negligible and is not worth the extra computation.  
 
 \begin{figure}[h!]
 \centering
@@ -421,24 +431,32 @@ In summary As proven by the above examples the boolean operations worked, howeve
 \newpage
 \subsection{Meshing Performance Testing}
 \subsubsection{Polygon Count}
-One way in which the meshing performance of the Pyg4ometry primitive solids is tested, is by counting the number of polygons produced by both the old and new meshing algorithms. I.e counting the number of triangular and quadrangular faces on a solid, in order to make a comparison. A plot for each primitive solid counting its number of generated polygons was produced.
+One way in which the meshing performance of the Pyg4ometry primitive solids was tested, was by counting the number of polygons produced by both the old and new meshing algorithms. I.e counting the number of triangular and quadrangular faces on a solid, in order to make a comparison. A plot for each primitive solid counting its number of generated polygons was produced.
 \\\\
-They were generated by varying the user inputted number of slices across a range. Most were put through the range of (10-100) slices, whilst keeping the number of stacks at a constant 10. However a few old solid meshings took too long to produce at higher mesh densities. Leading to a few solids only being measured across a shorter range of slices e.g the old Hyperboloid meshing was left to run for over a couple hours and only collected data up to a slice of 50.  \\
+They were generated by varying the user inputted number of slices across a range. Most were put through the range of (10-100) slices, whilst keeping the number of stacks at a constant 10. However a few of old meshing scripts took too long to execute at higher mesh densities. Leading to a few solids only being measured across a shorter range of slices e.g the old Hyperboloid pycsgmesh() function was left to run for a duration of over 2 hours and only collected data up to a slice of 50, shown in Figure \ref{hypeup}.  \\
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{Images//Quad_fits//Tubs_quad.pdf}
-\caption[width=\columnwidth]{A plot showing the comparison of the number of polygons (and triangles) generated by the new and old meshing methods, across a range of slices 10-100.}
-\label{conts}
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{Images//Quad_fits//Tubs_quad.pdf}
+  \captionof{figure}{A plot showing the comparison of\\ the number of polygons (and triangles) generated\\ by the new and old meshing methods, across a\\ range of slices 10-100.}
+  \label{conts}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{Images//Quad_fits//Hyperboloid_quad.pdf}
+  \captionof{figure}{A plot showing the comparison of\\ the number of polygons (and triangles) generated\\ by the new and old meshing methods, across a\\ range of slices 10-100.}
+  \label{hypeup}
+\end{minipage}%
 \end{figure}
 
-\noindent Figure \ref{conts} is one of many plots, which are all displayed in the Appendix \ref{app1}. As you can see in Figure \ref{conts} the new meshing function is much more computationally reduced compared with the old meshing function. The number of polygons increases more uniformly and linearly for the new pycsgmesh function. The old function exhibits a more scatters and quadratic relationship. This can be seen by the values tabled in the Appendix, which contains the quadratic fitting parameters to all these plots. If you extrapolated both graphs it is clear than the new mesh is not only improving the structural appearance of the meshed solids, but also saving large amounts of computational power and time.
+\noindent Figures \ref{conts} \& \ref{hypeup} are two of many plots, which are all displayed in the Appendix \ref{app1}. As you can see in Figure \ref{conts} the new meshing function is much more computationally reduced compared with the old meshing function. The number of polygons increases more uniformly and linearly for the new pycsgmesh function. The old function exhibits a more scatters and quadratic relationship. This can be seen by the values tabled in the Appendix, which contains the quadratic fitting parameters to all these plots. If you extrapolated both graphs it is clear than the new mesh is not only improving the structural appearance of the meshed solids, but also saving large amounts of computational power and time.
 \\\\
 \noindent The polygon count plots for the remaining primitive solids can be found in the Appendix \ref{app1} and a table of parameters for the quadratic fits can also be found in the Appendix \ref{tab1}. 
 
 %------------------------------------------------------------------------------------------------------------------------------------
 
-\newpage
 \section{BDSIM Interactions}
 \label{int}
 The second aim of this project was to measure how the physics is altered, between the new and old meshings as the mesh density is varied. As mentioned before Geant4 already has its own set of primitive solids, which can be used as a guideline for comparison, due to no slice and stack dependence. The physics being measured will be features such as the trajectories and energy deposition, through solids.
@@ -548,8 +566,6 @@ When creating meshed solids, you have the choice of material. Figure \ref{novar}
 \label{deltar}
 \end{figure}
 
-
-\newpage
 \subsubsection{Stopping Power}
 \label{stop}
 Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEmo example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
@@ -564,7 +580,6 @@ Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with bat
 
 \noindent With the stopping power in mind Figure \ref{novar} was reproduced, but instead of using the same dimensions for each sphere, $\Delta R$ was scaled by the stopping distance. The radius of thickness is set to be the extracted stopping distance for a 100 MeV electron interacting with the material in question. The values of $\Delta R$ are shown in Table \ref{rs}.
 
-\newpage
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|}
