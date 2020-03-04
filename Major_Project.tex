@@ -21,6 +21,7 @@
 % G4 total unrestricted stopping power mathes with paper
 % freecad ref
 % make inkscape pdf
+% mesh deviation and loss of detail
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -149,7 +150,6 @@ The first part of the part of the project and report focusses on the meshing of 
 \subsection{Report Structure}
 The subsequent sections are constructed in the following way. First the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
-
 % ------------------------------------------------------------------------------------------------------------------------------
 
 \section{Software Packages}
@@ -164,7 +164,7 @@ Most of the development in this project is conducted in Pyg4ometry and managed u
 
 \subsection{Geant4}\label{geant4}
 \label{g4}
-Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset solids that are used for simulating particle interactions. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids.
+Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset solids that are used for simulating particle interactions. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. Geant4 has a large inbuilt database which contains the properties of most materials and particles.
 \\\\
 The materials used in Pyg4ometry and throughout this project are also from the Geant4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each Geant4 material are also used in this project, such as the stopping power (Section \ref{stop}).
 
@@ -202,40 +202,20 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \newpage
 \section{Primitive Meshing}
 \label{prim}
-This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. However it had been realised that the computation of triangles and boolean operations in most cases compared with polygons and adapted trigonometry is much more intensive and inefficient. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
+This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. As a triangle is the shape which has the minimum amount of points to needed define a face with containing an area, as well as always being on a single plane. However it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with polygons and adapted trigonometry. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
 \\\\
 One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack''), were not meshed in radial directions.
 
 \subsection{Co-ordinate Systems}
 \label{cosy}
-The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own solids. The parameters of a 3D solid are properties relating to the co-ordinate system it is constructed in, such as height or radius. The parameters are then used to define the points of the object via basic trigonometry. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
+The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within, such as height or radius. The parameters are then used to generate points on the object via basic trigonometry, which can then be used as vertexs to define faces on the given solid. The number of faces and subsequently the number of points defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
 \\\\
-The Python meshing scripts for all co-ordinate systems follow a similar structure, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system. The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with coordinate system. The slice and stack for solids in the cylindrical polar co-ordinate system is demonstrated in Figure \ref{cylmeshin}.
-
-\subsubsection{Cylindrical Co-ordinate System}
-\label{cycl}
-The meshing for the primitive solids in cylindrical polar co-ordinate systems are constructed by looping through user defined number of slices and stacks (as shown in Figure \ref{cylmeshin}), which the cylinder is being cut into (Listing \ref{code1}). The Loop then creates the co-ordinates for 3 or 4 points at a time using an adaption to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or polygonal face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder, provided it does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the polygons also applies to triangles, just using 3 vertex points to make a face.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.45]{Images//Coords//cyl.png}
-\caption[width=\columnwidth]{Diagram showing the meshing method for a cylindrical co-ordinate system, where the red lines indicate the slices (8) and the blue indicate the stacks (2). Diagram drawn using the CAD software Inkscape.}
-\label{cylmeshin}
-\end{figure}
-\vspace{0.3cm}
-The trigonometry that converts the points from cylindrical polar co-ordinates to cartesian, are:
-\begin{equation}
-\begin{aligned}
-\label{cyctrig}
-& x = r \cos{\theta} \\
-& y = r \sin{\theta} \\
-& z = z
-\end{aligned}
-\end{equation}
+The Python meshing scripts for all co-ordinate systems follow a similar structure, the begining of which can be seen in Listing \ref{code1}, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar co-ordinate system is demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
+\\\\
 
 %\label{code1} 
-\newpage
-\begin{lstlisting}[language=Python, label=code1, caption=Basic method structure for Pyg4ometry primitive meshing of solids]
+
+\begin{lstlisting}[language=Python, label=code1, caption=Basic Python script structure for new meshing of primitive solid in Pyg4ometry.]
 polygons = []
 
 for j0 in range(nslice):
@@ -249,9 +229,35 @@ for j0 in range(nslice):
           i2 = i0 + 1     
 
 \end{lstlisting}
-The code in Listing \ref{code1} generates counters so that you can choose from two slices and two stacks, in order to gain the four points surrounding a desired face. These points are then used to define a polygon. 
-\\\\
-The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non linear function in the r-z plane. For example a paraboloid (Figure \ref{para}) would need a stack, but a linear cone (Figure \ref{cons}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
+
+\subsubsection{Cylindrical Polar Co-ordinate System}
+\label{cycl}
+In the cylindrical polar co-ordinate system the loops create 3 or 4 points at a time using an adaption to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or quadrilateral face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder. These cases are only true provided the solid does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the triangular faces is identical to that of the quadrilateral, just using 3 vertex points to make a face.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.45]{Images//Coords//cyl.png}
+\caption[width=\columnwidth]{A diagram showing the meshing method for a cylindrical polar co-ordinate system, where the red lines indicate the slices (8) and the blue indicate the stacks (2). The diagram was drawn using the CAD software Inkscape.}
+\label{cylmeshin}
+\end{figure}
+The trigonometry that converts the points from cylindrical polar co-ordinates to cartesian, are:
+\begin{equation}
+\begin{aligned}
+\label{cyctrig}
+& x = r \cos{\theta} \\
+& y = r \sin{\theta} \\
+& z = z
+\end{aligned}
+\end{equation}
+
+\noindent The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non-linear function in the r-z plane. For example a paraboloid (Figure \ref{paraco}) would need a stack, but a linear cone (Figure \ref{cons}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{Images//Coords//para.png}
+\caption[width=\columnwidth]{A VTK screenshot of a paraboloid constructed with the meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
+\label{paraco}
+\end{figure}
 
 \newpage
 \subsubsection{Spherical Co-ordinate System}
@@ -271,15 +277,14 @@ The trigonometry that converts the points from spherical co-ordinates to cartesi
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Coords//sph.png}
-\caption[width=\columnwidth]{Diagram showing the meshing method for a spherical co-ordinate system\\
-Red = Slices (12)\\
-Blue = Stacks (6)\\
+\caption[width=\columnwidth]{Diagram showing the meshing method for a spherical co-ordinate system, where the red lines indicate the slices (12) and the blue indicate the stacks (6).
  Diagram drawn using the CAD software Inkscape.}
 \label{sphmeshin}
 \end{figure}
 
-\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}.\\\\
-\noindent The only time triangles are constructed in the spherical co-ordinate system is if the solid has a complete pole at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
+\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if the solid has a complete pole at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
+
+
 
 %\begin{lstlisting}[language=Python, caption=Python example]
 %for j0 in range(nslice):
