@@ -22,6 +22,9 @@
 % freecad ref
 % make inkscape pdf
 % mesh deviation and loss of detail
+% clean cuttubs fig
+% boolean symbols latex
+% what is pycsg 
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -178,7 +181,7 @@ BDSIM has a Python library called Pybdsim which allows interactions to run and a
 Suprisingly ROOT is not an acronym and is named after the idea that it is a system for other system to grow off of, much like the roots of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. ROOT has its own GUI for file browsing due to the nature of its formatting. Despite ROOT generating its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and been replotted using Python and Matplotlib (library for creating publication grade figures).
 
 \subsection{Freecad (Libraries)}
-In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI. The libraries are used to import STEP files and to convert them into a tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the begining of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a space satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM. 
+In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI. The libraries are used to import STEP files and to convert them into a tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a space satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM. 
 
 \subsection{Visualisation}
 Most of the packages mentioned above have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (as seen in Figure \ref{sat}) to create its GUI's and BDSIM uses Geant4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with Geant4. Both the VTK and Geant4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The Geant4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by Pybdsim.
@@ -210,11 +213,10 @@ One of the major improvements to the Pyg4ometry meshing scripts was in the compu
 \label{cosy}
 The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within, such as height or radius. The parameters are then used to generate points on the object via basic trigonometry, which can then be used as vertexs to define faces on the given solid. The number of faces and subsequently the number of points defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
 \\\\
-The Python meshing scripts for all co-ordinate systems follow a similar structure, the begining of which can be seen in Listing \ref{code1}, of first defining an empty list of faces (polygons). Then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar co-ordinate system is demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
+The Python meshing scripts for all co-ordinate systems follow a similar structure, using a pycsgmesh() function, the begining of which can be seen in Listing \ref{code1}. The ``CSG'' in ``pycsg'' stands for Constructive Solid Geometry, which is a  modeling technique that uses Boolean operations to construct 3D solids. The script works by  first defining an empty list of faces (polygons) and then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar co-ordinate system is demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
 \\\\
 
 %\label{code1} 
-
 \begin{lstlisting}[language=Python, label=code1, caption=Basic Python script structure for new meshing of primitive solid in Pyg4ometry.]
 polygons = []
 
@@ -290,8 +292,6 @@ The trigonometry that converts the points from spherical co-ordinates to cartesi
 
 \noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if a complete pole exists at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
 
-
-
 %\begin{lstlisting}[language=Python, caption=Python example]
 %for j0 in range(nslice):
 %    j1 = j0
@@ -361,9 +361,9 @@ One of the curved solids for which the meshing was rewritten is the hyperboloid,
 \end{minipage}%
 \end{figure}
 
-\noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operations to generate this solid, the meshing is still improved by replacing all the unessessary triangular faces with quadrilateral ones. For the ellipticalcone it was also possible for the stack to be removed, as for a cone the faces in the r-z plane (in cylindrical co-ordinates) are a linear function.
+\noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operations to generate this solid, the meshing is still improved by replacing all the unnecessary triangular faces with quadrilateral ones. For the ellipticalcone it was also possible for the stack to be removed, as for a cone the faces in the r-z plane (in cylindrical co-ordinates) are a linear function.
 \\\\
-\noindent A feature that is also removed by the transition to the new meshing alogrithms is the "grenade like" surface seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become trianglised but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexs. This was removed as when you increase the orders of stack and slice  
+\noindent A feature that is also removed by the transition to the new meshing algorithms is the "grenade like" texture seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become trianglised but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexs. Despite this improving the mesh accuracy, it was removed as when you increase the orders of stack and slice to high enough orders the difference is negligible and is not worth the extra computation.  
 
 \begin{figure}[h!]
 \centering
@@ -373,23 +373,21 @@ One of the curved solids for which the meshing was rewritten is the hyperboloid,
 \end{figure}
 
 \subsubsection{Degenerate Points}
-Multiple meshing points occupying the same area can spring a few errors, sometimes without entirely crashing the code, making it a hard error to identify. It is typically given away when a $DivisionByZero$ error occours, within the pycsg meshing of a solid. You can identify wether this is the error by debugging each polygon and triangle in a mesh, looking out for a face that has two or more vertices with the same $(x,y,z)$ coordinates. This typically happens when you mean to mesh a triangle, but are still using the format for meshing a quadrilateral face. Or it can be due to the incorrect choice of an incorrect stack and slice iteration when constructing a face, as mentioned before in Section \ref{cosy}.
+Degenerate points are another common mistake which can cause missing faces to occur, due to creating a face with null area. Multiple meshing points occupying the same point in space can spring a few errors, sometimes without entirely crashing the meshing script, making it a potentially hard error to identify. It is typically given away when a $DivisionByZero$ error occurs, within the pycsg meshing of a solid. You can identify whether this is the error by debugging each polygon and triangle in a mesh, looking out for a face that has two or more vertices with the same $(x,y,z)$ coordinates. This typically happens when you intend to mesh a triangle, but are still using the format for meshing a quadrilateral face. Or it can be due to the incorrect choice of an incorrect stack and slice iteration when constructing a face, as mentioned before in Section \ref{cosy}.
 
 \subsubsection{Boolean Operations}
 \label{bool}
-One of the largest improvements to the performance of the new meshing methods compared with the previous methods, is the discarding of boolean operations in order to create hollow or cut-up primitive solids. The idea can be clearly seen in Figure \ref{booly}, where you conduct basic operations on simple solids, resulting in a complex solid being made.
-\\
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.3]{Images//Booleans//Boolean.png}
+\includegraphics[scale=0.25]{Images//Booleans//Boolean.png}
 \caption[width=\columnwidth]{A diagram showing the basic method of constructing a more complicated 3D solid out of boolean operations with simpler primitive solids.\\
-- = Boolean Subtraction\\
-n = Boolean Intersection\\
-u = Boolean Unions}
+Where - = Boolean Subtraction, n = Boolean Intersection, u = Boolean Unions.}
 \label{booly}
 \end{figure}
 
-\noindent The Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a box with a hollow sphere (in solid view). The coloured lines are representing the perpendicular planes in which the final object is placed in. These were made in the process of checking the normals before passing them into BDSIM to undergo interactions.
+One of the largest improvements to the performance of the new meshing methods compared with the previous methods, is the discarding of boolean operations in order to create hollow or cut-up primitive solids. The idea can be clearly seen in Figure \ref{booly}, where you conduct basic operations on simple solids, resulting in a more complex solid being made.
+\\\\
+\noindent Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a solid box with a hollow sphere (in solid view). The coloured lines are representing the perpendicular planes to the axes in which the final object is placed in. These were made in the process of checking the normals before passing them into BDSIM to undergo particle interactions.
 \\
 \begin{figure}[h!]
 \centering
@@ -407,16 +405,23 @@ u = Boolean Unions}
 \end{minipage}%
 \end{figure}
 
+\noindent The old meshing algorithms heavily relied on these operations, using intersections to slice solids and subtractions to make solids hollow or cut-up. For example CutTubs, as seen in Figure \ref{ct}, is made from two cylinders and a rotated Box, first the two cylinders were subtracted from one another, creating regular Tubs (as seen in Appendix Figure \ref{ctub}). The hollowed out cylinder was then intersected with the the tilted box to create angled tips. This has now all been replaced with clean trigonometry.
+\\\\\\
+The appearance of the mesh structure itself is also affected by the use of boolean operations, the boolean operations worked by trying to identify common mesh points then remesh. This created a lot of non-radially uniform mesh sections as seen in solids such as the hyperboloid, mentioned before in Figure \ref{polypic1}, in which the new meshing algorithm outputs clean radial faces at for the top and bottom sides of the solid.
+\\\\
+In summary As proven by the above examples the boolean operations worked, however are very computationally heavy compared with that of the adapted trigonometry that is implemented in the new method. This is the case especially when one or more of the orginal solids is curved in structure.
 
-
-\noindent The old meshing algorithms would heavily rely on these operations. The old meshing algorithms used intersections to slice solids, as seen in Figure \ref{ctub}, and subtractions to make solids hollow of cut-up, as seen in Figure \ref{Sphere}. For example Tubs is made from two cylinders being subtracted in order to create a tube as seen in Figure \ref{tubspic}. The boolean operations worked, however are very computationally heavy compared with that of the adapted trigonometry applied in the new method. This is the case especially when one or more of the orginal solids is curved in structure. Another thing the boolean operations affected was the appearance of the mesh its self, the boolean operations worked by trying to identify common mesh points then remesh. This created a lot of non radially uniform mesh sections as seen in solids such as the polycone and Tubs , which do not appear in the new meshing algorithms.\\
-
-
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{Images//Meshes//CutTubs.png}
+\caption[width=\columnwidth]{VTK screenshots of CutTubs meshing Development (Solid \& Mesh View)}
+\label{ct}
+\end{figure}
 
 \newpage
 \subsection{Meshing Performance Testing}
 \subsubsection{Polygon Count}
-One way in which the meshing performance of the Pyg4ometry primitive solids is tested, is by counting the number of polygons produced by both the old and new meshing alogrithms. I.e counting the number of triangular and quadrangular faces on a solid, in order to make a comparison. A plot for each primitive solid counting its number of generated polygons was produced.
+One way in which the meshing performance of the Pyg4ometry primitive solids is tested, is by counting the number of polygons produced by both the old and new meshing algorithms. I.e counting the number of triangular and quadrangular faces on a solid, in order to make a comparison. A plot for each primitive solid counting its number of generated polygons was produced.
 \\\\
 They were generated by varying the user inputted number of slices across a range. Most were put through the range of (10-100) slices, whilst keeping the number of stacks at a constant 10. However a few old solid meshings took too long to produce at higher mesh densities. Leading to a few solids only being measured across a shorter range of slices e.g the old Hyperboloid meshing was left to run for over a couple hours and only collected data up to a slice of 50.  \\
 
@@ -430,6 +435,8 @@ They were generated by varying the user inputted number of slices across a range
 \noindent Figure \ref{conts} is one of many plots, which are all displayed in the Appendix \ref{app1}. As you can see in Figure \ref{conts} the new meshing function is much more computationally reduced compared with the old meshing function. The number of polygons increases more uniformly and linearly for the new pycsgmesh function. The old function exhibits a more scatters and quadratic relationship. This can be seen by the values tabled in the Appendix, which contains the quadratic fitting parameters to all these plots. If you extrapolated both graphs it is clear than the new mesh is not only improving the structural appearance of the meshed solids, but also saving large amounts of computational power and time.
 \\\\
 \noindent The polygon count plots for the remaining primitive solids can be found in the Appendix \ref{app1} and a table of parameters for the quadratic fits can also be found in the Appendix \ref{tab1}. 
+
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \newpage
 \section{BDSIM Interactions}
@@ -447,12 +454,12 @@ The second aim of this project was to measure how the physics is altered, betwee
 \\\\
 BDSIM works by running a GMAD file and then outputs  a ROOT (Section \ref{root}) file with the option of using the GUI, allows the user to visualise the interactions in an interactive 3D environment. A GMAD file contains the basic information needed to produce an interaction in BDSIM, i.e a particle and path to file of the target object (Typically of the format GDML). The option ``physicsList'' defines the physics which is used for the interaction, for the project the option was set to``g4FTFP\_BERT'', which contains all the standard electomagnetism and particle physics required for this project. The ROOT file contains a detailed analysis of the interaction. One of the elements analysed within this project is the CPU duration time distribution of an interaction in BDSIM.
 \\\\
-The shape chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in Figure \ref{sphbd} the sphere was orginally chosen to be orientented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a Geant4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
+The shape chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a Geant4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Images//BDSIM//ProtonSphere2.png}
-\caption[width=\columnwidth]{BDSIM screenshot of 10 1.3 GeV protons interacting with a Iron sphere, which has been constructed using the new meshing scripts. Mesh reseloution is a stack \& slice of 25 \& 25. (Shown in mesh view)}
+\caption[width=\columnwidth]{BDSIM screenshot of 10 1.3 GeV protons interacting with a Iron sphere, which has been constructed using the new meshing scripts. Mesh resolution is a stack \& slice of 25 \& 25. (Shown in mesh view)}
 \label{sphbd}
 \end{figure}
 
@@ -496,7 +503,7 @@ rmax = 10mm\\
 \end{minipage}%
 \end{figure}
 
-\noindent From FIgures \ref{} and \ref{}, you can see that as the number of stack and slice is increased the mean CPU duration for the protons increases at a slower rate for the new meshing. The old meshing would only meshed up to a maximum reseloution of slice = 48 and stack =48, before it would max out pythons recursion limit. Where as the new meshing could go to 100 stack, 100 slice with out any issues at all.
+\noindent From Figures \ref{} and \ref{}, you can see that as the number of stack and slice is increased the mean CPU duration for the protons increases at a slower rate for the new meshing. The old meshing would only meshed up to a maximum resolution of slice = 48 and stack =48, before it would max out pythons recursion limit. Where as the new meshing could go to 100 stack, 100 slice with out any issues at all.
 \\\
 \noindent It was orginaly thought that the standard deviations of the CPU durations was related to the number of secondaries being produced. However this was disproved by Figure \ref{}, where the same test was conducted with the BDSIM option that disables secondary particles from being produced implemented.
 
@@ -547,11 +554,11 @@ When creating meshed solids, you have the choice of material. Figure \ref{novar}
 \label{stop}
 Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEmo example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
-Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with 100 different energy electrons. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1TeV, where most if not all of the particle tracks leave the sphere. 
+Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1TeV, where most if not all of the particle tracks leave the sphere. 
 
 \begin{figure}[h!]
 \hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
-\caption[width=\columnwidth]{Screenshots of 1 GeV, 1TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
 \label{tung}
 \end{figure}
 
@@ -941,4 +948,3 @@ ax^2 + bx + c = 0
 
 
 \end{document}
-
