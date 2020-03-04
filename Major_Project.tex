@@ -1,4 +1,4 @@
-% to sort
+ % to sort
 
 % sphere coord needs middlie red line to get slice count consistent
 % torus diagram needs colour
@@ -250,7 +250,7 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 \end{aligned}
 \end{equation}
 
-\noindent The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non-linear function in the r-z plane. For example a paraboloid (Figure \ref{paraco}) would need a stack, but a linear cone (Figure \ref{cons}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
+\noindent The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non-linear function in the r-z plane. For example a paraboloid (Figure \ref{paraco}) would need a stack, but a linear cone (Figure \ref{consco}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
 
 \begin{figure}[h!]
 \centering
@@ -259,10 +259,17 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 \label{paraco}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{Images//Coords//consco.png}
+\caption[width=\columnwidth]{A VTK screenshot of Cons constructed with the meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
+\label{consco}
+\end{figure}
+
 \newpage
 \subsubsection{Spherical Co-ordinate System}
 
-The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works, like the longitude and latitude on a globe, as shown in Figure \ref{sphmeshin}. 
+The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical. Just with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works in the same way as the longitudinal and latitudinal mapping on a globe, shown in Figure \ref{sphmeshin}. 
 \\\\
 The trigonometry that converts the points from spherical co-ordinates to cartesian, are:
 
@@ -277,12 +284,11 @@ The trigonometry that converts the points from spherical co-ordinates to cartesi
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Coords//sph.png}
-\caption[width=\columnwidth]{Diagram showing the meshing method for a spherical co-ordinate system, where the red lines indicate the slices (12) and the blue indicate the stacks (6).
- Diagram drawn using the CAD software Inkscape.}
+\caption[width=\columnwidth]{A diagram showing the meshing method for a spherical co-ordinate system, where the red lines indicate the slices (12) and the blue indicate the stacks (6). The diagram was drawn using the CAD software Inkscape.}
 \label{sphmeshin}
 \end{figure}
 
-\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if the solid has a complete pole at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
+\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if a complete pole exists at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
 
 
 
@@ -299,7 +305,7 @@ The trigonometry that converts the points from spherical co-ordinates to cartesi
 \newpage
 \subsubsection{Toroidal Co-ordinate System}
 
-The toroidal co-ordinate system is a special case and is only needed, for toroidal based solids. A toroidal shape is much harder to visualise a stack and slice, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$, as shown in Figure \ref{tormeshin}. The toroidal stack is a $R$ radial cut out of the angle $\theta$. 
+The toroidal co-ordinate system is a special case and is only needed, for toroidal based solids. The stack and slice for a toroidal shape is much harder to visualise, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$ and a toroidal stack is a $R$ radial cut out of the angle $\theta$, where the angles and radii are displayed in Figure \ref{tormeshin}. 
 \\\\
 The trigonometry that converts the points from toroidal co-ordinates to cartesian, are:
 
@@ -320,38 +326,51 @@ The trigonometry that converts the points from toroidal co-ordinates to cartesia
 
 \subsection{Plane Direction}
 \label{order}
-One key thing to be taken into account is the convention being used in the code for the order in which points are appended to make a plane, i.e to define a face on a solid. This is important as the direction the normal of the plane points in, dictates wether a face is considered an inside or outside face on the given solid. Getting this order incorrect, will lead to missing faces, when the meshing is made. The concept is demonstrated in Figure \ref{pointsorder}.
-
+One key thing to be taken into account is the convention being used throughout the meshing scripts is the order in which points are appended to define a plane, i.e to define a face on a solid. This is important as the direction the normal of the plane points in, dictates wether a face is considered an inside or outside face on the given solid. Getting this order incorrect, will lead to missing faces, when the meshing is made.
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.75]{Images//append_points//Point_Appending_Order.png}
-\caption[width=\columnwidth]{Diagram showing the order convention of appending points to define the normal to a plane. Diagram drawn using the CAD software Inkscape.}
+\includegraphics[scale=0.7]{Images//append_points//Point_Appending_Order.png}
+\caption[width=\columnwidth]{A diagram showing the order convention of appending points to define the normal to a plane. The diagram was drawn using the CAD software Inkscape.}
 \label{pointsorder}
 \end{figure}
-\noindent The simplest way to test this is by performing boolean operations with a box, as the boolean operation will only work nicely if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses Geant4, which displays face directions. VTK inside Pyg4ometry is much more lenient and will display solids even if their normals are incorrect, giving you a false idea of what is being displayed.
+\newpage
+\noindent The convention is that the normal to a plane points away from the solids surface, making it an exterior face. The normal is in the z direction to a plane residing on z=0, if the points are appended anticlockwise in the x-y plane. For points appending in the other direction (clockwise in the x-y plane), the normal would be in the -z direction, making an interior face. The concept is shown in Figure \ref{pointsorder}.
+\\\\
+The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses Geant4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visuliser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
 
 \subsection{New Meshing of Curved Primitive Solids}
-In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being in this project and within this report are the ones used by Geant4.
+In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being used in this project and within this report are the ones used by Geant4.
 \\\\
-One of the curved solids is the polycone, the old and new meshing development of the polycone is shown in Figure \ref{polypic1}. It can be seen that in this example that the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the polycone.
+One of the curved solids for which the meshing was rewritten is the hyperboloid, the old and new meshing structures of the hyperboloid is shown in Figure \ref{polypic1}. It can be seen that in this example the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the polycone.
+\\\\
 
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.4\textwidth}
   \centering
-  \includegraphics[height=1\linewidth]{Images//Meshes//polycone.png}
-  \captionof{figure}{Meshing Development \\for polycone (Solid \& Mesh View)}
+  \includegraphics[height=1\linewidth]{Images//Meshes//Hyperboloid.png}
+  \captionof{figure}{VTK screenshots of\\ hyperboloid meshing Development\\ (Solid \& Mesh View)}
   \label{polypic1}
 \end{minipage}%
+\hspace{1mm}
 \begin{minipage}{.4\textwidth}
   \centering
   \includegraphics[height=1\linewidth]{Images//Meshes//ellipticalcone.png}
-  \captionof{figure}{Meshing Development \\for ellipticalcone (Solid \& Mesh View)}
+  \captionof{figure}{VTK screenshots of\\ ellipticalcone meshing Development\\ (Solid \& Mesh View)}
   \label{elco1}
 \end{minipage}%
 \end{figure}
 
-\noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operation to generate this solid, the meshing is still improved by replacing all the unessessary triangular faces with quadrilateral ones. The stack was also removed as for the cone the faces in the r-z plane (in cylindrical co-ordinates) is a linear function.
+\noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operations to generate this solid, the meshing is still improved by replacing all the unessessary triangular faces with quadrilateral ones. For the ellipticalcone it was also possible for the stack to be removed, as for a cone the faces in the r-z plane (in cylindrical co-ordinates) are a linear function.
+\\\\
+\noindent A feature that is also removed by the transition to the new meshing alogrithms is the "grenade like" surface seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become trianglised but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexs. This was removed as when you increase the orders of stack and slice  
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{Images//Meshes//Ellipsoid.png}
+\caption[width=\columnwidth]{VTK screenshots of ellipsoid meshing Development (Solid \& Mesh View)}
+\label{ellipme}
+\end{figure}
 
 \subsubsection{Degenerate Points}
 Multiple meshing points occupying the same area can spring a few errors, sometimes without entirely crashing the code, making it a hard error to identify. It is typically given away when a $DivisionByZero$ error occours, within the pycsg meshing of a solid. You can identify wether this is the error by debugging each polygon and triangle in a mesh, looking out for a face that has two or more vertices with the same $(x,y,z)$ coordinates. This typically happens when you mean to mesh a triangle, but are still using the format for meshing a quadrilateral face. Or it can be due to the incorrect choice of an incorrect stack and slice iteration when constructing a face, as mentioned before in Section \ref{cosy}.
