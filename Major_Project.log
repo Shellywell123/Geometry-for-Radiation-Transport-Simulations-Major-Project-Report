@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.14)  7 MAR 2020 09:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.14)  8 MAR 2020 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -511,20 +511,20 @@ LaTeX Warning: Label `fig:test2' multiply defined.
 )
 \openout1 = `Major_Project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
  (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count137
@@ -556,7 +556,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 88.
+Package hyperref Info: Link coloring OFF on input line 94.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -566,9 +566,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
 
 (./Major_Project.out) (./Major_Project.out)
 \@outlinefile=\write3
@@ -610,41 +610,41 @@ LaTeX Info: Redefining \nameref on input line 88.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 88.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 88.
+LaTeX Info: Redefining \celsius on input line 94.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 94.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 88.
-Package gensymb Info: Using \Omega for \ohm on input line 88.
+LaTeX Info: Redefining \ohm on input line 94.
+Package gensymb Info: Using \Omega for \ohm on input line 94.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<Images//Logos//rhul.jpg, id=217, 711.4078pt x 355.3275pt>
+<Images//Logos//rhul.jpg, id=225, 711.4078pt x 355.3275pt>
 File: Images//Logos//rhul.jpg Graphic file (type jpg)
 <use Images//Logos//rhul.jpg>
-Package pdftex.def Info: Images//Logos//rhul.jpg  used on input line 93.
+Package pdftex.def Info: Images//Logos//rhul.jpg  used on input line 99.
 (pdftex.def)             Requested size: 195.63815pt x 97.71265pt.
-<Images//Logos//BDSIM_Logo.jpg, id=218, 728.7225pt x 356.33125pt>
+<Images//Logos//BDSIM_Logo.jpg, id=226, 728.7225pt x 356.33125pt>
 File: Images//Logos//BDSIM_Logo.jpg Graphic file (type jpg)
 <use Images//Logos//BDSIM_Logo.jpg>
-Package pdftex.def Info: Images//Logos//BDSIM_Logo.jpg  used on input line 126.
+Package pdftex.def Info: Images//Logos//BDSIM_Logo.jpg  used on input line 132.
 
 (pdftex.def)             Requested size: 117.38408pt x 57.39476pt.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 127.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 133.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-<Images//Logos//JAI_Logo.jpeg, id=219, 321.2pt x 92.345pt>
+<Images//Logos//JAI_Logo.jpeg, id=227, 321.2pt x 92.345pt>
 File: Images//Logos//JAI_Logo.jpeg Graphic file (type jpg)
 <use Images//Logos//JAI_Logo.jpeg>
-Package pdftex.def Info: Images//Logos//JAI_Logo.jpeg  used on input line 130.
+Package pdftex.def Info: Images//Logos//JAI_Logo.jpeg  used on input line 136.
 (pdftex.def)             Requested size: 146.73235pt x 42.18611pt.
 
-Overfull \hbox (97.82654pt too wide) in paragraph at lines 125--132
+Overfull \hbox (97.82654pt too wide) in paragraph at lines 131--138
  []$[]$$[]$ 
  []
 
@@ -656,44 +656,44 @@ o.jpeg>]pdfTeX warning (ext4): destination with the same identifier (name{page.
 1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.135 \leavevmode\thispagestyle{empty}\newpage
+l.141 \leavevmode\thispagestyle{empty}\newpage
                                                [1] (./Major_Project.toc
 [2])
 \tf@toc=\write4
 \openout4 = `Major_Project.toc'.
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 155--163
+Underfull \hbox (badness 10000) in paragraph at lines 164--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--163
+Underfull \hbox (badness 10000) in paragraph at lines 164--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--163
+Underfull \hbox (badness 10000) in paragraph at lines 164--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--163
+Underfull \hbox (badness 10000) in paragraph at lines 164--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--171
+Underfull \hbox (badness 10000) in paragraph at lines 164--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--171
+Underfull \hbox (badness 10000) in paragraph at lines 177--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--177
+Underfull \hbox (badness 10000) in paragraph at lines 177--182
 
  []
 
@@ -701,16 +701,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 
+l.182 
        [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 189--192
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--198
+Underfull \hbox (badness 10000) in paragraph at lines 194--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--201
 
  []
 
@@ -718,40 +728,55 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.198 
+l.207 
        [2]
+Underfull \hbox (badness 10000) in paragraph at lines 210--213
 
-LaTeX Warning: Reference `free' on page 3 undefined on input line 209.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
+
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.213 
-       [3]
-<Images//VTK/sat.png, id=343, 890.8482pt x 542.025pt>
+l.223 \subsubsection
+                    {Pybdsim} [3]
+
+LaTeX Warning: Reference `free' on page 4 undefined on input line 230.
+
+<Images//VTK/sat.png, id=355, 890.8482pt x 542.025pt>
 File: Images//VTK/sat.png Graphic file (type png)
 <use Images//VTK/sat.png>
-Package pdftex.def Info: Images//VTK/sat.png  used on input line 216.
+Package pdftex.def Info: Images//VTK/sat.png  used on input line 237.
 (pdftex.def)             Requested size: 356.33298pt x 216.80615pt.
-<Images//BDSIM//screengrab.png, id=345, 963.1182pt x 508.7808pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images//BDSIM//screengrab.png, id=357, 963.1182pt x 508.7808pt>
 File: Images//BDSIM//screengrab.png Graphic file (type png)
 <use Images//BDSIM//screengrab.png>
-Package pdftex.def Info: Images//BDSIM//screengrab.png  used on input line 223.
+Package pdftex.def Info: Images//BDSIM//screengrab.png  used on input line 244.
 
 (pdftex.def)             Requested size: 385.24046pt x 203.50871pt.
- [4 <./Images//VTK/sat.png> <./Images//BDSIM//screengrab.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 254--257
+
+ []
+
+[5 <./Images//VTK/sat.png> <./Images//BDSIM//screengrab.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
@@ -759,97 +784,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 239--241
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 242.
+nput line 263.
 
 
-Package xcolor Warning: Incompatible color definition on input line 243.
+Package xcolor Warning: Incompatible color definition on input line 264.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 243.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 264.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 264.
 
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 266.
 
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 266.
 
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 266.
 
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 266.
 
 
-Package xcolor Warning: Incompatible color definition on input line 247.
+Package xcolor Warning: Incompatible color definition on input line 268.
 
 
-Package xcolor Warning: Incompatible color definition on input line 249.
+Package xcolor Warning: Incompatible color definition on input line 270.
 
 
-Package xcolor Warning: Incompatible color definition on input line 251.
+Package xcolor Warning: Incompatible color definition on input line 272.
 
 
-Package xcolor Warning: Incompatible color definition on input line 253.
+Package xcolor Warning: Incompatible color definition on input line 274.
 
 
-Package xcolor Warning: Incompatible color definition on input line 255.
+Package xcolor Warning: Incompatible color definition on input line 276.
 
 
-Package xcolor Warning: Incompatible color definition on input line 257.
+Package xcolor Warning: Incompatible color definition on input line 278.
 
 
-Package xcolor Warning: Incompatible color definition on input line 259.
+Package xcolor Warning: Incompatible color definition on input line 280.
 
 
-Package xcolor Warning: Incompatible color definition on input line 259.
+Package xcolor Warning: Incompatible color definition on input line 280.
 
 
-Package xcolor Warning: Incompatible color definition on input line 259.
+Package xcolor Warning: Incompatible color definition on input line 280.
 
 
-Package xcolor Warning: Incompatible color definition on input line 261.
+Package xcolor Warning: Incompatible color definition on input line 282.
 
-[5]
-<Images//Coords//cyl.png, id=389, 1002.74625pt x 464.73625pt>
+[6]
+<Images//Coords//cyl.png, id=406, 1002.74625pt x 464.73625pt>
 File: Images//Coords//cyl.png Graphic file (type png)
 <use Images//Coords//cyl.png>
-Package pdftex.def Info: Images//Coords//cyl.png  used on input line 274.
+Package pdftex.def Info: Images//Coords//cyl.png  used on input line 295.
 (pdftex.def)             Requested size: 451.23164pt x 209.12938pt.
-<Images//Coords//para.png, id=392, 1076.823pt x 466.3824pt>
+<Images//Coords//para.png, id=409, 1076.823pt x 466.3824pt>
 File: Images//Coords//para.png Graphic file (type png)
 <use Images//Coords//para.png>
-Package pdftex.def Info: Images//Coords//para.png  used on input line 292.
+Package pdftex.def Info: Images//Coords//para.png  used on input line 313.
 (pdftex.def)             Requested size: 323.0494pt x 139.91579pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//Coords//consco.png, id=393, 756.426pt x 452.4102pt>
+<Images//Coords//consco.png, id=410, 756.426pt x 452.4102pt>
 File: Images//Coords//consco.png Graphic file (type png)
 <use Images//Coords//consco.png>
-Package pdftex.def Info: Images//Coords//consco.png  used on input line 299.
+Package pdftex.def Info: Images//Coords//consco.png  used on input line 320.
 (pdftex.def)             Requested size: 226.92955pt x 135.7241pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
 
  []
 
-[6 <./Images//Coords//cyl.png>]
-<Images//Coords//sph.png, id=408, 993.7125pt x 314.17375pt>
+[7 <./Images//Coords//cyl.png>]
+<Images//Coords//sph.png, id=425, 993.7125pt x 314.17375pt>
 File: Images//Coords//sph.png Graphic file (type png)
 <use Images//Coords//sph.png>
-Package pdftex.def Info: Images//Coords//sph.png  used on input line 321.
+Package pdftex.def Info: Images//Coords//sph.png  used on input line 342.
 (pdftex.def)             Requested size: 496.85503pt x 157.08649pt.
 
-Overfull \hbox (7.75215pt too wide) in paragraph at lines 321--322
+Overfull \hbox (7.75215pt too wide) in paragraph at lines 342--343
  [][] 
  []
 
@@ -857,257 +882,257 @@ Overfull \hbox (7.75215pt too wide) in paragraph at lines 321--322
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--343
+Underfull \hbox (badness 10000) in paragraph at lines 361--364
 
  []
 
-[7 <./Images//Coords//para.png> <./Images//Coords//consco.png>]
-<Images//Coords/torus_coords.png, id=418, 1436.36626pt x 506.89375pt>
+[8 <./Images//Coords//para.png> <./Images//Coords//consco.png>]
+<Images//Coords/torus_coords.png, id=435, 1436.36626pt x 506.89375pt>
 File: Images//Coords/torus_coords.png Graphic file (type png)
 <use Images//Coords/torus_coords.png>
-Package pdftex.def Info: Images//Coords/torus_coords.png  used on input line 35
-4.
+Package pdftex.def Info: Images//Coords/torus_coords.png  used on input line 37
+5.
 (pdftex.def)             Requested size: 502.73573pt x 177.41547pt.
 
-Overfull \hbox (13.63286pt too wide) in paragraph at lines 354--355
+Overfull \hbox (13.63286pt too wide) in paragraph at lines 375--376
  [][] 
  []
 
-<Images//append_points//Point_Appending_Order.png, id=419, 240.9pt x 229.85875p
+<Images//append_points//Point_Appending_Order.png, id=436, 240.9pt x 229.85875p
 t>
 File: Images//append_points//Point_Appending_Order.png Graphic file (type png)
 <use Images//append_points//Point_Appending_Order.png>
 Package pdftex.def Info: Images//append_points//Point_Appending_Order.png  used
- on input line 364.
+ on input line 385.
 (pdftex.def)             Requested size: 168.62883pt x 160.90001pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8 <./Images//Coords//sph.png> <./Images//Coords/torus_coords.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+[9 <./Images//Coords//sph.png> <./Images//Coords/torus_coords.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 390--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--378
+Underfull \hbox (badness 10000) in paragraph at lines 395--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--378
+Underfull \hbox (badness 10000) in paragraph at lines 395--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--378
+Underfull \hbox (badness 10000) in paragraph at lines 395--399
 
  []
 
-<Images//Meshes//Hyperboloid.png, id=430, 406.1574pt x 378.213pt>
+<Images//Meshes//Hyperboloid.png, id=449, 406.1574pt x 378.213pt>
 File: Images//Meshes//Hyperboloid.png Graphic file (type png)
 <use Images//Meshes//Hyperboloid.png>
-Package pdftex.def Info: Images//Meshes//Hyperboloid.png  used on input line 38
-3.
+Package pdftex.def Info: Images//Meshes//Hyperboloid.png  used on input line 40
+4.
 (pdftex.def)             Requested size: 210.09372pt x 195.63815pt.
 
-Overfull \hbox (14.45557pt too wide) in paragraph at lines 383--384
+Overfull \hbox (14.45557pt too wide) in paragraph at lines 404--405
  [][] 
  []
 
-<Images//Meshes//ellipticalcone.png, id=431, 275.5896pt x 325.215pt>
+<Images//Meshes//ellipticalcone.png, id=450, 275.5896pt x 325.215pt>
 File: Images//Meshes//ellipticalcone.png Graphic file (type png)
 <use Images//Meshes//ellipticalcone.png>
 Package pdftex.def Info: Images//Meshes//ellipticalcone.png  used on input line
- 390.
+ 411.
 (pdftex.def)             Requested size: 165.78815pt x 195.63815pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--399
+Underfull \hbox (badness 10000) in paragraph at lines 417--420
 
  []
 
-<Images//Meshes//Ellipsoid.png, id=434, 335.8146pt x 355.0866pt>
+<Images//Meshes//Ellipsoid.png, id=453, 335.8146pt x 355.0866pt>
 File: Images//Meshes//Ellipsoid.png Graphic file (type png)
 <use Images//Meshes//Ellipsoid.png>
-Package pdftex.def Info: Images//Meshes//Ellipsoid.png  used on input line 402.
+Package pdftex.def Info: Images//Meshes//Ellipsoid.png  used on input line 423.
 
 (pdftex.def)             Requested size: 201.49031pt x 213.05359pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9 <./Images//append_points//Point_Appending_Order.png>]
-<Images//Booleans//Boolean.png, id=445, 803.0pt x 711.65875pt>
+[10 <./Images//append_points//Point_Appending_Order.png>]
+<Images//Booleans//Boolean.png, id=463, 803.0pt x 711.65875pt>
 File: Images//Booleans//Boolean.png Graphic file (type png)
 <use Images//Booleans//Boolean.png>
-Package pdftex.def Info: Images//Booleans//Boolean.png  used on input line 414.
+Package pdftex.def Info: Images//Booleans//Boolean.png  used on input line 435.
 
 (pdftex.def)             Requested size: 200.74951pt x 177.91425pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//Booleans/SphereUnion.png, id=449, 547.04375pt x 604.2575pt>
+<Images//Booleans/SphereUnion.png, id=467, 547.04375pt x 604.2575pt>
 File: Images//Booleans/SphereUnion.png Graphic file (type png)
 <use Images//Booleans/SphereUnion.png>
 Package pdftex.def Info: Images//Booleans/SphereUnion.png  used on input line 4
-28.
+49.
 (pdftex.def)             Requested size: 88.55548pt x 97.81908pt.
-<Images//Booleans//SphereSubtraction.png, id=450, 879.285pt x 716.6775pt>
+<Images//Booleans//SphereSubtraction.png, id=468, 879.285pt x 716.6775pt>
 File: Images//Booleans//SphereSubtraction.png Graphic file (type png)
 <use Images//Booleans//SphereSubtraction.png>
 Package pdftex.def Info: Images//Booleans//SphereSubtraction.png  used on input
- line 434.
+ line 455.
 (pdftex.def)             Requested size: 120.0132pt x 97.81908pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--439
+Underfull \hbox (badness 10000) in paragraph at lines 441--460
 
  []
 
-[10 <./Images//Meshes//Hyperboloid.png> <./Images//Meshes//ellipticalcone.png> 
+[11 <./Images//Meshes//Hyperboloid.png> <./Images//Meshes//ellipticalcone.png> 
 <./Images//Meshes//Ellipsoid.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--445
+Underfull \hbox (badness 10000) in paragraph at lines 461--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--445
+Underfull \hbox (badness 10000) in paragraph at lines 461--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--445
+Underfull \hbox (badness 10000) in paragraph at lines 461--466
 
  []
 
-<Images//Meshes//CutTubs.png, id=463, 412.4208pt x 426.393pt>
+<Images//Meshes//CutTubs.png, id=480, 412.4208pt x 426.393pt>
 File: Images//Meshes//CutTubs.png Graphic file (type png)
 <use Images//Meshes//CutTubs.png>
-Package pdftex.def Info: Images//Meshes//CutTubs.png  used on input line 448.
+Package pdftex.def Info: Images//Meshes//CutTubs.png  used on input line 469.
 (pdftex.def)             Requested size: 206.20988pt x 213.19597pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./Images//Booleans//Boolean.png> <./Images//Booleans/SphereUnion.png> <./I
+[12 <./Images//Booleans//Boolean.png> <./Images//Booleans/SphereUnion.png> <./I
 mages//Booleans//SphereSubtraction.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 456--459
+Underfull \hbox (badness 10000) in paragraph at lines 477--480
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--459
+Underfull \hbox (badness 10000) in paragraph at lines 477--480
 
  []
 
-<Images//Quad_fits//Tubs_quad.pdf, id=475, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Tubs_quad.pdf, id=492, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Tubs_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Tubs_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Tubs_quad.pdf  used on input line 4
-64.
+85.
 (pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
-<Images//Quad_fits//Hyperboloid_quad.pdf, id=476, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Hyperboloid_quad.pdf, id=493, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Hyperboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Hyperboloid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Hyperboloid_quad.pdf  used on input
- line 470.
+ line 491.
 (pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
-[12 <./Images//Meshes//CutTubs.png> <./Images//Quad_fits//Tubs_quad.pdf> <./Ima
+[13 <./Images//Meshes//CutTubs.png> <./Images//Quad_fits//Tubs_quad.pdf> <./Ima
 ges//Quad_fits//Hyperboloid_quad.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//Quad_fits//Hyperbo
 loid_quad.pdf): PDF inclusion: multiple pdfs with page group included in a sing
 le page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 477--480
+Underfull \hbox (badness 10000) in paragraph at lines 498--501
 
  []
 
-<Images//Triangles//MeshvTRi.pdf, id=566, 688.73308pt x 445.18318pt>
-File: Images//Triangles//MeshvTRi.pdf Graphic file (type pdf)
-<use Images//Triangles//MeshvTRi.pdf>
-Package pdftex.def Info: Images//Triangles//MeshvTRi.pdf  used on input line 48
-3.
-(pdftex.def)             Requested size: 344.36569pt x 222.59105pt.
-<Images//BDSIM//titanium.pdf, id=568, 963.6pt x 528.97626pt>
+<Images//Triangles//MeshvTRi1.pdf, id=583, 625.13548pt x 411.2163pt>
+File: Images//Triangles//MeshvTRi1.pdf Graphic file (type pdf)
+<use Images//Triangles//MeshvTRi1.pdf>
+Package pdftex.def Info: Images//Triangles//MeshvTRi1.pdf  used on input line 5
+04.
+(pdftex.def)             Requested size: 312.56697pt x 205.60764pt.
+<Images//BDSIM//titanium.pdf, id=585, 963.6pt x 528.97626pt>
 File: Images//BDSIM//titanium.pdf Graphic file (type pdf)
 <use Images//BDSIM//titanium.pdf>
-Package pdftex.def Info: Images//BDSIM//titanium.pdf  used on input line 501.
+Package pdftex.def Info: Images//BDSIM//titanium.pdf  used on input line 521.
 (pdftex.def)             Requested size: 317.98898pt x 174.5627pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--515
+Underfull \hbox (badness 10000) in paragraph at lines 530--535
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--515
+Underfull \hbox (badness 10000) in paragraph at lines 530--535
 
  []
 
-[13 <./Images//Triangles//MeshvTRi.pdf>]
-<Images//BDSIM//ProtonSphere2.png, id=630, 963.1182pt x 517.935pt>
+[14 <./Images//Triangles//MeshvTRi1.pdf>]
+<Images//BDSIM//ProtonSphere2.png, id=647, 963.1182pt x 517.935pt>
 File: Images//BDSIM//ProtonSphere2.png Graphic file (type png)
 <use Images//BDSIM//ProtonSphere2.png>
 Package pdftex.def Info: Images//BDSIM//ProtonSphere2.png  used on input line 5
-18.
+38.
 (pdftex.def)             Requested size: 337.09642pt x 181.27995pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./Images//BDSIM//titanium.pdf>]
-<Images//CPU//Total_plot.pdf, id=646, 462.52798pt x 346.89601pt>
+[15 <./Images//BDSIM//titanium.pdf>]
+<Images//CPU//Total_plot.pdf, id=664, 462.52798pt x 346.89601pt>
 File: Images//CPU//Total_plot.pdf Graphic file (type pdf)
 <use Images//CPU//Total_plot.pdf>
-Package pdftex.def Info: Images//CPU//Total_plot.pdf  used on input line 548.
+Package pdftex.def Info: Images//CPU//Total_plot.pdf  used on input line 568.
 (pdftex.def)             Requested size: 244.55287pt x 183.41357pt.
-<Images//CPU//Total_Plot_no_secondaries.pdf, id=647, 462.52798pt x 346.89601pt>
+<Images//CPU//Total_Plot_no_secondaries.pdf, id=665, 462.52798pt x 346.89601pt>
 
 File: Images//CPU//Total_Plot_no_secondaries.pdf Graphic file (type pdf)
 <use Images//CPU//Total_Plot_no_secondaries.pdf>
 Package pdftex.def Info: Images//CPU//Total_Plot_no_secondaries.pdf  used on in
-put line 554.
+put line 574.
 (pdftex.def)             Requested size: 244.55287pt x 183.41357pt.
-<Images//CPU//Total_plot_with_offset.pdf, id=648, 462.52798pt x 346.89601pt>
+<Images//CPU//Total_plot_with_offset.pdf, id=666, 462.52798pt x 346.89601pt>
 File: Images//CPU//Total_plot_with_offset.pdf Graphic file (type pdf)
 <use Images//CPU//Total_plot_with_offset.pdf>
 Package pdftex.def Info: Images//CPU//Total_plot_with_offset.pdf  used on input
- line 564.
+ line 584.
 (pdftex.def)             Requested size: 244.55287pt x 183.41357pt.
-<Images//CPU//Total_Plot_with_offset_and_no_secondaries.pdf, id=649, 665.60669p
+<Images//CPU//Total_Plot_with_offset_and_no_secondaries.pdf, id=667, 665.60669p
 t x 346.89601pt>
 File: Images//CPU//Total_Plot_with_offset_and_no_secondaries.pdf Graphic file (
 type pdf)
 <use Images//CPU//Total_Plot_with_offset_and_no_secondaries.pdf>
 Package pdftex.def Info: Images//CPU//Total_Plot_with_offset_and_no_secondaries
-.pdf  used on input line 570.
+.pdf  used on input line 590.
 (pdftex.def)             Requested size: 351.92688pt x 183.41357pt.
 
-Overfull \hbox (107.37544pt too wide) in paragraph at lines 570--571
+Overfull \hbox (107.37544pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//CPU//pythonhist1.pdf, id=650, 815.20557pt x 400.37581pt>
+<Images//CPU//pythonhist1.pdf, id=668, 815.20557pt x 400.37581pt>
 File: Images//CPU//pythonhist1.pdf Graphic file (type pdf)
 <use Images//CPU//pythonhist1.pdf>
-Package pdftex.def Info: Images//CPU//pythonhist1.pdf  used on input line 578.
+Package pdftex.def Info: Images//CPU//pythonhist1.pdf  used on input line 598.
 (pdftex.def)             Requested size: 407.60178pt x 200.18741pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15 <./Images//BDSIM//ProtonSphere2.png> <./Images//CPU//Total_plot.pdf> <./Ima
+[16 <./Images//BDSIM//ProtonSphere2.png> <./Images//CPU//Total_plot.pdf> <./Ima
 ges//CPU//Total_Plot_no_secondaries.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//CPU//Total_Plot_no
 _secondaries.pdf): PDF inclusion: multiple pdfs with page group included in a s
 ingle page
->] [16 <./Images//CPU//Total_plot_with_offset.pdf> <./Images//CPU//Total_Plot_w
+>] [17 <./Images//CPU//Total_plot_with_offset.pdf> <./Images//CPU//Total_Plot_w
 ith_offset_and_no_secondaries.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//CPU//Total_Plot_wi
@@ -1118,178 +1143,178 @@ th_offset_and_no_secondaries.pdf): PDF inclusion: multiple pdfs with page group
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//CPU//pythonhist1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<Images//Error//std_N.png, id=930, 462.528pt x 346.896pt>
+<Images//Error//std_N.png, id=947, 462.528pt x 346.896pt>
 File: Images//Error//std_N.png Graphic file (type png)
 <use Images//Error//std_N.png>
-Package pdftex.def Info: Images//Error//std_N.png  used on input line 604.
+Package pdftex.def Info: Images//Error//std_N.png  used on input line 624.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=932, 794.97pt 
+<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=949, 794.97pt 
 x 505.89pt>
 File: Images//Materials//not_Varied_by_radius_and_secondaries.pdf Graphic file 
 (type pdf)
 <use Images//Materials//not_Varied_by_radius_and_secondaries.pdf>
 Package pdftex.def Info: Images//Materials//not_Varied_by_radius_and_secondarie
-s.pdf  used on input line 616.
+s.pdf  used on input line 636.
 (pdftex.def)             Requested size: 476.98569pt x 303.53633pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//Materials//RMAX.png, id=935, 760.8425pt x 760.8425pt>
+<Images//Materials//RMAX.png, id=952, 760.8425pt x 760.8425pt>
 File: Images//Materials//RMAX.png Graphic file (type png)
 <use Images//Materials//RMAX.png>
-Package pdftex.def Info: Images//Materials//RMAX.png  used on input line 625.
+Package pdftex.def Info: Images//Materials//RMAX.png  used on input line 645.
 (pdftex.def)             Requested size: 152.1658pt x 152.1658pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--635
+Underfull \hbox (badness 10000) in paragraph at lines 652--655
 
  []
 
-[17 <./Images//Error//std_N.png>]
-<Images//BDSIM//Tungsten_Sphere.png, id=949, 939.0282pt x 317.0244pt>
+[18 <./Images//Error//std_N.png>]
+<Images//BDSIM//Tungsten_Sphere.png, id=966, 939.0282pt x 317.0244pt>
 File: Images//BDSIM//Tungsten_Sphere.png Graphic file (type png)
 <use Images//BDSIM//Tungsten_Sphere.png>
 Package pdftex.def Info: Images//BDSIM//Tungsten_Sphere.png  used on input line
- 637.
+ 657.
 (pdftex.def)             Requested size: 469.51295pt x 158.51181pt.
 
-Overfull \hbox (20.24376pt too wide) in paragraph at lines 637--638
+Overfull \hbox (20.24376pt too wide) in paragraph at lines 657--658
 []| [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18 <./Images//Materials//not_Varied_by_radius_and_secondaries.pdf> <./Images//
+[19 <./Images//Materials//not_Varied_by_radius_and_secondaries.pdf> <./Images//
 Materials//RMAX.png>]
-<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=1010, 794.97pt x 5
+<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=1027, 794.97pt x 5
 05.89pt>
 File: Images//Materials//Varied_by_radius_and_secondaries.pdf Graphic file (typ
 e pdf)
 <use Images//Materials//Varied_by_radius_and_secondaries.pdf>
 Package pdftex.def Info: Images//Materials//Varied_by_radius_and_secondaries.pd
-f  used on input line 660.
+f  used on input line 680.
 (pdftex.def)             Requested size: 476.98569pt x 303.53633pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//Materials//Time_ex_dists.pdf, id=1012, 794.97pt x 505.89pt>
+<Images//Materials//Time_ex_dists.pdf, id=1029, 794.97pt x 505.89pt>
 File: Images//Materials//Time_ex_dists.pdf Graphic file (type pdf)
 <use Images//Materials//Time_ex_dists.pdf>
 Package pdftex.def Info: Images//Materials//Time_ex_dists.pdf  used on input li
-ne 669.
+ne 689.
 (pdftex.def)             Requested size: 317.98236pt x 202.3524pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./Images//BDSIM//Tungsten_Sphere.png>]
+[20 <./Images//BDSIM//Tungsten_Sphere.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//BDSIM//numoftris_tit_10G_e_nostd.pdf, id=1021, 979.9812pt x 417.7206pt
+<Images//BDSIM//numoftris_tit_10G_e_nostd.pdf, id=1038, 979.9812pt x 417.7206pt
 >
 File: Images//BDSIM//numoftris_tit_10G_e_nostd.pdf Graphic file (type pdf)
 <use Images//BDSIM//numoftris_tit_10G_e_nostd.pdf>
 Package pdftex.def Info: Images//BDSIM//numoftris_tit_10G_e_nostd.pdf  used on 
-input line 694.
+input line 714.
 (pdftex.def)             Requested size: 489.9894pt x 208.85979pt.
 
-Overfull \hbox (0.88652pt too wide) in paragraph at lines 694--695
+Overfull \hbox (0.88652pt too wide) in paragraph at lines 714--715
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./Images//Materials//Varied_by_radius_and_secondaries.pdf> <./Images//Mate
+[21 <./Images//Materials//Varied_by_radius_and_secondaries.pdf> <./Images//Mate
 rials//Time_ex_dists.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//Materials//Time_ex
 _dists.pdf): PDF inclusion: multiple pdfs with page group included in a single 
 page
 >]
-<Images//CAD_Screw//freecadbolt.png, id=1128, 1111.0308pt x 392.1852pt>
+<Images//CAD_Screw//freecadbolt.png, id=1146, 1111.0308pt x 392.1852pt>
 File: Images//CAD_Screw//freecadbolt.png Graphic file (type png)
 <use Images//CAD_Screw//freecadbolt.png>
 Package pdftex.def Info: Images//CAD_Screw//freecadbolt.png  used on input line
- 706.
+ 726.
 (pdftex.def)             Requested size: 311.74767pt x 110.0474pt.
 
-Overfull \hbox (67.19623pt too wide) in paragraph at lines 706--707
+Overfull \hbox (67.19623pt too wide) in paragraph at lines 726--727
  [][] 
  []
 
-<Images//CAD_Screw//boltVTK.png, id=1129, 538.6524pt x 542.025pt>
+<Images//CAD_Screw//boltVTK.png, id=1147, 538.6524pt x 542.025pt>
 File: Images//CAD_Screw//boltVTK.png Graphic file (type png)
 <use Images//CAD_Screw//boltVTK.png>
-Package pdftex.def Info: Images//CAD_Screw//boltVTK.png  used on input line 712
+Package pdftex.def Info: Images//CAD_Screw//boltVTK.png  used on input line 732
 .
 (pdftex.def)             Requested size: 121.5121pt x 122.27571pt.
-<Images//CAD_Screw//Screw_hnh_10MeVe.png, id=1130, 963.1182pt x 524.6802pt>
+<Images//CAD_Screw//Screw_hnh_10MeVe.png, id=1148, 963.1182pt x 524.6802pt>
 File: Images//CAD_Screw//Screw_hnh_10MeVe.png Graphic file (type png)
 <use Images//CAD_Screw//Screw_hnh_10MeVe.png>
 Package pdftex.def Info: Images//CAD_Screw//Screw_hnh_10MeVe.png  used on input
- line 724.
+ line 744.
 (pdftex.def)             Requested size: 224.45172pt x 122.27571pt.
-<Images//CAD_Screw//bensboltinbdsim.png, id=1131, 962.1546pt x 524.6802pt>
+<Images//CAD_Screw//bensboltinbdsim.png, id=1149, 962.1546pt x 524.6802pt>
 File: Images//CAD_Screw//bensboltinbdsim.png Graphic file (type png)
 <use Images//CAD_Screw//bensboltinbdsim.png>
 Package pdftex.def Info: Images//CAD_Screw//bensboltinbdsim.png  used on input 
-line 730.
+line 750.
 (pdftex.def)             Requested size: 224.22716pt x 122.27571pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//CAD_Screw//boltcount.png, id=1132, 599.841pt x 380.1402pt>
+<Images//CAD_Screw//boltcount.png, id=1150, 599.841pt x 380.1402pt>
 File: Images//CAD_Screw//boltcount.png Graphic file (type png)
 <use Images//CAD_Screw//boltcount.png>
 Package pdftex.def Info: Images//CAD_Screw//boltcount.png  used on input line 7
-38.
+58.
 (pdftex.def)             Requested size: 419.88583pt x 266.09631pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21 <./Images//BDSIM//numoftris_tit_10G_e_nostd.pdf> <./Images//CAD_Screw//free
+[22 <./Images//BDSIM//numoftris_tit_10G_e_nostd.pdf> <./Images//CAD_Screw//free
 cadbolt.png> <./Images//CAD_Screw//boltVTK.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 748--754
+Underfull \hbox (badness 10000) in paragraph at lines 768--774
 
  []
 
-[22 <./Images//CAD_Screw//Screw_hnh_10MeVe.png> <./Images//CAD_Screw//bensbolti
-nbdsim.png> <./Images//CAD_Screw//boltcount.png>] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 798--800
+[23 <./Images//CAD_Screw//Screw_hnh_10MeVe.png> <./Images//CAD_Screw//bensbolti
+nbdsim.png> <./Images//CAD_Screw//boltcount.png>] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 823--825
 []$\OT1/cmtt/m/n/10.95 http : / / geant4-[]userdoc . web . cern . ch / geant4-[
 ]userdoc / UsersGuides /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 802--804
+Underfull \hbox (badness 10000) in paragraph at lines 827--829
 []$\OT1/cmtt/m/n/10.95 http : / / geant4-[]userdoc . web . cern . ch / geant4-[
 ]userdoc / UsersGuides /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 816--820
+Underfull \hbox (badness 10000) in paragraph at lines 841--845
 []$\OT1/cmtt/m/n/10.95 https : / / www . govinfo . gov / content / pkg / GOVPUB
 -[]C13-[]139be796c7e56cb34375ad52db8ec5e7 /
  []
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+[25pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
 s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.830 \newpage
+l.855 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.830 \newpage
+l.855 \newpage
               ] (./Scripts//Run_New_Meshes.py
 
 Package xcolor Warning: Incompatible color definition on input line 2.
@@ -1897,145 +1922,145 @@ Package xcolor Warning: Incompatible color definition on input line 41.
 
 Package xcolor Warning: Incompatible color definition on input line 43.
 
-) [25]
-Underfull \hbox (badness 10000) in paragraph at lines 845--845
+) [26]
+Underfull \hbox (badness 10000) in paragraph at lines 870--870
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 847.
+(hyperref)                than one, level fixed on input line 872.
 
-<Images//Meshes//cons.png, id=1285, 210.5466pt x 361.35pt>
+<Images//Meshes//cons.png, id=1303, 210.5466pt x 361.35pt>
 File: Images//Meshes//cons.png Graphic file (type png)
 <use Images//Meshes//cons.png>
-Package pdftex.def Info: Images//Meshes//cons.png  used on input line 852.
+Package pdftex.def Info: Images//Meshes//cons.png  used on input line 877.
 (pdftex.def)             Requested size: 56.99612pt x 97.81908pt.
-<Images//Quad_fits//Cons_quad.pdf, id=1286, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Cons_quad.pdf, id=1304, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Cons_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Cons_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Cons_quad.pdf  used on input line 8
-58.
+83.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 858--859
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 883--884
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 850--862
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 875--887
  []$[]$$[]$ 
  []
 
 File: Images//Meshes//CutTubs.png Graphic file (type png)
 <use Images//Meshes//CutTubs.png>
-Package pdftex.def Info: Images//Meshes//CutTubs.png  used on input line 870.
+Package pdftex.def Info: Images//Meshes//CutTubs.png  used on input line 895.
 (pdftex.def)             Requested size: 94.60936pt x 97.81908pt.
-<Images//Quad_fits//CutTubs_quad.pdf, id=1287, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//CutTubs_quad.pdf, id=1305, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//CutTubs_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//CutTubs_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//CutTubs_quad.pdf  used on input lin
-e 876.
+e 901.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 876--877
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 901--902
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 868--880
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 893--905
  []$[]$$[]$ 
  []
 
-<Images//Meshes//ellipsoid.png, id=1288, 335.8146pt x 355.0866pt>
+<Images//Meshes//ellipsoid.png, id=1306, 335.8146pt x 355.0866pt>
 File: Images//Meshes//ellipsoid.png Graphic file (type png)
 <use Images//Meshes//ellipsoid.png>
-Package pdftex.def Info: Images//Meshes//ellipsoid.png  used on input line 888.
+Package pdftex.def Info: Images//Meshes//ellipsoid.png  used on input line 913.
 
 (pdftex.def)             Requested size: 92.51071pt x 97.81908pt.
-<Images//Quad_fits//Ellipsoid_quad.pdf, id=1289, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Ellipsoid_quad.pdf, id=1307, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Ellipsoid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Ellipsoid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Ellipsoid_quad.pdf  used on input l
-ine 894.
+ine 919.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 894--895
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 919--920
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 886--898
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 911--923
  []$[]$$[]$ 
  []
 
 File: Images//Meshes//ellipticalcone.png Graphic file (type png)
 <use Images//Meshes//ellipticalcone.png>
 Package pdftex.def Info: Images//Meshes//ellipticalcone.png  used on input line
- 907.
+ 932.
 (pdftex.def)             Requested size: 82.89197pt x 97.81908pt.
-<Images//Quad_fits//Ellipticalcone_quad.pdf, id=1290, 462.52798pt x 346.89601pt
+<Images//Quad_fits//Ellipticalcone_quad.pdf, id=1308, 462.52798pt x 346.89601pt
 >
 File: Images//Quad_fits//Ellipticalcone_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Ellipticalcone_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Ellipticalcone_quad.pdf  used on in
-put line 913.
+put line 938.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 913--914
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 938--939
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 905--917
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 930--942
  []$[]$$[]$ 
  []
 
-<Images//Meshes//ellipticaltube.png, id=1291, 353.1594pt x 304.0158pt>
+<Images//Meshes//ellipticaltube.png, id=1309, 353.1594pt x 304.0158pt>
 File: Images//Meshes//ellipticaltube.png Graphic file (type png)
 <use Images//Meshes//ellipticaltube.png>
 Package pdftex.def Info: Images//Meshes//ellipticaltube.png  used on input line
- 925.
+ 950.
 (pdftex.def)             Requested size: 90.90317pt x 78.25555pt.
-<Images//Quad_fits//EllipticalTube_quad.pdf, id=1292, 462.52798pt x 346.89601pt
+<Images//Quad_fits//EllipticalTube_quad.pdf, id=1310, 462.52798pt x 346.89601pt
 >
 File: Images//Quad_fits//EllipticalTube_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//EllipticalTube_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//EllipticalTube_quad.pdf  used on in
-put line 931.
+put line 956.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 931--932
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 956--957
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 923--935
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 948--960
  []$[]$$[]$ 
  []
 
-<Images//Meshes//hyperboloid.png, id=1293, 406.1574pt x 378.213pt>
+<Images//Meshes//hyperboloid.png, id=1311, 406.1574pt x 378.213pt>
 File: Images//Meshes//hyperboloid.png Graphic file (type png)
 <use Images//Meshes//hyperboloid.png>
-Package pdftex.def Info: Images//Meshes//hyperboloid.png  used on input line 94
-3.
+Package pdftex.def Info: Images//Meshes//hyperboloid.png  used on input line 96
+8.
 (pdftex.def)             Requested size: 94.53596pt x 88.03656pt.
 File: Images//Quad_fits//Hyperboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Hyperboloid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Hyperboloid_quad.pdf  used on input
- line 949.
+ line 974.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 949--950
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 974--975
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 941--953
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 966--978
  []$[]$$[]$ 
  []
 
-[26
+[27
 
  <./Images//Meshes//cons.png> <./Images//Quad_fits//Cons_quad.pdf> <./Images//Q
 uad_fits//CutTubs_quad.pdf
@@ -2055,133 +2080,134 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//Quad_fits//Ellipti
 calTube_quad.pdf): PDF inclusion: multiple pdfs with page group included in a s
 ingle page
 > <./Images//Meshes//hyperboloid.png>]
-<Images//Meshes//orb.png, id=1480, 374.3586pt x 319.9152pt>
+<Images//Meshes//orb.png, id=1499, 374.3586pt x 319.9152pt>
 File: Images//Meshes//orb.png Graphic file (type png)
 <use Images//Meshes//orb.png>
-Package pdftex.def Info: Images//Meshes//orb.png  used on input line 962.
+Package pdftex.def Info: Images//Meshes//orb.png  used on input line 987.
 (pdftex.def)             Requested size: 91.57298pt x 78.25555pt.
-<Images//Quad_fits//orb_quad.pdf, id=1481, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//orb_quad.pdf, id=1500, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//orb_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//orb_quad.pdf>
-Package pdftex.def Info: Images//Quad_fits//orb_quad.pdf  used on input line 96
-8.
+Package pdftex.def Info: Images//Quad_fits//orb_quad.pdf  used on input line 99
+3.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 968--969
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 993--994
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 960--972
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 985--997
  []$[]$$[]$ 
  []
 
-<Images//Meshes//paraboloid.png, id=1482, 298.716pt x 367.1316pt>
+<Images//Meshes//paraboloid.png, id=1501, 298.716pt x 367.1316pt>
 File: Images//Meshes//paraboloid.png Graphic file (type png)
 <use Images//Meshes//paraboloid.png>
-Package pdftex.def Info: Images//Meshes//paraboloid.png  used on input line 980
-.
+Package pdftex.def Info: Images//Meshes//paraboloid.png  used on input line 100
+5.
 (pdftex.def)             Requested size: 79.58781pt x 97.81908pt.
-<Images//Quad_fits//Paraboloid_quad.pdf, id=1483, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Paraboloid_quad.pdf, id=1502, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Paraboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Paraboloid_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Paraboloid_quad.pdf  used on input 
-line 986.
+line 1011.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 986--987
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 1011--1012
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 978--990
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 1003--1015
  []$[]$$[]$ 
  []
 
-<Images//Meshes//polycone.png, id=1484, 292.9344pt x 332.9238pt>
+<Images//Meshes//polycone.png, id=1503, 292.9344pt x 332.9238pt>
 File: Images//Meshes//polycone.png Graphic file (type png)
 <use Images//Meshes//polycone.png>
-Package pdftex.def Info: Images//Meshes//polycone.png  used on input line 997.
+Package pdftex.def Info: Images//Meshes//polycone.png  used on input line 1022.
+
 (pdftex.def)             Requested size: 86.06625pt x 97.81908pt.
-<Images//Quad_fits//Polycone_quad.pdf, id=1485, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Polycone_quad.pdf, id=1504, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Polycone_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Polycone_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Polycone_quad.pdf  used on input li
-ne 1003.
+ne 1028.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1003--1004
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 1028--1029
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 995--1007
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 1020--1032
  []$[]$$[]$ 
  []
 
-<Images//Meshes//sphere.png, id=1486, 424.4658pt x 332.9238pt>
+<Images//Meshes//sphere.png, id=1505, 424.4658pt x 332.9238pt>
 File: Images//Meshes//sphere.png Graphic file (type png)
 <use Images//Meshes//sphere.png>
-Package pdftex.def Info: Images//Meshes//sphere.png  used on input line 1016.
+Package pdftex.def Info: Images//Meshes//sphere.png  used on input line 1041.
 (pdftex.def)             Requested size: 93.53172pt x 73.3643pt.
-<Images//Quad_fits//Sphere_quad.pdf, id=1487, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Sphere_quad.pdf, id=1506, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Sphere_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Sphere_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Sphere_quad.pdf  used on input line
- 1022.
+ 1047.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1022--1023
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 1047--1048
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1014--1026
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 1039--1051
  []$[]$$[]$ 
  []
 
-<Images//Meshes//torus.png, id=1488, 370.986pt x 219.7008pt>
+<Images//Meshes//torus.png, id=1507, 370.986pt x 219.7008pt>
 File: Images//Meshes//torus.png Graphic file (type png)
 <use Images//Meshes//torus.png>
-Package pdftex.def Info: Images//Meshes//torus.png  used on input line 1034.
+Package pdftex.def Info: Images//Meshes//torus.png  used on input line 1059.
 (pdftex.def)             Requested size: 82.58516pt x 48.90953pt.
-<Images//Quad_fits//Torus_quad.pdf, id=1489, 462.52798pt x 346.89601pt>
+<Images//Quad_fits//Torus_quad.pdf, id=1508, 462.52798pt x 346.89601pt>
 File: Images//Quad_fits//Torus_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Torus_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Torus_quad.pdf  used on input line 
-1040.
+1065.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1040--1041
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 1065--1066
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1032--1044
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 1057--1069
  []$[]$$[]$ 
  []
 
-<Images//Meshes//tubs.png, id=1490, 498.663pt x 365.2044pt>
+<Images//Meshes//tubs.png, id=1509, 498.663pt x 365.2044pt>
 File: Images//Meshes//tubs.png Graphic file (type png)
 <use Images//Meshes//tubs.png>
-Package pdftex.def Info: Images//Meshes//tubs.png  used on input line 1052.
+Package pdftex.def Info: Images//Meshes//tubs.png  used on input line 1077.
 (pdftex.def)             Requested size: 93.49147pt x 68.47305pt.
 File: Images//Quad_fits//Tubs_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Tubs_quad.pdf>
 Package pdftex.def Info: Images//Quad_fits//Tubs_quad.pdf  used on input line 1
-058.
+083.
 (pdftex.def)             Requested size: 161.8872pt x 121.41542pt.
 
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1058--1059
+Overfull \hbox (15.15486pt too wide) in paragraph at lines 1083--1084
  [][] 
  []
 
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1050--1062
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 1075--1087
  []$[]$$[]$ 
  []
 
-[27 <./Images//Meshes//orb.png> <./Images//Quad_fits//orb_quad.pdf> <./Images//
+[28 <./Images//Meshes//orb.png> <./Images//Quad_fits//orb_quad.pdf> <./Images//
 Meshes//paraboloid.png> <./Images//Quad_fits//Paraboloid_quad.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images//Quad_fits//Parabol
@@ -2208,29 +2234,29 @@ Overfull \hbox (21.40025pt too wide) in paragraph at lines 6--22
  []
 
 )
-<Images//CAD_Mag//maginfreecad.png, id=1702, 1116.8124pt x 630.1944pt>
+<Images//CAD_Mag//maginfreecad.png, id=1720, 1116.8124pt x 630.1944pt>
 File: Images//CAD_Mag//maginfreecad.png Graphic file (type png)
 <use Images//CAD_Mag//maginfreecad.png>
 Package pdftex.def Info: Images//CAD_Mag//maginfreecad.png  used on input line 
-1084.
+1109.
 (pdftex.def)             Requested size: 216.67838pt x 122.27571pt.
-<Images//CAD_Mag//maginbdsim.png, id=1703, 1008.4074pt x 551.661pt>
+<Images//CAD_Mag//maginbdsim.png, id=1721, 1008.4074pt x 551.661pt>
 File: Images//CAD_Mag//maginbdsim.png Graphic file (type png)
 <use Images//CAD_Mag//maginbdsim.png>
-Package pdftex.def Info: Images//CAD_Mag//maginbdsim.png  used on input line 10
-90.
+Package pdftex.def Info: Images//CAD_Mag//maginbdsim.png  used on input line 11
+15.
 (pdftex.def)             Requested size: 223.51212pt x 122.27571pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1097.
- [28
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1122.
+ [29
 
  <./Images//CAD_Mag//maginfreecad.png> <./Images//CAD_Mag//maginbdsim.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1097.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1122.
  (./Major_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1097.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1097.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1122.
 
 Package rerunfilecheck Info: File `Major_Project.out' has not changed.
-(rerunfilecheck)             Checksum: 990845F57400A00EEB85F5A9755572DD;3707.
+(rerunfilecheck)             Checksum: 40BC691506B88C0BE0E451DAEA36C5BF;3864.
 
 
 LaTeX Warning: There were undefined references.
@@ -2238,13 +2264,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1097.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1122.
  ) 
 Here is how much of TeX's memory you used:
- 11049 strings out of 492649
- 165435 string characters out of 6129621
- 475960 words of memory out of 5000000
- 14499 multiletter control sequences out of 15000+600000
+ 11057 strings out of 492649
+ 165528 string characters out of 6129621
+ 474718 words of memory out of 5000000
+ 14503 multiletter control sequences out of 15000+600000
  13989 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,42p,1335b,1506s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2263,10 +2289,10 @@ live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Major_Project.pdf (32 pages, 7551018 bytes).
+Output written on Major_Project.pdf (33 pages, 7553499 bytes).
 PDF statistics:
- 1807 PDF objects out of 2073 (max. 8388607)
- 825 compressed objects within 9 object streams
- 212 named destinations out of 1000 (max. 500000)
- 735 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1825 PDF objects out of 2073 (max. 8388607)
+ 842 compressed objects within 9 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 751 words of extra memory for PDF output out of 10000 (max. 10000000)
 
