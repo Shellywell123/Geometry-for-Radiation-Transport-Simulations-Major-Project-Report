@@ -160,12 +160,12 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \subsection{Report Structure}
 The subsequence Subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then following Sections are structured in the following way. First the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
-\subsection{Project Background}
-\subsubsection{Applications of Particle Tracking}
+\subsection{Project Background - Applications of Particle Tracking}
 \label{back}
 Radiation is the transport of energy through matter or a vacuum in the form of electromagnetic waves and/or particles. On Earth we experience harmless radiation everyday, such as small doses of UV (or Ultraviolet) radiation from the Sun. However in many cases radiation is unwanted and or needs to be controlled, which is where radiation tracking comes into play. The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
-\\\\
-\noindent The most obvious field which radiation tracking is important is all things nuclear, i.e nuclear reactors, weapons and accelerators (which is the main focus in this project). There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD aided design and simulations can be very helpful with planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider).
+
+\subsubsection{High Energy Physics}
+\noindent The most obvious field which radiation tracking is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider).
 
 \begin{figure}[h!]
 \centering
@@ -173,9 +173,13 @@ Radiation is the transport of energy through matter or a vacuum in the form of e
 \caption[width=\columnwidth]{Converted CAD file (STEP to GDML) of the shielding at CERN East Area T8 and T11 test beam lines. Figure 4 from Source \cite{pyg4om}.}
 \label{cerncad}
 \end{figure}
+
 \newpage
+\subsubsection{Space Exploration}
 \noindent Space exploration is also a large field in which radiation tracking and shielding is a key concept to consider. Beyond the Earth's atmosphere the Universe is full of GCR (or Galactic Cosmic Rays) radiation making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. However for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. 
-\\\\\
+
+
+\subsubsection{Medical}
 \noindent Another less obvious but essential field which radiation tracking is required in is medical treatment. X-ray radiation from vacuum tubes is not only used to check for fractures or breaks in bones it also used in radiotherapy. The X-rays are used to to target unwanted growths in the body through small doses of harmful radiation, with the aim of removing cancerous tissue with minimum damage to the neighbouring organs. This can be especially difficult when the tumor is in the vicinity of organs that move within the body, such as a the lungs. As the patient needs to breath in order to live, therefore the movement of the organs needs to be accounted for when aiming the particles.
 \\\\
 \noindent A patients organs also move with the body's orientation with respect to gravity therefore the patient must positioned laying down on a table that rotates perpendicular to the direction of gravity. The accelerator unit must then rotate around the patient to imitate the most stationary conditions. An example machine can be seen in Figure \ref{cancer}, where patients would be placed on the table to under go treatment by radiotherapy, the isocenter being the optimal target position of the cancerous cells to be in within the patents body.  A more recent type of radiotherapy that is proton therapy, which involves the use of small particle accelerators.
