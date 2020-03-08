@@ -29,15 +29,15 @@
 \contentsline {subsubsection}{\numberline {4.4.1}Polygon Count}{14}{subsubsection.4.4.1}
 \contentsline {section}{\numberline {5}BDSIM Interactions}{15}{section.5}
 \contentsline {subsection}{\numberline {5.1}Monte Carlo Simulation}{16}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Iron Sphere Interactions}{17}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Titanium Sphere Interactions}{17}{subsection.5.2}
 \contentsline {subsubsection}{\numberline {5.2.1}Error Reduction}{18}{subsubsection.5.2.1}
 \contentsline {subsection}{\numberline {5.3}Choice of Materials}{19}{subsection.5.3}
 \contentsline {subsubsection}{\numberline {5.3.1}Stopping Power}{19}{subsubsection.5.3.1}
 \contentsline {subsection}{\numberline {5.4}Titanium Sphere Interactions \& Spherical Beam Distribution}{22}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Interactions with CAD}{22}{subsection.5.5}
-\contentsline {section}{\numberline {6}Conclusion \& Summary}{24}{section.6}
-\contentsline {subsection}{\numberline {6.1}Improvements}{24}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Applications}{24}{subsection.6.2}
+\contentsline {subsection}{\numberline {5.5}Interactions with CAD}{23}{subsection.5.5}
+\contentsline {section}{\numberline {6}Conclusion \& Summary}{25}{section.6}
+\contentsline {subsection}{\numberline {6.1}Improvements}{25}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Applications}{25}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}Extension}{25}{subsection.6.3}
 \contentsline {section}{\numberline {A}Appendix (Python scripts)}{27}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Sphere BDSIM Vary Mesh Test}{27}{subsection.A.1}

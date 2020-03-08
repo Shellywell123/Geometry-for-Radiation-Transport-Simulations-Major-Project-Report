@@ -564,7 +564,7 @@ The shape chosen to be tested within BDSIM for this project was the sphere, whic
 \noindent One way that was though to analyse the energy deposition of the interactions, was to look at the CPU duration times as the mesh densities are increased. In this scenario the Geant4 solid was used as a guideline as it does not depend on a user defined stack \& slice. 
 
 
-\subsection{Iron Sphere Interactions}
+\subsection{Titanium Sphere Interactions}
 
 \begin{table}[h!]
 \centering
@@ -591,7 +591,7 @@ ngenerate & 10,000\\ \hline
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[height=0.75\linewidth]{Images//CPU//Total_Plot_no_secondaries.pdf}
+  \includegraphics[height=0.75\linewidth]{Images//CPU//Total_Plot_no_secondaries1.pdf}
   \captionof{figure}{ A plot showing mean\\ CPU duration of 10,000 protons\\ interacting with a Iron sphere of\\ various meshed forms, with\\ secondary particles disabled.}
   \label{fig:test2}
 \end{minipage}% 
@@ -782,7 +782,11 @@ As a final goal to round off the project, an imported CAD model was compared wit
 \label{boltcount}
 \end{figure}
 
-It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks being stored in BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occuring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down 
+\noindent It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks being stored in BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occuring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down due to ...\\
+However due to time constraints and the purpose of the plot being to find the energy range where the number of secondary particles is at large amount for better sampling.
+\\\\
+\noindent The reason for the number of secondaries being consistently larger for the boolean constructed bolt (Bens\_Bolt) compared with the imported CAD bolt (M14\_2-6G\_Bolt), is most likely due to the boolean construction being an overestimation of the imported bolt. The over estimation would be as a result of  time constraints and ease. The most naive  the threads on the bolt were ignored as well as the the hexagonal and cone features on the head of the bolt.
+
 \newpage
 \section{Conclusion \& Summary}
 \label{conc}
@@ -796,7 +800,7 @@ higher meshing density = closer to true solid as expected with BDISM interaction
 quote graphs and sections\\
 
 \subsection{Applications}
-BDSIM and Pyg4ometry are both very powerful software packages that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of file compatibilities it can be used to simulate a growing number of projects. This report demonstrates this by CAD magnet modelling.
+BDSIM and Pyg4ometry are both very powerful software packages that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of compatible files it can be used to simulate a growing number of projects. This report demonstrates this by CAD magnet modelling.
 
 \subsection{Extension}
 If given more time ...\\
