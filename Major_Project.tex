@@ -240,6 +240,7 @@ The materials used in Pyg4ometry and throughout this project are also from the G
 \label{bdsim}
 BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
 \subsubsection{Pybdsim}
+\label{pyb}
 BDSIM has a Python library called Pybdsim which allows interactions to be run and analysed using Python scripts. This is how all the plots in Section 4 are generated. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}.
 
 \subsection{ROOT}\label{root}
@@ -734,51 +735,54 @@ ngenerate & ?\\ \hline
 \caption[width=\columnwidth]{TODO}
 \label{tubspic}
 \end{figure}
-
+\newpage
 \subsection{Interactions with CAD}
-As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in Figure \ref{notmybolt}. The CAD bolt was downloaded as a STEP format from a free online database GradCAD \cite{cadmag}. The downloaded model was converted to GDML format with the material G4\_STAINLESS-STEEL using python. The dimensions of the CAD model were gained by using the measuring tool within the Freecad GUI as shown Figure \ref{boltinfreecad}. The CAD was then approximately recreated by the constructed of basic primitive solids with boolean operations in Pyg4ometry and can be seen in Figure \ref{boltinvtk}.
+As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in Figure \ref{notmybolt}. The CAD bolt was downloaded as a STEP format from a free online database GradCAD \cite{cadmag}. The downloaded model was converted to GDML format with the material G4\_STAINLESS-STEEL using python. The dimensions of the CAD model were gained by using the measuring tool within the Freecad GUI as shown Figure \ref{boltinfreecad}. The CAD model was then approximately recreated by the constructed of basic primitive solids with boolean operations in Pyg4ometry and can be seen in Figure \ref{boltinvtk}.
 
 \begin{figure}[h!]
 \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.7\textwidth}
   \centering
-  \includegraphics[height=.45\linewidth]{Images//CAD_Screw//freecadbolt.png}
-  \captionof{figure}{TODO}
+  \includegraphics[width=1\textwidth]{Images//CAD_Screw//freecadbolt.png}
+  \captionof{figure}{Diagram of imported CAD model in Freecad, with\\ dimensions indicated via Freecad's measuring tool.}
   \label{boltinfreecad}
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.3\textwidth}
   \centering
-  \hspace{2cm}\includegraphics[height=.5\linewidth]{{Images//CAD_Screw//boltVTK.png}}
-  \hspace{2cm}\captionof{figure}{TODO}
+  \vspace{5mm}
+  \hspace{2cm}\includegraphics[width=0.9\textwidth]{{Images//CAD_Screw//boltVTK.png}}
+  \hspace{5cm}\captionof{figure}{Compund boolean\\ soild recreation of imported\\ CAD model, shown in VTK.}
   \label{boltinvtk}
 \end{minipage}%
 \end{figure}
 
-\noindent Both were then ran in BDSIM for a variety of energies 
+\newpage
 
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=.5\linewidth]{Images//CAD_Screw//Screw_hnh_10MeVe.png}
-  \captionof{figure}{TODO}
+  \captionof{figure}{A Screenshot of the imported CAD\\ bolt in BDSIM interacting with 10,000 10 MeV\\ electrons}
   \label{notmybolt}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=.5\linewidth]{Images//CAD_Screw//bensboltinbdsim.png}
-  \captionof{figure}{TODO}
+  \captionof{figure}{A Screenshot of the boolean CAD\\ bolt in BDSIM interacting with 10,000 10 MeV\\ electrons}
   \label{mybolt}
 \end{minipage}%
 \end{figure}
+\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in Figures \ref{notmybolt} \& \ref{mybolt} (same method that was used for spheres in previous Section \ref{}). Figure \ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using Pybdsim (Section\ref{pyb}).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{Images//CAD_Screw//boltcount.pdf}
-\caption[width=\columnwidth]{TODO}
-\label{sphbd}
+\caption[width=\columnwidth]{A plot showing the average number of particle tracks produced in BDSIM when interacting 10,000 electrons of 10 Mev with different targets.}
+\label{boltcount}
 \end{figure}
 
+It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks being stored in BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occuring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down 
 \newpage
 \section{Conclusion \& Summary}
 \label{conc}
