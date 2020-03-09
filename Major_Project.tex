@@ -35,8 +35,9 @@
 % descibe a collimator
 % bdsim is compared with experiment
 %nuclear waste storage
-
+% read pyg4omety paper in docs 
 % with secs on old becomes slower than new 
+
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
 \usepackage{hyperref}   
@@ -117,7 +118,7 @@
 \centering
 
 \end{abstract}
-The testing and analysis of radiation travelling through geometries of devices, such as a medical magnets, spacecraft or new particle accelerators, is often a very expensive and time consuming process. The open-source software packages Pyg4ometry \& BDSIM are designed to enable scientists and people within in the industry to virtually simulate these tests, with accurate physics concepts. This project looks at improving the 3D simulation of the events and devices, by the remeshing of the basic primitive solids.
+The testing and analysis of radiation travelling through geometries of devices, such as a medical magnets, spacecraft or new particle accelerators, is often a very expensive and time consuming process. The open-source software packages Pyg4ometry \& BDSIM are designed to enable scientists and people within many different industries to virtually simulate these tests, with accurate physics concepts. This project looks at improving the 3D simulation of the events and devices, by the remeshing of the basic primitive solids and testing them in BDSIM.
 
 	\vfill
 	
@@ -159,25 +160,27 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \section{Introduction}
 
 \subsection{Report Structure}
-The subsequence Subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then following Sections are structured in the following way. First the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
+The proceeding subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then the subsequent Sections are structured in the following way; First a discussion of the types of radiation (Section \ref{radd}), then the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
 \subsection{Project Background - Applications of Particle Tracking}
 \label{back}
-Radiation is the transport of energy through matter or a vacuum in the form of electromagnetic waves and/or particles. On Earth we experience harmless radiation everyday, such as small doses of UV (or Ultraviolet) radiation from the Sun. However in many cases radiation is unwanted and or needs to be controlled, which is where radiation tracking comes into play. The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
+On Earth we experience harmless radiation everyday, such as small doses of UV (or Ultraviolet) radiation from the Sun. However in many cases radiation is unwanted and or needs to be controlled, which is where radiation tracking comes into play. Radiation tracking is the The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
 
 \subsubsection{High Energy Physics}
 \noindent The most obvious field which radiation tracking is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider).
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{Images//introduction//CernEast.png}
+\includegraphics[scale=0.15]{Images//introduction//CernEast.jpg}
 \caption[width=\columnwidth]{Converted CAD file (STEP to GDML) of the shielding at CERN East Area T8 and T11 test beam lines. Figure 4 from Source \cite{pyg4om}.}
 \label{cerncad}
 \end{figure}
 
 \newpage
 \subsubsection{Space Exploration}
-\noindent Space exploration is also a large field in which radiation tracking and shielding is a key concept to consider. Beyond the Earth's atmosphere the Universe is full of GCR (or Galactic Cosmic Rays) radiation making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. However for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. 
+\noindent Space exploration is also a large field in which radiation tracking and shielding is a key concept to consider. Beyond the Earth's atmosphere the Universe is full of GCR (or Galactic Cosmic Rays) radiation making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. Which for a spacecraft is typically made from an aluminium alloy, an investigation using Geant4 (One of the software packages discussed in Section \ref{g4}) for shielding properties in space application are explored in Source \cite{spacesh}. The study specifically looks at the stopping power, which is also used later on in the project (Section \ref{stop}). 
+\\\\
+\noindent However for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. 
 
 
 \subsubsection{Medical}
@@ -211,7 +214,7 @@ The first part of the part of the project and report focuses on the meshing of t
 
 \section{Types of Radiation Emission }
 \label{radd}
-There are two main categories of radiation emission; ionising and non-ionising. Non-ionising (or NIR) can be harmful if exposed to for long periods of time or in high intensities, such as UV light can cause skin cancer or shining a strong laser into an eye can cause blindness. In order for a type of radiation to be ionising it must be an electromagnetic wave or particle with enough energy to "ionise" a neighbouring atom, typically travelling at a velocity greater than 1\% the speed of light.  "Ionisation" is the process of detaching an electron from an atom or molecule. This report only focuses on forms of ionising radiation as they are the ones more commonly associated with particle interactions. 
+Radiation is the transport of energy through matter or a vacuum in the form of electromagnetic waves and/or particles. There are two main categories of radiation emission; ionising and non-ionising. Non-ionising (or NIR) can be harmful if exposed to for long periods of time or in high intensities, such as UV light can cause skin cancer or shining a strong laser into an eye can cause blindness. In order for a type of radiation to be ionising it must be an electromagnetic wave or particle with enough energy to "ionise" a neighbouring atom, typically travelling at a velocity greater than 1\% the speed of light.  "Ionisation" is the process of detaching an electron from an atom or molecule. This report only focuses on forms of ionising radiation as they are the ones more commonly associated with particle interactions. 
 \\\\ 
 \noindent Bremsstrahlung is the electromagnetic radiation, which is typically in the form of a photon, created as the result of a charged particle decelerating after it has been deflected from another charged particle. The larger the loss in kinetic energy, i.e the greater the deceleration of the initial particle, the larger the frequency of the emitted photon. Medical X-ray tubes rely on Bremsstrahlung to create a continuously emitted spectrum. The X-ray tubes work by using an electric field to accelerate electrons within a vacuum, which is then aimed towards a target, such as a broken arm against a photographic absorber.
 \\\\
@@ -676,9 +679,19 @@ When creating meshed solids, you have the choice of material. Figure \ref{novar}
 \label{deltar}
 \end{figure}
 
+\newpage
 \subsubsection{Stopping Power}
 \label{stop}
-Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. A charged particle is mainly slowed down by electronic stopping as it moves along a linear trajectory. Electronic stopping is the inelastic energy loss to the electrons of the target as a result of thermal vibrations at an atomic level. The electronic stopping contributes most in the intermediate energy range of a travelling particle, as seen in Figure \ref{stprg}. Once the particle has lost a sufficient amount of its energy, slowing its velocity through the target, the probability of an elastic collision with a nuclei increases (Nuclear Stopping). The nuclear stopping is the process which causes damage to the target, as the target atom recoils way after the interaction causing a disorder in the lattice structure of the target. The recoiled atom can also go on to cause further collisions causing yet more damage. AS seen in Figure \ref{stprg} the electronic stopping power dominates and the nuclear stopping only needs to be accounted for at low energies.
+\\\\
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{Images//Stopping//stoppingrange.png}
+\caption[width=\columnwidth]{TODO\\Figure 2.1 from Source \cite{stprg}}
+\label{stprg}
+\end{figure}
+\\\\
+\noindent The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
 Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the sphere. 
 
@@ -830,6 +843,12 @@ Another area that could have been explored in more detail is a prototype magnet 
 \footnotesize
 \begin{thebibliography}{1}
 
+	\bibitem{spacesh}
+	Veli Capali etal.\\
+	Geant4 calculations for space radiation shielding material $Al_2O_3$\\
+	DOI: 10.1051/epjconf/201510002002\\
+	
+
 	\bibitem{cern}
 	CERN Homepage\\
 	Taken on 08/03/2020\\
@@ -910,6 +929,12 @@ Another area that could have been explored in more detail is a prototype magnet 
 	Abeloff's Clinical Oncology (Sixth Edition)\\
 	27 - Basics of Radiation Therapy\\
 	\url{https://www.sciencedirect.com/science/article/pii/B978032347674400027X}
+	
+\bibitem{stprg}
+	Machaka, Ronald\\
+	Ion Beam Modifications of Boron Nitride By Ion Implantation\\
+	2007\\
+	\url{https://www.researchgate.net/publication/265496484_Ion_Beam_Modifications_of_Boron_Nitride_By_Ion_Implantation}
 \end{thebibliography}
 
 % ------------------------------------------------------------------------------------------------------------------------------
