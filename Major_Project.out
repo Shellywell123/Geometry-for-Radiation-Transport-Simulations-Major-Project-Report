@@ -28,30 +28,31 @@
 \BOOKMARK [3][-]{subsubsection.4.4.1}{Polygon Count}{subsection.4.4}% 28
 \BOOKMARK [1][-]{section.5}{BDSIM Interactions}{}% 29
 \BOOKMARK [2][-]{subsection.5.1}{Monte Carlo Simulation}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.2}{Titanium Sphere Interactions}{section.5}% 31
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Error Reduction}{subsection.5.2}% 32
-\BOOKMARK [2][-]{subsection.5.3}{Choice of Materials}{section.5}% 33
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Stopping Power}{subsection.5.3}% 34
-\BOOKMARK [2][-]{subsection.5.4}{Titanium Sphere Interactions \046 Spherical Beam Distribution}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.5}{Interactions with CAD}{section.5}% 36
-\BOOKMARK [1][-]{section.6}{Conclusion \046 Summary}{}% 37
-\BOOKMARK [2][-]{subsection.6.1}{Improvements}{section.6}% 38
-\BOOKMARK [2][-]{subsection.6.2}{Applications}{section.6}% 39
-\BOOKMARK [2][-]{subsection.6.3}{Extension}{section.6}% 40
-\BOOKMARK [1][-]{appendix.A}{Appendix \(Python scripts\)}{}% 41
-\BOOKMARK [2][-]{subsection.A.1}{Sphere BDSIM Vary Mesh Test}{appendix.A}% 42
-\BOOKMARK [1][-]{appendix.B}{All Meshed Solids and Polygon Count Plots}{}% 43
-\BOOKMARK [2][-]{subsubsection.B.0.1}{Cons}{appendix.B}% 44
-\BOOKMARK [3][-]{subsubsection.B.0.2}{CutTubs}{subsubsection.B.0.1}% 45
-\BOOKMARK [3][-]{subsubsection.B.0.3}{Ellipsoid}{subsubsection.B.0.1}% 46
-\BOOKMARK [3][-]{subsubsection.B.0.4}{EllipticalCone}{subsubsection.B.0.1}% 47
-\BOOKMARK [3][-]{subsubsection.B.0.5}{EllipticalTube}{subsubsection.B.0.1}% 48
-\BOOKMARK [3][-]{subsubsection.B.0.6}{Hyperboloid}{subsubsection.B.0.1}% 49
-\BOOKMARK [3][-]{subsubsection.B.0.7}{Orb}{subsubsection.B.0.1}% 50
-\BOOKMARK [3][-]{subsubsection.B.0.8}{Paraboloid}{subsubsection.B.0.1}% 51
-\BOOKMARK [3][-]{subsubsection.B.0.9}{Polycone}{subsubsection.B.0.1}% 52
-\BOOKMARK [3][-]{subsubsection.B.0.10}{Sphere}{subsubsection.B.0.1}% 53
-\BOOKMARK [3][-]{subsubsection.B.0.11}{Torus}{subsubsection.B.0.1}% 54
-\BOOKMARK [3][-]{subsubsection.B.0.12}{Tubs}{subsubsection.B.0.1}% 55
-\BOOKMARK [1][-]{appendix.C}{Quadratic Parameters for polygon count plots}{}% 56
-\BOOKMARK [1][-]{appendix.D}{Prototype Freecad Magnet}{}% 57
+\BOOKMARK [2][-]{subsection.5.2}{Simulation Execution}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.3}{Sampling}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.4}{Titanium Sphere Interactions}{section.5}% 33
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Error Reduction}{subsection.5.4}% 34
+\BOOKMARK [2][-]{subsection.5.5}{Selection of Material}{section.5}% 35
+\BOOKMARK [3][-]{subsubsection.5.5.1}{Stopping Power}{subsection.5.5}% 36
+\BOOKMARK [2][-]{subsection.5.6}{Interactions with CAD}{section.5}% 37
+\BOOKMARK [1][-]{section.6}{Conclusion \046 Summary}{}% 38
+\BOOKMARK [2][-]{subsection.6.1}{Improvements}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.2}{Applications}{section.6}% 40
+\BOOKMARK [2][-]{subsection.6.3}{Extension}{section.6}% 41
+\BOOKMARK [1][-]{appendix.A}{Appendix \(Python scripts\)}{}% 42
+\BOOKMARK [2][-]{subsection.A.1}{Sphere BDSIM Vary Mesh Test}{appendix.A}% 43
+\BOOKMARK [1][-]{appendix.B}{All Meshed Solids and Polygon Count Plots}{}% 44
+\BOOKMARK [2][-]{subsubsection.B.0.1}{Cons}{appendix.B}% 45
+\BOOKMARK [3][-]{subsubsection.B.0.2}{CutTubs}{subsubsection.B.0.1}% 46
+\BOOKMARK [3][-]{subsubsection.B.0.3}{Ellipsoid}{subsubsection.B.0.1}% 47
+\BOOKMARK [3][-]{subsubsection.B.0.4}{EllipticalCone}{subsubsection.B.0.1}% 48
+\BOOKMARK [3][-]{subsubsection.B.0.5}{EllipticalTube}{subsubsection.B.0.1}% 49
+\BOOKMARK [3][-]{subsubsection.B.0.6}{Hyperboloid}{subsubsection.B.0.1}% 50
+\BOOKMARK [3][-]{subsubsection.B.0.7}{Orb}{subsubsection.B.0.1}% 51
+\BOOKMARK [3][-]{subsubsection.B.0.8}{Paraboloid}{subsubsection.B.0.1}% 52
+\BOOKMARK [3][-]{subsubsection.B.0.9}{Polycone}{subsubsection.B.0.1}% 53
+\BOOKMARK [3][-]{subsubsection.B.0.10}{Sphere}{subsubsection.B.0.1}% 54
+\BOOKMARK [3][-]{subsubsection.B.0.11}{Torus}{subsubsection.B.0.1}% 55
+\BOOKMARK [3][-]{subsubsection.B.0.12}{Tubs}{subsubsection.B.0.1}% 56
+\BOOKMARK [1][-]{appendix.C}{Quadratic Parameters for polygon count plots}{}% 57
+\BOOKMARK [1][-]{appendix.D}{Prototype Freecad Magnet}{}% 58
