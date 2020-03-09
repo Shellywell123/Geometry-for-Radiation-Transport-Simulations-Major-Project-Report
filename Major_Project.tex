@@ -32,11 +32,13 @@
 % check no null ref or cites
 % put newpage in table of contents
 
+% stopping power equations
 % descibe a collimator
 % bdsim is compared with experiment
 %nuclear waste storage
 % read pyg4omety paper in docs 
 % with secs on old becomes slower than new 
+% types of radiation are in bdsim
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -167,11 +169,11 @@ The proceeding subsections of the introduction will go on to discuss the backgro
 On Earth we experience harmless radiation everyday, such as small doses of UV (or Ultraviolet) radiation from the Sun. However in many cases radiation is unwanted and or needs to be controlled, which is where radiation tracking comes into play. Radiation tracking is the The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
 
 \subsubsection{High Energy Physics}
-\noindent The most obvious field which radiation tracking is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider).
+\noindent The most obvious field which radiation tracking is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider). The use of particle tracking can also be used as a toll for simulating beam losses \cite{pyg4om}.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.15]{Images//introduction//CernEast.jpg}
+\includegraphics[scale=0.14]{Images//introduction//CernEast.jpg}
 \caption[width=\columnwidth]{Converted CAD file (STEP to GDML) of the shielding at CERN East Area T8 and T11 test beam lines. Figure 4 from Source \cite{pyg4om}.}
 \label{cerncad}
 \end{figure}
@@ -184,7 +186,7 @@ On Earth we experience harmless radiation everyday, such as small doses of UV (o
 
 
 \subsubsection{Medical}
-\noindent Another less obvious but essential field which radiation tracking is required in is medical treatment. X-ray radiation from vacuum tubes is not only used to check for fractures or breaks in bones it also used in radiotherapy. The X-rays are used to to target unwanted growths in the body through small doses of harmful radiation, with the aim of removing cancerous tissue with minimum damage to the neighbouring organs. This can be especially difficult when the tumor is in the vicinity of organs that move within the body, such as a the lungs. As the patient needs to breath in order to live, therefore the movement of the organs needs to be accounted for when aiming the particles.
+\noindent Another less obvious but essential field which radiation transport simulation is required in is medical treatment. X-ray radiation from vacuum tubes is not only used to check for fractures or breaks in bones it also used in radiotherapy. The X-rays are used to to target unwanted growths in the body through small doses of harmful radiation, with the aim of removing cancerous tissue with minimum damage to the neighbouring organs. This can be especially difficult when the tumor is in the vicinity of organs that move within the body, such as a the lungs. As the patient needs to breath in order to live, therefore the movement of the organs needs to be accounted for when aiming the particles.
 \\\\
 \noindent A patients organs also move with the body's orientation with respect to gravity therefore the patient must positioned laying down on a table that rotates perpendicular to the direction of gravity. The accelerator unit must then rotate around the patient to imitate the most stationary conditions. An example machine can be seen in Figure \ref{cancer}, where patients would be placed on the table to under go treatment by radiotherapy, the isocenter being the optimal target position of the cancerous cells to be in within the patents body.  A more recent type of radiotherapy that is proton therapy, which involves the use of small particle accelerators.
 
@@ -205,6 +207,7 @@ On Earth we experience harmless radiation everyday, such as small doses of UV (o
 
 \subsection{Project Aims}
 \label{aim}
+Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements that volumes that which can not overlap, leading to most radiation transport geometries being mad by hand.
 The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}).
 \\\\
 The first part of the part of the project and report focuses on the meshing of the primitive solids. Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
@@ -230,19 +233,19 @@ This section goes through each package of software related to and used throughou
 
 \subsection{Pyg4ometry}
 \label{pyg}
-Pyg4ometry is an open-source Python package  written by the John Adams Institute (JAI) \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts \cite{pyg4om}. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with Geant4 (Section \ref{geant4}). The package is a key tool for allowing multiple file formats, such as STEP/STL files to be converted into GDML files, which are then compatible with BDSIM. GDML (Geometry Description Markup Language) is a format based on XML files. This increases the number of people who can utilise the package, as many people within in the industry use different file formats to store 3D CAD models..
+Pyg4ometry is an open-source Python package  written by the John Adams Institute (JAI) \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts \cite{pyg4om}. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with Geant4 (Section \ref{geant4}). The package is a key tool for allowing multiple file formats, such as STEP/STL or IGES files to be converted into GDML files, which are then compatible with BDSIM. GDML (Geometry Description Markup Language) is a format based on XML files. This increases the number of people who can utilise the package, as many people within in the industry use different file formats to store 3D CAD models. Pyg4ometry can also be used to determine if a model has any geometric overlaps.
 \\\\
 Most of the development in this project is conducted in Pyg4ometry and managed using an online bitbucket code repository \cite{bitb} in combination with Sourcetree \cite{st} (An open-source git management GUI). The package is currently written in and only supports Python 2.7, however as of January 2020 support for Python 2 has been discontinued as the newer version Python 3 is taking over. The transition to Python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
 
 \subsection{Geant4}\label{geant4}
 \label{g4}
-Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. Geant4 has a large inbuilt database which contains the properties of most materials and particles.
+Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. Geant4 has a large inbuilt database which contains the properties of most materials and particles. Geant4 is often referred to as a particle transport code, an alternative transport code is FLUKA (or FLUktuierende KAskade), which also uses Monte Carlo to simulate high energy physics. Pyg4ometry is also developing compatibility with other transport codes such as FLUKA, MCMPX, MAD and Transport \cite{pyg4om}.
 \\\\
 The materials used in Pyg4ometry and throughout this project are also from the Geant4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each Geant4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
 
 \subsection{BDSIM}
 \label{bdsim}
-BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
+BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode). BDSIM and G4Beamline alike both use Geant4 as a basis for beamline simulations.
 \subsubsection{Pybdsim}
 \label{pyb}
 BDSIM has a Python library called Pybdsim which allows interactions to be run and analysed using Python scripts. This is how all the plots in Section 4 are generated. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}.
@@ -574,7 +577,7 @@ The meshed solid chosen to be tested within BDSIM for this project was the spher
 
 \subsection{Titanium Sphere Interactions}
 
-In this section the CPU duration time of interaction in BDSIM with spheres of different mesh densities by different mehing alogirthms. Table \ref{tab1} shows the properties of the spheres being meshed.
+In this section the CPU duration time of interaction in BDSIM with spheres of different mesh densities by different meshing algorithms. Table \ref{tab1} shows the properties of the spheres being meshed.
  
 \begin{table}[h!]
 \centering
@@ -687,11 +690,11 @@ Stopping power is the force that acts against the motion of a particle within in
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Stopping//stoppingrange.png}
-\caption[width=\columnwidth]{TODO\\Figure 2.1 from Source \cite{stprg}}
+\caption[width=\columnwidth]{A plot showing the relationship between ion velocity and components of stopping power. Figure 2.1 from Source \cite{stprg}}
 \label{stprg}
 \end{figure}
 \\\\
-\noindent The Geant4 example ``TestEm0'' outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+\noindent The Geant4 example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
 Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the sphere. 
 
@@ -935,6 +938,10 @@ Another area that could have been explored in more detail is a prototype magnet 
 	Ion Beam Modifications of Boron Nitride By Ion Implantation\\
 	2007\\
 	\url{https://www.researchgate.net/publication/265496484_Ion_Beam_Modifications_of_Boron_Nitride_By_Ion_Implantation}
+	
+\bibitem{emo}
+	Geant Em0\\
+	\url{http://geant4-data.web.cern.ch/geant4-data/releases/geant4/examples/extended/electromagnetic/TestEm0/README}
 \end{thebibliography}
 
 % ------------------------------------------------------------------------------------------------------------------------------
