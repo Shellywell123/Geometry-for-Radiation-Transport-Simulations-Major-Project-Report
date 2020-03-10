@@ -24,7 +24,6 @@
 % check refs and cites
 % ref VTK
 % ref table in diff latex doc ?
-% freecad ref
 % portugal paper ref
 
 %to check at end
@@ -39,9 +38,11 @@
 % read pyg4omety paper in docs 
 % with secs on old becomes slower than new 
 % types of radiation are in bdsim
+%fix med max legend (use New + Median)
 
 % questions 
 % is brem and cherenokov within ftfp_bert ?
+% cherenkov no s it produces an amazing number of photons (makes tracking slow) and they're very low energy so not often cared about
 
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx}
@@ -176,7 +177,7 @@ On Earth we experience harmless radiation everyday, for example small doses of U
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.14]{Images//introduction//CernEast.jpg}
+\includegraphics[scale=0.13]{Images//introduction//CernEast.jpg}
 \caption[width=\columnwidth]{Converted CAD file (STEP to GDML) of the shielding at CERN East Area T8 and T11 test beam lines. Figure 4 from Source \cite{pyg4om}.}
 \label{cerncad}
 \end{figure}
@@ -195,7 +196,7 @@ On Earth we experience harmless radiation everyday, for example small doses of U
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Images//introduction//radiotherapy.png}
-\caption[width=\columnwidth]{A diagram of a gantry-based radiation therapy machine. Figure 27.44 from Source \cite{cancer}.}
+\caption[width=\columnwidth]{A diagram of a gantry-based radiation therapy machine. Figure 27.4 from Source \cite{cancer}.}
 \label{cancer}
 \end{figure}
 
@@ -237,38 +238,38 @@ Pyg4ometry is an open-source Python package  written by the John Adams Institute
 
 \subsection{GEANT4}\label{GEANT4}
 \label{g4}
-GEANT4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. GEANT4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. GEANT4 has a large inbuilt database which contains the properties of most materials and particles. GEANT4 is often referred to as a particle transport code, an alternative transport code is FLUKA (or FLUktuierende KAskade), which also uses Monte Carlo to simulate high energy physics. Pyg4ometry is also developing compatibility with other transport codes such as FLUKA, MCMPX, MAD and Transport \cite{pyg4om}. GEANT4 can and has also been used to conduct dose calculations for radiotherapy patients \cite{dose}.
+GEANT4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter by employing the Monte Carlo method (Section \ref{monte}). The package is used by many particle physicists and is one of the more popular geometry handling packages for interactions. GEANT4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. GEANT4 has a large inbuilt database which contains the properties of most materials and particles. GEANT4 is often referred to as a particle transport code, an alternative transport code is FLUKA (or FLUktuierende KAskade), which also uses Monte Carlo to simulate high energy physics. Pyg4ometry is also developing compatibility with other transport codes such as FLUKA, MCMPX, MAD and Transport \cite{pyg4om}. GEANT4 can and has also been used to conduct dose calculations for radiotherapy patients \cite{dose}.
 \\\\
-The materials used in Pyg4ometry and throughout this project are also from the GEANT4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
+The materials used in Pyg4ometry and throughout this project are also from the GEANT4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in which other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
 
 \subsection{BDSIM}
 \label{bdsim}
-BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode). BDSIM and G4Beamline alike both use GEANT4 as a basis for beamline simulations.
-\subsubsection{Pybdsim}
+BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. The pacakge has many applications, such as modelling complex particle accelerators like the LHC (or Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. G4Beamline \cite{g4beam}is a similar package, however includes the effects between particles ('collective effects') , which BDSIM does not due to better tracking and geometry in general. Both BDSIM and G4Beamline alike use GEANT4 as a basis for their beamline simulations. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
+\subsubsection{PyBDSIM}
 \label{pyb}
-BDSIM has a Python library called Pybdsim which allows interactions to be run and analysed using Python scripts. This is how all the plots in Section 4 are generated. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}.
+BDSIM has a Python library called PyBDSIM which allows interactions to be automated and analysed using Python scripts. PyBDSIM also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}. This is how all the plots in Sections \ref{prim} \& \ref{int} are generated.
 
 \subsection{ROOT}\label{root}
-Suprisingly ROOT is not an acronym and is named after the idea that it is a system for other system to grow off of, much like the roots of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. ROOT has its own GUI for file browsing due to the nature of its formatting. Despite ROOT generating its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and been replotted using Python and Matplotlib (library for creating publication grade figures).
+ROOT is not an acronym and is named after the idea, that it is a system for other systems to grow off of, much like a root of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. ROOT has its own GUI for file browsing. called a ``TBrowser'', due to the nature of its formatting. Despite ROOT generating its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and replotted using PyBDSIM \ref{pyb} and Matplotlib (library for creating publication grade figures). The plots are made this way as the data can be more easily manipulated and the formatting of ROOT plots is unpopular.
 
-\subsection{Freecad (Libraries)}
-In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI. The libraries are used to import STEP (Standard for The Exchange of Product data) files and to convert them into a tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a space satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM, example magnet shown in Appendix \ref{mag}.
+\subsection{Freecad}
+In this report the libraries from Freecad 0.18 \cite{18} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI (or Graphical User Interface). The libraries are used to import STEP (Standard for The Exchange of Product data) files and to convert them into triangular based tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a GPS satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM, example magnet shown in Appendix \ref{mag}.
 
 \subsection{Visualisation}
 \label{vis}
-Most of the packages mentioned above have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (or Visualization ToolKit), shown in Figure \ref{sat}, to create its GUI's and BDSIM uses GEANT4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with GEANT4. Both the VTK and GEANT4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The GEANT4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by Pybdsim.
+Most of the packages mentioned above have their own GUI's to visualise the meshed geometries. However the main two GUI's used in this project are the ones connected with Pyg4ometry and BDSIM. VTK (or Visualization ToolKit) is an open-source software for displaying and manipulating scientific data \cite{vtk}. Pyg4ometry uses VTK, shown in Figure \ref{sat}, to create its 3D interactive GUI. BDSIM uses GEANT4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with GEANT4. Both the VTK and GEANT4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The GEANT4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by PyBDSIM.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//VTK/sat.png}
-\caption[width=\columnwidth]{STEP file of a space satellite imported into Pyg4ometry using the Freecad libraries and viewed in VTK.}
+\caption[width=\columnwidth]{STEP file of a GPS satellite imported into Pyg4ometry using the Freecad libraries and viewed in VTK. Original STEP file from Source \cite{sat}.}
 \label{sat}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//BDSIM//screengrab.png}
-\caption[width=\columnwidth]{BDSIM GUI screenshot of particle interaction and output window, using a GEANT4 sphere with 10,000 1.3 GeV neutrons.}
+\caption[width=\columnwidth]{BDSIM GUI screenshot of a 3D particle interaction and output window. Interaction involving a GEANT4 sphere with 10,000 1.3 GeV neutrons.}
 \label{screengrab}
 \end{figure}
 
@@ -807,7 +808,7 @@ As a final goal to round off the project, an imported CAD model was compared wit
 \end{minipage}%
 \end{figure}
 
-\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in Figures \ref{notmybolt} \& \ref{mybolt} (same method that was used for spheres in previous Section \ref{}). Figure \ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using Pybdsim (Section\ref{pyb}).
+\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in Figures \ref{notmybolt} \& \ref{mybolt} (same method that was used for spheres in previous Section \ref{}). Figure \ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using PyBDSIM (Section\ref{pyb}).
 
 \begin{figure}[h!]
 \centering
@@ -854,11 +855,20 @@ Another area that could have been explored in more detail is a prototype magnet 
 \footnotesize
 \begin{thebibliography}{1}
 
+	\bibitem{vtk}
+	vtk homepage\\
+	Taken on 10/03/2020\\
+	\url{https://vtk.org/}
+
 	\bibitem{spacesh}
 	Veli Capali etal.\\
 	GEANT4 calculations for space radiation shielding material $Al_2O_3$\\
 	DOI: 10.1051/epjconf/201510002002\\
-	
+
+	\bibitem{sat}
+	gradcad satellite\\
+	Taken on 10/11/2019\\	
+	\url{https://grabcad.com/library/gps-satellite-1}
 
 	\bibitem{cern}
 	CERN Homepage\\
@@ -893,6 +903,7 @@ Another area that could have been explored in more detail is a prototype magnet 
 		BDSIM Manual\\
 		Taken on 01/03/2020\\
 		\url{http://www.pp.rhul.ac.uk/bdsim/manual/}
+		
 	\bibitem{bdsimpap}
 		L.J Nevay et al.\\
 		BDSIM: An accelerator tracking code with particle–matter interactions\\
@@ -902,6 +913,9 @@ Another area that could have been explored in more detail is a prototype magnet 
 		Sourcetree\\
 		Taken on 01/03/2020\\
 		\url{https://www.sourcetreeapp.com/}
+		
+	\bibitem{g4beam}
+	\url{https://accelconf.web.cern.ch/accelconf/PAC2011/papers/mop152.pdf}
 		
 	\bibitem{solids}
 	GEANT4 Solids\\
@@ -960,6 +974,11 @@ Another area that could have been explored in more detail is a prototype magnet 
 	Yi Hu et al.\\
 	Cherenkov Radiation Control via Self-accelerating Wave-packets\\
 	\url{https://www.nature.com/articles/s41598-017-08705-4.pdf}
+
+\bibitem{18}
+	freecad 0.18 release notes\\
+	\url{https://wiki.freecadweb.org/Release_notes_0.18}
+
 \end{thebibliography}
 
 % ------------------------------------------------------------------------------------------------------------------------------
