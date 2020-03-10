@@ -162,14 +162,14 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \section{Introduction}
 
 \subsection{Report Structure}
-The proceeding subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then the subsequent Sections are structured in the following way; First a discussion of the types of radiation (Section \ref{radd}), then the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
+The following subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then the subsequent Sections are structured in the following way; first a discussion of the types of radiation emission (Section \ref{radd}), the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
 \subsection{Project Background - Applications of Particle Tracking}
 \label{back}
-On Earth we experience harmless radiation everyday, such as small doses of UV (or Ultraviolet) radiation from the Sun. However in many cases radiation is unwanted and or needs to be controlled, which is where radiation tracking comes into play. Radiation tracking is the The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
+On Earth we experience harmless radiation everyday, for example small doses of UV (or UltraViolet) radiation from the Sun. However in many cases radiation is unwanted and/or needs to be controlled, which is where the simulations of radiation transport comes into play. Radiation transport is the physical phenomenon of energy transfer through a medium in the form of electromagnetic radiation. The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
 
 \subsubsection{High Energy Physics}
-\noindent The most obvious field which radiation tracking is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and uses magnetic fields to steer a particles trajectory. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider). The use of particle tracking can also be used as a toll for simulating beam losses \cite{pyg4om}.
+\noindent The most obvious field in which radiation transport is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise unwanted damage to instruments and the people operating them. Particle accelerators work by accelerating charged particles up to high energies using electric fields and the uses magnetic fields to steer the particle trajectories. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore CAD (or Computer Aided Design) and simulations can be very helpful with the planning of new sites and concepts. 
 
 \begin{figure}[h!]
 \centering
@@ -179,17 +179,17 @@ On Earth we experience harmless radiation everyday, such as small doses of UV (o
 \end{figure}
 
 \newpage
+\noindent Figure \ref{cerncad} shows a CAD model of the shielding used in a section of CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider). The use of particle transport simulation can also be used as a tool for simulating beam losses \cite{pyg4om}.
+
 \subsubsection{Space Exploration}
-\noindent Space exploration is also a large field in which radiation tracking and shielding is a key concept to consider. Beyond the Earth's atmosphere the Universe is full of GCR (or Galactic Cosmic Rays) radiation making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. Which for a spacecraft is typically made from an aluminium alloy, an investigation using Geant4 (One of the software packages discussed in Section \ref{g4}) for shielding properties in space application are explored in Source \cite{spacesh}. The study specifically looks at the stopping power, which is also used later on in the project (Section \ref{stop}). 
+\noindent Space exploration is also a large field where radiation transport and shielding is a key concept that must be accounted for. Beyond the Earth's atmosphere the Universe is full of harmful GCR (or Galactic Cosmic Rays) radiation making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. The shielding for a spacecraft is typically made from an aluminium alloy, studies have been simulated using GEANT4 (One of the software packages used in this project, detailed in Section \ref{g4}) as a way to measure its effectiveness of $Al_2O_3$ as space craft shielding \cite{spacesh}. The study specifically looks at the stopping power, which is also used later on in the project (Section \ref{stop}). 
 \\\\
-\noindent However for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. 
+\noindent However for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. This is something which could also be simulated in GEANT4 in the coming future, as GEANT4 has the capability to map electric \& magnetic fields.
 
 
 \subsubsection{Medical}
-\noindent Another less obvious but essential field which radiation transport simulation is required in is medical treatment. X-ray radiation from vacuum tubes is not only used to check for fractures or breaks in bones it also used in radiotherapy. The X-rays are used to to target unwanted growths in the body through small doses of harmful radiation, with the aim of removing cancerous tissue with minimum damage to the neighbouring organs. This can be especially difficult when the tumor is in the vicinity of organs that move within the body, such as a the lungs. As the patient needs to breath in order to live, therefore the movement of the organs needs to be accounted for when aiming the particles.
+\noindent Another less obvious but essential field which radiation transport simulation is required in is medical treatment. X-ray radiation from vacuum tubes is not only used to check for fractures or breaks in bones, it also used in radiotherapy. The X-rays are used to to target unwanted growths in the body through small doses of harmful radiation, with the aim of removing cancerous tissue with minimum damage to the neighbouring organs. This can be especially difficult when the tumor is in the vicinity of organs that move within the body, such as a the lungs. As the patient needs to breath in order to live, therefore the movement of the organs needs to be accounted for when aiming the particles.
 \\\\
-\noindent A patients organs also move with the body's orientation with respect to gravity therefore the patient must positioned laying down on a table that rotates perpendicular to the direction of gravity. The accelerator unit must then rotate around the patient to imitate the most stationary conditions. An example machine can be seen in Figure \ref{cancer}, where patients would be placed on the table to under go treatment by radiotherapy, the isocenter being the optimal target position of the cancerous cells to be in within the patents body.  A more recent type of radiotherapy that is proton therapy, which involves the use of small particle accelerators.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Images//introduction//radiotherapy.png}
@@ -197,20 +197,20 @@ On Earth we experience harmless radiation everyday, such as small doses of UV (o
 \label{cancer}
 \end{figure}
 
+\noindent A patients organs also move with the body's orientation with respect to gravity therefore the patient must be positioned laying down on a table that rotates perpendicular to the direction of gravity. The accelerator unit must then rotate around the patient to imitate the most stationary conditions. An example machine can be seen in Figure \ref{cancer}, where patients would be placed on the table to under go treatment by radiotherapy, the isocenter being the optimal target position of the cancerous cells to be in within the patents body.  A more recent type of radiotherapy that is proton therapy, which involves the use of small particle accelerators.
+
+
+
 \subsection{Project Motivations}
 \label{motiv}
-\noindent Historically it has been very hard to simulate particle radiation through matter correctly, being both expensive and time consuming. As computer technology has developed through recent years particle physicists have began building models to simulate these radiation events, employing techniques such as the Monte Carlo method. Currently many independent industries all require the ability to conduct radiation tracking simulations, but work in different file formats, which is where one of the biggest problems lie. Many software tools for radiation tracking are format specific and require complex file conversions. Pyg4ometry is used a easy tool to convert between these representations ad allow a wider audience to utilise these radiation tracking softwares.
-\\\\
--allowing all industry formats to be used\\
--nuclear codes , fluka?\\
--other packages such as GUImesh do same thing\\
+\noindent Historically it has been very hard to simulate particle radiation through matter correctly, being both expensive and time consuming. As computer technology has developed through recent years particle physicists have began building models to simulate these radiation events, employing techniques such as the Monte Carlo method. Currently many independent industries all require the ability to conduct radiation transport simulations (as shown by Section \ref{back}), but work with different file formats, which is where one of the biggest problems lie. Many software tools for simulating radiation transport are format specific and require complex file conversions. Pyg4ometry is a tool created to easily convert between these representations and allow a wider audience to utilise these radiation tracking softwares. GUImesh is a similar python package for converting STEP files into GDML format \cite{meh}.
 
 \subsection{Project Aims}
 \label{aim}
-Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements that volumes that which can not overlap, leading to most radiation transport geometries being mad by hand.
-The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive Geant4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}).
+Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements and volumes that which can not overlap, leading to most radiation transport geometries being mad by hand.
+The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance test to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}).
 \\\\
-The first part of the part of the project and report focuses on the meshing of the primitive solids. Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
+The first part of the project and report focuses on the meshing of the primitive solids (Section \ref{prim}). Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM (Section \ref{int}). Investigating the effects of material and particle energy, on the duration of interactions within a solid.
 
 
 % ------------------------------------------------------------------------------------------------------------------------------
@@ -233,19 +233,19 @@ This section goes through each package of software related to and used throughou
 
 \subsection{Pyg4ometry}
 \label{pyg}
-Pyg4ometry is an open-source Python package  written by the John Adams Institute (JAI) \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts \cite{pyg4om}. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with Geant4 (Section \ref{geant4}). The package is a key tool for allowing multiple file formats, such as STEP/STL or IGES files to be converted into GDML files, which are then compatible with BDSIM. GDML (Geometry Description Markup Language) is a format based on XML files. This increases the number of people who can utilise the package, as many people within in the industry use different file formats to store 3D CAD models. Pyg4ometry can also be used to determine if a model has any geometric overlaps.
+Pyg4ometry is an open-source Python package  written by the John Adams Institute (JAI) \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) models between different representations to allow compatibility with BDSIM for the testing of new concepts \cite{pyg4om}. The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with GEANT4 (Section \ref{GEANT4}). The package is a key tool for allowing multiple file formats, such as STEP/STL or IGES files to be converted into GDML files, which are then compatible with BDSIM. GDML (Geometry Description Markup Language) is a format based on XML files. This increases the number of people who can utilise the package, as many people within in the industry use different file formats to store 3D CAD models. Pyg4ometry can also be used to determine if a model has any geometric overlaps. Pyg4ometry makes loading CAD into BDSIM much faster than using the full GEANT4 C++ application, as well as fast visuallisation discussed in Section \ref{vis}.
 \\\\
 Most of the development in this project is conducted in Pyg4ometry and managed using an online bitbucket code repository \cite{bitb} in combination with Sourcetree \cite{st} (An open-source git management GUI). The package is currently written in and only supports Python 2.7, however as of January 2020 support for Python 2 has been discontinued as the newer version Python 3 is taking over. The transition to Python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
 
-\subsection{Geant4}\label{geant4}
+\subsection{GEANT4}\label{GEANT4}
 \label{g4}
-Geant4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. Geant4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. Geant4 has a large inbuilt database which contains the properties of most materials and particles. Geant4 is often referred to as a particle transport code, an alternative transport code is FLUKA (or FLUktuierende KAskade), which also uses Monte Carlo to simulate high energy physics. Pyg4ometry is also developing compatibility with other transport codes such as FLUKA, MCMPX, MAD and Transport \cite{pyg4om}.
+GEANT4 (or GEometry ANd Tracking) is a software developed in C++ for the simulation and tracking of particles traveling through matter. The package is used by many particle physicists and is one of the more popular packages for handling the geometry within interactions. GEANT4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats Pyg4ometry uses the same conventions when meshing its primitive solids. GEANT4 has a large inbuilt database which contains the properties of most materials and particles. GEANT4 is often referred to as a particle transport code, an alternative transport code is FLUKA (or FLUktuierende KAskade), which also uses Monte Carlo to simulate high energy physics. Pyg4ometry is also developing compatibility with other transport codes such as FLUKA, MCMPX, MAD and Transport \cite{pyg4om}. GEANT4 can and has also been used to conduct dose calculations for radiotherapy patients \cite{dose}.
 \\\\
-The materials used in Pyg4ometry and throughout this project are also from the Geant4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each Geant4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
+The materials used in Pyg4ometry and throughout this project are also from the GEANT4 database \cite{mater}. In this report the three main materials used are $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in with other objects are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
 
 \subsection{BDSIM}
 \label{bdsim}
-BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode). BDSIM and G4Beamline alike both use Geant4 as a basis for beamline simulations.
+BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. BDSIM has many applications, such as modelling complex particle accelerators like the LHC (Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. The package allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Monte Carlo simulations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode). BDSIM and G4Beamline alike both use GEANT4 as a basis for beamline simulations.
 \subsubsection{Pybdsim}
 \label{pyb}
 BDSIM has a Python library called Pybdsim which allows interactions to be run and analysed using Python scripts. This is how all the plots in Section 4 are generated. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}.
@@ -257,7 +257,8 @@ Suprisingly ROOT is not an acronym and is named after the idea that it is a syst
 In this report the libraries from Freecad 0.18 \ref{free} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the Freecad GUI. The libraries are used to import STEP (Standard for The Exchange of Product data) files and to convert them into a tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the internet and converted into meshed GDML files. One of the CAD models converted was a space satellite, which can be seen in Figure \ref{sat}. Freecad itself can also be used to create CAD models that can then be tested in BDSIM, example magnet shown in Appendix \ref{mag}.
 
 \subsection{Visualisation}
-Most of the packages mentioned above have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (or Visualization ToolKit), shown in Figure \ref{sat}, to create its GUI's and BDSIM uses Geant4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with Geant4. Both the VTK and Geant4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The Geant4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by Pybdsim.
+\label{vis}
+Most of the packages mentioned above have their own GUI's to visualise the meshed objects. However the only two used in this project are the ones connected with Pyg4ometry and BDSIM. Pyg4ometry uses VTK (or Visualization ToolKit), shown in Figure \ref{sat}, to create its GUI's and BDSIM uses GEANT4's GUI (as seen in Figure \ref{screengrab}), which is another reason Pyg4ometry aims to be consistent with GEANT4. Both the VTK and GEANT4 GUI's allow meshed solids to be viewed as solids or as meshed structures. The GEANT4 GUI has its own console in which commands can be carried out, allowing interactions to be altered from within the GUI as well as by Pybdsim.
 
 \begin{figure}[h!]
 \centering
@@ -269,7 +270,7 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//BDSIM//screengrab.png}
-\caption[width=\columnwidth]{BDSIM GUI screenshot of particle interaction and output window, using a Geant4 sphere with 10,000 1.3 GeV neutrons.}
+\caption[width=\columnwidth]{BDSIM GUI screenshot of particle interaction and output window, using a GEANT4 sphere with 10,000 1.3 GeV neutrons.}
 \label{screengrab}
 \end{figure}
 
@@ -278,13 +279,13 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \newpage
 \section{Primitive Meshing}
 \label{prim}
-This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with Geant4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. As a triangle is the shape which has the minimum amount of points to needed define a face with containing an area, as well as always being on a single plane. However it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with polygons and adapted trigonometry. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
+This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with GEANT4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. As a triangle is the shape which has the minimum amount of points to needed define a face with containing an area, as well as always being on a single plane. However it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with polygons and adapted trigonometry. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
 \\\\
 One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack''), were not meshed in radial directions.
 
 \subsection{Co-ordinate Systems}
 \label{cosy}
-The various primitive solids are all constructed by using the predefined parameters used by Geant4, to be consistent with Geant4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within, such as height or radius. The parameters are then used to generate points on the object via basic trigonometry, which can then be used as vertexes to define faces on the given solid. The number of faces and subsequently the number of points defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
+The various primitive solids are all constructed by using the predefined parameters used by GEANT4, to be consistent with GEANT4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within, such as height or radius. The parameters are then used to generate points on the object via basic trigonometry, which can then be used as vertexes to define faces on the given solid. The number of faces and subsequently the number of points defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
 \\\\
 
 \begin{lstlisting}[language=Python, label=code1, caption=Basic Python script structure for new meshing of primitive solid in Pyg4ometry.]
@@ -416,10 +417,10 @@ One key thing to be taken into account is the convention being used throughout t
 \newpage
 \noindent The convention is that the normal to a plane points away from the solids surface, making it an exterior face. The normal is in the z direction to a plane residing on z=0, if the points are appended anticlockwise in the x-y plane. For points appending in the other direction (clockwise in the x-y plane), the normal would be in the -z direction, making an interior face. The concept is shown in Figure \ref{pointsorder}.
 \\\\
-The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses Geant4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
+The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses GEANT4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
 
 \subsection{New Meshing of Curved Primitive Solids}
-In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being used in this project and within this report are the ones used by Geant4.
+In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being used in this project and within this report are the ones used by GEANT4.
 \\\\
 One of the curved solids for which the meshing was rewritten is the hyperboloid, the old and new meshing structures of the hyperboloid is shown in Figure \ref{polypic1}. It can be seen that in this example the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the polycone.
 \\\\
@@ -529,9 +530,18 @@ They were generated by varying the user input for the number of slices across a 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Images//Triangles//MeshvTRi1.pdf}
-\caption[width=\columnwidth]{TODO}
-\label{tritri}
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[height=0.7\linewidth]{Images//CPU//mednmax.pdf}
+  \captionof{figure}{TODO}
+  \label{mednmax}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[height=0.7\linewidth]{Images//Triangles//MeshvTRi1.pdf}
+  \captionof{figure}{TODO}
+  \label{tritri}
+\end{minipage}%
 \end{figure}
 
 \noindent It can be seen that in Figure \ref{tritri} the new pycsgmesh() function has a much smooth gradient and that the old function has small peaks occurring at certain intervals of stack and slice. This is most likely to do with the boolean subtractions of the spheres favouring the old mesh at particular densities
@@ -542,16 +552,16 @@ They were generated by varying the user input for the number of slices across a 
 
 \section{BDSIM Interactions}
 \label{int}
-The second aim of this project was to measure how the physics is altered, between the new and old meshings as the mesh density is varied. As mentioned before Geant4 already has its own set of primitive solids, which can be used as a guideline for comparison, due to no slice and stack dependence. The physics being measured will be features such as the trajectories and energy deposition, through solids.
+The second aim of this project was to measure how the physics is altered, between the new and old meshings as the mesh density is varied. As mentioned before GEANT4 already has its own set of primitive solids, which can be used as a guideline for comparison, due to no slice and stack dependence. The physics being measured will be features such as the trajectories and energy deposition, through solids.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.33]{Images//BDSIM//titanium.pdf}
-\caption[width=\columnwidth]{A BDSIM screenshot of a G4\_W Geant4 Sphere generated with new meshing interacting with 1.3 GeV electrons.}
+\caption[width=\columnwidth]{A BDSIM screenshot of a G4\_W GEANT4 Sphere generated with new meshing interacting with 1.3 GeV electrons.}
 \label{black}
 \end{figure}
 
-\noindent BDSIM uses the colour convention for representing a particles charge from Geant4, green is neutral, blue is positive and red is negative. Figure \ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a G4\_Ti sphere, where it can be seen that red electrons and many green neutron secondaries are produced. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce anther particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for storing particles, assigning each particle a unique number for ease of identifying what happens in a set interaction. The numbering system adopted in BDSIM is the one created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
+\noindent BDSIM uses the colour convention for representing a particles charge from GEANT4, green is neutral, blue is positive and red is negative. Figure \ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a G4\_Ti sphere, where it can be seen that red electrons and many green neutron secondaries are produced. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce anther particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for storing particles, assigning each particle a unique number for ease of identifying what happens in a set interaction. The numbering system adopted in BDSIM is the one created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
 
 \subsection{Monte Carlo Simulation}
 \label{monte}
@@ -562,7 +572,7 @@ BDSIM works by running a GMAD file and then outputs  a ROOT (Section \ref{root})
 
 \newpage
 \subsection{Sampling}
-The meshed solid chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a Geant4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
+The meshed solid chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a GEANT4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
 
 \begin{figure}[h!]
 \centering
@@ -572,7 +582,7 @@ The meshed solid chosen to be tested within BDSIM for this project was the spher
 \end{figure}
 
 
-\noindent One way that was though to analyse the energy deposition of the interactions, was to look at the CPU duration times as the mesh densities are increased. In this scenario the Geant4 solid was used as a guideline as it does not depend on a user defined stack \& slice. 
+\noindent One way that was though to analyse the energy deposition of the interactions, was to look at the CPU duration times as the mesh densities are increased. In this scenario the GEANT4 solid was used as a guideline as it does not depend on a user defined stack \& slice. 
 
 
 \subsection{Titanium Sphere Interactions}
@@ -664,12 +674,12 @@ However Figure \ref{} shows...\\
 The error bars are still very big so it was proposed to use the standard error of the main as an alternative. As well as as investigation for varying energy and the material of the target.
 
 \subsection{Selection of Material}
-When creating meshed solids, you have the choice of material. Figure \ref{novar} shows the CPU duration time distributions for electrons interactions with Geant4 spheres constructed of different Geant4 materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time of the interactions increasing with energy. The run time is heavily linked to the number of secondary particles which is a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
+When creating meshed solids, you have the choice of material. Figure \ref{novar} shows the CPU duration time distributions for electrons interactions with GEANT4 spheres constructed of different GEANT4 materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time of the interactions increasing with energy. The run time is heavily linked to the number of secondary particles which is a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Materials//not_Varied_by_radius_and_secondaries.pdf}
-\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying Geant4 materials and particle energies in BDSIM on a Geant4 sphere. The left 4 histograms show the distributions show the varying of energy upon each material. The right 4 histograms show the varying of material at each set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying GEANT4 materials and particle energies in BDSIM on a GEANT4 sphere. The left 4 histograms show the distributions show the varying of energy upon each material. The right 4 histograms show the varying of material at each set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
 \label{novar}
 \end{figure}
 
@@ -694,13 +704,13 @@ Stopping power is the force that acts against the motion of a particle within in
 \label{stprg}
 \end{figure}
 \\\\
-\noindent The Geant4 example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a Geant4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+\noindent The GEANT4 example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a GEANT4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
 Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are al contained within the sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the sphere. 
 
 \begin{figure}[h!]
 \hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
-\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted Geant4 stopping distance of a 1 TeV electron in tungsten.}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. Where the radius of thickness is set to the extracted GEANT4 stopping distance of a 1 TeV electron in tungsten.}
 \label{tung}
 \end{figure}
 
@@ -723,7 +733,7 @@ G4\_W &  10.1631\\ \hline
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Materials//Varied_by_radius_and_secondaries.pdf}
-\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a Geant4 sphere. The left 4 histograms show the distributions show the varying of energy on each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a GEANT4 sphere. The left 4 histograms show the distributions show the varying of energy on each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
 \label{var}
 \end{figure}
 
@@ -848,7 +858,7 @@ Another area that could have been explored in more detail is a prototype magnet 
 
 	\bibitem{spacesh}
 	Veli Capali etal.\\
-	Geant4 calculations for space radiation shielding material $Al_2O_3$\\
+	GEANT4 calculations for space radiation shielding material $Al_2O_3$\\
 	DOI: 10.1051/epjconf/201510002002\\
 	
 
@@ -873,7 +883,7 @@ Another area that could have been explored in more detail is a prototype magnet 
 
 	\bibitem{pyg4om}
 	Stewart Boogert et al.\\
-	Pyg4ometry : A tool to create geometries for Geant4, BDSIM, G4BEAMLINE and FLUKA for particle loss energy deposition studies\\
+	Pyg4ometry : A tool to create geometries for GEANT4, BDSIM, G4BEAMLINE and FLUKA for particle loss energy deposition studies\\
 	\url{http://accelconf.web.cern.ch/AccelConf/ipac2019/papers/wepts054.pdf}
 
 	\bibitem{bitb}
@@ -896,18 +906,18 @@ Another area that could have been explored in more detail is a prototype magnet 
 		\url{https://www.sourcetreeapp.com/}
 		
 	\bibitem{solids}
-	Geant4 Solids\\
+	GEANT4 Solids\\
 	Taken on 01/03/2020\\
-	\url{http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html}
+	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html}
 	
 	\bibitem{mater}
-	Geant4 Materials\\
+	GEANT4 Materials\\
 	Taken on 01/03/2020\\
-	\url{http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html}
+	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html}
 	
 	\bibitem{meh}
 	M. Pinto, P. Gon\c{c}alves\\
-	GUIMesh: A tool to import STEP geometries into Geant4 via GDML\\
+	GUIMesh: A tool to import STEP geometries into GEANT4 via GDML\\
 	\url{https://doi.org/10.1016/j.cpc.2019.01.024}
 		
 	\bibitem{pdg}
@@ -941,7 +951,13 @@ Another area that could have been explored in more detail is a prototype magnet 
 	
 \bibitem{emo}
 	Geant Em0\\
-	\url{http://geant4-data.web.cern.ch/geant4-data/releases/geant4/examples/extended/electromagnetic/TestEm0/README}
+	\url{http://GEANT4-data.web.cern.ch/GEANT4-data/releases/GEANT4/examples/extended/electromagnetic/TestEm0/README}
+
+\bibitem{dose}
+	Tsukasa Aso et al.\\
+	Optimization of Patient Geometry Based on CT Data in GEANT4 for Medical Application\\
+	\url{https://doi.org/10.1016/j.meddos.2017.08.007}
+
 \end{thebibliography}
 
 % ------------------------------------------------------------------------------------------------------------------------------
@@ -961,7 +977,7 @@ Another area that could have been explored in more detail is a prototype magnet 
 \small
 \twocolumn[\section{All Meshed Solids and Polygon Count Plots}
 \label{app1}
-The following Figures are the meshing and polygon data for each primitive solid constructed in Pyg4ometry \ref{pyg}. The first Figure for each solid is a screenshot of the old meshing and new meshing visualized in VTK. They show the before and after of each primitive solid in both solid and meshed view. The second Figures Show the number of polygons and triangles produced on a solid as you increase the slice across a range of 10-100 (if there is a stack it is kept at a constant 10). All plots are made using Python and the sold naming convention is the one used by Geant4 \ref{g4}\\.]
+The following Figures are the meshing and polygon data for each primitive solid constructed in Pyg4ometry \ref{pyg}. The first Figure for each solid is a screenshot of the old meshing and new meshing visualized in VTK. They show the before and after of each primitive solid in both solid and meshed view. The second Figures Show the number of polygons and triangles produced on a solid as you increase the slice across a range of 10-100 (if there is a stack it is kept at a constant 10). All plots are made using Python and the sold naming convention is the one used by GEANT4 \ref{g4}\\.]
 \begingroup
 \subsubsection{Cons}
 \begin{figure}[h!]
@@ -1193,7 +1209,7 @@ ax^2 + bx + c = 0
 
 \section{Prototype Freecad Magnet}
 \label{mag}
-First attempt at a prototype magnet made using Freecad GUI (Figure \ref{freee}) and exported as a STEP file, which was then converted to a GDML format with Geant4 material G4\_Cu using python. A magnet field was then mapped on to the shape using a preset dipole field in BDSIM, in which you can see electrons repelling in Figure \ref{repel}.
+First attempt at a prototype magnet made using Freecad GUI (Figure \ref{freee}) and exported as a STEP file, which was then converted to a GDML format with GEANT4 material G4\_Cu using python. A magnet field was then mapped on to the shape using a preset dipole field in BDSIM, in which you can see electrons repelling in Figure \ref{repel}.
 
 \begin{figure}[h!]
 \centering
