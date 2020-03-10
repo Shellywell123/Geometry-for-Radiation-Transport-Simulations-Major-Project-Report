@@ -407,17 +407,17 @@ The trigonometry that converts the points from toroidal co-ordinates to Cartesia
 
 \subsection{Plane Direction}
 \label{order}
-One key thing to be taken into account is the convention being used throughout the meshing scripts is the order in which points are appended to define a plane, i.e to define a face on a solid. This is important as the direction the normal of the plane points in, dictates whether a face is considered an inside or outside face on the given solid. Getting this order incorrect, will lead to missing faces, when the meshing is made.
+A key thing to be taken into account when writing Pyg4ometry meshing scripts is the order convention being used for appending points/vertexes to a list, to define a plane, i.e to define a face on a solid. This is important as the direction the normal of the plane points in, dictates whether a face is considered an inside or outside face on the given solid. Getting this order incorrect, will lead to missing faces, when the meshing is made.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{Images//append_points//Point_Appending_Order.png}
 \caption[width=\columnwidth]{A diagram showing the order convention of appending points to define the normal to a plane. The diagram was drawn using the CAD software Inkscape.}
 \label{pointsorder}
 \end{figure}
-\newpage
 \noindent The convention is that the normal to a plane points away from the solids surface, making it an exterior face. The normal is in the z direction to a plane residing on z=0, if the points are appended anticlockwise in the x-y plane. For points appending in the other direction (clockwise in the x-y plane), the normal would be in the -z direction, making an interior face. The concept is shown in Figure \ref{pointsorder}.
 \\\\
-The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes. This test only works for the visualiser in BDSIM as it uses GEANT4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
+The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes, mentioned in more detail in Section \ref{bool}. This test only works for the visualiser in BDSIM as it uses GEANT4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
 
 \subsection{New Meshing of Curved Primitive Solids}
 In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being used in this project and within this report are the ones used by GEANT4.
@@ -444,7 +444,7 @@ One of the curved solids for which the meshing was rewritten is the hyperboloid,
 
 \noindent Another curved solid that was remeshed is the ellipticalcone, as seen in Figure \ref{elco1}. Despite having no boolean operations to generate this solid, the meshing is still improved by replacing all the unnecessary triangular faces with quadrilateral ones. For the ellipticalcone it was also possible for the stack to be removed, as for a cone the faces in the r-z plane (in cylindrical co-ordinates) are a linear function.
 \\\\
-\noindent A feature that is also removed by the transition to the new meshing algorithms is the "grenade like" texture seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become triangulated but also has a contour. This is due to the old mesh would tend to use quadrilateral faces but replace them with quadrilateral based pyramids to better estimate a true curve solid. This was done by rotating every other stack to be out of phase when appending vertexes. Despite this improving the mesh accuracy, it was removed as when you increase the orders of stack and slice to high enough orders the difference is negligible and is not worth the extra computation.  
+\noindent A feature that is also removed by the transition to the new meshing algorithms is the "grenade like" texture seen on the surfaces of the curved solids. The clearest example being the ellipsoid, shown in Figure \ref{ellipme}, where it can be seen that the surface of the solid has not only become triangulated, but also has a contour. This is due to the fact that the old mesh would tend to use quadrilateral based pyramids instead of quadrilateral faces in attempt to better estimate a true curved solid. This was done by rotating every other stack to be out of phase when appending vertexes. Despite this improving the mesh accuracy, it was removed as when you increase the orders of stack and slice to high enough orders the difference is negligible and is not worth the extra computation.  
 
 \begin{figure}[h!]
 \centering
