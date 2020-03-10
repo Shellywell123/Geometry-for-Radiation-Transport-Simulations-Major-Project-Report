@@ -244,7 +244,7 @@ The materials used in Pyg4ometry and throughout this project are also from the G
 
 \subsection{BDSIM}
 \label{bdsim}
-BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. The pacakge has many applications, such as modelling complex particle accelerators like the LHC (or Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. G4Beamline \cite{g4beam}is a similar package, however includes the effects between particles ('collective effects') , which BDSIM does not due to better tracking and geometry in general. Both BDSIM and G4Beamline alike use GEANT4 as a basis for their beamline simulations. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
+BDSIM (or Beam Delivery SIMulation) is an open-source software package also written by JAI, for the use of modelling particle beam interactions. The pacakge has many applications, such as modelling complex particle accelerators like the LHC (or Large Hadron Collider) or concepts magnets for medical scanners used to treat tumours. G4Beamline \cite{g4beam} is a similar package, however includes the effects between particles ('collective effects') , which BDSIM does not due to better tracking and geometry in general. Both BDSIM and G4Beamline alike use GEANT4 as a basis for their beamline simulations. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental results as possible. The software outputs a full analysis of each run, and can even allow multiple runs to execute at once (batch mode).
 \subsubsection{PyBDSIM}
 \label{pyb}
 BDSIM has a Python library called PyBDSIM which allows interactions to be automated and analysed using Python scripts. PyBDSIM also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}. This is how all the plots in Sections \ref{prim} \& \ref{int} are generated.
@@ -278,16 +278,16 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \newpage
 \section{Primitive Meshing}
 \label{prim}
-This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with GEANT4's solids. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations (Section \ref{bool}) to construct the 3D solids. As a triangle is the shape which has the minimum amount of points to needed define a face with containing an area, as well as always being on a single plane. However it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with polygons and adapted trigonometry. In particular with the curved solids, i.e circular and elliptical based solids, due to the boolean operations generating more complicated meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids.
+This section will describe the work done to optimize the Python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with GEANT4's solids \cite{solids}. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations to construct the 3D solids. As the triangle is the shape which has the minimum amount of points needed to define a planar face containing an area. Prior to the project it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with the polygons and adapted trigonometry. In particular with the curved solids are the most computationally heavy, i.e cylindrical, spherical and toroidal based solids, due to the boolean operations generating more complex meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids in Pyg4ometry (Section\ref{pyg}).
 \\\\
-One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack''), were not meshed in radial directions.
+One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. Discussed more in Section \ref{bool}. Which resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack'') were often meshed in non-axial directions.
 
 \subsection{Co-ordinate Systems}
 \label{cosy}
-The various primitive solids are all constructed by using the predefined parameters used by GEANT4, to be consistent with GEANT4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within, such as height or radius. The parameters are then used to generate points on the object via basic trigonometry, which can then be used as vertexes to define faces on the given solid. The number of faces and subsequently the number of points defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
+The various primitive solids are all constructed by using the predefined parameters used by GEANT4, to be consistent with GEANT4's own convention for solids. The parameters defining a 3D solid are properties relating to the co-ordinate system that the solid is constructed within. For example for a simple cylinder the parameters would be a height and radius. The parameters are then used to generate points on the object via basic trigonometry. The points can then be used as vertexes to define faces on the given solid. The number of faces and subsequently the number of points on a solids surface defines the mesh density. The order in which the points are appended is also very important and is detailed in Section \ref{order}.
 \\\\
 
-\begin{lstlisting}[language=Python, label=code1, caption=Basic Python script structure for new meshing of primitive solid in Pyg4ometry.]
+\begin{lstlisting}[language=Python, label=code1, caption=Basic Python function structure for new meshing of primitive solid in Pyg4ometry.]
 def pycsgmesh(nslice,nstack, *args, **kwargs):
 
     # ... 
@@ -311,11 +311,11 @@ def pycsgmesh(nslice,nstack, *args, **kwargs):
 \end{lstlisting}
 
 
-\noindent The Python meshing scripts for all co-ordinate systems follow a similar structure, using a pycsgmesh() function, the beginning of which can be seen in Listing \ref{code1}. The ``CSG'' in ``pycsg'' stands for Constructive Solid Geometry, which is a  modeling technique that uses Boolean operations to construct 3D solids. The script works by  first defining an empty list of faces (polygons) and then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The density of the meshing is defined by a user inputted number of slices and stacks, of which the orientations vary with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar co-ordinate system is demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
+\noindent The Python meshing scripts for all co-ordinate systems follow a similar structure, using a pycsgmesh() function, the beginning of which can be seen in Listing \ref{code1}. The ``CSG'' in ``pycsg'' stands for Constructive Solid Geometry, which is a  modeling technique that uses Boolean operations to construct 3D solids. The naming convention is left over from when the old meshing scripts employed boolean operations. The script works by  first defining an empty list of faces (polygons) and then running the associated trigonometric equations through a number of loops to generate and append polygons to that list. The number of loops is associated with the number of sections a surface of a solid is being split up into in a given co-ordinate system (``nslice'' \& ``nstack'' in Listing \ref{code1}). The two parts of Listing \ref{code1} where code has been commented out is where a lot of repetitive code is placed. The first comment block is where the units and other empty lists are defined and the second is were all the points, faces and polygons are constructed using ``pycsg.geom'' functions. The density of the mesh is defined by the user inputted number of slices and stacks, of which the orientation varies with co-ordinate system. The slice and stack used by the new meshing scripts for the solids in the cylindrical polar, spherical \& toroidal co-ordinate systems are demonstrated in Figures \ref{cylmeshin}, \ref{sphmeshin} \& \ref{tormeshin}.
 
 \subsubsection{Cylindrical Polar Co-ordinate System}
 \label{cycl}
-In the cylindrical polar co-ordinate system the loops create 3 or 4 points at a time using an adaptation to the trigonometry in Equations \ref{cyctrig}, which can then be defined as a triangular or quadrilateral face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder. These cases are only true provided the solid does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the triangular faces is identical to that of the quadrilateral, just using 3 vertex points to make a face.
+In the cylindrical polar co-ordinate system the loops within the equivalent function to Listing \ref{code1}, creates 3 or 4 points at a time using an adaptation to the trigonometry in Equations \ref{cyctrig}, which can then be used to define a triangular or quadrilateral face. The only cases where the new meshing produces triangles is at the top and bottom faces of the cylinder. These cases are only true provided the solid does not have a minimum radius equal to zero (creating a tube or cone). The same logic for the triangular faces is identical to that of the quadrilateral faces, just using 3 vertex points to make a face.
 
 \begin{figure}[h!]
 \centering
@@ -333,19 +333,19 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 \end{aligned}
 \end{equation}
 
-\noindent The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non-linear function in the r-z plane. For example a paraboloid (Figure \ref{paraco}) would need a stack, but a linear cone (Figure \ref{consco}) would not. This is due to the fact how that a plane can not represent a curved surface with a singular face. 
+\noindent The only time a stack is needed in the cylindrical co-ordinate system is when the solid has a non-linear function in the r-z plane. For example a paraboloid (Figure \ref{paraco}) would need a stack, but a linear cone (Figure \ref{consco}) would not. This is due to the fact that a singular plane can not represent a curved surface with a one face. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{Images//Coords//para.png}
-\caption[width=\columnwidth]{A VTK screenshot of a paraboloid constructed with the meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
+\caption[width=\columnwidth]{A VTK screenshot of a paraboloid constructed using the new meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
 \label{paraco}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{Images//Coords//consco.png}
-\caption[width=\columnwidth]{A VTK screenshot of Cons constructed with the meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
+\caption[width=\columnwidth]{A VTK screenshot of Cons constructed using the new meshing method in cylindrical polar co-ordinate system, where the red lines indicate the points residing on the x=0 plane, the blue lines indicate points on the z=0 plane and green lines indicate points on the y=0 plane.}
 \label{consco}
 \end{figure}
 
@@ -371,7 +371,7 @@ The trigonometry that converts the points from spherical co-ordinates to Cartesi
 \label{sphmeshin}
 \end{figure}
 
-\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if a complete pole exists at the top or bottom of the solid. The solids constructed in the spherical always have both a stack and a slice.
+\noindent The structure of the code for a spherical system is the same as used in Listing \ref{code1}. The only time triangles are constructed in the spherical co-ordinate system is if a complete pole exists at the top or bottom of the solid. The solids constructed in the spherical co-ordinate system always have both a stack and a slice.
 
 %\begin{lstlisting}[language=Python, caption=Python example]
 %for j0 in range(nslice):
@@ -383,6 +383,7 @@ The trigonometry that converts the points from spherical co-ordinates to Cartesi
 %          i2 = i0 + 1
 %\end{lstlisting}
 
+\newpage
 \subsubsection{Toroidal Co-ordinate System}
 
 The toroidal co-ordinate system is a special case and is only needed, for toroidal based solids. The stack and slice for a toroidal shape is much harder to visualise, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$ and a toroidal stack is a $R$ radial cut out of the angle $\theta$, where the angles and radii are displayed in Figure \ref{tormeshin}. 
