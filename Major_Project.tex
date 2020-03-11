@@ -224,37 +224,21 @@ On Earth we experience harmless radiation everyday, for example small doses of U
 
 \noindent A patients' organs also move with the body's orientation with respect to gravity therefore the patient must be positioned laying down on a table that rotates perpendicular to the direction of gravity. The gantry unit must then rotate around the patient to imitate the most stationary conditions. An example machine can be seen in Figure \ref{cancer}, where patients would be placed on the table to under go treatment by radiotherapy, the isocenter being the optimal target position of the cancerous cells to be in within the patents body.  A more recent type of radiotherapy is proton therapy, which involves the use of small particle accelerators. The use of the word small being relative to size of typical particle accelerators like the LHC.
 
-
 \subsection{Project Motivations}
 \label{motiv}
-\noindent Historically it has been very hard to simulate particle radiation through matter correctly, being both expensive and time consuming. As computer technology has developed through recent years particle physicists have began building models to simulate these radiation events, employing techniques such as the Monte Carlo method. Currently many independent industries all require the ability to conduct radiation transport simulations, but work with different file formats\\
-not nessescarily file formats but its methodology of storing geometries, which comes as diffenent file formats\\
-\\
-, which is where one of the biggest problems lie. Many software tools for simulating radiation transport are format specific and require complex file conversions. 
-\\
-sont talk about pyg4ometry stright away\\
-the motivation of the proj is to study the eff of ttesselated solid (non stn geom). and then eaplin what tesslated solid is\\
-\\
-Pyg4ometry is a tool created to easily convert between these representations and allow a wider audience to utilise these radiation tracking softwares. GUImesh is a similar python package for converting STEP files into GDML format \cite{meh}.
+\noindent Historically it has been very hard to simulate particle radiation through matter correctly, being both expensive and time consuming. As computer technology has developed through recent years particle physicists have began building models to simulate these radiation events, employing techniques such as the Monte Carlo method. Currently many independent industries all require the ability to conduct radiation transport simulations, but use different methodolgies of storing geometries, which come in the format of different file formats. The use of different file formats is where one of the biggest problems lie. Many software tools for simulating radiation transport are format specific and require complex file conversions. 
+\\\\
+The motivation of the project is to study the efficiency of tessellated solids, where a tessellated solids is a 3D shape whose surfaces are mapped using 2D geometric shapes. Pyg4ometry is a tool created to easily convert between these representations in different formats and allow a wider audience to utilise these radiation tracking softwares. GUImesh is a similar python package for converting STEP files into GDML format \cite{meh}.
 
 \subsection{Project Aims}
 \label{aim}
-Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements and volumes which can not overlap, leading to most radiation transport geometries being made by hand.
-\\
-these types of aims are possible in side software such as pyg4\\
-the geo produced through yg4 can be simulated in softwares such as bdsim\\
-and introduce geant4 (undrlying librariy of geometries,tracking,fields materials physics)\\
-discussed in later sections\\
-\\
-The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}).
-\\\\
-The first part of the project focuses on the meshing of the primitive solids 
-\\
-what is a prim solid\\
-\\
+Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements and volumes which can not overlap, leading to most radiation transport geometries being made by hand. These types of aims are possible in software such as Pyg4ometry. The geometries produced in Pyg4ometry can then be simulated in other packages such as BDSIM. The underlying libraries of BDSIM, which contribute towards the simulation properties such as the tracking, fields and material physics, arises from GEANT4, which are all disccussed in later sections.
+
+The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}). The first part of the project focuses on the meshing of the primitive solids. Within constructive solid geometry (CSG) a primitive solid is a simple geometric solid such as cube, pyramid, sphere or torus.
+
 (Section \ref{prim}) within Pyg4ometry.
 %next sentence doent right
- Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
+Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
 
 
 % ------------------------------------------------------------------------------------------------------------------------------
