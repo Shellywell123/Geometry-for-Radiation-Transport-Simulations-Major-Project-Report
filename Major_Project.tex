@@ -22,9 +22,6 @@
 % reference section
 % format
 % check refs and cites
-% ref VTK
-% ref table in diff latex doc ?
-% portugal paper ref
 
 %to check at end
 % check pagegaps
@@ -48,7 +45,6 @@
 % diagrams drawn in inksacape unless other wise referenced and get rid of sesntences in fig caps
 % for coord figs describe left centre and right diagrams 
 
-% check how cut tubs is made
 %appendix fig nums ie A1,A2
 % questions 
 % is brem and cherenokov within ftfp_bert ?
@@ -63,6 +59,7 @@
 
 %get rid of name bens bolt (boolean or meshed), imported 
 % also log x axis potentially 
+% std investigation plot is still using Iron.
 
 % refs publication year volue etc for every paper
 
@@ -273,30 +270,23 @@ GEANT4 (or GEometry ANd Tracking) \ref{geant} is a toolkit developed in C++ for 
 \label{bdsim}
 % ref another bdsim papere saying em fields to fully transport partiles in start to end simulations of particle accelerators (before GMAD bit)
 
-BDSIM (or Beam Delivery SIMulation) \cite{bdsimpap} is an open-source software package also written by JAI at Royal Holloway, for the use of modelling particle beam interactions. The package is written in C++ and has many applications, such as modelling complex particle accelerators like the Large Hadron Collider (LHC) or low energy magnetic beamlines for radiotherapy applications used to treat tumours. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. BDSIM works by intaking a simple asci file with its own extension (GMAD), where the simulation and model can then be controlled by the GMAD's parameters. One of these parameters is the ``worldMaterial'', which defines the material of the environment that other elements and volumes are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files, where G4\_Galactic is the GEANT4 vacuum material as mentioned before (section \ref{bdsim}). Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). Although the BDSIM defaults build up a standard geometry beamline, often specialised pieces of geometry are needed to accurately simulate interactions. This can be done by supplying an external GDML file, where its placement in the simulation can be specified in the GMAD. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental data as possible. The software outputs a root file contain all the required information. As many particles as desired can be simulated in batch mode, however a GUI is available to view the geometry, but is rarely used to simulate the particle accelerators as it is computationally expensive.
+BDSIM (or Beam Delivery SIMulation) \cite{bdsimpap} is an open-source software package also written by JAI at Royal Holloway, for the use of modelling particle beam interactions. The package is written in C++ and has many applications, such as modelling complex particle accelerators like the Large Hadron Collider (LHC) or low energy magnetic beamlines for radiotherapy applications used to treat tumours. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. BDSIM works by intaking a simple asci file with its own extension (GMAD), where the simulation and model can then be controlled by the GMAD's parameters. One of these parameters is the ``worldMaterial'', which defines the material of the environment that other elements and volumes are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files, where G4\_Galactic is the GEANT4 vacuum material as mentioned before (section \ref{bdsim}). Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). Although the BDSIM defaults build up a standard geometry beamline, often specialised pieces of geometry are needed to accurately simulate interactions. This can be done by supplying an external GDML file, where its placement in the simulation can be specified in the GMAD. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental data as possible. The software outputs a root file contain all the required information. As many particles as desired can be simulated in batch mode, however a GUI is available to view the geometry, but is rarely used to simulate the particle accelerators as it is computationally expensive. BDSIM uses the colour convention of tracks for representing a particles charge from GEANT4, green is neutral, blue is positive and red is negative, which can be seen in figures throughout this paper such as \ref{screengrab}. The option ``physicsList'' defines the physics which is used for the interaction, for the project the option was set to``g4FTFP\_BERT'', which contains all the standard electromagnetism and particle physics required for this project. The ROOT file contains a detailed analysis of the interaction. One of the elements analysed within this project is the CPU duration time distribution of an interaction in BDSIM.
 
+
+BDSIM works by  a GMAD file and then outputs  a ROOT (Section \ref{root}) file with the option of using the GUI, allows the user to visualise the interactions in an interactive 3D environment.
+
+\subsubsection{Pybdsim}
+\label{pyb}
+BDSIM has a python utility library called Pybdsim which provides an interface to be automate BDSIM and read its output files for data processing using python scripts. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}. This is how all the plots in Sections \ref{prim} \& \ref{int} are generated.
 
 
 %=========================================================================================
 
 \subsection{Pyg4ometry}
 \label{pyg}
-Pyg4ometry is an open-source python package, developed by the John Adams Institute (JAI) at Royal Holloway \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) geometries between different representations to allow compatibility with BDSIM (Section \ref{bdsim}) for the simulation of radiation transport \cite{pyg4om}. \\
-\\
-4 comes from the point being to design geoms for g4\\
-\\
-The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with GEANT4 (Section \ref{GEANT4}). The package is a key tool for allowing multiple file formats, such as STEP/STL or IGES files to be converted into GDML files, which are the compatible format for BDSIM. GDML (or Geometry Description Markup Language) is a format based on XML file type. The range of file compatibility increases the number of people who can utilise both Pyg4ometry and BDSIM, as many industries use different file formats to store their 3D CAD geometries.
+Pyg4ometry is an open-source python package, developed by the John Adams Institute (JAI) at Royal Holloway \cite{jai}, its purpose is to convert 3D CAD (Computer Aided Design) geometries between different representations to allow compatibility with BDSIM (Section \ref{bdsim}) for the simulation of radiation transport \cite{pyg4om}. The ``4'' in ``Pyg4ometry'' comes from the fact the package has been written to design geometries specifically for GEANT4 (Section \ref{GEANT4}). The package is a key tool for allowing multiple file formats, such as STEP/STL or IGES files to be converted into GDML files, which are the compatible format for BDSIM. GDML (or Geometry Description Markup Language) is a format based on XML file type. The range of file compatibility increases the number of people who can utilise both Pyg4ometry and BDSIM, as many industries use different file formats to store their 3D CAD geometries.
 \\\\
-\noindent Pyg4ometry can also be used to determine if a model has any geometric overlaps. 
-% next sentce doesnt quite make sense in para
-As well as making loading CAD geometries into BDSIM much faster than using the full GEANT4 C++ application, as well as fast VTK visualisation discussed in Section \ref{vis}. Most of the development in this project is conducted in Pyg4ometry. As of January 2020 the first CentOs 7 docker image for Pyg4ometry is now available in the source code repository. The package is currently written in and only supports python 2.7, however as of January 2020 developer support for python 2 has been discontinued as the newer version python 3 is taking over. The transition to python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
-
-
-
- 
-\subsubsection{Pybdsim}
-\label{pyb}
-BDSIM has a python utility library called Pybdsim which provides an interface to be automate BDSIM and read its output files for data processing using python scripts. Pybdsim also allows for the navigation of ROOT analysis files to extract data to plot, mentioned more in Section \ref{root}. This is how all the plots in Sections \ref{prim} \& \ref{int} are generated.
+\noindent Pyg4ometry can also be used to determine if a model has any geometric overlap and provides faster loading of CAD geometries into BDSIM compared with the full GEANT4 C++ application. Most of the development in this project is conducted in Pyg4ometry. As of January 2020 the first CentOs 7 docker image for Pyg4ometry is now available in the source code repository. The package is currently written in and only supports python 2.7, however as of January 2020 developer support for python 2 has been discontinued as the newer version python 3 is taking over. The transition to python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
 
 \subsection{ROOT}\label{root}
 ROOT is not an acronym and is named after the idea, that it is a system for other systems to grow off of, much like a root of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written. Naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. Despite ROOT storing data in the format of its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and replotted using Pybdsim \ref{pyb} and Matplotlib. The plots are made this way as the data can be more easily manipulated and the formatting of ROOT plots is more complex than with a simple python script, of which a few standardised examples in Pybdsim.
@@ -315,7 +305,6 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \label{sat}
 \end{figure}
 
-% should explainf bdsim colours before this plot apossed to later on
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//BDSIM//screengrab.png}
@@ -324,15 +313,15 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \end{figure}
 
 
-% ------------------------------------------------------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------------------------------------------------------
+
 \newpage
 \section{Primitive Meshing}
 \label{prim}
 
 This section will describe the work done to optimize the python scripts that generate the three dimensional meshings for the primitive solids within the Pyg4ometry package (Section \ref{pyg}). All the primitive solids used are constructed such that they are compatible with GEANT4's solids \cite{solids}. It was previously thought that it would be best to use purely triangular based meshes in combination with boolean operations to construct the 3D solids. The triangle is the shape which has the minimum amount of points needed to define a planar face containing an area. Prior to the project it had been realised that the computation of triangles and boolean operations in most cases is much more intensive and inefficient, compared with the polygons and adapted trigonometry. In particular with the curved solids are the most computationally heavy, i.e cylindrical, spherical and toroidal based solids, due to the boolean operations generating more complex meshes. Thus the first part of the major project was to rewrite the meshing scripts for all the curved primitive solids in Pyg4ometry (Section\ref{pyg}).
 \\\\
-%change word cutup
-One of the major improvements to the Pyg4ometry meshing scripts was in the computation of cut up primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. This resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack'') were often meshed in non-axial directions.
+One of the major improvements to the Pyg4ometry meshing scripts was in the computation of sectioned primitive solids. The meshing of hollow or sliced solids were previously constructed by boolean subtractions and intersections, which involves using two or more separate solids and operating on them to create a final single solid. This resulted in a very computationally heavy and less aesthetic outcome, where the mesh lines (``slice and stack'') were often meshed in non-axial directions.
 
 \subsection{Co-ordinate Systems}
 \label{cosy}
@@ -400,9 +389,7 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 \label{consco}
 \end{figure}
 
-
 \subsubsection{Spherical Co-ordinate System}
-
 The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means the that of the cylindrical co-ordinate system, with different trigonometric equations (Equations \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works in the same way as the longitudinal and latitudinal mapping on a globe, shown in Figure \ref{sphmeshin}. 
 \\\\
 The trigonometry that converts the points from spherical co-ordinates to Cartesian, are:
@@ -468,8 +455,7 @@ A Key consideration when writing Pyg4ometry meshing scripts is the order convent
 \end{figure}
 \noindent The convention is that the normal to a plane points away from the solids surface, making it an exterior face. The normal is in the z direction to a plane residing on z=0, if the points are appended anticlockwise in the x-y plane. For points appending in the other direction (clockwise in the x-y plane), the normal would be in the -z direction, making an interior face. The concept is shown in Figure \ref{pointsorder}.
 \\\\
-% these tests are shown in subsequent sections
-The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes, mentioned in more detail in Section \ref{bool}. This test only works for the visualiser in BDSIM as it uses GEANT4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed.
+The simplest way to test this is by performing boolean operations with a solid box, as the boolean operation will only work correctly if all the planes are correct on both shapes, mentioned in more detail in Section \ref{bool}. This test only works for the visualiser in BDSIM as it uses GEANT4, which displays face directions. VTK inside Pyg4ometry is a much more lenient visualiser and will display solids even if their normals are incorrect, giving you a false perspective of what is being displayed. These tests are shown in subsequent sections \ref{bool}.
 
 \subsection{New Meshing of Curved Primitive Solids}
 In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{app1}. The naming convention of the solids being used in this project and within this report are the ones used by GEANT4.
@@ -528,8 +514,6 @@ Degenerate points are a common mistake which can cause missing faces to occur, d
 Where - = Boolean Subtraction, \cap = Boolean Intersection, \cup = Boolean Unions.}
 \label{booly}
 \end{figure}
-
-
 
 \noindent Potentially the largest improvement made to the performance of the new meshing methods compared with the previous methods, is the discarding of boolean operations in order to create hollow or cut-up primitive solids. The idea can be clearly seen in Figure \ref{booly}, where you conduct basic operations on multiple simple solids, resulting in a single complex solid being made.
 \\\\
@@ -594,18 +578,18 @@ They were generated by varying the user input for the number of slices across a 
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=0.7\linewidth]{Images//CPU//mednmax.pdf}
-  \captionof{figure}{TODO}
+  \captionof{figure}{A plot of the number of polygon faces in a mesh as a result against the median and maximum values of the CPU duration distribution, displayed for both the new meshing (orange) and the old meshing (blue).}
   \label{mednmax}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=0.7\linewidth]{Images//Triangles//MeshvTRi1.pdf}
-  \captionof{figure}{TODO}
+  \captionof{figure}{A plot showing the the stack and slice against number of polygon faces produced on a sphere with the set dimensions for the proceding section. Shown for both meshing algorithms new (orange) and old (blue).}
   \label{tritri}
 \end{minipage}%
 \end{figure}
 
-\noindent It can be seen that in Figure \ref{tritri} the new pycsgmesh() function has a much smooth gradient and that the old function has small peaks occurring at certain intervals of stack and slice. This is most likely to do with the boolean subtractions of the spheres favouring the old mesh at particular densities
+\noindent It can be seen that in Figure \ref{tritri} the new pycsgmesh function has a much smooth gradient and that the old function has small peaks occurring at certain intervals of stack and slice. This is most likely to do with the boolean subtractions of the spheres favouring the old mesh at particular densities
 
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
@@ -622,26 +606,15 @@ The second aim of this project was to measure how the physics is altered, betwee
 \label{black}
 \end{figure}
 
-\noindent BDSIM uses the colour convention for representing a particles charge from GEANT4, green is neutral, blue is positive and red is negative. Figure \ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a G4\_Ti sphere, where it can be seen that negatively charges red tracks and neutral green tracks, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for 
-%indentfying 
-particles, assigning each particle a unique number The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
+\noindent Figure \ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a G4\_Ti sphere, where it can be seen that negatively charges red tracks and neutral green tracks, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for identifying particles, assigning each particle a unique number The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
 
 \subsection{Monte Carlo Simulation}
 \label{monte}
 \noindent The probability of certain particle interactions occurring in a given BDSIM event, such as the decays or scattering of a particles trajectories is generated by a Monte Carlo simulation. The basic principle behind the Monte Carlo algorithms is the use of large random sampling to find numerical results. This is perfect for simulating the probabilities of particular particle interactions happening, as two initially identical interaction setups can have two non identical interactions, with a given probability. Each event in BDSIM is associated with a specific seed number produced via this Monte Carlo method. The uniqueness of each seed allows a particular event to be repeatedly simulated under the same physics conditions, which is key to this project when it comes to comparing the interactions of different objects fairly. The other properties of the particle and physics processes that may occur can also be user defined to tweak the experiment. Properties such as the particles initial energy, whether secondaries get produced and much more. The seeds used in this project could not be logically chosen due to the fact they are generated via the Monte Carlo simulation. Therefore they were selected by running a lot of test runs in BDSIM to see which seeds generate a decent amount of secondaries.
 
-\subsection{Simulation Execution}
-%check not duplicate with abve section 
-
-BDSIM works by  a GMAD file and then outputs  a ROOT (Section \ref{root}) file with the option of using the GUI, allows the user to visualise the interactions in an interactive 3D environment.
-
-% maybe move all this to bdsim software section
- A GMAD file contains the basic information needed to construct a 3D model of an accelerator for a defined particle beam in BDSIM, i.e a particle and path to file of the target object (Typically of the format GDML). The option ``physicsList'' defines the physics which is used for the interaction, for the project the option was set to``g4FTFP\_BERT'', which contains all the standard electromagnetism and particle physics required for this project. The ROOT file contains a detailed analysis of the interaction. One of the elements analysed within this project is the CPU duration time distribution of an interaction in BDSIM.
-
 \newpage
 \subsection{Simple Solid Target}
-The meshed solid chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in % wrong ref
-Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a GEANT4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
+The meshed solid chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a GEANT4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in Figure \ref{sphbd}.
 
 \begin{figure}[h!]
 \centering
@@ -711,13 +684,12 @@ The second plot on the left Figure \ref{withs} is the same simulation as in figu
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//CPU//pythonhist1.pdf}
-\caption[width=\columnwidth]{TODO}
+\caption[width=\columnwidth]{A histogram showing a CPU duration distrubtution for 10,000 1.3 GeV electrons intercting with a sphere that has been meshed using the new pycsgmesh function. The density of the mesh was set to slice and stack both equal to 100. }
 \label{disty}
 \end{figure}
 
-% for a small num of events where where a large num of secondaries results in a longer event duration
 
-\noindent The reason for the standard deviations being so large is to do with a small number of particles in each event running for a significantly longer duration  thus skewing the standard deviation of the whole event. An example of this is shown in Figure \ref{disty}, where the plot shows the CPU distribution for 10,000 10 MeV electrons interacting with a G4\_Au sphere. The sphere in this example is constructed using the new pycsgmesh() function with a stack and slice both set at 100.
+\noindent The reason for the standard deviations being so large is that there is a small number of events where a large number of secondaries are being produced, which results in a longer overall event duration and in turn lengthens the standard deviation. An example of this is shown in Figure \ref{disty}, where the plot shows the CPU distribution for 10,000 10 MeV electrons interacting with a G4\_Au sphere. The sphere in this example is constructed using the new pycsgmesh function with a stack and slice both set at 100.
 
 \noindent From Figures \ref{} and \ref{}, you can see that as the number of stack and slice is increased the mean CPU duration for the protons increases at a slower rate for the new meshing. 
 \\\
@@ -740,11 +712,11 @@ However Figure \ref{} shows...\\
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Error//std_N.png}
-\caption[width=\columnwidth]{TODO}
+\caption[width=\columnwidth]{A plot showing the mean CPU duration of an interaction with a new meshing sphere against number of initial 1.3 GeV electrons, where the mesh density is stack }
 \label{fcgvhjbkn}
 \end{figure}
 
-The error bars are still very big so it was proposed to use the standard error of the main as an alternative. 
+\noindent The error bars are still very big so it was proposed to use the standard error of the main as an alternative. 
 %next sen makes no sens/ in wrong place
 As well as as investigation for varying energy and the material of the target.
 
@@ -775,13 +747,11 @@ Stopping power is the force that acts against the motion of a particle within in
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Stopping//stoppingrange.png}
-% can just say from source
 \caption[width=\columnwidth]{A plot showing the relationship between ion velocity and components of stopping power. Figure 2.1 from Source \cite{stprg}}
 \label{stprg}
 \end{figure}
 \\\\
-%suppllimen
-\noindent GEANT4 comes with some suplimentary examples, the example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a GEANT4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+\noindent GEANT4 comes with some Supplementary examples, the example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a GEANT4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
 Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are all contained within the sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the sphere. 
 
@@ -850,7 +820,6 @@ G4\_W &  10.1631\\ \hline
 
 \subsection{Interactions with CAD}
 As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in Figure
-% should ref erence in order 
 \ref{notmybolt}. The CAD bolt was downloaded as a STEP format from a free online database GradCAD \cite{cadmag}. The downloaded model was converted to GDML format with the material G4\_STAINLESS-STEEL using python. The dimensions of the CAD model were gained by using the measuring tool within the FreeCAD GUI as shown Figure \ref{boltinfreeCAD}. The CAD model was then approximately recreated by the constructed of basic primitive solids with boolean operations in Pyg4ometry and can be seen in Figure \ref{boltinvtk}.
 
 \begin{figure}[h!]
@@ -906,7 +875,7 @@ However due to time constraints and the purpose of the plot being to find the en
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//CAD_Screw//cpudist1.png}
-\caption[width=\columnwidth]{TODO}
+\caption[width=\columnwidth]{CPU duration distribution of 1,000,000 0.5 TeV electrons interacting with CAD models of a bolt.}
 \label{brgqebafd}
 \end{figure}
 
@@ -926,7 +895,7 @@ quote graphs and sections\\
 \subsection{Applications}
 As discussed in the introduction (Section \ref{intro} there are many invaluable uses for softwares such as BDSIM and Pyg4ometry that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of compatible files it can be used to simulate a growing number of projects. This report demonstrates this by CAD magnet modelling.
 
-\subsection{Extension}
+\subsection{Project Extensions}
 If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a sphere in Section \ref{} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Also a range of particles other than the electrons such as proton\\
 Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.
 
