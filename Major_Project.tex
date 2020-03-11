@@ -57,6 +57,7 @@
 % cant be 25 percen diff in bolt count plot
 % make radius of boolean bolt inner radius of thread to see if the boolean truely is an over approximation
 
+% main three materials are diff 
 % Figure then fig. 
 %Figures always lowercase
 
@@ -189,9 +190,20 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \subsection{Report Structure}
 The following subsections of the introduction will go on to discuss the background (Section \ref{back}), motivations (Section \ref{motiv}) and aims (Section \ref{aim}) of the project. Then the subsequent Sections are structured in the following way; first a discussion of the types of radiation emission (Section \ref{radd}), the software packages that are used and referenced throughout this report are discussed in Section \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (Section \ref{prim}). The interactions of meshed solids and objects in BDSIM (Section \ref{int}) and a conclusion and summary of the results of the report (Section \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise.
 
-\subsection{Project Background - Applications of Particle Tracking}
+\subsection{Project Background}
+
+% ------------------------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Types of Radiation Emission }
+\label{radd}
+Radiation is the transport of energy through matter or a vacuum in the form of electromagnetic waves and/or particles. There are two main categories of radiation emission; ionising and non-ionising. Non-ionising (or NIR) can be harmful if exposed to for long periods of time or in high intensities, such as UV light can cause skin cancer or shining a strong laser into an eye can cause blindness. In order for a type of radiation to be ionising it must be an electromagnetic wave or particle with enough energy to "ionise" a neighbouring atom, typically travelling at a velocity greater than 1\% the speed of light.  "Ionisation" is the process of detaching an electron from an atom or molecule. This report only focuses on forms of ionising radiation as they are the ones more commonly associated with particle interactions. 
+\\\\ 
+\noindent Bremsstrahlung is the electromagnetic radiation, which is typically in the form of a photon, created as the result of a charged particle decelerating after it has been deflected from another charged particle. The larger the loss in kinetic energy, i.e the greater the deceleration of the initial particle, the larger the frequency of the emitted photon. Medical X-ray tubes rely on Bremsstrahlung to create a continuously emitted spectrum. The X-ray tubes work by using an electric field to accelerate electrons within a vacuum, which is then aimed towards a target, such as a broken arm against a photographic absorber.
+\\\\
+\noindent Cherenkov radiation is important within nuclear reactors and is the reason why submerged reactors often appear to glow blue \cite{blue}. The blue colour is due to the radiating particles traveling faster than the speed of light in the same medium, acting in the same fashion as a sonic boom. The reactors are typically submerged in water and it is the change of medium as the particle enters the water which causes the Cherenkov radiation. As the particle propagates through the water it causes a creates continuous moving source of radiation in the blue visible spectrum. The blue colour is very faint and can only really appear at high energies, such as the ones found in nuclear reactors. 
+ 
 \label{back}
-On Earth we experience harmless radiation everyday, for example small doses of UV (or UltraViolet) radiation from the Sun. However in many cases radiation is unwanted and/or needs to be controlled, which is why the simulations of radiation transport needs to be considered. Radiation transport is the physical phenomenon of energy transfer through a medium in the form of electromagnetic radiation. The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
+\noindent On Earth we experience harmless radiation everyday, for example small doses of UV (or UltraViolet) radiation from the Sun. However in many cases radiation is unwanted and/or needs to be controlled, which is why the simulations of radiation transport needs to be considered. Radiation transport is the physical phenomenon of energy transfer through a medium in the form of electromagnetic radiation. The various types of radiation are discussed in Section \ref{radd}. There is a large number of sectors that the simulation of particle radiation tracking is an invaluable tool.
 
 \subsubsection{High Energy Physics}
 \noindent The most obvious field in which radiation transport is important is all things nuclear and particle physics, i.e nuclear reactors, weapons and accelerators (accelerators being the main focus in this project), which all typically involve high energy physics. There are many types of radiation that need to be carefully taken into account in order to minimise unwanted damage to instruments and the people operating them. Nuclear reactors rely on fission which occurs via ionising radiation in the form of free neutrons. The free neutrons begin a chain reaction by interacting with nuclei making them unstable, causing a further neutron to be emitted and ionise another nuclei. Only appears in Particle accelerators work by accelerating charged particles up to high energies using electric fields and the uses magnetic fields to steer the particle beam. The cost of construction and upgrades for accelerators and nuclear power plants are extremely high, therefore  Computer Aided Design (CAD) and simulations can be very helpful with the planning of new sites and concepts. 
@@ -203,9 +215,7 @@ On Earth we experience harmless radiation everyday, for example small doses of U
 \label{cerncad}
 \end{figure}
 
-\newpage
 \noindent Figure \ref{cerncad} shows a CAD model of the shielding used in a section of the east area at CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider). The use of particle transport simulation can also be used as a tool for simulating beam losses \cite{pyg4om}. This tool can be applied for experiments such as machine protection, efficiency tests and machine optimisation.
-\\\\
 
 \subsubsection{Space Exploration}
 \noindent Space exploration is also a large field where radiation transport and shielding is a key concept that must be accounted for. Beyond the Earth's atmosphere the universe is full of harmful GCR (Galactic Cosmic Rays) radiation and stellar material making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. The shielding for a spacecraft is typically made from an aluminium alloy, studies have been simulated using GEANT4 (One of the software packages used in this project, detailed in Section \ref{g4}) as a way to measure its effectiveness of $Al_2O_3$ as space craft shielding \cite{spacesh}. The study specifically looks at the stopping power. 
@@ -233,44 +243,14 @@ The motivation of the project is to study the efficiency of tessellated solids, 
 \subsection{Project Aims}
 \label{aim}
 Simulating radiation transport requires a description of the target 3D formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements and volumes which can not overlap, leading to most radiation transport geometries being made by hand. These types of aims are possible in software such as Pyg4ometry. The geometries produced in Pyg4ometry can then be simulated in other packages such as BDSIM. The underlying libraries of BDSIM, which contribute towards the simulation properties such as the tracking, fields and material physics, arises from GEANT4, which are all disccussed in later sections.
-
-The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}). The first part of the project focuses on the meshing of the primitive solids. Within constructive solid geometry (CSG) a primitive solid is a simple geometric solid such as cube, pyramid, sphere or torus.
-
-(Section \ref{prim}) within Pyg4ometry.
-%next sentence doent right
-Discussing the comparison of methods and techniques used to make not only primitive solids, but also complex compound ones. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
-
-
-% ------------------------------------------------------------------------------------------------------------------------------
-
-%move into 1.2.1 before 
-\section{Types of Radiation Emission }
-\label{radd}
-Radiation is the transport of energy through matter or a vacuum in the form of electromagnetic waves and/or particles. There are two main categories of radiation emission; ionising and non-ionising. Non-ionising (or NIR) can be harmful if exposed to for long periods of time or in high intensities, such as UV light can cause skin cancer or shining a strong laser into an eye can cause blindness. In order for a type of radiation to be ionising it must be an electromagnetic wave or particle with enough energy to "ionise" a neighbouring atom, typically travelling at a velocity greater than 1\% the speed of light.  "Ionisation" is the process of detaching an electron from an atom or molecule. This report only focuses on forms of ionising radiation as they are the ones more commonly associated with particle interactions. 
-\\\\ 
-\noindent Bremsstrahlung is the electromagnetic radiation, which is typically in the form of a photon, created as the result of a charged particle decelerating after it has been deflected from another charged particle. The larger the loss in kinetic energy, i.e the greater the deceleration of the initial particle, the larger the frequency of the emitted photon. Medical X-ray tubes rely on Bremsstrahlung to create a continuously emitted spectrum. The X-ray tubes work by using an electric field to accelerate electrons within a vacuum, which is then aimed towards a target, such as a broken arm against a photographic absorber.
 \\\\
-\noindent Cherenkov radiation is important within nuclear reactors \\
-\\need to say that reactors are submerged in water and that it is the hange of medium\\
-\\
-and is the reason why submerged reactors often appear to glow blue \cite{blue}. The blue colour is due to the radiating particles traveling faster than the speed of light in the same medium, acting in the same fashion as a sonic boom. 
-%sentence in wrong place
-\\Thus causing a continuous moving source of radiation in the visible spectrum.\\
-\\
- The blue colour is very faint and can only really appear at high energies, such as the ones found in nuclear reactors. 
+\noindent The aims of this project are to contribute towards the optimization of the Pyg4ometry package (Section \ref{pyg}) and subsequently BDSIM (Section \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (Section \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (Section \ref{bool}). The first part of the project focuses on the meshing of the primitive solids (Section \ref{prim}) within Pyg4ometry. Within constructive solid geometry (CSG) a primitive solid is a simple geometric solid such as cube, pyramid, sphere or torus. By looking at the comparison of methods and techniques of producing these tessellated meshes for primitive and compound solids. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
 
 % ------------------------------------------------------------------------------------------------------------------------------
 
 \section{Software Packages}
 \label{packs}
-This Section outlines the key details of each package, describing its function and link to the project. At the time of the project a lot of the prerequisite packages were only compatible with Linux OS  (or Operating System) and no docker images were available. Due to owning a machine that operated on windows, a lot of time was initially spent setting up virtual machines running Cent0s 7 (standard free Linux OS used by CERN \cite{cern}). However despite getting it setup, the packages were not performing to the same standard as they were on the fellow Apple MacBooks. Therefore for the main duration of project, a Linux laptop was loaned out from the particle physics department of Royal Holloway (a 2011 Apple MacBook Pro running OS El Capitan). This legacy operating system came pre-installed with the some of the required packages, and allowed for easy installation of outstanding backdated versions. 
-\\
-done on mac\\
-early attempts on other os such as centos\\
-% basically horrten it
-
-
-% dont worry about dockers to much 
+This Section outlines the key details of each package, describing its function and link to the project. At the time of the project a lot of the prerequisite packages were only compatible with Linux Operating Systems (OS) and no docker images were available. Due to owning a machine that operated on windows, the project was then completed on a Linux laptop (a 2011 Apple MacBook Pro running OS El Capitan) from the department. The setting up virtual machines running Cent0s 7 (standard free Linux OS used by CERN \cite{cern}) was also tried, however despite getting it setup, the packages were not performing to the same standard as they were on the fellow Apple MacBooks. This legacy operating system on the loaned laptop came pre-installed with the some of the required packages, and allowed for easy installation of outstanding backdated versions. 
 
 % change ordering of sub sects
 % g4 first
@@ -280,6 +260,24 @@ early attempts on other os such as centos\\
 % then say bdsim uses geant4
 
 % then have pyg4
+
+%========================================================================================
+
+\subsection{GEANT4}\label{GEANT4}
+\label{g4}
+GEANT4 (or GEometry ANd Tracking) \ref{geant} is a toolkit developed in C++ for the simulation and tracking of particles traveling through matter by employing the Monte Carlo method (Section \ref{monte}). It is used by many particle physicists and is one of the more popular packages used to create 3D models of experiments for Monte Carlo simulations. GEANT4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. GEANT4 also has a large inbuilt database which contains the properties of most materials and particles. An alternative transport code is FLUKA (or FLUktuierende KAskade) \cite{fluka}, which also uses Monte Carlo to simulate high energy physics. GEANT4 can and has also been used to conduct dose calculations for radiotherapy patients \cite{dose} as well as many other simulations around particle losses and background radiation \cite{will}. The materials used throughout this project are from the GEANT4 database \cite{mater}. In this report the three main materials used are Iron,Titanium and Vacuum ( $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in which other objects are placed into.
+
+%========================================================================================
+
+\subsection{BDSIM}
+\label{bdsim}
+% ref another bdsim papere saying em fields to fully transport partiles in start to end simulations of particle accelerators (before GMAD bit)
+
+BDSIM (or Beam Delivery SIMulation) \cite{bdsimpap} is an open-source software package also written by JAI at Royal Holloway, for the use of modelling particle beam interactions. The package is written in C++ and has many applications, such as modelling complex particle accelerators like the Large Hadron Collider (LHC) or low energy magnetic beamlines for radiotherapy applications used to treat tumours. BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. BDSIM works by intaking a simple asci file with its own extension (GMAD), where the simulation and model can then be controlled by the GMAD's parameters. One of these parameters is the ``worldMaterial'', which defines the material of the environment that other elements and volumes are placed into. By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files, where G4\_Galactic is the GEANT4 vacuum material as mentioned before (section \ref{bdsim}). Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). Although the BDSIM defaults build up a standard geometry beamline, often specialised pieces of geometry are needed to accurately simulate interactions. This can be done by supplying an external GDML file, where its placement in the simulation can be specified in the GMAD. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental data as possible. The software outputs a root file contain all the required information. As many particles as desired can be simulated in batch mode, however a GUI is available to view the geometry, but is rarely used to simulate the particle accelerators as it is computationally expensive.
+
+
+
+%=========================================================================================
 
 \subsection{Pyg4ometry}
 \label{pyg}
@@ -293,42 +291,8 @@ The ``4'' in ``Pyg4ometry'' comes from the consistency the package has with GEAN
 % next sentce doesnt quite make sense in para
 As well as making loading CAD geometries into BDSIM much faster than using the full GEANT4 C++ application, as well as fast VTK visualisation discussed in Section \ref{vis}. Most of the development in this project is conducted in Pyg4ometry. As of January 2020 the first CentOs 7 docker image for Pyg4ometry is now available in the source code repository. The package is currently written in and only supports python 2.7, however as of January 2020 developer support for python 2 has been discontinued as the newer version python 3 is taking over. The transition to python 3 means adjusting the syntax of several functions and files in Pyg4ometry, this has began, but a full transition will take sometime as it is not an immediate priority. 
 
-\subsection{GEANT4}\label{GEANT4}
-\label{g4}
-%g4 is not a program it is a library of c++ classes 
-GEANT4 (or GEometry ANd Tracking) is a toolkit developed in C++ for the simulation and tracking of particles traveling through matter by employing the Monte Carlo method (Section \ref{monte}). The package is used by many particle physicists and is one of the more popular
-%not geom handlin its designed for creating 3d models of experiments for monte carlo simulations
- geometry handling packages for interactions. GEANT4 has its own preset primitive solids that are used for simulating particle interactions and can be found within the online manual \cite{solids}. For ease of conversion between file formats 
- %would not mentioned pyg4 ijn new ordering yet
- Pyg4ometry uses the same conventions when meshing its primitive solids. GEANT4 has a large inbuilt database which contains the properties of most materials and particles. An alternative transport code is FLUKA (or FLUktuierende KAskade)
- % ref g4 and fluka
- , which also uses Monte Carlo to simulate high energy physics. GEANT4 can and has also been used to conduct dose calculations for radiotherapy patients \cite{dose}.\\
- expand on this\\
- ref Will hadron therapy bdsim\\
- \\
-\\\\
-The materials used in Pyg4ometry and throughout this project are also from the GEANT4 database \cite{mater}. In this report the three main materials used are
-% put normal materials frst and then say in ge4 they are..
- $G4\_Fe$, $G4\_Ti$ and $G4\_Galactic$ (Iron,Titanium and Vacuum). The use of $G4\_Galactic$ is arguably the most important as it is used to set the material of the world environment in which other objects are placed into.
- % phylists are bdsim not g4 same with gmad files
-  By default the world material in BDSIM is set to be air, which means the particles would interact before passing into the object being tested, this was avoided by using the option $worldMaterial=``G4\_Galactic"$ within the GMAD files. Other properties for each GEANT4 material are also used in this project, such as the stopping power (Section \ref{stop}). 
 
-\subsection{BDSIM}
-\label{bdsim}
-%is a c++ program based apo g4 and root which programatially builds a 3d model of a partile accelerator
-% bdsim takes a simple asci input file with its own extension (GMAD), where you can controll simulation and model parmeters
-% ref another bdsim papere saying em fields to fully transport partiles in start to end simulations of particle accelerators (before GMAD bit)
-% one paramete i owkrd material
 
-BDSIM (or Beam Delivery SIMulation)
-% ref
- is an open-source software package also written by JAI at Royal Holloway, for the use of modelling particle beam interactions. The package has many applications, such as modelling complex particle accelerators like the LHC (or Large Hadron Collider) or low energy magnetic beamlines for radiotherapy applications used to treat tumours.
- % G4Beamline \cite{g4beam} is a similar package, however includes the effects between particles ('collective effects') , which BDSIM does not due to better tracking and geometry in general. 
-% Both BDSIM and G4Beamline alike use GEANT4 as a basis for their beamline simulations. 
-BDSIM allows a user to specify the physics being used for a particular particle interaction, such as the particle energy and the number of secondaries produced. The scattering of the particle trajectories and decays are computed using Geant4's Monte Carlo calculations, to make the results as consistent with experimental data as possible. The software outputs a root file contain all the required information. As many particles as desired can be simulated in batch mode, however a GUI is available to view the geometry, but is rarely used to simulate the particle accelerators as it is computationally expensive.
-%although be deafult ot bulds up a standard geom beamline often specaialised pieces of geom are neede to accuratley simulate interaction desired
-%this can be done by supplying an external GDML file 
-% basically say gmad can place objects in bea,line path or anywhere else in simulation
  
 \subsubsection{Pybdsim}
 \label{pyb}
@@ -689,7 +653,6 @@ Figure \ref{sphbd} the sphere was orginally chosen to be oriented such that the 
 
 \noindent One way to analyse the energy deposition of the interactions, was to look at the CPU duration times as the mesh densities are increased. In this scenario the GEANT4 solid was used as a guideline as it does not depend on a user defined stack \& slice. 
 
-
 \subsection{Titanium Sphere Interactions}
 
 In this section the CPU duration time of interaction in BDSIM with spheres of different mesh densities by different meshing algorithms. Table \ref{tab1} shows the properties of the spheres being meshed.
@@ -968,6 +931,7 @@ If given more time there is several things that I  would have wished to pursue i
 Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.
 
 % ------------------------------------------------------------------------------------------------------------------------------
+
 \newpage
 \newpage
 \footnotesize
@@ -1056,6 +1020,9 @@ Another area that could have been explored in more detail is a prototype magnet 
 	M. Pinto, P. Gon\c{c}alves\\
 	GUIMesh: A tool to import STEP geometries into GEANT4 via GDML\\
 	\url{https://doi.org/10.1016/j.cpc.2019.01.024}
+	
+	\bibitem{will}
+	HADRON THERAPY MACHINE SIMULATIONS USING BDSIM
 		
 	\bibitem{pdg}
 	% exapnd more inf
