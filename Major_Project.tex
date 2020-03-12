@@ -1,7 +1,7 @@
  % to sort
 
 % figures
-% sphere coord needs middlie red line to get slice count consistent
+% Sphere coord needs middlie red line to get slice count consistent
 % torus diagram needs colour
 % check captions
 % add figures for types of radiation and applications
@@ -12,7 +12,7 @@
 % polycone stack kept at 3
 % conversion typically leads to leads to loss of detail -> pyg4ometry and GUIMesh are free (open-source) alternatives to this (mesh deviation stuff?)
 
-% table of sphere comps
+% table of Sphere comps
 % G4 total unrestricted stopping power mathes with paper
 % check all units
 
@@ -176,7 +176,7 @@ The testing and analysis of radiation travelling through geometries of devices, 
 \section{Introduction}
 
 \subsection{Report Structure}
-The following subsections of the introduction will go on to discuss the background (sec. \ref{back}), motivations (sec. \ref{motiv}) and aims (sec. \ref{aim}) of the project. Then the subsequent sections are structured in the following way; first a summary of the software packages that are used and referenced throughout this report are discussed in sec. \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (sec. \ref{prim}). The interactions of meshed solids and objects in BDSIM (sec. \ref{int}) and a conclusion and summary of the results of the report (sec. \ref{conc}). Followed by an Appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise. All the diagrams in this report are drawn using the CAD software Inkscape, unless otherwise referenced.
+The following subsections of the introduction will go on to discuss the background (sec. \ref{back}), motivations (sec. \ref{motiv}) and aims (sec. \ref{aim}) of the project. Then the subsequent sections are structured in the following way; first a summary of the software packages that are used and referenced throughout this report are discussed in sec. \ref{packs}, the concepts and details of the primitive meshing used in Pyg4ometry (sec. \ref{prim}). The interactions of meshed solids and objects in BDSIM (sec. \ref{int}) and a conclusion and summary of the results of the report (sec. \ref{conc}). Followed by an appendix \ref{ap1}, which lists a variety of content produced in the project, but is not included in the report its self, in the interest of being incise. All the diagrams in this report are drawn using the CAD software Inkscape, unless otherwise referenced.
 
 \subsection{Project Background}
 \label{back}
@@ -206,7 +206,7 @@ Radiation is the transport of energy through matter or a vacuum in the form of e
 \noindent Fig.\ref{cerncad} shows a CAD model of the shielding used in a section of the east area at CERN (or The European Organization for Nuclear Research translated from French) home to the LHC (or Large Hadron Collider). The use of particle transport simulation can also be used as a tool for simulating beam losses \cite{pyg4om}, which can be applied for experiments such as machine protection, efficiency tests and machine optimisation.
 
 \subsubsection{Space Exploration}
-\noindent Space exploration is also a large field where radiation transport and shielding is a key concept that must be accounted for. Beyond the Earth's atmosphere the universe is full of harmful GCR (Galactic Cosmic Rays) radiation and stellar material making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. The shielding for a spacecraft is typically made from an aluminium alloy, studies have been simulated the effectiveness of $Al_2O_3$ as space craft shielding \cite{spacesh}, taking into account properties of the alloy such the stopping power. 
+\noindent Space exploration is also a large field where radiation transport and shielding is a key concept that must be accounted for. Beyond the Earth's atmoSphere the universe is full of harmful GCR (Galactic Cosmic Rays) radiation and stellar material making the shielding of spacecraft and astronauts a major priority. Traditionally protection against unwanted radiation has involved placing an absorber in between the target and the source. The shielding for a spacecraft is typically made from an aluminium alloy, studies have been simulated the effectiveness of $Al_2O_3$ as space craft shielding \cite{spacesh}, taking into account properties of the alloy such the stopping power. 
 \\\\
 \noindent However, for the case of astronauts the size of the required absorber is extremely large and unpractical and will likely cause showers of more harmful secondary radiation. Therefore the use of magnetic fields is being investigated as a way to divert the charged electromagnetic radiation away from a target apposed to stopping it \cite{magf}. This is something which can also be simulated in Monte Carlo software with the inclusion of electric \& magnetic field maps.
 
@@ -232,7 +232,7 @@ The motivation of the project is to study the efficiency of tessellated solids, 
 \label{aim}
 Simulating radiation transport requires a 3D description of the target formation, detailing its structure, dimensions and material properties such as density. These 3D models contain elements and volumes which can not overlap, leading to most radiation transport geometries being made by hand. These types of aims are possible in software such as Pyg4ometry. The geometries produced in Pyg4ometry can then be simulated in other packages such as BDSIM. The underlying libraries of BDSIM, which contribute towards the simulation properties such as the tracking, fields and material physics, arises from GEANT4, which are all discussed in later sections.
 \\\\
-\noindent The aims of this project are to contribute towards the optimization of the Pyg4ometry package (sec. \ref{pyg}) and subsequently BDSIM (sec. \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (sec. \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (sec. \ref{bool}). The first part of the project focuses on the meshing of the primitive solids (sec. \ref{prim}) within Pyg4ometry. Within constructive solid geometry (CSG) a primitive solid is a simple geometric solid such as cube, pyramid, sphere or torus. By looking at the comparison of methods and techniques of producing these tessellated meshes for primitive and compound solids. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
+\noindent The aims of this project are to contribute towards the optimization of the Pyg4ometry package (sec. \ref{pyg}) and subsequently BDSIM (sec. \ref{bdsim}), by improving parts of the code and conducting performance tests to produce results that can be analysed. The main areas for improvement and where most of the computational energy in wasted, is in the meshing of the primitive GEANT4 (sec. \ref{g4}) compatible solids. The inefficient computation is primarily due to the unnecessary use of boolean operations (sec. \ref{bool}). The first part of the project focuses on the meshing of the primitive solids (sec. \ref{prim}) within Pyg4ometry. Within constructive solid geometry (CSG) a primitive solid is a simple geometric solid such as cube, pyramid, Sphere or torus. By looking at the comparison of methods and techniques of producing these tessellated meshes for primitive and compound solids. The second part of the project focuses on the performance of the meshes within BDSIM. Investigating the effects of material and particle energy, on the duration of interactions within a solid.
 
 % ------------------------------------------------------------------------------------------------------------------------------
 
@@ -293,7 +293,7 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//BDSIM//screengrab.png}
-\caption[width=\columnwidth]{BDSIM GUI screenshot of a 3D particle interaction and output window, showing a GEANT4 sphere with 100 1.3 GeV neutrons.}
+\caption[width=\columnwidth]{BDSIM GUI screenshot of a 3D particle interaction and output window, showing a GEANT4 Sphere with 100 1.3 GeV neutrons.}
 \label{screengrab}
 \end{figure}
 
@@ -485,13 +485,13 @@ Degenerate points are a common mistake which can cause missing faces to occur, d
 \centering
 \includegraphics[scale=0.25]{Images//Booleans//Boolean.png}
 \caption[width=\columnwidth]{An example CSG solid showing the basic method of constructing a more complicated 3D solid using boolean operations applied onto simpler primitive solids. From Source \cite{wiki}.\\
-Where - = Boolean Subtraction, \cap = Boolean Intersection, \cup = Boolean Unions.}
+Where $-$ = Boolean Subtraction, $\cap$ = Boolean Intersection, $\cup$ = Boolean Unions.}
 \label{booly}
 \end{figure}
 
 \noindent Potentially the largest improvement made to the performance of the new meshing methods compared with the previous methods, is the discarding of boolean operations in order to create hollow or sliced primitive solids. The idea can be clearly seen in fig.\ref{booly}, where you conduct basic operations on multiple simple solids, resulting in a single complex solid being made.
 \\\\
-\noindent Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a solid box with a hollow sphere (in solid view), where the box is centered around the origin. The coloured lines are representing the perpendicular planes to the axes in which the final object is placed in. These were made in the process of checking the normals before passing them into BDSIM to undergo particle interactions.
+\noindent Figures \ref{uni} \& \ref{sub} are of the meshed boolean union and subtraction of a solid box with a hollow Sphere (in solid view), where the box is centered around the origin. The coloured lines are representing the perpendicular planes to the axes in which the final object is placed in. These were made in the process of checking the normals before passing them into BDSIM to undergo particle interactions.
 \\
 \begin{figure}[h!]
 \centering
@@ -559,24 +559,24 @@ The second aim of this project was to measure how the physics is altered, betwee
 \label{black}
 \end{figure}
 
-\noindent Fig.\ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a Pyg4ometry G4\_Ti sphere, where negatively charged red tracks and neutral green tracks can be seen, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for identifying particles, assigning each particle a unique number The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
+\noindent Fig.\ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a Pyg4ometry G4\_Ti Sphere, where negatively charged red tracks and neutral green tracks can be seen, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for identifying particles, assigning each particle a unique number The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
 
 \subsection{Monte Carlo Simulation}
 \label{monte}
 \noindent The probability of certain particle interactions occurring in a given BDSIM event, such as the decays or scattering of a particles trajectories is generated by a Monte Carlo simulation. The basic principle behind the Monte Carlo algorithms is the use of large random sampling to find numerical results. This is perfect for simulating the probabilities of particular particle interactions happening, as two initially identical interaction setups can have two non identical interactions, with a given probability. Each event in BDSIM is associated with a specific seed number produced via this Monte Carlo method. The uniqueness of each seed allows a particular event to be repeatedly simulated under the same physics conditions, which is key to this project when it comes to comparing the interactions of different objects fairly. The other properties of the particle and physics processes that may occur can also be user defined to tweak the experiment. Properties such as the particles initial energy, whether secondaries get produced and much more. The seeds used in this project could not be logically chosen due to the fact they are generated via the Monte Carlo simulation. Therefore they were selected by running a lot of test runs in BDSIM to see which seeds generate an adequate amount of secondaries.
 
 \subsection{Simple Solid Target}
-The meshed solid chosen to be tested within BDSIM for this project was the sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in fig.\ref{sphbd} the sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the sphere outwards. The conversion from a Pyg4ometry mesh into a GEANT4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in fig.\ref{black} \& fig. \ref{sphbd}.
+The meshed solid chosen to be tested within BDSIM for this project was the Sphere, which is made of a minimum and maximum radius, making it a hollow solid. The reason a Sphere was chosen because it is the ideal shape testing radiation in all directions, as its thickness can be controlled radially. As seen in fig.\ref{sphbd} the Sphere was orginally chosen to be oriented such that the particle beam is fired from the centre of the Sphere outwards. The conversion from a Pyg4ometry mesh into a GEANT4 tessellated solid, results in only triangular faces. This is why all the quadrilateral faces are cut into two in fig.\ref{black} \& fig. \ref{sphbd}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Images//BDSIM//ProtonSphere2.png}
-\caption[width=\columnwidth]{BDSIM screenshot of 10 1.3 GeV protons interacting with a G4\_Fe sphere, which has been constructed using the new Pyg4ometry meshing scripts. Mesh resolution is a stack of 25 and slice of 25. (Shown in mesh view)}
+\caption[width=\columnwidth]{BDSIM screenshot of 10 1.3 GeV protons interacting with a G4\_Fe Sphere, which has been constructed using the new Pyg4ometry meshing scripts. Mesh resolution is a stack of 25 and slice of 25. (Shown in mesh view)}
 \label{sphbd}
 \end{figure}
 
 \subsection{Titanium Sphere Interactions}
-This section investigates the CPU duration time of simulated particle interactions in BDSIM, comparing spheres that are constructed by different meshing algorithms as a way to analyse the energy deposition as the mesh density is increased. Table \ref{tab11} shows the properties of the spheres being meshed and the simulation setup, ``ngenerate'' is a BDSIM parameter to specify the number of particles in a given run. In this scenario the preset GEANT4 sphere was used as a guideline as it does not depend on a user defined stack \& slice. 
+This section investigates the CPU duration time of simulated particle interactions in BDSIM, comparing Spheres that are constructed by different meshing algorithms as a way to analyse the energy deposition as the mesh density is increased. Table \ref{tab11} shows the properties of the Spheres being meshed and the simulation setup, ``ngenerate'' is a BDSIM parameter to specify the number of particles in a given run. In this scenario the preset GEANT4 Sphere was used as a guideline as it does not depend on a user defined stack \& slice. 
  
 \begin{table}[h!]
 \centering
@@ -592,36 +592,36 @@ ngenerate & 10,000\\ \hline
 \caption{Table of simulation properties for the simulations in this section.}
 \label{tab11}
 \end{table}
-\noindent To begin with all the GDML spheres were created, this was first in the aim of being more productive, as the creating the GDML targets typically takes longer than to execute an interaction in BDSIM. Therfore once the GDMLs are all coreectly made, the time taken for simulations and plots is largely reduced. Also by outputting the data after each run, increases the ease of adjusting plots. The same analysis performed in sec. \ref{per} was applied to the created GDMLS and can be seen in fig. \ref{tritri}.
+\noindent To begin with all the GDML Spheres were created, this was first in the aim of being more productive, as the creating the GDML targets typically takes longer than to execute an interaction in BDSIM. Therfore once the GDMLs are all coreectly made, the time taken for simulations and plots is largely reduced. Also by outputting the data after each run, increases the ease of adjusting plots. The same analysis performed in sec. \ref{per} was applied to the created GDMLS and can be seen in fig. \ref{tritri}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[height=.4\linewidth]{Images//Triangles//MeshvTRi1.pdf}
-\caption[width=\columnwidth]{A plot showing the the stack and slice against the number of polygonal faces produced on a sphere with the set dimensions for the proceeding section, shown for both meshing algorithms new (orange) and old (blue).}
+\caption[width=\columnwidth]{A plot showing the the stack and slice against the number of polygonal faces produced on a Sphere with the set dimensions for the proceeding section, shown for both meshing algorithms new (orange) and old (blue).}
 \label{tritri}
 \end{figure}
-\noindent The fig. \ref{tritri} shows the total number of triangles on the interior and exterior surfaces for a given slice and stack equal to the same value on a G4\_Ti sphere. The old meshing algorithm only meshed up to a maximum resolution of slice and stack equaling 48, before it would max out pythons recursion limit. Where as the new meshing could go to stack of 100 and a slice of 100 without any issues at all. The recursion limit can be extended to allow for a larger range, however it would not be worth the time it would take to code and run. 
- It can be seen that in fig.\ref{tritri} the new pycsgmesh function has a much smoother gradient and that the old function has small peaks occurring at certain intervals of stack and slice. This is most likely to do with the boolean subtractions of the spheres favouring the old mesh at particular densities. To avoid confusion with the polygon count plot for the sphere in the appedix (fig. \ref{aphh}) it should be made clear that the two plots are testing two differently meshed spheres across different variations of slice and stack. The one in the appendix is an incomplete sphere missing wedges in both its slice and stack, compared with the one tested in fig. \ref{tritri}, which is a complete sphere tessellated purely out of triangles.  This plot confirms the GDML are all in the expected format, to begin interaction.
+\noindent The fig. \ref{tritri} shows the total number of triangles on the interior and exterior surfaces for a given slice and stack equal to the same value on a G4\_Ti Sphere. The old meshing algorithm only meshed up to a maximum resolution of slice and stack equaling 48, before it would max out pythons recursion limit. Where as the new meshing could go to stack of 100 and a slice of 100 without any issues at all. The recursion limit can be extended to allow for a larger range, however it would not be worth the time it would take to code and run. 
+ It can be seen that in fig.\ref{tritri} the new pycsgmesh function has a much smoother gradient and that the old function has small peaks occurring at certain intervals of stack and slice. This is most likely to do with the boolean subtractions of the Spheres favouring the old mesh at particular densities. To avoid confusion with the polygon count plot for the Sphere in the appedix (fig. \ref{aphh}) it should be made clear that the two plots are testing two differently meshed Spheres across different variations of slice and stack. The one in the appendix is an incomplete Sphere missing wedges in both its slice and stack, compared with the one tested in fig. \ref{tritri}, which is a complete Sphere tessellated purely out of triangles.  This plot confirms the GDML are all in the expected format, to begin interaction.
  \\\\
-\noindent The interactions were automated using Pybdsim within a specially written python script. The script worked by creating a GMAD file from a template, which would then specify which GDML sphere it was placeing into the simulation environment, and then using Pybdsim to execute the simulation and extract data from the outputted ROOT files. The python script ran this processes in a ``for loop'' iterating through each GDML target and appending its data to an external TXT. The results of which can be seen in fig. \ref{withs}.
+\noindent The interactions were automated using Pybdsim within a specially written python script. The script worked by creating a GMAD file from a template, which would then specify which GDML Sphere it was placeing into the simulation environment, and then using Pybdsim to execute the simulation and extract data from the outputted ROOT files. The python script ran this processes in a ``for loop'' iterating through each GDML target and appending its data to an external TXT. The results of which can be seen in fig. \ref{withs}.
 
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=0.7\linewidth]{Images//CPU//Total_Plot_with_secondaries.pdf}
-  \captionof{figure}{Mean CPU duration of 10,000\\ protons interacting with a G4\_Ti sphere of \\various meshed forms.\\}
+  \captionof{figure}{Mean CPU duration of 10,000\\ protons interacting with a G4\_Ti Sphere of \\various meshed forms.\\}
   \label{withs}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=0.7\linewidth]{{Images//CPU//Total_Plot_no_secondaries1.pdf}}
-  \captionof{figure}{Mean CPU duration of 10,000\\ protons interacting with a G4\_Ti sphere of \\various meshed forms, with secondary\\ particles disabled.}
+  \captionof{figure}{Mean CPU duration of 10,000\\ protons interacting with a G4\_Ti Sphere of \\various meshed forms, with secondary\\ particles disabled.}
   \label{withouts}
 \end{minipage}%
 \end{figure}
 
-\noindent Fig.\ref{withs} shows the mean CPU duration times for an interaction in BDSIM with a given Sphere. The x-axis was orginally the number of stack and slice, but it was thought that the number of triangular faces created on a given Sphere would give a fairer weighting between meshing algorithms. This is due to the fact the number of faces increases at different rates dependent of the meshing algorithm used, as shown earlier by fig. \ref{tritri}. The reason there is nearly twice as many points plotted for the new meshing over the old is because of the recursion limit, which is discussed in sec. \ref{recur}. The error bars in fig.\ref{withs} are the std deviation of each run, the material of the sphere was orginally chosen to be G4\_Fe which is much less dense and caused many more secondaries than G4\_Ti, making the error bars dominate the data trend. The change of material from G4\_Fe to G4\_Ti was chosen as G4\_Ti is not only much denser but also has a larger stopping power (sec. \ref{stop}). Fig.\ref{withouts} is the same simulation as in fig.\ref{withs}, but has secondary particles disabled. The reason for fig.\ref{withouts} was to investigate whether the number of secondaries produced has an effect on the duration of the interaction. As it can be seen the number of secondaries produced partially relates to the size of the standard deviation, but not by a very large margin.
+\noindent Fig.\ref{withs} shows the mean CPU duration times for an interaction in BDSIM with a given Sphere. The x-axis was orginally the number of stack and slice, but it was thought that the number of triangular faces created on a given Sphere would give a fairer weighting between meshing algorithms. This is due to the fact the number of faces increases at different rates dependent of the meshing algorithm used, as shown earlier by fig. \ref{tritri}. The reason there is nearly twice as many points plotted for the new meshing over the old is because of the recursion limit, which is discussed in sec. \ref{recur}. The error bars in fig.\ref{withs} are the std deviation of each run, the material of the Sphere was orginally chosen to be G4\_Fe which is much less dense and caused many more secondaries than G4\_Ti, making the error bars dominate the data trend. The change of material from G4\_Fe to G4\_Ti was chosen as G4\_Ti is not only much denser but also has a larger stopping power (sec. \ref{stop}). Fig.\ref{withouts} is the same simulation as in fig.\ref{withs}, but has secondary particles disabled. The reason for fig.\ref{withouts} was to investigate whether the number of secondaries produced has an effect on the duration of the interaction. As it can be seen the number of secondaries produced partially relates to the size of the standard deviation, but not by a very large margin.
 
 \newpage
 \subsubsection{Error Reduction}
@@ -642,16 +642,16 @@ ngenerate & 10,000\\ \hline
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Error//std_N.png}
-\caption[width=\columnwidth]{Mean and standard deviation of the CPU duration distribution of an interaction as the number of initial particles is increased. The interaction modeled was 1.3 GeV electrons against  newly meshed G4\_Fe sphere with a stack of 100 and slice of 100.}
+\caption[width=\columnwidth]{Mean and standard deviation of the CPU duration distribution of an interaction as the number of initial particles is increased. The interaction modeled was 1.3 GeV electrons against  newly meshed G4\_Fe Sphere with a stack of 100 and slice of 100.}
 \label{err}
 \end{figure}
 
-\noindent It was then concluded that the number of particles being ran in each event was already sufficenty high that you would not see much fluctuation in the size of the standard deviation no matter how many more partiles were fired. The real reason for the standard deviations being so large is that there is a small number of particles within each simulation run , where a large number of secondaries are being produced, resulting in a longer overall event duration and in turn lengthens the standard deviation. An example of this is shown in fig.\ref{disty}, where the plot shows the CPU distribution for 10,000 10 MeV electrons interacting with a G4\_Ti sphere. The sphere in this example is constructed using the new pycsgmesh function with a stack and slice both set at 100.
+\noindent It was then concluded that the number of particles being ran in each event was already sufficenty high that you would not see much fluctuation in the size of the standard deviation no matter how many more partiles were fired. The real reason for the standard deviations being so large is that there is a small number of particles within each simulation run , where a large number of secondaries are being produced, resulting in a longer overall event duration and in turn lengthens the standard deviation. An example of this is shown in fig.\ref{disty}, where the plot shows the CPU distribution for 10,000 10 MeV electrons interacting with a G4\_Ti Sphere. The Sphere in this example is constructed using the new pycsgmesh function with a stack and slice both set at 100.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//CPU//pythonhist1.pdf}
-\caption[width=\columnwidth]{A  histogram showing a CPU duration distrubtution for 10,000 1.3 GeV electrons intercting with a sphere that has been meshed using the new pycsgmesh function. The density of the mesh was set to slice and stack both equal to 100.}
+\caption[width=\columnwidth]{A  histogram showing a CPU duration distrubtution for 10,000 1.3 GeV electrons intercting with a Sphere that has been meshed using the new pycsgmesh function. The density of the mesh was set to slice and stack both equal to 100.}
 \label{disty}
 \end{figure}
 
@@ -667,47 +667,39 @@ ngenerate & 10,000\\ \hline
 
 \newpage
 \subsection{Selection of Material}
-When creating any solid, you have the choice of material. Fig.\ref{novar} shows the CPU duration time distributions for electron interactions with preset GEANT4 spheres constructed of different GEANT4 materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time being heavily linked to the number of secondary particles produced as a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the increase in number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
+When creating any solid, you have the choice of material. Fig.\ref{novar} shows the CPU duration time distributions for electron interactions with preset GEANT4 Spheres constructed of different GEANT4 materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time being heavily linked to the number of secondary particles produced as a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the increase in number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Materials//not_Varied_by_radius_and_secondaries.pdf}
-\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying GEANT4 materials and particle energies in BDSIM on a GEANT4 sphere. The left 4 histograms show the distributions show the varying of energy upon each material. The right 4 histograms show the varying of material at each set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying GEANT4 materials and particle energies in BDSIM on a GEANT4 Sphere. The left 4 histograms show the distributions show the varying of energy upon each material. The right 4 histograms show the varying of material at each set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
 \label{novar}
 \end{figure}
 \newpage
-\noindent The dimensions of the spheres used in fig.\ref{novar} were set to a minimum radius of 1 micron and a maximum radius of 10 mm. xIt was then proposed that the radius of thickness could be scaled with respect to the stopping distance of the material it is travelling through, in order to eliminate material as a variable. The radius of thickness $\Delta R$ can be seen depicted in fig.\ref{deltar}, where $\Delta R = R_{Max} - R_{Min}$.
+\noindent The dimensions of the Spheres used in fig.\ref{novar} were set to a minimum radius of 1 micron and a maximum radius of 10 mm. It was then proposed that the radius of thickness could be scaled with respect to the stopping distance of the material it is travelling through, in order to eliminate material as a variable. The radius of thickness $\Delta R$ can be seen depicted in fig.\ref{deltar}, where $\Delta R = R_{Max} - R_{Min}$.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.2]{Images//Materials//RMAX.png}
-\caption[width=\columnwidth]{A diagram depicting a crosssec. of a sphere, which has a minimum and maximum radius.}
+\caption[width=\columnwidth]{A diagram depicting a crosssec. of a Sphere, which has a minimum and maximum radius.}
 \label{deltar}
 \end{figure}
 
 \newpage
 \subsubsection{Stopping Power}
 \label{stop}
-Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. A charged particle is mainly slowed down by electronic stopping as it moves along a linear trajectory. Electronic stopping is the inelastic energy loss to the electrons of the target as a result of thermal vibrations at an atomic level. The electronic stopping contributes most in the intermediate energy range of a travelling particle, as seen in fig.\ref{stprg}. Once the particle has lost a sufficient amount of its energy, slowing its velocity through the target, the probability of an elastic collision with a nuclei increases (Nuclear Stopping). The nuclear stopping is the process which causes damage to the target, as the target atom recoils way after the interaction causing a disorder in the lattice structure of the target. The recoiled atom can also go on to cause further collisions causing yet more damage. As seen in fig.\ref{stprg} the electronic stopping power dominates and the nuclear stopping only needs to be accounted for at low energies.
+Stopping power is the force that acts against the motion of a particle within in a material, causing it to lose energy. A charged particle is mainly slowed down by electronic stopping as it moves along a linear trajectory. Electronic stopping is the inelastic energy loss to the electrons of the target as a result of thermal vibrations at an atomic level. The electronic stopping contributes most in the intermediate energy range of a travelling particle, as seen in fig.\ref{stprg}. Once the particle has lost a sufficient amount of its energy, slowing its velocity through the target, the probability of an elastic collision with a nuclei increases (Nuclear Stopping). The nuclear stopping is the process which causes damage to the target, as the target atom recoils way after the interaction causing a disorder in the lattice structure of the target. The recoiled atom can also go on to cause further collisions causing yet more damage. As seen in fig.\ref{stprg} the electronic stopping power dominates and the nuclear stopping only needs to be accounted for at very low energies.
 \\\\
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Stopping//stoppingrange.png}
-\caption[width=\columnwidth]{The relationship between ion velocity and components of stopping power,from Source \cite{stprg}}
+\caption[width=\columnwidth]{The relationship between ion velocity and components of stopping power, from Source \cite{stprg}}
 \label{stprg}
 \end{figure}
 \\\\
-\noindent GEANT4 comes with some Supplementary examples, the example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a GEANT4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
+\noindent GEANT4 comes with some supplementary examples, the example ``TestEm0'' \cite{emo} outputs the stopping power and distances for a given material and particle energy. If the energy of the incident particle and the stopping power of the material is known, a stopping distance can be calculated. The values for stopping power in this project are calculated by the TestEm0 example, which extracting values from a GEANT4 data lists and then interpolates or extrapolates between them, as the stopping power is a function of energy. The extracted stopping powers match with values found in other studies, such as \cite{stpdat}.
 \\\\
-Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The spheres radius of thickness is set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV (the stopping distance energy for this situation), the tracks of the interactions are all contained within the sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the sphere. 
-
-\begin{figure}[h!]
-\hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
-\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. The radius of thickness is set to the extracted GEANT4 stopping distance of a 1 TeV electron in G4\_W.}
-\label{tung}
-\end{figure}
-
-\noindent With the stopping power in mind fig.\ref{novar} was reproduced, but instead of using the same dimensions for each sphere, $\Delta R$ was scaled by the stopping distance. The radius of thickness is set to be the extracted stopping distance for a 100 MeV electron interacting with the material in question. The values of $\Delta R$ are shown in Table \ref{rs}.
-
+\noindent With the stopping power in mind fig.\ref{novar} was reproduced, but instead of using the same dimensions for each Sphere, $\Delta R$ was scaled by the stopping distance of the material. The radius of thickness is set to be the extracted stopping distance for a 100 MeV electron interacting with the material in question. The values of $\Delta R$ are shown in Table \ref{rs}.
+\newpage
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|}
@@ -721,39 +713,44 @@ G4\_W &  10.1631\\ \hline
 \caption{A table showing the values of $\Delta R$ used in fig.\ref{var}.}
 \label{rs}
 \end{table}
-
+\noindent It can be seen that in fig.\ref{var}, the scaling of radius relative to stopping distances, generates histograms which act extremely similar at the same particle energies irrespective of the material it propagates through. This is very interesting as it means that for any further analysis, material can be ruled out as a variable and only energy needs to be varied.
+\\\\
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Materials//Varied_by_radius_and_secondaries.pdf}
-\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a GEANT4 sphere. The left 4 histograms show the distributions show the varying of energy on each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
+\caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying materials and particle energies in BDSIM on a GEANT4 Sphere. The left 4 histograms show the distributions show the varying of energy on each material. The right 4 histograms show the varying of material at a set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
 \label{var}
 \end{figure}
+\\
+\noindent The effect is visulaised by fig. \ref{tung}, which shows a Sphere made of G4\_W, undergoing interactions with batches of 100 electrons at 3 different energies. The radial thickness ($\Delta R$) of all three Spheres set to the be the stopping distance for G4\_W interacting with a 1 TeV electron. It can be seen that when the energy of the electrons is 1 GeV, which is below the 1 TeV threshold, the tracks of the interactions are all contained within the Sphere. The opposite happens when the electrons energies are more than 1 TeV, where most if not all of the particle tracks leave the Sphere. However, when the energy of the electron travels through its required stopping distance $\Delta R$, the maximum amount of radiation can be contained within the Sphere with minimum escapes. This concept is what causes all the histograms to become near identical in fig. \ref{novar}, as they are all using there relative stopping distances as a $\Delta R$ scaling.
 
-\noindent It can be seen that in fig.\ref{var}, the scaling of radius relative to stopping distances, generates histograms which act extremely similar at the same particle energies irrespective of the material it propagates through. This is very interesting as it means that for any further analysis, material can be ruled out as a variable and only energy needs to be varied.
+\begin{figure}[h!]
+\hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten Sphere. The radius of thickness is set to the extracted GEANT4 stopping distance of a 1 TeV electron in G4\_W.}
+\label{tung}
+\end{figure}
 
 \subsection{Interactions with CAD}
-As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in Figure
-\ref{notmybolt}. The CAD bolt was downloaded as a STEP format from a free online database GradCAD \cite{cadmag}. The downloaded model was converted to GDML format with the material G4\_STAINLESS-STEEL using python. The dimensions of the CAD model were gained by using the measuring tool within the FreeCAD GUI as shown fig.\ref{boltinfreeCAD}. The CAD model was then approximately recreated by the constructed of basic primitive solids with boolean operations in Pyg4ometry and can be seen in fig.\ref{boltinvtk}.
-
+As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in fig.
+\ref{notmybolt}. The CAD bolt was downloaded as a STEP format from a free online database GradCAD \cite{cadmag}. The downloaded model was converted to GDML format with the material G4\_STAINLESS-STEEL using python. The dimensions of the CAD model were gained by using the measuring tool within the FreeCAD GUI as shown fig.\ref{boltinfreeCAD}. The CAD model was then approximately recreated by the construction of basic primitive solids with boolean operations in Pyg4ometry and can be seen in fig.\ref{boltinvtk}.
+\\
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.7\textwidth}
   \centering
   \includegraphics[width=1\textwidth]{Images//CAD_Screw//freeCADbolt.png}
-  \captionof{figure}{Diagram of imported CAD model in FreeCAD, with\\ dimensions indicated via FreeCAD's measuring tool.}
+  \captionof{figure}{Imported CAD model in FreeCAD, with dimensions \\ via FreeCAD's measuring tool.}
   \label{boltinfreeCAD}
 \end{minipage}%
 \begin{minipage}{.3\textwidth}
   \centering
   \vspace{5mm}
   \hspace{2cm}\includegraphics[width=0.9\textwidth]{{Images//CAD_Screw//boltVTK.png}}
-  \hspace{5cm}\captionof{figure}{Compound boolean\\ solid recreation of imported\\ CAD model, shown in VTK.}
+  \hspace{5cm}\captionof{figure}{Compound boolean solid recreation of imported CAD model, shown in VTK.}
   \label{boltinvtk}
 \end{minipage}%
 \end{figure}
-
-\newpage
-
+\\
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.5\textwidth}
@@ -769,19 +766,17 @@ As a final goal to round off the project, an imported CAD model was compared wit
   \label{mybolt}
 \end{minipage}%
 \end{figure}
-
-\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in figures \ref{notmybolt} \& \ref{mybolt} (same method that was used for spheres in previoussec. \ref{}). fig.\ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using Pybdsim (sec.\ref{pyb}).
-
+\\\\
+\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in fig. \ref{notmybolt} \& fig. \ref{mybolt} (same method that was used for Spheres in sec. \ref{bdsim}). Fig. \ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using Pybdsim (sec.\ref{pyb}).
+\\
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1\textwidth]{Images//CAD_Screw//boltcount.pdf}
-\caption[width=\columnwidth]{A plot showing the average number of particle tracks produced in BDSIM when interacting 10,000 electrons of 10 Mev with different targets.}
+\caption[width=\columnwidth]{The average number of particle tracks produced in BDSIM when interacting 10,000 electrons of 10 Mev with different targets.}
 \label{boltcount}
 \end{figure}
-
-\noindent It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks being stored in BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occuring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down due to ...\\
-
-However due to time constraints and the purpose of the plot being to find the energy range where the number of secondary particles is at large amount for better sampling.
+\\\\
+\noindent It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks stored by BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occurring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down due to the reaction happening near instantaneously. However due to time constraints and the purpose of the plot being to find the energy range where the number of secondary particles is at large amount for better sampling, this range was not explored.
 \\\\
 \noindent The reason for the number of secondaries being consistently larger for the boolean constructed bolt (Bens\_Bolt) compared with the imported CAD bolt (M14\_2-6G\_Bolt), is most likely due to the boolean construction being an overestimation of the imported bolt. The over estimation would be as a result of  time constraints and ease. The most naive  the threads on the bolt were ignored as well as the the hexagonal and cone features on the head of the bolt.
 
@@ -798,18 +793,12 @@ However due to time constraints and the purpose of the plot being to find the en
 
 \subsection{Improvements \& observations}
 
-The improvements all come from the work done in the first half of the project as a result of thePyg4ometry meshing scripts being rewritten. Te new scripts were proven to be compuationally more fficent and even produce mesh structures tht were aestically neater. This was all down to the removal of boolean operations within in the ething functions and replacing them with coordinate sytem specified adapted trigonometric equations that uses both quadrilateral and triangular faces for tessellation. The full raw resultss for each solid can be entirely viewed in appendix, where it can be clearly seen that the number of polygons on a mesh as the mesh density is varied, and subsuquently the computatinon needed to make that mesh is much more linear and dlat in relation ship of the new solids over the old.  
-meshing is quicker\\
-BDSIM interactions are quicker but still slower than G4 solid (as expected)
-improved coverage unit test speeds\\
-higher meshing density = closer to true solid as expected with BDISM interactions\\
-quote graphs and secs\\
-the material can be factored out by the use of aacaling with respect to the stopping power.\\
-the standard deviatino in the cpu duration of a simulated event was predominatly from ta few long life particles\\
-
+The majority of improvements in the project resulted from the rewriting of the tessellated curved primitive solid meshing scripts in Pyg4ometry (sec. \ref{pyg}). The new scripts were proven to be computationally more efficient and even produce mesh structures that were aesthetically neater. This was primarily down to the removal of dependence on boolean operations within in the pycsgmesh functions and replacing them with co-ordinate system specified adapted trigonometry that uses both quadrilateral and triangular faces for tessellation. The full raw results for each solid can be entirely viewed in appendix \ref{app1}. The results clearly show that the number of polygonal faces on a mesh increases much more uniformly gradual as the mesh density is increased. Subsequently the computation needed to create a given mesh exhibits the same relationship, as the CPU time of the meshing scripts scales with the number of faces on that particular solid. This is also increases the time taken to convert and import a meshed solid to GDML format and in to a BDSIM environment as they mesh much cleaner in structure with less points to process. 
+\\\\
+Other observations made throughout the duration of the project were things such as the effects of stopping power of target materials on a simulation. The ability to fact out materials when simulating interactions with spherical shapes can be utilised by scaling the radii by the respective stopping distance. The main driving factor for the properties of CPU duration distributions of interactions is governed by the energy of the incident particle/s and the number of particles in a given event. The more initial particles the smoother the distribution as there is a larger data set, as well as a small increase in the width due to a higher number of events 
 
 \subsection{Applications}
-As discussed in the introduction (sec. \ref{intro}) there are many invaluable uses for softwares such as BDSIM and Pyg4ometry that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of compatible files it can be used to simulate a growing number of projects. \\
+As discussed in the introduction (sec. \ref{back}) there are many invaluable uses for softwares such as BDSIM and Pyg4ometry that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the softwares being open-source and their wide range of compatible files it can be used to simulate a growing number of projects. This comes from the help of a lot of prequ
 thanks to g4 databases\\
 space\\
 
@@ -817,11 +806,11 @@ space\\
 As a final overview I beilieve the project went very well and the main of remeshing the primitive solids was completed\\
 lots of computer slills learnt along the way\\
 enjoyed working in the phd group\\
-bdsim and geant4 is a very powerful tool that can quickly test models of multiple formating, in a monte carlo accelerator beamline simulation
+bdsim and geant4 is a very powerful tool that can quickly test models of multiple formatting, in a monte carlo accelerator beamline simulation
 
 
 \subsection{Project Extensions}
-If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a sphere insec. \ref{} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Also a range of particles other than the electrons such as proton\\
+If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a Sphere in sec. \ref{} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Also a range of particles other than the electrons such as proton\\
 Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.\\
 fig 27 done what andrey had said and taken several vals of diff seeds to get an average and error in eah point, \\
 maybe done contour plots to show the variablility of both stack and slice for a polygon count\\
@@ -831,148 +820,8 @@ maybe done contour plots to show the variablility of both stack and slice for a 
 \newpage
 \newpage
 \footnotesize
-
-\begin{thebibliography}{1}
-
-	% say last visitied instead of taken on
-	
-	\bibitem{fluka}
-	FLUKA: A Multi-Particle Transport Code\\
-	
-	\bibitem{vtk}
-	VTK homepage\\
-	Taken on 10/03/2020\\
-	\url{https://vtk.org/}
-
-	\bibitem{spacesh}
-	Veli Capali, et al.\\
-	GEANT4 calculations for space radiation shielding material $Al_2O_3$\\
-	DOI: 10.1051/epjconf/201510002002
-
-	\bibitem{sat}
-	GradCAD satellite\\
-	Taken on 10/11/2019\\	
-	\url{https://grabcad.com/library/gps-satellite-1}
-
-	\bibitem{cern}
-	CERN Homepage\\
-	Taken on 08/03/2020\\
-	\url{https://home.cern/}
-	
-	\bibitem{magf}
-	Geoffrey A. Landis\\
-	NASA Lewis Research Center\\
-	Magnetic radiation shielding: An idea whose time has returned?\\
-	May 15-19, 1991, Princeton, N.J.\\
-	Cleveland, OH 44135\\
-	U.S.A.
-	\url{https://doi.org/10.1063/1.42056}
-	
-	\bibitem{wiki}
-	boolen image\\
-	\url{https://en.wikipedia.org/wiki/Constructive_solid_geometry#/media/File:Csg_tree.png}
-	
-	\bibitem{jai}
-	JAI Homepage\\
-	Taken on 07/03/2020\\
-	\url{https://www.adams-institute.ac.uk/}
-
-	\bibitem{pyg4om}
-	S.T. Boogert et al.\\
-	Pyg4ometry : A tool to create geometries for GEANT4, BDSIM, G4BEAMLINE and FLUKA for particle loss energy deposition studies\\
-	Proc. IPAC 2019\\s
-	\url{http://accelconf.web.cern.ch/AccelConf/ipac2019/papers/wepts054.pdf}
-
-	\bibitem{bitb}
-	Pyg4ometry BitBucket\\
-	Taken on 01/03/2020\\
-	\url{https://bitbucket.org/jairhul/Pyg4ometry/src/}
-	
-	\bibitem{}
-		BDSIM Manual\\
-		Taken on 01/03/2020\\
-		\url{http://www.pp.rhul.ac.uk/bdsim/manual/}
-		
-	\bibitem{bdsimpap}
-		L.J Nevay et al.\\
-		BDSIM: An accelerator tracking code with particle–matter interactions\\
-		\url{https://doi.org/10.1016/j.cpc.2020.107200}
-
-	
-	\bibitem{g4beam}
-	G4beamline homepage\\
-	Last visited on 11/03/2020\\
-	\url{https://accelconf.web.cern.ch/accelconf/PAC2011/papers/mop152.pdf}
-	
-		
-	\bibitem{solids}
-	GEANT4 Solids\\
-	Taken on 01/03/2020\\
-	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html}
-	
-	\bibitem{mater}
-	GEANT4 Materials\\
-	Taken on 01/03/2020\\
-	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html}
-	
-	\bibitem{meh}
-	M. Pinto, P. Gon\c{c}alves\\
-	GUIMesh: A tool to import STEP geometries into GEANT4 via GDML\\
-	\url{https://doi.org/10.1016/j.cpc.2019.01.024}
-	
-	\bibitem{will}
-	HADRON THERAPY MACHINE SIMULATIONS USING BDSIM
-		
-	\bibitem{pdg}
-	% exapnd more inf
-	M. Tanabashi et al\\
-	43. Monte Carlo Particle Numbering Scheme\\
-	\url{http://pdg.lbl.gov/2019/reviews/rpp2019-rev-monte-carlo-numbering.pdf}
-	
-	\bibitem{stpdat}
-	U.S. department of Commerce\\
-	Stopping Powers and Ranges of
-	Electrons and Positrons\\
-	%date and location
-	\url{https://www.govinfo.gov/content/pkg/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7/pdf/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7.pdf}
-	
-\bibitem{cadmag}
-	GrabCad\\
-	Source of CAD M14 2-6G Bolt\\
-	Taken on 07/03/2020\\
-	\url{https://grabcad.com/library/m14-2-1}
-
-\bibitem{cancer}
-	Elaine M.Zeman et al.\\
-	Abeloff's Clinical Oncology (Sixth Edition)\\
-	27 - Basics of Radiation Therapy\\
-	\url{https://www.sciencedirect.com/science/article/pii/B978032347674400027X}
-	
-\bibitem{stprg}
-	Machaka, Ronald\\
-	Ion Beam Modifications of Boron Nitride By Ion Implantation\\
-	2007\\
-	\url{https://www.researchgate.net/publication/265496484_Ion_Beam_Modifications_of_Boron_Nitride_By_Ion_Implantation}
-	
-\bibitem{emo}
-	Geant Em0\\
-	\url{http://GEANT4-data.web.cern.ch/GEANT4-data/releases/GEANT4/examples/extended/electromagnetic/TestEm0/README}
-
-\bibitem{dose}
-	Tsukasa Aso et al.\\
-	Optimization of Patient Geometry Based on CT Data in GEANT4 for Medical Application\\
-	\url{https://doi.org/10.1016/j.meddos.2017.08.007}
-
-\bibitem{blue}
-	Yi Hu et al.\\
-	Cherenkov Radiation Control via Self-accelerating Wave-packets\\
-	\url{https://www.nature.com/articles/s41598-017-08705-4.pdf}
-
-\bibitem{18}
-	FreeCAD 0.18 release notes\\
-	\url{https://wiki.freecadweb.org/Release_notes_0.18}
-
-\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,library}
 
 % ------------------------------------------------------------------------------------------------------------------------------
 \normalsize
@@ -1162,7 +1011,7 @@ The following figures are the meshing and polygon data for each primitive solid 
 \centering
 \begin{minipage}{.2\textwidth}
   \centering
-  \includegraphics[height=0.75\linewidth]{Images//Meshes//sphere.png}
+  \includegraphics[height=0.75\linewidth]{Images//Meshes//Sphere.png}
   \captionof{figure}{ }
   \label{fig:test1}
 \end{minipage}%

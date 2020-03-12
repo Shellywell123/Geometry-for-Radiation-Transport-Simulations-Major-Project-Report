@@ -1,0 +1,142 @@
+
+\begin{thebibliography}{1}
+
+	% say last visitied instead of taken on
+	
+	\bibitem{fluka}
+	FLUKA: A Multi-Particle Transport Code\\
+	
+	\bibitem{vtk}
+	VTK homepage\\
+	Taken on 10/03/2020\\
+	\url{https://vtk.org/}
+
+	\bibitem{spacesh}
+	Veli Capali, et al.\\
+	GEANT4 calculations for space radiation shielding material $Al_2O_3$\\
+	DOI: 10.1051/epjconf/201510002002
+
+	\bibitem{sat}
+	GradCAD satellite\\
+	Taken on 10/11/2019\\	
+	\url{https://grabcad.com/library/gps-satellite-1}
+
+	\bibitem{cern}
+	CERN Homepage\\
+	Taken on 08/03/2020\\
+	\url{https://home.cern/}
+	
+	\bibitem{magf}
+	Geoffrey A. Landis\\
+	NASA Lewis Research Center\\
+	Magnetic radiation shielding: An idea whose time has returned?\\
+	May 15-19, 1991, Princeton, N.J.\\
+	Cleveland, OH 44135\\
+	U.S.A.
+	\url{https://doi.org/10.1063/1.42056}
+	
+	\bibitem{wiki}
+	boolen image\\
+	\url{https://en.wikipedia.org/wiki/Constructive_solid_geometry#/media/File:Csg_tree.png}
+	
+	\bibitem{jai}
+	JAI Homepage\\
+	Taken on 07/03/2020\\
+	\url{https://www.adams-institute.ac.uk/}
+
+	\bibitem{pyg4om}
+	S.T. Boogert et al.\\
+	Pyg4ometry : A tool to create geometries for GEANT4, BDSIM, G4BEAMLINE and FLUKA for particle loss energy deposition studies\\
+	Proc. IPAC 2019\\s
+	\url{http://accelconf.web.cern.ch/AccelConf/ipac2019/papers/wepts054.pdf}
+
+	\bibitem{bitb}
+	Pyg4ometry BitBucket\\
+	Taken on 01/03/2020\\
+	\url{https://bitbucket.org/jairhul/Pyg4ometry/src/}
+	
+	\bibitem{}
+		BDSIM Manual\\
+		Taken on 01/03/2020\\
+		\url{http://www.pp.rhul.ac.uk/bdsim/manual/}
+		
+	\bibitem{bdsimpap}
+		L.J Nevay et al.\\
+		BDSIM: An accelerator tracking code with particle–matter interactions\\
+		\url{https://doi.org/10.1016/j.cpc.2020.107200}
+
+	
+	\bibitem{g4beam}
+	G4beamline homepage\\
+	Last visited on 11/03/2020\\
+	\url{https://accelconf.web.cern.ch/accelconf/PAC2011/papers/mop152.pdf}
+	
+		
+	\bibitem{solids}
+	GEANT4 Solids\\
+	Taken on 01/03/2020\\
+	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html}
+	
+	\bibitem{mater}
+	GEANT4 Materials\\
+	Taken on 01/03/2020\\
+	\url{http://GEANT4-userdoc.web.cern.ch/GEANT4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html}
+	
+	\bibitem{meh}
+	M. Pinto, P. Gon\c{c}alves\\
+	GUIMesh: A tool to import STEP geometries into GEANT4 via GDML\\
+	\url{https://doi.org/10.1016/j.cpc.2019.01.024}
+	
+	\bibitem{will}
+	HADRON THERAPY MACHINE SIMULATIONS USING BDSIM
+		
+	\bibitem{pdg}
+	% exapnd more inf
+	M. Tanabashi et al\\
+	43. Monte Carlo Particle Numbering Scheme\\
+	\url{http://pdg.lbl.gov/2019/reviews/rpp2019-rev-monte-carlo-numbering.pdf}
+	
+	\bibitem{stpdat}
+	U.S. department of Commerce\\
+	Stopping Powers and Ranges of
+	Electrons and Positrons\\
+	%date and location
+	\url{https://www.govinfo.gov/content/pkg/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7/pdf/GOVPUB-C13-139be796c7e56cb34375ad52db8ec5e7.pdf}
+	
+\bibitem{cadmag}
+	GrabCad\\
+	Source of CAD M14 2-6G Bolt\\
+	Taken on 07/03/2020\\
+	\url{https://grabcad.com/library/m14-2-1}
+
+\bibitem{cancer}
+	Elaine M.Zeman et al.\\
+	Abeloff's Clinical Oncology (Sixth Edition)\\
+	27 - Basics of Radiation Therapy\\
+	\url{https://www.sciencedirect.com/science/article/pii/B978032347674400027X}
+	
+\bibitem{stprg}
+	Machaka, Ronald\\
+	Ion Beam Modifications of Boron Nitride By Ion Implantation\\
+	2007\\
+	\url{https://www.researchgate.net/publication/265496484_Ion_Beam_Modifications_of_Boron_Nitride_By_Ion_Implantation}
+	
+\bibitem{emo}
+	Geant Em0\\
+	\url{http://GEANT4-data.web.cern.ch/GEANT4-data/releases/GEANT4/examples/extended/electromagnetic/TestEm0/README}
+
+\bibitem{dose}
+	Tsukasa Aso et al.\\
+	Optimization of Patient Geometry Based on CT Data in GEANT4 for Medical Application\\
+	\url{https://doi.org/10.1016/j.meddos.2017.08.007}
+
+\bibitem{blue}
+	Yi Hu et al.\\
+	Cherenkov Radiation Control via Self-accelerating Wave-packets\\
+	\url{https://www.nature.com/articles/s41598-017-08705-4.pdf}
+
+\bibitem{18}
+	FreeCAD 0.18 release notes\\
+	\url{https://wiki.freecadweb.org/Release_notes_0.18}
+
+\end{thebibliography}
