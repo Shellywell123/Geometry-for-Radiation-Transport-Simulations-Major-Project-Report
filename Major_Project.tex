@@ -671,16 +671,16 @@ However the error bars did not fluctuate in size much as the number of events wa
 
 \newpage
 \subsection{Selection of Material}
-When creating meshed solids, you have the choice of material. fig.\ref{novar} shows the CPU duration time distributions for electron interactions with GEANT4 spheres constructed of different GEANT4 materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time of the interactions increasing with energy. The run time is heavily linked to the number of secondary particles which is a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
-
+When creating meshed solids, you have the choice of material. fig.\ref{novar} shows the CPU duration time distributions for electron interactions with GEANT4 spheres constructed of different Pyg4ometry materials across a range of energies in BDSIM. The energy range is relatively low (25 MeV $\rightarrow$ 100 MeV), this is due to the run time of the interactions increasing with energy. The run time is heavily linked to the number of secondary particles which is a function of energy. This is proven by the fact that it can be seen that as the energy is increased the width of the distribution increases. This widening is due to the number of secondary particles being produced, the more energetic an interaction the further the particle will penetrate a solid and ionise along the way generating more secondaries.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Images//Materials//not_Varied_by_radius_and_secondaries.pdf}
 \caption[width=\columnwidth]{Histograms showing the CPU duration distributions of varying GEANT4 materials and particle energies in BDSIM on a GEANT4 sphere. The left 4 histograms show the distributions show the varying of energy upon each material. The right 4 histograms show the varying of material at each set energy. Each plot is normalised by the initial 10,000 electrons in each event.}
 \label{novar}
 \end{figure}
-
-\noindent The dimensions of the spheres used in fig.\ref{novar} were set to a minimum radius of 1 micron and a maximum radius of 20 mm. It was then proposed that the radius of thickness could be scaled with respect to the stopping distance of the material it is travelling through, in order to eliminate material as a variable. The radius of thickness $\Delta R$ can be seen depicted in fig.\ref{deltar}, where $\Delta R = R_{Max} - R_{Min}$.
+\noindent The dimensions of the spheres used in fig.\ref{novar} were set to a minimum radius of 1 micron and a maximum radius of 10 mm. 
+\\\\
+It was then proposed that the radius of thickness could be scaled with respect to the stopping distance of the material it is travelling through, in order to eliminate material as a variable. The radius of thickness $\Delta R$ can be seen depicted in fig.\ref{deltar}, where $\Delta R = R_{Max} - R_{Min}$.
 
 \begin{figure}[h!]
 \centering
@@ -697,7 +697,7 @@ Stopping power is the force that acts against the motion of a particle within in
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images//Stopping//stoppingrange.png}
-\caption[width=\columnwidth]{A plot showing the relationship between ion velocity and components of stopping power. fig.2.1 from Source \cite{stprg}}
+\caption[width=\columnwidth]{The relationship between ion velocity and components of stopping power,from Source \cite{stprg}}
 \label{stprg}
 \end{figure}
 \\\\
@@ -707,7 +707,7 @@ Figure \ref{tung} shows a sphere made of G4\_W, undergoing interactions with bat
 
 \begin{figure}[h!]
 \hspace*{1.4cm}\includegraphics[scale=0.5]{Images//BDSIM//Tungsten_Sphere.png}
-\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. The radius of thickness is set to the extracted GEANT4 stopping distance of a 1 TeV electron in tungsten.}
+\caption[width=\columnwidth]{Screenshots of 1 GeV, 1 TeV \& 100 TeV electrons interacting with a tungsten sphere. The radius of thickness is set to the extracted GEANT4 stopping distance of a 1 TeV electron in G4\_W.}
 \label{tung}
 \end{figure}
 
@@ -735,13 +735,6 @@ G4\_W &  10.1631\\ \hline
 \end{figure}
 
 \noindent It can be seen that in fig.\ref{var}, the scaling of radius relative to stopping distances, generates histograms which act extremely similar at the same particle energies irrespective of the material it propagates through. This is very interesting as it means that for any further analysis, material can be ruled out as a variable and only energy needs to be varied.
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=0.4]{Images//Materials//Time_ex_dists.pdf}
-%\caption[width=\columnwidth]{Meshing Development for Tubs (Solid \& Mesh View)}
-%\label{tubspic}
-%\end{figure}
 
 \subsection{Interactions with CAD}
 As a final goal to round off the project, an imported CAD model was compared with a compound boolean meshed solid of a generic bolt, shown in Figure
@@ -804,25 +797,39 @@ However due to time constraints and the purpose of the plot being to find the en
 \label{brgqebafd}
 \end{figure}
 
-
 \newpage
 \section{Conclusion \& Summary}
 \label{conc}
 
-\subsection{Improvements}
+\subsection{Improvements \& observations}
+
+The improvements all come from the work done in the first half of the project as a result of thePyg4ometry meshing scripts being rewritten. Te new scripts were proven to be compuationally more fficent and even produce mesh structures tht were aestically neater. This was all down to the removal of boolean operations within in the ething functions and replacing them with coordinate sytem specified adapted trigonometric equations that uses both quadrilateral and triangular faces for tessellation. The full raw resultss for each solid can be entirely viewed in appendix, where it can be clearly seen that the number of polygons on a mesh as the mesh density is varied, and subsuquently the computatinon needed to make that mesh is much more linear and dlat in relation ship of the new solids over the old.  
 meshing is quicker\\
 BDSIM interactions are quicker but still slower than G4 solid (as expected)
 improved coverage unit test speeds\\
 meshing is neater and more uniform in structure\\
 higher meshing density = closer to true solid as expected with BDISM interactions\\
-quote graphs andsec.s\\
+quote graphs and secs\\
+the material can be factored out by the use of aacaling with respect to the stopping power.\\
+the standard deviatino in the cpu duration of a simulated event was predominatly from ta few long life particles\\
+
 
 \subsection{Applications}
-As discussed in the introduction (sec. \ref{intro} there are many invaluable uses for softwares such as BDSIM and Pyg4ometry that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of compatible files it can be used to simulate a growing number of projects. This report demonstrates this by CAD magnet modelling.
+As discussed in the introduction (sec. \ref{intro} there are many invaluable uses for softwares such as BDSIM and Pyg4ometry that can be used to to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open source and its wide range of compatible files it can be used to simulate a growing number of projects. \\
+space\\
+
+\subsection{Summay}
+As a final overview I beilieve the project went very well and the main of remeshing the primitive solids was completed\\
+lots of computer slills learnt along the way\\
+enjoyed working in the phd group\\
+bdsim and geant4 is a very powerful tool that can quickly test models of multiple formating, in a monte carlo accelerator beamline simulation
+
 
 \subsection{Project Extensions}
 If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a sphere insec. \ref{} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Also a range of particles other than the electrons such as proton\\
-Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.
+Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.\\
+fig 27 done what andrey had said and taken several vals of diff seeds to get an average and error in eah point, \\
+maybe done contour plots to show the variablility of both stack and slice for a polygon count\\
 
 % ------------------------------------------------------------------------------------------------------------------------------
 
