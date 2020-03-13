@@ -1,7 +1,10 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2018.11.29)  12 MAR 2020 18:28
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2018.11.29)  13 MAR 2020 08:52
  restricted system commands enabled.
-**Major_Project.tex
-(./Major_Project.tex
+**C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Majo
+r_Project.tex
+
+(C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Major
+_Project.tex
 LaTeX2e <2017-04-15>
 Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
 Lua module: lualibs 2017-02-01 2.5 ConTeXt Lua standard libraries.
@@ -33,7 +36,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.470 seconds
+luaotfload | main : initialization completed in 0.444 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ("C:/Program Files/MiKTeX 2.9/tex/latex/base/article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -54,7 +57,12 @@ ja/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman12-regular.luc
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty"
+) ("C:/Program Files/MiKTeX 2.9/tex/latex/cite/cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty"
@@ -413,7 +421,11 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@dimlist=\toks24
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg"))
-("C:/Program Files/MiKTeX 2.9/tex/latex/subfigure/subfigure.sty"
+("C:/Program Files/MiKTeX 2.9/tex/latex/subfigure/subFigure.sty"
+
+LaTeX Warning: You have requested package `subFigure',
+               but the package provides `subfigure'.
+
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip47
 \subfigcapskip=\skip48
@@ -425,7 +437,6 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \c@lofdepth=\count122
 \c@subtable=\count123
 \c@lotdepth=\count124
-
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
@@ -539,28 +550,79 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \c@ContinuedFloat=\count135
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
-Package caption Info: subfigure package is loaded.
 )
-No file Major_Project.aux.
+(./Major_Project.aux
 
+LaTeX Warning: Label `err' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+)
 \openout1 = Major_Project.aux
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-("C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii"
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+ ("C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count136
 \scratchdimen=\dimen149
@@ -587,7 +649,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 114.
+Package hyperref Info: Link coloring OFF on input line 102.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -597,9 +659,11 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 102.
+LaTeX Info: Redefining \pageref on input line 102.
+LaTeX Info: Redefining \nameref on input line 102.
+
+(./Major_Project.out) (./Major_Project.out)
 \@outlinefile=\write3
 
 \openout3 = Major_Project.out
@@ -639,26 +703,26 @@ LaTeX Info: Redefining \nameref on input line 114.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 114.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 114.
+LaTeX Info: Redefining \celsius on input line 102.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 102.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 114.
-Package gensymb Info: Using \Omega for \ohm on input line 114.
+LaTeX Info: Redefining \ohm on input line 102.
+Package gensymb Info: Using \Omega for \ohm on input line 102.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<Images//Logos//rhul.jpg, id=3, pagebox=cropbox, 711.4078pt x 355.3275pt>
+<Images//Logos//rhul.jpg, id=239, pagebox=cropbox, 711.4078pt x 355.3275pt>
 File: Images//Logos//rhul.jpg Graphic file (type jpg)
 <use Images//Logos//rhul.jpg>
-Package luatex.def Info: Images//Logos//rhul.jpg  used on input line 119. on inp
-ut line 119.
+Package luatex.def Info: Images//Logos//rhul.jpg  used on input line 107. on inp
+ut line 107.
 Package luatex.def Info: Requested size: 195.63815pt x 97.71265pt on input line 
-119.
+107.
 (load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmromancaps10-regular.luc)(load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmroman17-regular.luc)(load luc: C:/Users/benja/Ap
@@ -667,325 +731,234 @@ uc: C:/Users/benja/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmrom
 an12-italic.luc)(load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9/luatex-cache/
 generic/fonts/otl/lmroman10-regular.luc)(load luc: C:/Users/benja/AppData/Local/
 MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-bold.luc)
-<Images//Logos//BDSIM_Logo.jpg, id=4, pagebox=cropbox, 174.8934pt x 85.5195pt>
+<Images//Logos//BDSIM_Logo.jpg, id=240, pagebox=cropbox, 174.8934pt x 85.5195pt>
+
 File: Images//Logos//BDSIM_Logo.jpg Graphic file (type jpg)
 <use Images//Logos//BDSIM_Logo.jpg>
-Package luatex.def Info: Images//Logos//BDSIM_Logo.jpg  used on input line 152. 
-on input line 152.
+Package luatex.def Info: Images//Logos//BDSIM_Logo.jpg  used on input line 140. 
+on input line 140.
 Package luatex.def Info: Requested size: 117.38408pt x 57.39822pt on input line 
-152.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 153.
+140.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 141.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/wasysym/uwasy.fd"
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-<Images//Logos//JAI_Logo.jpeg, id=5, pagebox=cropbox, 321.2pt x 92.345pt>
+<Images//Logos//JAI_Logo.jpeg, id=241, pagebox=cropbox, 321.2pt x 92.345pt>
 File: Images//Logos//JAI_Logo.jpeg Graphic file (type jpg)
 <use Images//Logos//JAI_Logo.jpeg>
-Package luatex.def Info: Images//Logos//JAI_Logo.jpeg  used on input line 156. o
-n input line 156.
+Package luatex.def Info: Images//Logos//JAI_Logo.jpeg  used on input line 144. o
+n input line 144.
 Package luatex.def Info: Requested size: 146.73235pt x 42.18611pt on input line 
-156.
+144.
 
-Overfull \hbox (97.82654pt too wide) in paragraph at lines 151--158
+Overfull \hbox (97.82654pt too wide) in paragraph at lines 139--146
  []$[]$$[]$ 
  []
 
 [1
 
-{C:/Users/benja/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}<./Images//Log
-os//rhul.jpg><./Images//Logos//BDSIM_Logo.jpg><./Images//Logos//JAI_Logo.jpeg>]
-
+{C:/Users/benja/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}<C:/Users/benj
+a/Documents/Major_Project_Report_Local/Major_Project_Report/Images//Logos//rhul.
+jpg><C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Im
+ages//Logos//BDSIM_Logo.jpg><C:/Users/benja/Documents/Major_Project_Report_Local
+/Major_Project_Report/Images//Logos//JAI_Logo.jpeg>]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1]
+[1] (./Major_Project.toc [2])
 \tf@toc=\write4
 
 \openout4 = Major_Project.toc
- [2]
+ [3]
 
-LaTeX Warning: Reference `back' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `motiv' on page 1 undefined on input line 179.
+LaTeX Warning: Citation `blue' on page 1 undefined on input line 180.
 
 
-LaTeX Warning: Reference `aim' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `packs' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `prim' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `int' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `conc' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Reference `ap1' on page 1 undefined on input line 179.
-
-
-LaTeX Warning: Citation `blue' on page 1 undefined on input line 192.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 176--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 176--181
 
  []
-
-
-LaTeX Warning: Reference `radd' on page 1 undefined on input line 194.
 
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 ]
-<Images//introduction//CernEast.jpg, id=34, pagebox=cropbox, 2094.82625pt x 1619
-.04875pt>
+<Images//introduction//CernEast.jpg, id=340, pagebox=cropbox, 2094.82625pt x 161
+9.04875pt>
 File: Images//introduction//CernEast.jpg Graphic file (type jpg)
 <use Images//introduction//CernEast.jpg>
 Package luatex.def Info: Images//introduction//CernEast.jpg  used on input line 
-201. on input line 201.
+189. on input line 189.
 Package luatex.def Info: Requested size: 272.33698pt x 210.48372pt on input line
- 201.
+ 189.
 
 
-LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 202.
+LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 190.
 
 
-LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 202.
+LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 190.
 
 
-LaTeX Warning: Reference `cerncad' on page 2 undefined on input line 206.
+LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 194.
 
 
-LaTeX Warning: Citation `pyg4om' on page 2 undefined on input line 206.
+LaTeX Warning: Citation `spacesh' on page 2 undefined on input line 197.
 
 
-LaTeX Warning: Citation `spacesh' on page 2 undefined on input line 209.
+LaTeX Warning: Citation `magf' on page 2 undefined on input line 199.
 
 
-LaTeX Warning: Citation `magf' on page 2 undefined on input line 211.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
 
  []
 
-<Images//introduction//radiotherapy.png, id=35, pagebox=cropbox, 690.78075pt x 6
-15.4995pt>
+<Images//introduction//radiotherapy.png, id=342, pagebox=cropbox, 690.78075pt x 
+615.4995pt>
 File: Images//introduction//radiotherapy.png Graphic file (type png)
 <use Images//introduction//radiotherapy.png>
 Package luatex.def Info: Images//introduction//radiotherapy.png  used on input l
-ine 218. on input line 218.
+ine 206. on input line 206.
 Package luatex.def Info: Requested size: 241.77687pt x 215.42804pt on input line
- 218.
+ 206.
 
-LaTeX Warning: Citation `cancer' on page 2 undefined on input line 219.
-
-
-LaTeX Warning: Citation `cancer' on page 2 undefined on input line 219.
+LaTeX Warning: Citation `cancer' on page 2 undefined on input line 207.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--222
+LaTeX Warning: Citation `cancer' on page 2 undefined on input line 207.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--210
 
  []
 
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
-[2<./Images//introduction//CernEast.jpg>]
+[2<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Imag
+es//introduction//CernEast.jpg>]
 
-LaTeX Warning: Reference `cancer' on page 3 undefined on input line 223.
-
-
-LaTeX Warning: Citation `meh' on page 3 undefined on input line 229.
+LaTeX Warning: Citation `meh' on page 3 undefined on input line 219.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--230
+Underfull \hbox (badness 10000) in paragraph at lines 217--220
 
  []
 
 
-LaTeX Warning: Reference `pyg' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Reference `bdsim' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Reference `g4' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Reference `bool' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Reference `prim' on page 3 undefined on input line 235.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
+Underfull \hbox (badness 10000) in paragraph at lines 223--226
 
  []
 
-[3<./Images//introduction//radiotherapy.png>]
 
-LaTeX Warning: Citation `cern' on page 4 undefined on input line 241.
+warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
+[3<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Imag
+es//introduction//radiotherapy.png>]
 
-
-LaTeX Warning: Reference `geant' on page 4 undefined on input line 248.
-
-
-LaTeX Warning: Reference `monte' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `cern' on page 4 undefined on input line 231.
 
 
-LaTeX Warning: Citation `solids' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `geant' on page 4 undefined on input line 238.
 
 
-LaTeX Warning: Citation `fluka' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `g4man' on page 4 undefined on input line 238.
 
 
-LaTeX Warning: Citation `dose' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `fluka' on page 4 undefined on input line 238.
 
 
-LaTeX Warning: Citation `will' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `dose' on page 4 undefined on input line 238.
 
 
-LaTeX Warning: Citation `mater' on page 4 undefined on input line 248.
+LaTeX Warning: Citation `will' on page 4 undefined on input line 238.
+
+
+LaTeX Warning: Citation `g4man' on page 4 undefined on input line 238.
+
+
+LaTeX Warning: Citation `bdsimpap' on page 4 undefined on input line 247.
 
 (load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmroman8-regular.luc)(load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9/luatex
 -cache/generic/fonts/otl/lmroman6-regular.luc)
-
-LaTeX Warning: Citation `bdsimpap' on page 4 undefined on input line 257.
-
-
-LaTeX Warning: Reference `bdsim' on page 4 undefined on input line 257.
-
-
-LaTeX Warning: Reference `stop' on page 4 undefined on input line 257.
-
-
-LaTeX Warning: Reference `screengrab' on page 4 undefined on input line 261.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+Underfull \hbox (badness 10000) in paragraph at lines 247--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+Underfull \hbox (badness 10000) in paragraph at lines 247--252
 
  []
 
 [4]
 
-LaTeX Warning: Reference `root' on page 5 undefined on input line 265.
+LaTeX Warning: Citation `jai' on page 5 undefined on input line 262.
 
 
-LaTeX Warning: Reference `prim' on page 5 undefined on input line 265.
+LaTeX Warning: Citation `pyg4om' on page 5 undefined on input line 262.
 
 
-LaTeX Warning: Reference `int' on page 5 undefined on input line 265.
-
-
-LaTeX Warning: Citation `jai' on page 5 undefined on input line 272.
-
-
-LaTeX Warning: Reference `bdsim' on page 5 undefined on input line 272.
-
-
-LaTeX Warning: Citation `pyg4om' on page 5 undefined on input line 272.
-
-
-LaTeX Warning: Reference `GEANT4' on page 5 undefined on input line 272.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
 
  []
 
 [5]
 
-LaTeX Warning: Citation `cern' on page 6 undefined on input line 277.
+LaTeX Warning: Citation `cern' on page 6 undefined on input line 267.
 
 
-LaTeX Warning: Reference `pyb' on page 6 undefined on input line 277.
+LaTeX Warning: Citation `18' on page 6 undefined on input line 270.
 
 
-LaTeX Warning: Citation `18' on page 6 undefined on input line 280.
+LaTeX Warning: Citation `vtk' on page 6 undefined on input line 274.
 
-
-LaTeX Warning: Reference `pyg' on page 6 undefined on input line 280.
-
-
-LaTeX Warning: Reference `sat' on page 6 undefined on input line 280.
-
-
-LaTeX Warning: Reference `mag' on page 6 undefined on input line 280.
-
-
-LaTeX Warning: Citation `vtk' on page 6 undefined on input line 284.
-
-
-LaTeX Warning: Reference `sat' on page 6 undefined on input line 284.
-
-
-LaTeX Warning: Reference `screengrab' on page 6 undefined on input line 284.
-
-<Images//VTK/sat.png, id=65, pagebox=cropbox, 890.8482pt x 542.025pt>
+<Images//VTK/sat.png, id=386, pagebox=cropbox, 890.8482pt x 542.025pt>
 File: Images//VTK/sat.png Graphic file (type png)
 <use Images//VTK/sat.png>
-Package luatex.def Info: Images//VTK/sat.png  used on input line 288. on input l
-ine 288.
+Package luatex.def Info: Images//VTK/sat.png  used on input line 278. on input l
+ine 278.
 Package luatex.def Info: Requested size: 356.33298pt x 216.80615pt on input line
- 288.
+ 278.
 
-LaTeX Warning: Citation `sat' on page 6 undefined on input line 289.
+LaTeX Warning: Citation `sat' on page 6 undefined on input line 279.
 
 
-LaTeX Warning: Citation `sat' on page 6 undefined on input line 289.
+LaTeX Warning: Citation `sat' on page 6 undefined on input line 279.
 
-<Images//BDSIM//screengrab.png, id=66, pagebox=cropbox, 963.1182pt x 508.7808pt>
-
-File: Images//BDSIM//screengrab.png Graphic file (type png)
-<use Images//BDSIM//screengrab.png>
-Package luatex.def Info: Images//BDSIM//screengrab.png  used on input line 295. 
-on input line 295.
-Package luatex.def Info: Requested size: 385.24046pt x 203.50871pt on input line
- 295.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6<./Images//VTK/sat.png>]
+<Images//BDSIM//screengrab.png, id=387, pagebox=cropbox, 963.1182pt x 508.7808pt
+>
+File: Images//BDSIM//screengrab.png Graphic file (type png)
+<use Images//BDSIM//screengrab.png>
+Package luatex.def Info: Images//BDSIM//screengrab.png  used on input line 285. 
+on input line 285.
+Package luatex.def Info: Requested size: 385.24046pt x 203.50871pt on input line
+ 285.
 
-LaTeX Warning: Reference `pyg' on page 7 undefined on input line 307.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6]
+
+LaTeX Warning: Citation `solids' on page 7 undefined on input line 296.
 
 
-LaTeX Warning: Citation `solids' on page 7 undefined on input line 307.
+Underfull \hbox (badness 10000) in paragraph at lines 296--299
 
+ []
 
-LaTeX Warning: Reference `pyg' on page 7 undefined on input line 307.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
+[7<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Imag
+es//VTK/sat.png><C:/Users/benja/Documents/Major_Project_Report_Local/Major_Proje
+ct_Report/Images//BDSIM//screengrab.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 
  []
 
 
-LaTeX Warning: Reference `order' on page 7 undefined on input line 313.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 
  []
 
@@ -993,655 +966,463 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--315
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
-put line 316.
+put line 305.
 
 
-Package xcolor Warning: Incompatible color definition on input line 317.
+Package xcolor Warning: Incompatible color definition on input line 306.
 
 
-Package xcolor Warning: Incompatible color definition on input line 319.
+Package xcolor Warning: Incompatible color definition on input line 308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 319.
+Package xcolor Warning: Incompatible color definition on input line 308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 319.
+Package xcolor Warning: Incompatible color definition on input line 308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 319.
-
-[7<./Images//BDSIM//screengrab.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 321.
+Package xcolor Warning: Incompatible color definition on input line 308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 323.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 325.
+Package xcolor Warning: Incompatible color definition on input line 312.
 
 
-Package xcolor Warning: Incompatible color definition on input line 327.
+Package xcolor Warning: Incompatible color definition on input line 314.
 
 
-Package xcolor Warning: Incompatible color definition on input line 329.
+Package xcolor Warning: Incompatible color definition on input line 316.
 
 
-Package xcolor Warning: Incompatible color definition on input line 331.
+Package xcolor Warning: Incompatible color definition on input line 318.
 
 
-Package xcolor Warning: Incompatible color definition on input line 333.
+Package xcolor Warning: Incompatible color definition on input line 320.
 
 
-Package xcolor Warning: Incompatible color definition on input line 333.
+Package xcolor Warning: Incompatible color definition on input line 322.
 
 
-Package xcolor Warning: Incompatible color definition on input line 333.
+Package xcolor Warning: Incompatible color definition on input line 322.
 
 
-Package xcolor Warning: Incompatible color definition on input line 335.
+Package xcolor Warning: Incompatible color definition on input line 322.
 
 
-LaTeX Warning: Reference `code1' on page 8 undefined on input line 339.
+Package xcolor Warning: Incompatible color definition on input line 324.
 
-
-LaTeX Warning: Reference `code1' on page 8 undefined on input line 339.
-
-
-LaTeX Warning: Reference `code1' on page 8 undefined on input line 339.
-
-
-LaTeX Warning: Reference `cylmeshin' on page 8 undefined on input line 339.
-
-
-LaTeX Warning: Reference `sphmeshin' on page 8 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tormeshin' on page 8 undefined on input line 339.
-
-
-LaTeX Warning: Reference `code1' on page 8 undefined on input line 343.
-
-
-LaTeX Warning: Reference `cyctrig' on page 8 undefined on input line 343.
-
-<Images//Coords//cyl.png, id=89, pagebox=cropbox, 1002.74625pt x 464.73625pt>
+[8]
+<Images//Coords//cyl.png, id=441, pagebox=cropbox, 1002.74625pt x 464.73625pt>
 File: Images//Coords//cyl.png Graphic file (type png)
 <use Images//Coords//cyl.png>
-Package luatex.def Info: Images//Coords//cyl.png  used on input line 347. on inp
-ut line 347.
+Package luatex.def Info: Images//Coords//cyl.png  used on input line 336. on inp
+ut line 336.
 Package luatex.def Info: Requested size: 451.23164pt x 209.12938pt on input line
- 347.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `paraco' on page 8 undefined on input line 361.
-
-
-LaTeX Warning: Reference `consco' on page 8 undefined on input line 361.
-
-<Images//Coords//para.png, id=90, pagebox=cropbox, 1076.823pt x 466.3824pt>
+ 336.
+<Images//Coords//para.png, id=444, pagebox=cropbox, 1076.823pt x 466.3824pt>
 File: Images//Coords//para.png Graphic file (type png)
 <use Images//Coords//para.png>
-Package luatex.def Info: Images//Coords//para.png  used on input line 365. on in
-put line 365.
+Package luatex.def Info: Images//Coords//para.png  used on input line 354. on in
+put line 354.
 Package luatex.def Info: Requested size: 323.0494pt x 139.91579pt on input line 
-365.
+354.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images//Coords//consco.png, id=91, pagebox=cropbox, 756.426pt x 452.4102pt>
+<Images//Coords//consco.png, id=445, pagebox=cropbox, 756.426pt x 452.4102pt>
 File: Images//Coords//consco.png Graphic file (type png)
 <use Images//Coords//consco.png>
-Package luatex.def Info: Images//Coords//consco.png  used on input line 372. on 
-input line 372.
+Package luatex.def Info: Images//Coords//consco.png  used on input line 361. on 
+input line 361.
 Package luatex.def Info: Requested size: 226.92955pt x 135.7241pt on input line 
-372.
+361.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `trigsph' on page 8 undefined on input line 378.
-
-
-LaTeX Warning: Reference `sphmeshin' on page 8 undefined on input line 378.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--381
+[9<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Imag
+es//Coords//cyl.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
 
  []
 
-[8]
-
-LaTeX Warning: Text page 9 contains only floats.
-
-[9<./Images//Coords//cyl.png><./Images//Coords//para.png><./Images//Coords//cons
-co.png>]
-<Images//Coords//sph.png, id=126, pagebox=cropbox, 993.7125pt x 314.17375pt>
+<Images//Coords//sph.png, id=458, pagebox=cropbox, 993.7125pt x 314.17375pt>
 File: Images//Coords//sph.png Graphic file (type png)
 <use Images//Coords//sph.png>
-Package luatex.def Info: Images//Coords//sph.png  used on input line 392. on inp
-ut line 392.
+Package luatex.def Info: Images//Coords//sph.png  used on input line 382. on inp
+ut line 382.
 Package luatex.def Info: Requested size: 496.85503pt x 157.08649pt on input line
- 392.
+ 382.
 
-Overfull \hbox (7.75215pt too wide) in paragraph at lines 392--393
+Overfull \hbox (7.75215pt too wide) in paragraph at lines 382--383
  [][] 
  []
 
 
-LaTeX Warning: Reference `code1' on page 10 undefined on input line 397.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10<./Images//Coords//sph.png>]
-
-LaTeX Warning: Reference `tormeshin' on page 11 undefined on input line 402.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--405
+[10<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Coords//para.png><C:/Users/benja/Documents/Major_Project_Report_Local/Major
+_Project_Report/Images//Coords//consco.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 392--395
 
  []
 
-<Images//Coords/torus_coords.png, id=134, pagebox=cropbox, 1436.36626pt x 506.89
+<Images//Coords/torus_coords.png, id=470, pagebox=cropbox, 1436.36626pt x 506.89
 375pt>
 File: Images//Coords/torus_coords.png Graphic file (type png)
 <use Images//Coords/torus_coords.png>
-Package luatex.def Info: Images//Coords/torus_coords.png  used on input line 416
-. on input line 416.
+Package luatex.def Info: Images//Coords/torus_coords.png  used on input line 406
+. on input line 406.
 Package luatex.def Info: Requested size: 502.73573pt x 177.41547pt on input line
- 416.
+ 406.
 
-Overfull \hbox (13.63286pt too wide) in paragraph at lines 416--417
+Overfull \hbox (13.63286pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
-<Images//append_points//Point_Appending_Order.png, id=135, pagebox=cropbox, 240.
+<Images//append_points//Point_Appending_Order.png, id=471, pagebox=cropbox, 240.
 9pt x 229.85875pt>
 File: Images//append_points//Point_Appending_Order.png Graphic file (type png)
 <use Images//append_points//Point_Appending_Order.png>
 Package luatex.def Info: Images//append_points//Point_Appending_Order.png  used 
-on input line 426. on input line 426.
+on input line 416. on input line 416.
 Package luatex.def Info: Requested size: 168.62883pt x 160.90001pt on input line
- 426.
+ 416.
 
-LaTeX Warning: Reference `pointsorder' on page 11 undefined on input line 430.
+Underfull \hbox (badness 10000) in paragraph at lines 413--423
 
+ []
 
-LaTeX Warning: Reference `bool' on page 11 undefined on input line 432.
-
-
-LaTeX Warning: Reference `bool' on page 11 undefined on input line 432.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--433
+[11<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Coords//sph.png><C:/Users/benja/Documents/Major_Project_Report_Local/Major_
+Project_Report/Images//Coords/torus_coords.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `app1' on page 11 undefined on input line 435.
-
-
-LaTeX Warning: Reference `polypic1' on page 11 undefined on input line 437.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
-
- []
-
-[11<./Images//Coords/torus_coords.png>]
-<Images//Meshes//Hyperboloid.png, id=146, pagebox=cropbox, 406.1574pt x 378.213p
+<Images//Meshes//Hyperboloid.png, id=487, pagebox=cropbox, 406.1574pt x 378.213p
 t>
 File: Images//Meshes//Hyperboloid.png Graphic file (type png)
 <use Images//Meshes//Hyperboloid.png>
-Package luatex.def Info: Images//Meshes//Hyperboloid.png  used on input line 444
-. on input line 444.
+Package luatex.def Info: Images//Meshes//Hyperboloid.png  used on input line 434
+. on input line 434.
 Package luatex.def Info: Requested size: 210.09372pt x 195.63815pt on input line
- 444.
+ 434.
 
-Overfull \hbox (14.45557pt too wide) in paragraph at lines 444--445
+Overfull \hbox (14.45557pt too wide) in paragraph at lines 434--435
  [][] 
  []
 
-<Images//Meshes//ellipticalcone.png, id=147, pagebox=cropbox, 275.5896pt x 325.2
+<Images//Meshes//ellipticalcone.png, id=488, pagebox=cropbox, 275.5896pt x 325.2
 15pt>
 File: Images//Meshes//ellipticalcone.png Graphic file (type png)
 <use Images//Meshes//ellipticalcone.png>
 Package luatex.def Info: Images//Meshes//ellipticalcone.png  used on input line 
-451. on input line 451.
+441. on input line 441.
 Package luatex.def Info: Requested size: 165.78815pt x 195.63815pt on input line
- 451.
+ 441.
 
-LaTeX Warning: Reference `elco1' on page 12 undefined on input line 457.
-
-
-LaTeX Warning: Reference `ellipme' on page 12 undefined on input line 459.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--460
+Underfull \hbox (badness 10000) in paragraph at lines 447--450
 
  []
 
-[12<./Images//append_points//Point_Appending_Order.png><./Images//Meshes//Hyperb
-oloid.png><./Images//Meshes//ellipticalcone.png>]
-<Images//Meshes//Ellipsoid.png, id=158, pagebox=cropbox, 335.8146pt x 355.0866pt
+[12<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//append_points//Point_Appending_Order.png>]
+<Images//Meshes//Ellipsoid.png, id=501, pagebox=cropbox, 335.8146pt x 355.0866pt
 >
 File: Images//Meshes//Ellipsoid.png Graphic file (type png)
 <use Images//Meshes//Ellipsoid.png>
-Package luatex.def Info: Images//Meshes//Ellipsoid.png  used on input line 465. 
-on input line 465.
+Package luatex.def Info: Images//Meshes//Ellipsoid.png  used on input line 455. 
+on input line 455.
 Package luatex.def Info: Requested size: 185.02142pt x 195.63815pt on input line
- 465.
-<Images//Meshes//CutTubs.png, id=159, pagebox=cropbox, 412.4208pt x 426.393pt>
+ 455.
+<Images//Meshes//CutTubs.png, id=502, pagebox=cropbox, 412.4208pt x 426.393pt>
 File: Images//Meshes//CutTubs.png Graphic file (type png)
 <use Images//Meshes//CutTubs.png>
-Package luatex.def Info: Images//Meshes//CutTubs.png  used on input line 471. on
- input line 471.
+Package luatex.def Info: Images//Meshes//CutTubs.png  used on input line 461. on
+ input line 461.
 Package luatex.def Info: Requested size: 189.225pt x 195.63815pt on input line 4
-71.
-
-
-LaTeX Warning: Reference `cosy' on page 13 undefined on input line 478.
-
-[13<./Images//Meshes//Ellipsoid.png><./Images//Meshes//CutTubs.png>]
-<Images//Booleans//Boolean.png, id=168, pagebox=cropbox, 803.0pt x 711.65875pt>
+61.
+ [13<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Im
+ages//Meshes//Hyperboloid.png><C:/Users/benja/Documents/Major_Project_Report_Loc
+al/Major_Project_Report/Images//Meshes//ellipticalcone.png><C:/Users/benja/Docum
+ents/Major_Project_Report_Local/Major_Project_Report/Images//Meshes//Ellipsoid.p
+ng><C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Meshes//CutTubs.png>]
+<Images//Booleans//Boolean.png, id=513, pagebox=cropbox, 803.0pt x 711.65875pt>
 File: Images//Booleans//Boolean.png Graphic file (type png)
 <use Images//Booleans//Boolean.png>
-Package luatex.def Info: Images//Booleans//Boolean.png  used on input line 486. 
-on input line 486.
+Package luatex.def Info: Images//Booleans//Boolean.png  used on input line 475. 
+on input line 475.
 Package luatex.def Info: Requested size: 200.74951pt x 177.91425pt on input line
- 486.
+ 475.
+
+LaTeX Warning: Citation `wiki' on page 14 undefined on input line 477.
 
 
-LaTeX Warning: Citation `wiki' on page 14 undefined on input line 488.
+LaTeX Warning: Citation `wiki' on page 14 undefined on input line 477.
 
-
-LaTeX Warning: Citation `wiki' on page 14 undefined on input line 488.
-
-
-LaTeX Warning: Reference `booly' on page 14 undefined on input line 492.
-
-
-LaTeX Warning: Reference `uni' on page 14 undefined on input line 494.
-
-
-LaTeX Warning: Reference `sub' on page 14 undefined on input line 494.
-
-<Images//Booleans/SphereUnion.png, id=169, pagebox=cropbox, 547.04375pt x 604.25
+<Images//Booleans/SphereUnion.png, id=517, pagebox=cropbox, 547.04375pt x 604.25
 75pt>
 File: Images//Booleans/SphereUnion.png Graphic file (type png)
 <use Images//Booleans/SphereUnion.png>
-Package luatex.def Info: Images//Booleans/SphereUnion.png  used on input line 50
-0. on input line 500.
-Package luatex.def Info: Requested size: 88.55548pt x 97.81908pt on input line 5
-00.
-<Images//Booleans//SphereSubtraction.png, id=170, pagebox=cropbox, 879.285pt x 7
+Package luatex.def Info: Images//Booleans/SphereUnion.png  used on input line 48
+9. on input line 489.
+Package luatex.def Info: Requested size: 88.55548pt x 97.81908pt on input line 4
+89.
+<Images//Booleans//SphereSubtraction.png, id=518, pagebox=cropbox, 879.285pt x 7
 16.6775pt>
 File: Images//Booleans//SphereSubtraction.png Graphic file (type png)
 <use Images//Booleans//SphereSubtraction.png>
 Package luatex.def Info: Images//Booleans//SphereSubtraction.png  used on input 
-line 506. on input line 506.
-Package luatex.def Info: Requested size: 120.0132pt x 97.81908pt on input line 5
-06.
+line 495. on input line 495.
+Package luatex.def Info: Requested size: 120.0132pt x 97.81908pt on input line 4
+95.
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--511
+Underfull \hbox (badness 10000) in paragraph at lines 481--500
 
  []
 
 
-LaTeX Warning: Reference `ct' on page 14 undefined on input line 512.
+Underfull \hbox (badness 10000) in paragraph at lines 501--504
 
+ []
 
-LaTeX Warning: Reference `ctub' on page 14 undefined on input line 512.
+[14<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Booleans//Boolean.png><C:/Users/benja/Documents/Major_Project_Report_Local/
+Major_Project_Report/Images//Booleans/SphereUnion.png><C:/Users/benja/Documents/
+Major_Project_Report_Local/Major_Project_Report/Images//Booleans//SphereSubtract
+ion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 512--515
 
-
-LaTeX Warning: Reference `polypic1' on page 14 undefined on input line 514.
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 512--515
 
  []
 
-[14<./Images//Booleans//Boolean.png><./Images//Booleans/SphereUnion.png><./Image
-s//Booleans//SphereSubtraction.png>]
-
-LaTeX Warning: Reference `err' on page 15 undefined on input line 520.
-
-
-LaTeX Warning: Reference `conts' on page 15 undefined on input line 523.
-
-
-LaTeX Warning: Reference `hypeup' on page 15 undefined on input line 523.
-
-
-LaTeX Warning: Reference `app1' on page 15 undefined on input line 523.
-
-
-LaTeX Warning: Reference `hypeup' on page 15 undefined on input line 525.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 523--526
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 523--526
-
- []
-
-<Images//Quad_fits//Tubs_quad.pdf, id=182, pagebox=cropbox, 462.52798pt x 346.89
+<Images//Quad_fits//Tubs_quad.pdf, id=539, pagebox=cropbox, 462.52798pt x 346.89
 601pt>
 File: Images//Quad_fits//Tubs_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Tubs_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Tubs_quad.pdf  used on input line 53
-1. on input line 531.
+Package luatex.def Info: Images//Quad_fits//Tubs_quad.pdf  used on input line 52
+0. on input line 520.
 Package luatex.def Info: Requested size: 231.26341pt x 173.44757pt on input line
- 531.
-<Images//Quad_fits//Hyperboloid_quad.pdf, id=183, pagebox=cropbox, 462.52798pt x
+ 520.
+<Images//Quad_fits//Hyperboloid_quad.pdf, id=540, pagebox=cropbox, 462.52798pt x
  346.89601pt>
 File: Images//Quad_fits//Hyperboloid_quad.pdf Graphic file (type pdf)
 <use Images//Quad_fits//Hyperboloid_quad.pdf>
 Package luatex.def Info: Images//Quad_fits//Hyperboloid_quad.pdf  used on input 
-line 537. on input line 537.
+line 526. on input line 526.
 Package luatex.def Info: Requested size: 231.26341pt x 173.44757pt on input line
- 537.
+ 526.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
-
-LaTeX Warning: Reference `tab2' on page 16 undefined on input line 544.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 544--546
+Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
-<Images//BDSIM//titanium.pdf, id=191, pagebox=cropbox, 963.6pt x 528.97626pt>
+<Images//BDSIM//titanium.pdf, id=549, pagebox=cropbox, 963.6pt x 528.97626pt>
 File: Images//BDSIM//titanium.pdf Graphic file (type pdf)
 <use Images//BDSIM//titanium.pdf>
-Package luatex.def Info: Images//BDSIM//titanium.pdf  used on input line 557. on
- input line 557.
+Package luatex.def Info: Images//BDSIM//titanium.pdf  used on input line 546. on
+ input line 546.
 Package luatex.def Info: Requested size: 317.98898pt x 174.5627pt on input line 
-557.
+546.
 
-LaTeX Warning: Reference `black' on page 16 undefined on input line 562.
+LaTeX Warning: Citation `pdg' on page 16 undefined on input line 551.
 
-
-LaTeX Warning: Citation `pdg' on page 16 undefined on input line 562.
-
-[16<./Images//Quad_fits//Tubs_quad.pdf><./Images//Quad_fits//Hyperboloid_quad.pd
-f><./Images//BDSIM//titanium.pdf>]
-
-LaTeX Warning: Reference `sphbd' on page 17 undefined on input line 569.
-
-
-LaTeX Warning: Reference `black' on page 17 undefined on input line 569.
-
-
-LaTeX Warning: Reference `sphbd' on page 17 undefined on input line 569.
-
-<Images//BDSIM//ProtonSphere2.png, id=300, pagebox=cropbox, 963.1182pt x 517.935
+[16<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Quad_fits//Tubs_quad.pdf><C:/Users/benja/Documents/Major_Project_Report_Loc
+al/Major_Project_Report/Images//Quad_fits//Hyperboloid_quad.pdf><C:/Users/benja/
+Documents/Major_Project_Report_Local/Major_Project_Report/Images//BDSIM//titaniu
+m.pdf>]
+<Images//BDSIM//ProtonSphere2.png, id=662, pagebox=cropbox, 963.1182pt x 517.935
 pt>
 File: Images//BDSIM//ProtonSphere2.png Graphic file (type png)
 <use Images//BDSIM//ProtonSphere2.png>
-Package luatex.def Info: Images//BDSIM//ProtonSphere2.png  used on input line 57
-3. on input line 573.
+Package luatex.def Info: Images//BDSIM//ProtonSphere2.png  used on input line 56
+2. on input line 562.
 Package luatex.def Info: Requested size: 337.09642pt x 181.27995pt on input line
- 573.
-
-LaTeX Warning: Reference `tab11' on page 17 undefined on input line 579.
-
-[17<./Images//BDSIM//ProtonSphere2.png>]
-
-LaTeX Warning: Reference `per' on page 18 undefined on input line 595.
-
-
-LaTeX Warning: Reference `tritri' on page 18 undefined on input line 595.
-
-<Images//Triangles//MeshvTRi1.pdf, id=309, pagebox=cropbox, 625.13548pt x 411.21
+ 562.
+ [17<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Im
+ages//BDSIM//ProtonSphere2.png>]
+<Images//Triangles//MeshvTRi1.pdf, id=674, pagebox=cropbox, 625.13548pt x 411.21
 63pt>
 File: Images//Triangles//MeshvTRi1.pdf Graphic file (type pdf)
 <use Images//Triangles//MeshvTRi1.pdf>
-Package luatex.def Info: Images//Triangles//MeshvTRi1.pdf  used on input line 59
-9. on input line 599.
+Package luatex.def Info: Images//Triangles//MeshvTRi1.pdf  used on input line 58
+8. on input line 588.
 Package luatex.def Info: Requested size: 297.41937pt x 195.63815pt on input line
- 599.
+ 588.
 
-LaTeX Warning: Reference `tritri' on page 18 undefined on input line 603.
-
-
-LaTeX Warning: Reference `tritri' on page 18 undefined on input line 604.
-
-
-LaTeX Warning: Reference `aphh' on page 18 undefined on input line 604.
-
-
-LaTeX Warning: Reference `tritri' on page 18 undefined on input line 604.
-
-
-LaTeX Warning: Reference `withs' on page 18 undefined on input line 606.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 603--607
+Underfull \hbox (badness 10000) in paragraph at lines 592--596
 
  []
 
-[18<./Images//Triangles//MeshvTRi1.pdf>]
-<Images//CPU//Total_Plot_with_secondaries.pdf, id=373, pagebox=cropbox, 605.6225
+[18<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Triangles//MeshvTRi1.pdf>]
+<Images//CPU//Total_Plot_with_secondaries.pdf, id=743, pagebox=cropbox, 605.6225
 9pt x 442.29242pt>
 File: Images//CPU//Total_Plot_with_secondaries.pdf Graphic file (type pdf)
 <use Images//CPU//Total_Plot_with_secondaries.pdf>
 Package luatex.def Info: Images//CPU//Total_Plot_with_secondaries.pdf  used on i
-nput line 612. on input line 612.
+nput line 601. on input line 601.
 Package luatex.def Info: Requested size: 234.3991pt x 171.18526pt on input line 
-612.
-<Images//CPU//Total_Plot_no_secondaries1.pdf, id=374, pagebox=cropbox, 531.18451
+601.
+<Images//CPU//Total_Plot_no_secondaries1.pdf, id=744, pagebox=cropbox, 531.18451
 pt x 388.81259pt>
 File: Images//CPU//Total_Plot_no_secondaries1.pdf Graphic file (type pdf)
 <use Images//CPU//Total_Plot_no_secondaries1.pdf>
 Package luatex.def Info: Images//CPU//Total_Plot_no_secondaries1.pdf  used on in
-put line 618. on input line 618.
+put line 607. on input line 607.
 Package luatex.def Info: Requested size: 233.8759pt x 171.18526pt on input line 
-618.
-
-
-LaTeX Warning: Reference `withs' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `tritri' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `recur' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `withs' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `stop' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `withouts' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `withs' on page 19 undefined on input line 624.
-
-
-LaTeX Warning: Reference `withouts' on page 19 undefined on input line 624.
-
-[19<./Images//CPU//Total_Plot_with_secondaries.pdf><./Images//CPU//Total_Plot_no
-_secondaries1.pdf>]
-
-LaTeX Warning: Reference `a' on page 20 undefined on input line 629.
-
-
-LaTeX Warning: Reference `err' on page 20 undefined on input line 640.
-
-<Images//Error//std_N.png, id=490, pagebox=cropbox, 462.528pt x 346.896pt>
-File: Images//Error//std_N.png Graphic file (type png)
-<use Images//Error//std_N.png>
-Package luatex.def Info: Images//Error//std_N.png  used on input line 644. on in
-put line 644.
-Package luatex.def Info: Requested size: 277.51894pt x 208.13919pt on input line
- 644.
-
-LaTeX Warning: Reference `disty' on page 20 undefined on input line 649.
-
-<Images//CPU//pythonhist1.pdf, id=491, pagebox=cropbox, 815.20557pt x 400.37581p
+607.
+ [19<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Im
+ages//CPU//Total_Plot_with_secondaries.pdf><C:/Users/benja/Documents/Major_Proje
+ct_Report_Local/Major_Project_Report/Images//CPU//Total_Plot_no_secondaries1.pdf
+>]
+<Images//Error//std_N1.png, id=870, pagebox=cropbox, 385.44pt x 289.08pt>
+File: Images//Error//std_N1.png Graphic file (type png)
+<use Images//Error//std_N1.png>
+Package luatex.def Info: Images//Error//std_N1.png  used on input line 633. on i
+nput line 633.
+Package luatex.def Info: Requested size: 231.26578pt x 173.44933pt on input line
+ 633.
+<Images//CPU//Pythonhist1.pdf, id=872, pagebox=cropbox, 815.20557pt x 400.37581p
 t>
-File: Images//CPU//pythonhist1.pdf Graphic file (type pdf)
-<use Images//CPU//pythonhist1.pdf>
-Package luatex.def Info: Images//CPU//pythonhist1.pdf  used on input line 653. o
-n input line 653.
+File: Images//CPU//Pythonhist1.pdf Graphic file (type pdf)
+<use Images//CPU//Pythonhist1.pdf>
+Package luatex.def Info: Images//CPU//Pythonhist1.pdf  used on input line 642. o
+n input line 642.
 Package luatex.def Info: Requested size: 407.60178pt x 200.18741pt on input line
- 653.
+ 642.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `mednmax' on page 20 undefined on input line 658.
-
-<Images//CPU//mednmax.pdf, id=492, pagebox=cropbox, 695.96008pt x 445.18318pt>
+<Images//CPU//mednmax.pdf, id=874, pagebox=cropbox, 695.96008pt x 445.18318pt>
 File: Images//CPU//mednmax.pdf Graphic file (type pdf)
 <use Images//CPU//mednmax.pdf>
-Package luatex.def Info: Images//CPU//mednmax.pdf  used on input line 662. on in
-put line 662.
+Package luatex.def Info: Images//CPU//mednmax.pdf  used on input line 651. on in
+put line 651.
 Package luatex.def Info: Requested size: 417.57927pt x 267.11197pt on input line
- 662.
+ 651.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20<./Images//Error//std_N.png>]
-
-LaTeX Warning: Reference `novar' on page 21 undefined on input line 670.
-
-<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=502, pagebox=cr
+[20<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Error//std_N1.png>]
+<Images//Materials//not_Varied_by_radius_and_secondaries.pdf, id=886, pagebox=cr
 opbox, 794.97pt x 505.89pt>
 File: Images//Materials//not_Varied_by_radius_and_secondaries.pdf Graphic file (
 type pdf)
 <use Images//Materials//not_Varied_by_radius_and_secondaries.pdf>
 Package luatex.def Info: Images//Materials//not_Varied_by_radius_and_secondaries
-.pdf  used on input line 673. on input line 673.
+.pdf  used on input line 662. on input line 662.
 Package luatex.def Info: Requested size: 476.98569pt x 303.53633pt on input line
- 673.
+ 662.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21<./Images//CPU//pythonhist1.pdf><./Images//CPU//mednmax.pdf>]
+[21<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//CPU//Pythonhist1.pdf><C:/Users/benja/Documents/Major_Project_Report_Local/M
+ajor_Project_Report/Images//CPU//mednmax.pdf>]
+<Images//Materials//RMAX.png, id=1008, pagebox=cropbox, 760.8425pt x 760.8425pt>
 
-LaTeX Warning: Reference `novar' on page 22 undefined on input line 678.
-
-
-LaTeX Warning: Reference `deltar' on page 22 undefined on input line 678.
-
-<Images//Materials//RMAX.png, id=623, pagebox=cropbox, 760.8425pt x 760.8425pt>
 File: Images//Materials//RMAX.png Graphic file (type png)
 <use Images//Materials//RMAX.png>
-Package luatex.def Info: Images//Materials//RMAX.png  used on input line 682. on
- input line 682.
+Package luatex.def Info: Images//Materials//RMAX.png  used on input line 671. on
+ input line 671.
 Package luatex.def Info: Requested size: 152.1658pt x 152.1658pt on input line 6
-82.
-[22<./Images//Materials//not_Varied_by_radius_and_secondaries.pdf><./Images//Mat
-erials//RMAX.png>]
-
-LaTeX Warning: Reference `stprg' on page 23 undefined on input line 690.
-
-
-LaTeX Warning: Reference `stprg' on page 23 undefined on input line 690.
-
-<Images//Stopping//stoppingrange.png, id=686, pagebox=cropbox, 783.52725pt x 635
-.976pt>
+71.
+ [22<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Im
+ages//Materials//not_Varied_by_radius_and_secondaries.pdf><C:/Users/benja/Docume
+nts/Major_Project_Report_Local/Major_Project_Report/Images//Materials//RMAX.png>
+]
+<Images//Stopping//stoppingrange.png, id=1073, pagebox=cropbox, 783.52725pt x 63
+5.976pt>
 File: Images//Stopping//stoppingrange.png Graphic file (type png)
 <use Images//Stopping//stoppingrange.png>
 Package luatex.def Info: Images//Stopping//stoppingrange.png  used on input line
- 694. on input line 694.
+ 683. on input line 683.
 Package luatex.def Info: Requested size: 313.40533pt x 254.3859pt on input line 
-694.
-
-LaTeX Warning: Citation `stprg' on page 23 undefined on input line 695.
+683.
 
 
-LaTeX Warning: Citation `stprg' on page 23 undefined on input line 695.
+LaTeX Warning: Citation `stprg' on page 23 undefined on input line 684.
 
 
-LaTeX Warning: Citation `emo' on page 23 undefined on input line 699.
+LaTeX Warning: Citation `stprg' on page 23 undefined on input line 684.
 
 
-LaTeX Warning: Citation `stpdat' on page 23 undefined on input line 699.
+LaTeX Warning: Citation `emo' on page 23 undefined on input line 688.
 
 
-LaTeX Warning: Reference `novar' on page 23 undefined on input line 701.
+LaTeX Warning: Citation `stpdat' on page 23 undefined on input line 688.
 
 
-LaTeX Warning: Reference `rs' on page 23 undefined on input line 701.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 690--702
+Underfull \hbox (badness 10000) in paragraph at lines 679--691
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--702
+Underfull \hbox (badness 10000) in paragraph at lines 679--691
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--702
+Underfull \hbox (badness 10000) in paragraph at lines 679--691
 
  []
 
-[23<./Images//Stopping//stoppingrange.png>]
-
-LaTeX Warning: Reference `var' on page 24 undefined on input line 713.
-
-
-LaTeX Warning: Reference `var' on page 24 undefined on input line 713.
-
-
-LaTeX Warning: Reference `var' on page 24 undefined on input line 716.
-
-<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=694, pagebox=cropbo
-x, 794.97pt x 505.89pt>
+[23<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Stopping//stoppingrange.png>]
+<Images//Materials//Varied_by_radius_and_secondaries.pdf, id=1087, pagebox=cropb
+ox, 794.97pt x 505.89pt>
 File: Images//Materials//Varied_by_radius_and_secondaries.pdf Graphic file (type
  pdf)
 <use Images//Materials//Varied_by_radius_and_secondaries.pdf>
 Package luatex.def Info: Images//Materials//Varied_by_radius_and_secondaries.pdf
-  used on input line 720. on input line 720.
+  used on input line 709. on input line 709.
 Package luatex.def Info: Requested size: 476.98569pt x 303.53633pt on input line
- 720.
+ 709.
 
-LaTeX Warning: Reference `tung' on page 24 undefined on input line 725.
-
-
-LaTeX Warning: Reference `novar' on page 24 undefined on input line 725.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 716--726
+Underfull \hbox (badness 10000) in paragraph at lines 705--715
 
  []
 
-<Images//BDSIM//Tungsten_Sphere.png, id=695, pagebox=cropbox, 939.0282pt x 317.0
-244pt>
+<Images//BDSIM//Tungsten_Sphere.png, id=1090, pagebox=cropbox, 939.0282pt x 317.
+0244pt>
 File: Images//BDSIM//Tungsten_Sphere.png Graphic file (type png)
 <use Images//BDSIM//Tungsten_Sphere.png>
 Package luatex.def Info: Images//BDSIM//Tungsten_Sphere.png  used on input line 
-728. on input line 728.
+717. on input line 717.
 Package luatex.def Info: Requested size: 469.51295pt x 158.51181pt on input line
- 728.
+ 717.
 
-Overfull \hbox (20.24376pt too wide) in paragraph at lines 728--729
+Overfull \hbox (20.24376pt too wide) in paragraph at lines 717--718
 []| [] 
  []
 
@@ -1649,1167 +1430,200 @@ Overfull \hbox (20.24376pt too wide) in paragraph at lines 728--729
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `notmybolt' on page 24 undefined on input line 735.
+LaTeX Warning: Citation `cadmag' on page 24 undefined on input line 723.
 
-
-LaTeX Warning: Citation `cadmag' on page 24 undefined on input line 735.
-
-
-LaTeX Warning: Reference `boltinfreeCAD' on page 24 undefined on input line 735.
-
-
-
-LaTeX Warning: Reference `boltinvtk' on page 24 undefined on input line 735.
-
-<Images//CAD_Screw//freeCADbolt.png, id=696, pagebox=cropbox, 1111.0308pt x 392.
-1852pt>
+<Images//CAD_Screw//freeCADbolt.png, id=1094, pagebox=cropbox, 1111.0308pt x 392
+.1852pt>
 File: Images//CAD_Screw//freeCADbolt.png Graphic file (type png)
 <use Images//CAD_Screw//freeCADbolt.png>
 Package luatex.def Info: Images//CAD_Screw//freeCADbolt.png  used on input line 
-741. on input line 741.
+729. on input line 729.
 Package luatex.def Info: Requested size: 342.37051pt x 120.85205pt on input line
- 741.
-<Images//CAD_Screw//boltVTK.png, id=697, pagebox=cropbox, 538.6524pt x 542.025pt
->
+ 729.
+<Images//CAD_Screw//boltVTK.png, id=1095, pagebox=cropbox, 538.6524pt x 542.025p
+t>
 File: Images//CAD_Screw//boltVTK.png Graphic file (type png)
 <use Images//CAD_Screw//boltVTK.png>
-Package luatex.def Info: Images//CAD_Screw//boltVTK.png  used on input line 748.
- on input line 748.
+Package luatex.def Info: Images//CAD_Screw//boltVTK.png  used on input line 736.
+ on input line 736.
 Package luatex.def Info: Requested size: 132.05821pt x 132.88412pt on input line
- 748.
+ 736.
 
-Underfull \hbox (badness 10000) in paragraph at lines 749--749
+Underfull \hbox (badness 10000) in paragraph at lines 737--737
 []\TU/lmr/bx/n/10.95 Fig-ure 34: |\TU/lmr/m/n/10.95 Com-pound
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 749--749
+Underfull \hbox (badness 5161) in paragraph at lines 737--737
 \TU/lmr/m/n/10.95 boolean solid recre-ation of
  []
 
-<Images//CAD_Screw//Screw_hnh_10MeVe.png, id=698, pagebox=cropbox, 963.1182pt x 
-524.6802pt>
+<Images//CAD_Screw//Screw_hnh_10MeVe.png, id=1096, pagebox=cropbox, 963.1182pt x
+ 524.6802pt>
 File: Images//CAD_Screw//Screw_hnh_10MeVe.png Graphic file (type png)
 <use Images//CAD_Screw//Screw_hnh_10MeVe.png>
 Package luatex.def Info: Images//CAD_Screw//Screw_hnh_10MeVe.png  used on input 
-line 758. on input line 758.
+line 746. on input line 746.
 Package luatex.def Info: Requested size: 224.45172pt x 122.27571pt on input line
- 758.
-<Images//CAD_Screw//bensboltinbdsim.png, id=699, pagebox=cropbox, 962.1546pt x 5
-24.6802pt>
+ 746.
+<Images//CAD_Screw//bensboltinbdsim.png, id=1097, pagebox=cropbox, 962.1546pt x 
+524.6802pt>
 File: Images//CAD_Screw//bensboltinbdsim.png Graphic file (type png)
 <use Images//CAD_Screw//bensboltinbdsim.png>
 Package luatex.def Info: Images//CAD_Screw//bensboltinbdsim.png  used on input l
-ine 764. on input line 764.
+ine 752. on input line 752.
 Package luatex.def Info: Requested size: 224.22716pt x 122.27571pt on input line
- 764.
+ 752.
+<Images//CAD_Screw//skinnybolt.png, id=1098, pagebox=cropbox, 963.1182pt x 522.7
+53pt>
+File: Images//CAD_Screw//skinnybolt.png Graphic file (type png)
+<use Images//CAD_Screw//skinnybolt.png>
+Package luatex.def Info: Images//CAD_Screw//skinnybolt.png  used on input line 7
+62. on input line 762.
+Package luatex.def Info: Requested size: 225.2747pt x 122.27571pt on input line 
+762.
+<Images//CAD_Screw//allcount.pdf, id=1108, pagebox=cropbox, 549.25201pt x 398.20
+77pt>
+File: Images//CAD_Screw//allcount.pdf Graphic file (type pdf)
+<use Images//CAD_Screw//allcount.pdf>
+Package luatex.def Info: Images//CAD_Screw//allcount.pdf  used on input line 789
+. on input line 789.
+Package luatex.def Info: Requested size: 256.77975pt x 186.16115pt on input line
+ 789.
 
-LaTeX Warning: Reference `notmybolt' on page 24 undefined on input line 770.
+Overfull \hbox (12.22832pt too wide) in paragraph at lines 789--791
+ [][] 
+ []
 
+<Images//CAD_Screw//allcoutlog.pdf, id=1109, pagebox=cropbox, 547.08388pt x 399.
+6531pt>
+File: Images//CAD_Screw//allcoutlog.pdf Graphic file (type pdf)
+<use Images//CAD_Screw//allcoutlog.pdf>
+Package luatex.def Info: Images//CAD_Screw//allcoutlog.pdf  used on input line 7
+96. on input line 796.
+Package luatex.def Info: Requested size: 256.77975pt x 187.58694pt on input line
+ 796.
 
-LaTeX Warning: Reference `mybolt' on page 24 undefined on input line 770.
-
-
-LaTeX Warning: Reference `bdsim' on page 24 undefined on input line 770.
-
-
-LaTeX Warning: Reference `boltcount' on page 24 undefined on input line 770.
-
-
-LaTeX Warning: Reference `pyb' on page 24 undefined on input line 770.
-
-<Images//CAD_Screw//boltcount.pdf, id=700, pagebox=cropbox, 644.64839pt x 414.82
-98pt>
-File: Images//CAD_Screw//boltcount.pdf Graphic file (type pdf)
-<use Images//CAD_Screw//boltcount.pdf>
-Package luatex.def Info: Images//CAD_Screw//boltcount.pdf  used on input line 77
-4. on input line 774.
-Package luatex.def Info: Requested size: 489.10287pt x 314.74222pt on input line
- 774.
-
-Underfull \hbox (badness 10000) in paragraph at lines 734--782
-
+Overfull \hbox (12.22832pt too wide) in paragraph at lines 796--798
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--782
-
+Underfull \hbox (badness 2980) in paragraph at lines 798--798
+\TU/lmr/m/n/10.95 elec-trons of in-creas-ing en-er-gies from dif-fer-ent
  []
 
+<Images//CAD_Screw//boltdist.pdf, id=1114, pagebox=cropbox, 794.97pt x 505.89pt>
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--782
-
- []
-
-[24<./Images//Materials//Varied_by_radius_and_secondaries.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[25<./Images//BDSIM//Tungsten_Sphere.png><./Images//CAD_Screw//freeCADbolt.png><
-./Images//CAD_Screw//boltVTK.png>]
-<Images//CAD_Screw//cpudist1.png, id=773, pagebox=cropbox, 794.97pt x 505.89pt>
-File: Images//CAD_Screw//cpudist1.png Graphic file (type png)
-<use Images//CAD_Screw//cpudist1.png>
-Package luatex.def Info: Images//CAD_Screw//cpudist1.png  used on input line 785
-. on input line 785.
+File: Images//CAD_Screw//boltdist.pdf Graphic file (type pdf)
+<use Images//CAD_Screw//boltdist.pdf>
+Package luatex.def Info: Images//CAD_Screw//boltdist.pdf  used on input line 809
+. on input line 809.
 Package luatex.def Info: Requested size: 397.48402pt x 252.94437pt on input line
- 785.
+ 809.
+<Images//VC//VC1.png, id=1119, pagebox=cropbox, 833.514pt x 537.207pt>
+File: Images//VC//VC1.png Graphic file (type png)
+<use Images//VC//VC1.png>
+Package luatex.def Info: Images//VC//VC1.png  used on input line 820. on input l
+ine 820.
+Package luatex.def Info: Requested size: 189.72012pt x 122.27571pt on input line
+ 820.
+<Images//VC//VC4.png, id=1120, pagebox=cropbox, 963.1182pt x 522.753pt>
+File: Images//VC//VC4.png Graphic file (type png)
+<use Images//VC//VC4.png>
+Package luatex.def Info: Images//VC//VC4.png  used on input line 826. on input l
+ine 826.
+Package luatex.def Info: Requested size: 225.2747pt x 122.27571pt on input line 
+826.
+
+LaTeX Warning: Citation `vc' on page 24 undefined on input line 832.
+
+<Images//VC//countvclogfinal.pdf, id=1123, pagebox=cropbox, 582.4962pt x 379.417
+5pt>
+File: Images//VC//countvclogfinal.pdf Graphic file (type pdf)
+<use Images//VC//countvclogfinal.pdf>
+Package luatex.def Info: Images//VC//countvclogfinal.pdf  used on input line 836
+. on input line 836.
+Package luatex.def Info: Requested size: 291.24739pt x 189.70828pt on input line
+ 836.
+<Images//VC//vcdist.pdf, id=1124, pagebox=cropbox, 615.01767pt x 379.4175pt>
+File: Images//VC//vcdist.pdf Graphic file (type pdf)
+<use Images//VC//vcdist.pdf>
+Package luatex.def Info: Images//VC//vcdist.pdf  used on input line 843. on inpu
+t line 843.
+Package luatex.def Info: Requested size: 307.50807pt x 189.70828pt on input line
+ 843.
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--862
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--862
+
+ []
+
+[24<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//Materials//Varied_by_radius_and_secondaries.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26<./Images//CAD_Screw//Screw_hnh_10MeVe.png><./Images//CAD_Screw//bensboltinbd
-sim.png><./Images//CAD_Screw//boltcount.pdf>]
 
-LaTeX Warning: Reference `pyg' on page 27 undefined on input line 796.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[25<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//BDSIM//Tungsten_Sphere.png><C:/Users/benja/Documents/Major_Project_Report_L
+ocal/Major_Project_Report/Images//CAD_Screw//freeCADbolt.png><C:/Users/benja/Doc
+uments/Major_Project_Report_Local/Major_Project_Report/Images//CAD_Screw//boltVT
+K.png>] [26<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Re
+port/Images//CAD_Screw//Screw_hnh_10MeVe.png><C:/Users/benja/Documents/Major_Pro
+ject_Report_Local/Major_Project_Report/Images//CAD_Screw//bensboltinbdsim.png><C
+:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Images//
+CAD_Screw//skinnybolt.png><C:/Users/benja/Documents/Major_Project_Report_Local/M
+ajor_Project_Report/Images//CAD_Screw//allcount.pdf><C:/Users/benja/Documents/Ma
+jor_Project_Report_Local/Major_Project_Report/Images//CAD_Screw//allcoutlog.pdf>
+]
 
-LaTeX Warning: Reference `app1' on page 27 undefined on input line 796.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 796--799
-
- []
-
-
-LaTeX Warning: Reference `back' on page 27 undefined on input line 801.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 801--804
-
- []
-
-[27<./Images//CAD_Screw//cpudist1.png>]
-
-LaTeX Warning: Reference `' on page 28 undefined on input line 813.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `' on page 28 undefined on input line 813.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `' on page 28 undefined on input line 814.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--817
+[27<C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Report/Ima
+ges//CAD_Screw//boltdist.pdf>] [28<C:/Users/benja/Documents/Major_Project_Report
+_Local/Major_Project_Report/Images//VC//VC1.png><C:/Users/benja/Documents/Major_
+Project_Report_Local/Major_Project_Report/Images//VC//VC4.png><C:/Users/benja/Do
+cuments/Major_Project_Report_Local/Major_Project_Report/Images//VC//countvclogfi
+nal.pdf><C:/Users/benja/Documents/Major_Project_Report_Local/Major_Project_Repor
+t/Images//VC//vcdist.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 868--871
 
  []
 
-[28]
-No file Major_Project.bbl.
-(./Scripts//Run_New_Meshes.py
+[29] [30] (./Major_Project.bbl(load luc: C:/Users/benja/AppData/Local/MiKTeX/2.9
+/luatex-cache/generic/fonts/otl/lmroman10-italic.luc)
+! TeX capacity exceeded, sorry [input stack size=5000].
+\@makeother #1->\catcode `#1
+                            12\relax 
+l.84 ...tps://doi.org/10.1016/j.meddos.2017.08.007}}
+                                                  
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
 
-Package xcolor Warning: Incompatible color definition on input line 2.
 
-
-Package xcolor Warning: Incompatible color definition on input line 4.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6.
-
-
-Package xcolor Warning: Incompatible color definition on input line 8.
-
-
-Package xcolor Warning: Incompatible color definition on input line 10.
-
-
-Package xcolor Warning: Incompatible color definition on input line 10.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 11.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 12.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 13.
-
-
-Package xcolor Warning: Incompatible color definition on input line 15.
-
-
-Package xcolor Warning: Incompatible color definition on input line 15.
-
-
-Package xcolor Warning: Incompatible color definition on input line 15.
-
-
-Package xcolor Warning: Incompatible color definition on input line 15.
-
-
-Package xcolor Warning: Incompatible color definition on input line 17.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 19.
-
-
-Package xcolor Warning: Incompatible color definition on input line 20.
-
-
-Package xcolor Warning: Incompatible color definition on input line 22.
-
-
-Package xcolor Warning: Incompatible color definition on input line 22.
-
-
-Package xcolor Warning: Incompatible color definition on input line 22.
-
-
-Package xcolor Warning: Incompatible color definition on input line 22.
-
-
-Package xcolor Warning: Incompatible color definition on input line 22.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 23.
-
-
-Package xcolor Warning: Incompatible color definition on input line 24.
-
-
-Package xcolor Warning: Incompatible color definition on input line 26.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 27.
-
-
-Package xcolor Warning: Incompatible color definition on input line 28.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 29.
-
-
-Package xcolor Warning: Incompatible color definition on input line 30.
-
-
-Package xcolor Warning: Incompatible color definition on input line 30.
-
-
-Package xcolor Warning: Incompatible color definition on input line 30.
-
-
-Package xcolor Warning: Incompatible color definition on input line 30.
-
-
-Package xcolor Warning: Incompatible color definition on input line 32.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 34.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 35.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Package xcolor Warning: Incompatible color definition on input line 39.
-
-
-Package xcolor Warning: Incompatible color definition on input line 39.
-
-
-Package xcolor Warning: Incompatible color definition on input line 39.
-
-
-Package xcolor Warning: Incompatible color definition on input line 39.
-
-
-Package xcolor Warning: Incompatible color definition on input line 41.
-
-
-Package xcolor Warning: Incompatible color definition on input line 41.
-
-
-Package xcolor Warning: Incompatible color definition on input line 41.
-
-
-Package xcolor Warning: Incompatible color definition on input line 43.
-
-) [29]
-
-LaTeX Warning: Reference `pyg' on page 30 undefined on input line 844.
-
-
-LaTeX Warning: Reference `g4' on page 30 undefined on input line 844.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 846.
-
-<Images//Meshes//cons.png, id=905, pagebox=cropbox, 210.5466pt x 361.35pt>
-File: Images//Meshes//cons.png Graphic file (type png)
-<use Images//Meshes//cons.png>
-Package luatex.def Info: Images//Meshes//cons.png  used on input line 851. on in
-put line 851.
-Package luatex.def Info: Requested size: 56.99612pt x 97.81908pt on input line 8
-51.
-<Images//Quad_fits//Cons_quad.pdf, id=906, pagebox=cropbox, 462.52798pt x 346.89
-601pt>
-File: Images//Quad_fits//Cons_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Cons_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Cons_quad.pdf  used on input line 85
-7. on input line 857.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-857.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 857--858
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 849--861
- []$[]$$[]$ 
- []
-
-File: Images//Meshes//CutTubs.png Graphic file (type png)
-<use Images//Meshes//CutTubs.png>
-Package luatex.def Info: Images//Meshes//CutTubs.png  used on input line 869. on
- input line 869.
-Package luatex.def Info: Requested size: 94.60936pt x 97.81908pt on input line 8
-69.
-<Images//Quad_fits//CutTubs_quad.pdf, id=907, pagebox=cropbox, 462.52798pt x 346
-.89601pt>
-File: Images//Quad_fits//CutTubs_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//CutTubs_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//CutTubs_quad.pdf  used on input line
- 875. on input line 875.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-875.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 875--876
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 867--879
- []$[]$$[]$ 
- []
-
-<Images//Meshes//ellipsoid.png, id=908, pagebox=cropbox, 335.8146pt x 355.0866pt
->
-File: Images//Meshes//ellipsoid.png Graphic file (type png)
-<use Images//Meshes//ellipsoid.png>
-Package luatex.def Info: Images//Meshes//ellipsoid.png  used on input line 886. 
-on input line 886.
-Package luatex.def Info: Requested size: 92.51071pt x 97.81908pt on input line 8
-86.
-<Images//Quad_fits//Ellipsoid_quad.pdf, id=909, pagebox=cropbox, 462.52798pt x 3
-46.89601pt>
-File: Images//Quad_fits//Ellipsoid_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Ellipsoid_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Ellipsoid_quad.pdf  used on input li
-ne 892. on input line 892.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-892.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 892--893
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 884--896
- []$[]$$[]$ 
- []
-
-File: Images//Meshes//ellipticalcone.png Graphic file (type png)
-<use Images//Meshes//ellipticalcone.png>
-Package luatex.def Info: Images//Meshes//ellipticalcone.png  used on input line 
-905. on input line 905.
-Package luatex.def Info: Requested size: 82.89197pt x 97.81908pt on input line 9
-05.
-<Images//Quad_fits//Ellipticalcone_quad.pdf, id=910, pagebox=cropbox, 462.52798p
-t x 346.89601pt>
-File: Images//Quad_fits//Ellipticalcone_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Ellipticalcone_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Ellipticalcone_quad.pdf  used on inp
-ut line 911. on input line 911.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-911.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 911--912
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 903--915
- []$[]$$[]$ 
- []
-
-<Images//Meshes//ellipticaltube.png, id=911, pagebox=cropbox, 353.1594pt x 304.0
-158pt>
-File: Images//Meshes//ellipticaltube.png Graphic file (type png)
-<use Images//Meshes//ellipticaltube.png>
-Package luatex.def Info: Images//Meshes//ellipticaltube.png  used on input line 
-923. on input line 923.
-Package luatex.def Info: Requested size: 90.90317pt x 78.25555pt on input line 9
-23.
-<Images//Quad_fits//EllipticalTube_quad.pdf, id=912, pagebox=cropbox, 462.52798p
-t x 346.89601pt>
-File: Images//Quad_fits//EllipticalTube_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//EllipticalTube_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//EllipticalTube_quad.pdf  used on inp
-ut line 929. on input line 929.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-929.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 929--930
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 921--933
- []$[]$$[]$ 
- []
-
-<Images//Meshes//hyperboloid.png, id=913, pagebox=cropbox, 406.1574pt x 378.213p
-t>
-File: Images//Meshes//hyperboloid.png Graphic file (type png)
-<use Images//Meshes//hyperboloid.png>
-Package luatex.def Info: Images//Meshes//hyperboloid.png  used on input line 941
-. on input line 941.
-Package luatex.def Info: Requested size: 94.53596pt x 88.03656pt on input line 9
-41.
-File: Images//Quad_fits//Hyperboloid_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Hyperboloid_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Hyperboloid_quad.pdf  used on input 
-line 947. on input line 947.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-947.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 947--948
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 939--951
- []$[]$$[]$ 
- []
-
-[30
-
-<./Images//Meshes//cons.png><./Images//Quad_fits//Cons_quad.pdf><./Images//Quad_
-fits//CutTubs_quad.pdf><./Images//Meshes//ellipsoid.png><./Images//Quad_fits//El
-lipsoid_quad.pdf><./Images//Quad_fits//Ellipticalcone_quad.pdf><./Images//Meshes
-//ellipticaltube.png><./Images//Quad_fits//EllipticalTube_quad.pdf><./Images//Me
-shes//hyperboloid.png>]
-<Images//Meshes//orb.png, id=1132, pagebox=cropbox, 374.3586pt x 319.9152pt>
-File: Images//Meshes//orb.png Graphic file (type png)
-<use Images//Meshes//orb.png>
-Package luatex.def Info: Images//Meshes//orb.png  used on input line 960. on inp
-ut line 960.
-Package luatex.def Info: Requested size: 91.57298pt x 78.25555pt on input line 9
-60.
-<Images//Quad_fits//orb_quad.pdf, id=1133, pagebox=cropbox, 462.52798pt x 346.89
-601pt>
-File: Images//Quad_fits//orb_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//orb_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//orb_quad.pdf  used on input line 966
-. on input line 966.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-966.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 966--967
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 958--970
- []$[]$$[]$ 
- []
-
-<Images//Meshes//paraboloid.png, id=1134, pagebox=cropbox, 298.716pt x 367.1316p
-t>
-File: Images//Meshes//paraboloid.png Graphic file (type png)
-<use Images//Meshes//paraboloid.png>
-Package luatex.def Info: Images//Meshes//paraboloid.png  used on input line 978.
- on input line 978.
-Package luatex.def Info: Requested size: 79.58781pt x 97.81908pt on input line 9
-78.
-<Images//Quad_fits//Paraboloid_quad.pdf, id=1135, pagebox=cropbox, 462.52798pt x
- 346.89601pt>
-File: Images//Quad_fits//Paraboloid_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Paraboloid_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Paraboloid_quad.pdf  used on input l
-ine 984. on input line 984.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-984.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 984--985
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 976--988
- []$[]$$[]$ 
- []
-
-<Images//Meshes//polycone.png, id=1136, pagebox=cropbox, 292.9344pt x 332.9238pt
->
-File: Images//Meshes//polycone.png Graphic file (type png)
-<use Images//Meshes//polycone.png>
-Package luatex.def Info: Images//Meshes//polycone.png  used on input line 995. o
-n input line 995.
-Package luatex.def Info: Requested size: 86.06625pt x 97.81908pt on input line 9
-95.
-<Images//Quad_fits//Polycone_quad.pdf, id=1137, pagebox=cropbox, 462.52798pt x 3
-46.89601pt>
-File: Images//Quad_fits//Polycone_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Polycone_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Polycone_quad.pdf  used on input lin
-e 1001. on input line 1001.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-1001.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1001--1002
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 993--1005
- []$[]$$[]$ 
- []
-
-<Images//Meshes//Sphere.png, id=1138, pagebox=cropbox, 424.4658pt x 332.9238pt>
-File: Images//Meshes//Sphere.png Graphic file (type png)
-<use Images//Meshes//Sphere.png>
-Package luatex.def Info: Images//Meshes//Sphere.png  used on input line 1014. on
- input line 1014.
-Package luatex.def Info: Requested size: 93.53172pt x 73.3643pt on input line 10
-14.
-<Images//Quad_fits//Sphere_quad.pdf, id=1139, pagebox=cropbox, 462.52798pt x 346
-.89601pt>
-File: Images//Quad_fits//Sphere_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Sphere_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Sphere_quad.pdf  used on input line 
-1020. on input line 1020.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-1020.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1020--1021
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1012--1024
- []$[]$$[]$ 
- []
-
-<Images//Meshes//torus.png, id=1140, pagebox=cropbox, 370.986pt x 219.7008pt>
-File: Images//Meshes//torus.png Graphic file (type png)
-<use Images//Meshes//torus.png>
-Package luatex.def Info: Images//Meshes//torus.png  used on input line 1032. on 
-input line 1032.
-Package luatex.def Info: Requested size: 82.58516pt x 48.90953pt on input line 1
-032.
-<Images//Quad_fits//Torus_quad.pdf, id=1141, pagebox=cropbox, 462.52798pt x 346.
-89601pt>
-File: Images//Quad_fits//Torus_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Torus_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Torus_quad.pdf  used on input line 1
-038. on input line 1038.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-1038.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1038--1039
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1030--1042
- []$[]$$[]$ 
- []
-
-<Images//Meshes//tubs.png, id=1142, pagebox=cropbox, 498.663pt x 365.2044pt>
-File: Images//Meshes//tubs.png Graphic file (type png)
-<use Images//Meshes//tubs.png>
-Package luatex.def Info: Images//Meshes//tubs.png  used on input line 1050. on i
-nput line 1050.
-Package luatex.def Info: Requested size: 93.49147pt x 68.47305pt on input line 1
-050.
-File: Images//Quad_fits//Tubs_quad.pdf Graphic file (type pdf)
-<use Images//Quad_fits//Tubs_quad.pdf>
-Package luatex.def Info: Images//Quad_fits//Tubs_quad.pdf  used on input line 10
-56. on input line 1056.
-Package luatex.def Info: Requested size: 161.8872pt x 121.41542pt on input line 
-1056.
-
-Overfull \hbox (15.15486pt too wide) in paragraph at lines 1056--1057
- [][] 
- []
-
-
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 1048--1060
- []$[]$$[]$ 
- []
-
-[31<./Images//Meshes//orb.png><./Images//Quad_fits//orb_quad.pdf><./Images//Mesh
-es//paraboloid.png><./Images//Quad_fits//Paraboloid_quad.pdf><./Images//Meshes//
-polycone.png><./Images//Quad_fits//Polycone_quad.pdf><./Images//Meshes//Sphere.p
-ng><./Images//Quad_fits//Sphere_quad.pdf><./Images//Meshes//torus.png><./Images/
-/Quad_fits//Torus_quad.pdf><./Images//Meshes//tubs.png>]
-Overfull \hbox (21.45477pt too wide) in paragraph at lines 1078--1094
- [][][] 
- []
-
-
-LaTeX Warning: Reference `freee' on page 32 undefined on input line 1097.
-
-
-LaTeX Warning: Reference `repel' on page 32 undefined on input line 1097.
-
-<Images//CAD_Mag//maginfreeCAD.png, id=1387, pagebox=cropbox, 1116.8124pt x 630.
-1944pt>
-File: Images//CAD_Mag//maginfreeCAD.png Graphic file (type png)
-<use Images//CAD_Mag//maginfreeCAD.png>
-Package luatex.def Info: Images//CAD_Mag//maginfreeCAD.png  used on input line 1
-103. on input line 1103.
-Package luatex.def Info: Requested size: 216.67838pt x 122.27571pt on input line
- 1103.
-<Images//CAD_Mag//maginbdsim.png, id=1388, pagebox=cropbox, 1008.4074pt x 551.66
-1pt>
-File: Images//CAD_Mag//maginbdsim.png Graphic file (type png)
-<use Images//CAD_Mag//maginbdsim.png>
-Package luatex.def Info: Images//CAD_Mag//maginbdsim.png  used on input line 110
-9. on input line 1109.
-Package luatex.def Info: Requested size: 223.51212pt x 122.27571pt on input line
- 1109.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1116.
-[32
-
-<./Images//CAD_Mag//maginfreeCAD.png><./Images//CAD_Mag//maginbdsim.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1116.
-
-(./Major_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1116.
-
-
-Package rerunfilecheck Warning: File `Major_Project.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Major_Project.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  E27810B3E5D4CFAED1F36133D5676111;4184.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1116.
-)
 
 Here is how much of LuaTeX's memory you used:
- 11679 strings out of 494456
- 305229,383344 words of node,token memory allocated
- 516 words of node memory still in use:
-   5 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 16 attribute, 57 glue_spec, 16 attr
-ibute_list, 1 write nodes
-   avail lists: 2:5447,3:221,4:7494,5:5866,6:50,7:8477,8:5330,9:9469,10:36,11:57
-3
- 14794 multiletter control sequences out of 65536+200000
- 66 fonts using 4995303 bytes
- 36i,10n,42p,1516b,1026s stack positions out of 5000i,500n,10000p,200000b,50000s
-<c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman6-regular.otf><c:/p
-rogram files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><c:/progr
-am files/miktex 2.9/fonts/opentype/public/lm/lmroman12-regular.otf><c:/program f
-iles/miktex 2.9/fonts/opentype/public/lm/lmroman10-bold.otf><c:/program files/mi
-ktex 2.9/fonts/opentype/public/lm/lmroman12-italic.otf><c:/program files/miktex 
-2.9/fonts/opentype/public/lm/lmroman12-bold.otf><c:/program files/miktex 2.9/fon
-ts/opentype/public/lm/lmromancaps10-regular.otf><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Major_Project.pdf (35 pages, 8192746 bytes).
-
-PDF statistics: 1480 PDF objects out of 1728 (max. 8388607)
- 210 named destinations out of 1000 (max. 131072)
- 1 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+ 11589 strings out of 494456
+ 195339,1144653 words of node,token memory allocated 38525 words of node memory still in use:
+   52 hlist, 1 vlist, 2 rule, 109 disc, 12 local_par, 1 dir, 10 math, 431 glue, 
+86 kern, 120 penalty, 1662 glyph, 146 attribute, 71 glue_spec, 146 attribute_lis
+t, 1 temp, 9982 if_stack, 1 shape, 5 pdf_start_link, 5 pdf_end_link, 12 pdf_dest
+, 5 pdf_action, 22 pdf_colorstack nodes
+   avail lists: 3:259,4:2272,5:1912,6:75,7:8495,8:1690,9:3017,10:25,11:546
+ 14859 multiletter control sequences out of 65536+200000
+ 67 fonts using 5126983 bytes
+ 5000i,11n,9987p,1602b,734s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

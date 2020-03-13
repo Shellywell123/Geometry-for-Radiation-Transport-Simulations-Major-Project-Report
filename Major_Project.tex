@@ -1,13 +1,11 @@
  % to sort
 
-% Figure AND SECTION AS FULL WORDS
 
 % Figures
 % Sphere coord needs middlie red line to get slice count consistent
 % torus diagram needs colour
 % check captions
 % add Figures for types of radiation and applications
-% clean cuttubs fig
 
 % equations for motion of a particle
 % need to have local copy of code if it changes in appendix listings
@@ -18,7 +16,6 @@
 % G4 total unrestricted stopping power mathes with paper
 % check all units
 
-% referenceSection
 % format
 % check refs and cites
 % std plot has incorrect y axis
@@ -28,9 +25,6 @@
 % check no null ref or cites
 % put newpage in table of contents
 
-% bdsim g4 ref should be papers not website
-
-% use G$ manula apposed to indudual pages ie materials and solids
 % stopping power equations
 % descibe a collimator
 % bdsim is compared with experiment
@@ -38,7 +32,6 @@
 % read pyg4omety paper in docs 
 % with secs on old becomes slower than new 
 % types of radiation are in bdsim
-%fix med max legend (use New + Median)
 
 %check bib packages for easy automation
 
@@ -47,14 +40,9 @@
 % is brem and cherenokov within ftfp_bert ?
 % cherenkov no s it produces an amazing number of photons (makes tracking slow) and they're very low energy so not often cared about
 
-% cant be 25 percen diff in bolt count plot
-% make radius of boolean bolt inner radius of thread to see if the boolean truely is an over approximation
-
-%get rid of name bens bolt (boolean or meshed), imported 
-% also log x axis potentially 
-% std investigation plot is still using Iron.
 
 \documentclass[12pt,a4paper]{article}
+\usepackage{cite}
 \usepackage{graphicx}
 \usepackage{hyperref}   
 \usepackage{braket}
@@ -882,24 +870,13 @@ The majority of improvements in the project resulted from the rewriting of the t
 Other observations made throughout the duration of the project were factors such as the effects of stopping power of target materials on a simulation. The ability to factor out materials when simulating interactions with spherical shapes can be utilised by scaling the radii by the respective stopping distance. The main driving factor for the properties of CPU duration distributions of interactions is governed by the energy of the incident particle/s and the number of particles in a given event. The more initial particles the smoother the distribution as there is a larger data set, as well as a small increase in the width due to a higher number of events 
 
 \subsection{Applications}
-As discussed in the introduction (Section \ref{back}) there are many invaluable uses for software packages such as BDSIM and Pyg4ometry that can be used to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment. Thanks to the software being open-source and their wide range of compatible files it can be used to simulate a growing number of projects. This comes from the help of a lot of prerequisites 
-thanks to g4 databases\\
-space\\
-bdsim and geant4 is a very powerful tool that can quickly test models of multiple formatting, in a monte carlo accelerator beamline simulation
-
-\subsection{Summary}
-As a final overview I beilieve the project went very well and the main of remeshing the primitive solids was completed\\
-lots of computer slills learnt along the way\\
-enjoyed working in the phd group\\
-
-
+As discussed in the introduction (Section \ref{back}) there are many invaluable uses for software packages such as BDSIM and Pyg4ometry that can be used to aid not only the scientific research community of particle physicist, but also help everyday people by improving medical treatment and space exploration. Thanks to the software being open-source and their wide range of compatible files it can be used to simulate a growing number of projects. This comes from the help of a lot of prerequisites such the to GEANT4 databases and Monte Carlo calculations.
 
 \subsection{Project Extensions}
-If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a Sphere in Section \ref{bdsim} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{ap1}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Also a range of particles other than the electrons such as proton\\
-Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{}.\\
-fig 27 done what andrey had said and taken several vals of diff seeds to get an average and error in each point, \\
-maybe done contour plots to show the variablility of both stack and slice for a polygon count\\
+If given more time there is several things that I  would have wished to pursue in addition to the project. One being that the analysis done on a Sphere in Section \ref{bdsim} to also be performed on every one of the remeshed curved primitive solids, all of which are listed in the Appendix \ref{ap1}. This way you could have gain an even more complete picture of the improvement to the meshing of compound solids. Despite a lot of the plots being normalised over a few seed values and being ran with 10,00 of more initial particles, the simulations could be re reran with a more particles and for a larger number of seeds. Another area that could have been explored in more detail is a prototype magnet in which I began to make , can be seen in the Appendix \ref{mag}. As a further analysis of the comparison between the new and old meshing scripts. contour plots could be made to display the variation of both stack and slice for each shape.
 
+\subsection{Acknowledgments}
+I would like to say a special thank you to all the Post-docs and PhD students within JAI at Royal Holloway that helped me and made the project that much more enjoyable. Their continuous patience and support always made me feel welcome and equal within the group, and really made me feel apart of the team. Finally I would like to thank my supervisor, Stewart Boogert for overlooking the whole project and constantly pushing me. 
 % ------------------------------------------------------------------------------------------------------------------------------
 
 \newpage
@@ -1164,7 +1141,6 @@ The following Figures are the meshing and polygon data for each primitive solid 
 \onecolumn
 
 
-
 \section{Appendix (Python scripts)}
 \subsection{Sphere BDSIM Vary Mesh Test}
 \label{ap1}
@@ -1188,18 +1164,18 @@ ax^2 + bx + c = 0
   \caption{A Table showing the parameters to the quadratic fits for the polygon count plot.}
     \begin{tabular}{lrrrrrr}
     Curved Primitive Solid & \multicolumn{1}{l}{$a_{Old}$} & \multicolumn{1}{l}{$b_{Old}$} & \multicolumn{1}{l}{$c_{Old}$} & \multicolumn{1}{l}{$a_{New}$} & \multicolumn{1}{l}{$b_{New}$} & \multicolumn{1}{l}{$c_{New}$} \\
-    Cons  & -2.74E-04 & 3.97E+00 & 5.72E+01 & -3.83E-17 & 4.00E+00 & 2.00E+00 \\
-    CutTubs & 2.19E-04 & 5.50E+00 & 6.30E+00 & -3.83E-17 & 4.00E+00 & 2.00E+00 \\
-    Ellipsoid & 18.65090372 & -333.5688153 & 1919.792901 & 1.61E-17 & 1.20E+01 & 0.00E+00 \\
-    EllipticalCone & 4.00E+00 & 2.00E+00 & 2.41E-12 & 4.03E-18 & 3.00E+00 & 0.00E+00 \\
-    EllipticalTube & -1.94E-16 & 4.20E+01 & -5.72E-13 & 4.03E-18 & 3.00E+00 & 0.00E+00 \\
-    Hyperboloid & 64.83177713 & -1452.629624 & 16378.18198 & 4.84E-17 & 2.20E+01 & -9.53E-14 \\
-    Orb   & -6.45E-17 & 3.40E+01 & -1.91E-13 & -8.06E-18 & 1.00E+01 & -4.77E-14 \\
-    Paraboloid & -1.94E-16 & 3.40E+01 & -1.91E-13 & 1.61E-17 & 1.20E+01 & 0.00E+00 \\
-    Polycone & 0.39682347 & 7.13011557 & 7.42466252 & -4.03E-17 & 6.00E+00 & 4.00E+00 \\
-    Sphere & 10.82154926 & -356.6329124 & 8557.249195 & 2.00E+01 & 2.20E+02 & 1.98E-11 \\
-    Torus & 7.01776508 & 304.8746037 & 4899.196225 & -1.61E-17 & 2.00E+01 & -9.53E-14 \\
-    Tubs  & 0.27241769 & 4.58191175 & 8.33675211 & -3.83E-17 & 4.00E+00 & 2.00E+00 \\
+    Cons  & 0.00  & 3.97 & 57.20 & 0.00  & 4.00 & 2.00 \\
+    CutTubs & 0.00  & 5.50 & 6.30 & 0.00  & 4.00 & 2.00 \\
+    Ellipsoid & 18.65 & -333.56 & 1919.79 & 0.00  & 12.00 & 0.00 \\
+    EllipticalCone & 4.00 & 2.00 & 0.00  & 0.00  & 3.00 & 0.00 \\
+    EllipticalTube & 0.00  & 42.00 & 0.00  & 0.00  & 3.00 & 0.00 \\
+    Hyperboloid & 64.83 & 0.00  & 16378.18 & 0.00  & 22.00 & 0.00  \\
+    Orb   & 0.00  & 34.00 & 0.00  & 0.00  & 10.00 & -0.00  \\
+    Paraboloid & 0.00  & 34.00 & 0.00  & 0.00 & 12.0 & 0.00 \\
+    Polycone & 0.396 & 7.13 & 7.42 & 0.00  & 6.00 & 4.00 \\
+    Sphere & 10.82 & -356.63 & 8557.24 & 20.00 & 220.00 & 0.00  \\
+    Torus & 7.017 & 304.87 & 4899.19 & 0.00  & 20.00 & 0.00  \\
+    Tubs  & 0.27 & 4.581 & 8.33 & 0.00  & 4.00 & 2.00 \\
     \end{tabular}%
   \label{tab1}%
 \end{table}
