@@ -299,7 +299,6 @@ Most of the packages mentioned above have their own GUI's to visualise the meshe
 \label{screengrab}
 \end{figure}
 
-
 % -----------------------------------------------------------------------------------------------------------------------------
 
 \newpage
@@ -643,7 +642,7 @@ ngenerate & 10,000\\ \hline
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{Images//Error//std_N.png}
+\includegraphics[scale=0.6]{Images//Error//std_N1.png}
 \caption[width=\columnwidth]{Mean and standard deviation of the CPU duration distribution of an interaction as the number of initial particles is increased. The interaction modeled was 1.3 GeV electrons against  newly meshed G4\_Fe Sphere with a stack of 100 and slice of 100.}
 \label{err}
 \end{figure}
@@ -758,42 +757,80 @@ As a final goal to round off the project, an imported CAD model was compared wit
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=.5\linewidth]{Images//CAD_Screw//Screw_hnh_10MeVe.png}
-  \captionof{figure}{A Screenshot of the imported CAD\\ bolt in BDSIM interacting with 10,000 10 MeV\\ electrons}
+  \captionof{figure}{A Screenshot of the imported CAD\\ bolt in BDSIM interacting with 10 100 MeV\\ electrons}
   \label{notmybolt}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[height=.5\linewidth]{Images//CAD_Screw//bensboltinbdsim.png}
-  \captionof{figure}{A Screenshot of the boolean CAD\\ bolt in BDSIM interacting with 10,000 10 MeV\\ electrons}
+  \captionof{figure}{A Screenshot of the boolean CAD\\ bolt in BDSIM interacting with 10 100 MeV\\ electrons}
   \label{mybolt}
 \end{minipage}%
 \end{figure}
-\\\\
-\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in fig. \ref{notmybolt} \& fig. \ref{mybolt} (same method that was used for Spheres in sec. \ref{bdsim}). Fig. \ref{boltcount} show the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks per event extracted using Pybdsim (sec.\ref{pyb}).
 \\
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{Images//CAD_Screw//boltcount.pdf}
-\caption[width=\columnwidth]{The average number of particle tracks produced in BDSIM when interacting 10,000 electrons of 10 Mev with different targets.}
-\label{boltcount}
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[height=.5\linewidth]{Images//CAD_Screw//skinnybolt.png}
+  \captionof{figure}{A Screenshot of the boolean CAD\\ bolt with a reduced body radius in BDSIM\\ interacting with 10 100 MeV electrons}
+  \label{mybolt2}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+%\begin{table}
+\centering
+\begin{tabular}{|l|}
+\hline
+Seeds \\ \hline
+1581002619\\ \hline
+7538262927\\ \hline
+2549647824\\ \hline
+\end{tabular}
+\vspace{1.6cm}
+\captionof{table}{A table showing the values seed values used in fig.\ref{boltcount} \& fig. \ref{boltcountlog}.}
+\label{tabbb}
+%\end{table}
+\end{minipage}%
+\end{figure}
+\\
+\noindent Both bolts were then ran in BDSIM interacting with a batch of 10,000 electrons through a range of energies 1 MeV to 0.75 TeV. The interactions were simulated using the spherical beam distribution origined at the centre of each bolt, as shown in fig. \ref{notmybolt} \& fig. \ref{mybolt} (same method that was used for Spheres in sec. \ref{bdsim}). Fig. \ref{boltcount} shows the average number of tracks produced from 3 different runs, using a set seed for each run, for both the boolean and CAD bolts. The seeds averaged across can be seen in Table 3. The number of tracks is calculated by subtracting the 10,000 tracks made by the initial electrons from the total number of particle tracks extracted using Pybdsim (sec.\ref{pyb}) in each run.
+\\
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\textwidth]{Images//CAD_Screw//allcount.pdf}
+  \captionof{figure}{The average number of particles\\
+   tracks produced in BDSIM when interacting\\ 10,000 electrons of increasing energies from\\ different GDML targets.}
+  \label{boltcount}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\textwidth]{Images//CAD_Screw//allcoutlog.pdf}
+  \captionof{figure}{The average number of particles\\
+   tracks produced in BDSIM when interacting 10,000 electrons of increasing energies from different GDML targets with a logarithmic x-axis scale.}
+  \label{boltcountlog}
+\end{minipage}%
 \end{figure}
 \\\\
-\noindent It can be seen that as the energy is increased the electrons generate more secondary particles causing the increase in tracks stored by BDSIM. The gradient of the data begins to flatten out in the range of 100,000 MeV (100 GeV). This flattening is due to the interactions leading to shower of secondary particles occurring earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down due to the reaction happening near instantaneously. However due to time constraints and the purpose of the plot being to find the energy range where the number of secondary particles is at large amount for better sampling, this range was not explored.
+\noindent It can be seen that as the energy is increased the electron interactions generate more secondary particles causing the increase in tracks stored by BDSIM. The gradient of the data begins to flatten out in the range of 200,000 MeV (200 GeV). This flattening is due to the interactions resulting in showers of secondary particles which occur earlier and earlier as the particle energy is increased. Theoretically the graph will then begin to have small drop back down due to the reaction happening near instantaneously. However due to time constraints and the purpose of the plot being to find the energy range where the number of secondary particles is at a sufficiently high amount to generate a histogram of the CPU duration distribution, this range was not explored.
 \\\\
-\noindent The reason for the number of secondaries being consistently larger for the boolean constructed bolt (Bens\_Bolt) compared with the imported CAD bolt (M14\_2-6G\_Bolt), is most likely due to the boolean construction being an overestimation of the imported bolt. The over estimation would be as a result of  time constraints and ease. The most naive  the threads on the bolt were ignored as well as the the hexagonal and cone features on the head of the bolt.
+\noindent The reason for the number of secondaries is consistently larger for the boolean constructed bolt (Boolean Bolt) compared with the imported CAD bolt (Imported CAD Bolt), is due to the boolean construction being an overestimation of the imported bolt. The overestimation is because of boolean bolt not taking the threads on the bolt into account as well as ignoring hexagonal and cone features on the head of the bolt. This is proven by the creation of a third bolt in which the body of the screw is reduced and is constant (fig. \ref{mybolt2}. The data for the reduced bolt is plotted in blue and is a much closer to fit to that of the imported CAD than the orginal boolean replica, which is shown in green in fig. \ref{boltcount}. Fig. \ref{boltcountlog} is the same plot as fig. \ref{boltcount}, but has a logarithmic scale for energy.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//CAD_Screw//cpudist1.png}
 \caption[width=\columnwidth]{CPU duration distribution of 1,000,000 0.5 TeV electrons interacting with CAD models of a bolt.}
-\label{brgqebafd}
+\label{lastplot}
 \end{figure}
+
+\noindent Simulations of interactions with both CAD models were then repeated with 1,000,000 electrons at an energy at 0.5 TeV. The CPU duration distributions can be seen in fig. \ref{lastplot}. The binning of the histograms was set to be 100 bins across the range of 0 - 1000 [ms], it was orginally planned to run the simulations a few times at different seed values to create an average. However as seen in fig. \ref{lastplot} the imported CAD bolt took significantly long to simulate. The reason the CAD bolt has a much longer CPU duration than the reduced boolean constructed bolt is due to the increased complexity of the geometric mesh, which creates more sporadic particle tracks.
 
 \newpage
 \section{Conclusion \& Summary}
 \label{conc}
 
-\subsection{Improvements \& observations}
+\subsection{Improvements \& Observations}
 
 The majority of improvements in the project resulted from the rewriting of the tessellated curved primitive solid meshing scripts in Pyg4ometry (sec. \ref{pyg}). The new scripts were proven to be computationally more efficient and even produce mesh structures that were aesthetically neater. This was primarily down to the removal of dependence on boolean operations within in the pycsgmesh functions and replacing them with co-ordinate system specified adapted trigonometry that uses both quadrilateral and triangular faces for tessellation. The full raw results for each solid can be entirely viewed in appendix \ref{app1}. The results clearly show that the number of polygonal faces on a mesh increases much more uniformly gradual as the mesh density is increased. Subsequently the computation needed to create a given mesh exhibits the same relationship, as the CPU time of the meshing scripts scales with the number of faces on that particular solid. This is also increases the time taken to convert and import a meshed solid to GDML format and in to a BDSIM environment as they mesh much cleaner in structure with less points to process. 
 \\\\
@@ -804,7 +841,7 @@ As discussed in the introduction (sec. \ref{back}) there are many invaluable use
 thanks to g4 databases\\
 space\\
 
-\subsection{Summay}
+\subsection{Summary}
 As a final overview I beilieve the project went very well and the main of remeshing the primitive solids was completed\\
 lots of computer slills learnt along the way\\
 enjoyed working in the phd group\\
