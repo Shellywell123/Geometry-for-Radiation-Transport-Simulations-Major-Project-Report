@@ -111,9 +111,8 @@
 	\vspace{1cm}
 	{\scshape\Large PH4100: Major Project\par}
 	\vspace{1.5cm}
-	{\huge\bfseries Meshing of Primitive Solids\\
-	in\\
-	Pyg4ometry \& BDSIM\par}
+	{\huge\bfseries Geometry for Radiation\\
+	Transport Simulations\par}
 	\vspace{2cm}
 	{\Large\itshape Ben Shellswell\par}
 	\vfill
@@ -267,7 +266,7 @@ Pyg4ometry is an open-source Python package, developed by the John Adams Institu
 ROOT is not an acronym and is named after the idea, that it is a system for other systems to grow off of, much like a root of a tree that has many branches. ROOT is adopted by many physics communities such as CERN \cite{cern}, where it was first written, naturally making it a popular format for particle physicists in particular and is the why it is the default output for analysis by BDSIM. Despite ROOT storing data in the format of its own plots, no ROOT files or plots are shown in the report, as the data has been extracted from the root files and replotted using Pybdsim \ref{pyb} and Matplotlib. The plots are made this way as the data can be more easily manipulated and the formatting of ROOT plots is more complex than with a simple Python script, of which a few standardised examples are used in Pybdsim.
 
 \subsection{FreeCAD}
-In this report the libraries from FreeCAD 0.18 \cite{18} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the FreeCAD Graphical User Interface (GUI). The libraries are used to import STEP files and to convert them into triangular based tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the Internet and converted into meshed GDML files. One of the CAD models converted was a GPS satellite, which can be seen in Figure\ref{sat}. FreeCAD itself can also be used to create CAD models that can then be tested in BDSIM, an example magnet shown in Appendix \ref{mag}.
+In this report the libraries from FreeCAD 0.18 \cite{18} are used directly within Pyg4ometry (Section \ref{pyg}), without the use of the FreeCAD Graphical User Interface (GUI). The libraries are used to import STEP files and to convert them into triangular based tessellated meshed solids, that can then be written out as a GDML file. As an exercise at the beginning of the project a few example CAD STEP files were downloaded from the Internet and converted into meshed GDML files. One of the CAD models converted was a GPS satellite, which can be seen in Figure \ref{sat}. FreeCAD itself can also be used to create CAD models that can then be tested in BDSIM, an example magnet shown in Appendix \ref{mag}.
 
 \subsection{Visualisation}
 \label{vis}
@@ -334,7 +333,7 @@ In the cylindrical polar co-ordinate system the loops within the equivalent func
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.45]{Images//Coords//cyl.png}
-\caption[width=\columnwidth]{A diagram showing the meshing method for a cylindrical polar co-ordinate system, where the red lines indicate the slices (8) and the blue indicate the stacks (2). The far left diagram depicts a single face in the co-ordinate system using two slices and two stacks to define its four vertexes. The middle diagram shows a complete view of a constructed mesh, using both slice and stack. The far right diagram depicts the meshed cylinder in the x-y plane (top view), to further illustrate the the slice is taken radially.}
+\caption[width=\columnwidth]{A diagram showing the meshing method for a cylindrical polar co-ordinate system, where the red lines indicate the slices (8) and the blue indicate the stacks (2). The far left diagram depicts a single face in the co-ordinate system using two slices and two stacks to define its four vertexes. The middle diagram shows a complete view of a constructed mesh, using both slice and stack. The far right diagram depicts the meshed cylinder in the x-y plane (top view), to further illustrate the slice is taken radially.}
 \label{cylmeshin}
 \end{figure}
 The trigonometry that converts the points from cylindrical polar co-ordinates to Cartesian are:
@@ -365,7 +364,7 @@ The trigonometry that converts the points from cylindrical polar co-ordinates to
 
 \newpage
 \subsubsection{Spherical Co-ordinate System}\label{sphh}
-The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means to that of the cylindrical co-ordinate system, with different trigonometric equations (Equation \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works in the same way as the longitudinal and latitudinal mapping on a globe, shown in Figure\ref{sphmeshin}. 
+The meshing for the primitive solids in spherical co-ordinate systems are constructed by similar means to that of the cylindrical co-ordinate system, with different trigonometric equations (Equation \ref{trigsph}) as a result of two angle parameters $\phi$ and $\theta$. The stack (blue) and slice (red) for solids in the spherical co-ordinate system works in the same way as the longitudinal and latitudinal mapping on a globe, shown in Figure \ref{sphmeshin}. 
 \\\\
 The trigonometry that converts the points from spherical co-ordinates to Cartesian are:
 
@@ -380,7 +379,7 @@ The trigonometry that converts the points from spherical co-ordinates to Cartesi
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{Images//Coords//sph.png}
-\caption[width=\columnwidth]{The meshing method for a spherical co-ordinate system, where the red lines indicate the slices (12) and the blue indicate the stacks (6). The far left diagram depicts a single face in the co-ordinate system using two slices and two stacks to define its four vertexes. The centre diagram depicts a fully meshed Orb made out of both stack and slice. The far right diagram shows the meshed Orb in the x-y plane (top view), to further illustrate the the slice is taken radially and that the stacks are circular in nature.}
+\caption[width=\columnwidth]{The meshing method for a spherical co-ordinate system, where the red lines indicate the slices (12) and the blue indicate the stacks (6). The far left diagram depicts a single face in the co-ordinate system using two slices and two stacks to define its four vertexes. The centre diagram depicts a fully meshed Orb made out of both stack and slice. The far right diagram shows the meshed Orb in the x-y plane (top view), to further illustrate the slice is taken radially and that the stacks are circular in nature.}
 \label{sphmeshin}
 \end{figure}
 
@@ -389,7 +388,7 @@ The trigonometry that converts the points from spherical co-ordinates to Cartesi
 \newpage
 \subsubsection{Toroidal Co-ordinate System}
 \label{too}
-The toroidal co-ordinate system is a special case and is only needed for toroidal based solids. The stack and slice for a toroidal shape is much more complex to visualise, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$ and a toroidal stack is a $R$ radial cut out of the angle $\theta$, where the angles and radii are displayed in Figure\ref{tormeshin}. 
+The toroidal co-ordinate system is a special case and is only needed for toroidal based solids. The stack and slice for a toroidal shape is much more complex to visualise, due to the fact it is a rotating co-ordinate system. A toroidal slice is an $R_{Torus}$ radial cut taken out of the angle $\phi$ and a toroidal stack is a $R$ radial cut out of the angle $\theta$, where the angles and radii are displayed in Figure \ref{tormeshin}. 
 \\\\
 The trigonometry that converts the points from toroidal co-ordinates to Cartesian are:
 
@@ -424,7 +423,7 @@ The simplest way to test this is by performing boolean operations with a solid b
 \subsection{New Meshing of Curved Primitive Solids}
 In total there are 12 curved primitive solids, of which many of the examples and concepts are very similar. Therefore only a few select solids will be discussed in this section, but the remaining solids and their development can all be viewed in Appendix \ref{poy}.
 \\\\
-One of the curved solids for which the meshing was rewritten is the Hyperboloid, the old and new meshing structures of the Hyperboloid is shown in Figure\ref{polypic1}. It can be seen that in this example the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the Hyperboloid.
+One of the curved solids for which the meshing was rewritten is the Hyperboloid, the old and new meshing structures of the Hyperboloid is shown in Figure \ref{polypic1}. It can be seen that in this example the meshing at the top and bottom faces becomes more radially uniform. This is due to the replacement of boolean subtractions with simple trigonometry within the new meshing algorithm for the Hyperboloid.
 \\\\
 
 \begin{figure}[h!]
@@ -498,7 +497,7 @@ Where $-$ = Boolean Subtraction, $\cap$ = Boolean Intersection, $\cup$ = Boolean
 \end{minipage}%
 \end{figure}
 
-\noindent The old meshing algorithms heavily relied on these operations, using intersections to slice solids and subtractions to make solids hollow or cut-up. For example CutTubs (tube with angled ends), as seen in Figure \ref{ct}, can be made from two cylinders and a rotated Box, first the two cylinders would be subtracted from one another, creating regular Tubs (tube), as seen in Appendix Figure \ref{ctub}, then the hollowed out cylinder would be intersected with the the rotated box to create angled tips. In the source code the intersection with a box is actually subtractions with rotated planes, as it is the same concept but more efficient. This basic method has now entirely been replaced with clean trigonometry for all the curved solid meshing scripts in Pyg4ometry.
+\noindent The old meshing algorithms heavily relied on these operations, using intersections to slice solids and subtractions to make solids hollow or cut-up. For example CutTubs (tube with angled ends), as seen in Figure \ref{ct}, can be made from two cylinders and a rotated Box, first the two cylinders would be subtracted from one another, creating regular Tubs (tube), as seen in Appendix Figure \ref{ctub}, then the hollowed out cylinder would be intersected with the rotated box to create angled tips. In the source code the intersection with a box is actually subtractions with rotated planes, as it is the same concept but more efficient. This basic method has now entirely been replaced with clean trigonometry for all the curved solid meshing scripts in Pyg4ometry.
 \\\\
 The appearance of the mesh structure itself is also affected by the use of boolean operations, as the boolean operations work by trying to identify common mesh points on the two separate solids, to then remesh between. This created a lot of non-axially uniform mesh sections as seen in solids such as the Hyperboloid, mentioned before in Figure \ref{polypic1}. It can be seen that the new meshing algorithm outputs clean radial faces at for the top and bottom sides of the solid.
 
@@ -548,7 +547,7 @@ The second aim of this project was to measure how the physics is altered between
 \label{black}
 \end{figure}
 
-\noindent Figure\ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a Pyg4ometry G4\_Ti Sphere, where negatively charged red tracks and neutral green tracks can be seen, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for identifying particles, assigning each particle a unique number. The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
+\noindent Figure \ref{black} shows a spherical distribution of 100 1.3 GeV electrons radiating outwards from the centre of a Pyg4ometry G4\_Ti Sphere, where negatively charged red tracks and neutral green tracks can be seen, which are most likely electrons and photons. A secondary particle is anything that is produced as a result of the initial particles interacting with the solid, therefore a secondary itself can produce another particle which is considered to also be  a secondary particle. The Monte Carlo simulation in BDSIM uses a numbering system for identifying particles, assigning each particle a unique number. The numbering system adopted in BDSIM is the one used by GEANT4 and created by PDG (or the Particle Data Group) \cite{pdg}, which is an international collaboration dedicated to analysing and publishing the properties of particles. 
 
 \subsection{Monte Carlo Simulation}
 \label{monte}
@@ -856,7 +855,7 @@ $a$ &  -31.80126415\\ \hline
 $b$ &  490.80581809\\ \hline
 $c$ &  743.39452632\\ \hline
 \end{tabular}
-\caption{TODO}
+\caption{Parameters for the quadratic fit show in Figure \ref{vccount}.}
 \label{vctab}
 \end{table}
 
